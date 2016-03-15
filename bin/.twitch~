@@ -1,0 +1,13 @@
+#!bin/bash
+
+twitch=http://www.twitch.tv
+mpv= --player=mpv &
+defaultquality=best
+quality=${2:-defaultquality}
+l=low
+m=medium
+
+
+santzo=$twitch/santzo84 $quality $mpv
+
+outerheaven=$twitch/outerheaven $quality $mpv

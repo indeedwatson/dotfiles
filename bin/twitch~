@@ -1,0 +1,31 @@
+#!/bin/bash
+# shortcuts for livestreamer channels and quality
+
+twitch=http://www.twitch.tv/
+mpv=--player=mpv
+
+# get channel from list of most watched channels
+case "$1" in
+    santzo) channel=santzo84;;
+    ohn) channel=outerheaven;;
+    prec) channel=previouslyrecorded_live;;
+    tftv) channel=teamfortresstv;;
+    $1) channel=$1;;
+esac
+
+# get quality, best by default
+case "${2:-b}" in
+    b*) quality=best;;
+    l*) quality=low;;
+    m*) quality=medium;;
+    *)
+        printf '%s: unkown quality option: %s (one of [l]ow,
+        [m]edium, [b]est)'"$0" "$2" >&2
+        exit 1
+        ;;
+esac
+
+# exec livestreamer
+livestreamer $twitch$channel $quality $mpv
+
+
