@@ -1,0 +1,23 @@
+# Aliases for .bashrc
+# twitch channels
+alias santzo='twitch santzo'
+alias tftv='twitch tftv'
+alias ohn='twitch ohn'
+alias prec='twitch prec'
+
+# global aliases
+alias l='ls -la'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias upgrade='sudo dnf upgrade --exclude=kernel*,xorg*'
+alias install='sudo dnf install'
+alias pip3='sudo python3 -m pip'
+alias g='git'
+alias gitc='git clone'
+alias v=vim
+alias rr='rm -rf'
+alias rbash='xrdb ~/.Xresources'
+
+# List aliases
+alias listaliases="alias | sed 's/=.*//'"
