@@ -1,0 +1,1091 @@
+2015-12-09 12:42:03	--	irc: connecting to server irc.rizon.net/6670...
+2015-12-09 12:42:04	--	irc: connected to irc.rizon.net/6670 (192.161.191.29)
+2015-12-09 12:42:04	--	* :Please wait while we process your connection.
+2015-12-09 12:42:04	--	irc.rizon.io: *** Looking up your hostname...
+2015-12-09 12:42:04	--	irc.rizon.io: *** Checking Ident
+2015-12-09 12:42:05	--	irc.rizon.io: *** Found your hostname
+2015-12-09 12:42:06	--	irc.rizon.io: *** No Ident response
+2015-12-09 12:42:06	--	irc.rizon.io: *** Your host is masked (Rizon-7F97078A.telecom.net.ar)
+2015-12-09 12:42:06	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2015-12-09 12:42:06	--	Your host is irc.rizon.io, running version hybrid-7.2.3+plexus-3.1.0(20151005_0-546)
+2015-12-09 12:42:06	--	This server was created Oct 23 2015 at 15:30:46
+2015-12-09 12:42:06	--	irc.rizon.io hybrid-7.2.3+plexus-3.1.0(20151005_0-546) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2015-12-09 12:42:06	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2015-12-09 12:42:06	--	CHANLIMIT=#:75 CHANNELLEN=50 EXCEPTS=e INVEX=I CHANMODES=beI,k,l,BCMNORScimnpstz ELIST=CMNTU SAFELIST AWAYLEN=160 KNOCK FNC NAMESX UHNAMES :are supported by this server
+2015-12-09 12:42:06	--	89CAAE20T :your unique ID
+2015-12-09 12:42:06	--	There are 69 users and 20893 invisible on 13 servers
+2015-12-09 12:42:06	--	59 :IRC Operators online
+2015-12-09 12:42:06	--	5 :unknown connection(s)
+2015-12-09 12:42:06	--	19983 :channels formed
+2015-12-09 12:42:06	--	I have 20962 clients and 13 servers
+2015-12-09 12:42:06	--	20962 24501 :Current local users 20962, max 24501
+2015-12-09 12:42:06	--	20962 24501 :Current global users 20962, max 24501
+2015-12-09 12:42:06	--	- irc.rizon.io Message of the Day -
+2015-12-09 12:42:06	--	-          oo                            
+2015-12-09 12:42:06	--	-
+2015-12-09 12:42:06	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2015-12-09 12:42:06	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2015-12-09 12:42:06	--	- 88       88  .Y8P    88.  .88 88    88 
+2015-12-09 12:42:06	--	- dP       dP d888888P `88888P' dP    dP
+2015-12-09 12:42:06	--	-
+2015-12-09 12:42:06	--	- Rizon Chat Network -- http://rizon.net
+2015-12-09 12:42:06	--	-
+2015-12-09 12:42:06	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2015-12-09 12:42:06	--	-
+2015-12-09 12:42:06	--	- Rules:
+2015-12-09 12:42:06	--	- o No spamming or flooding
+2015-12-09 12:42:06	--	- o No clones or malicious bots
+2015-12-09 12:42:06	--	- o No takeovers
+2015-12-09 12:42:06	--	- o No distribution of child pornography
+2015-12-09 12:42:06	--	- o Clients must respond to VERSION requests
+2015-12-09 12:42:06	--	- o Rizon staff may disconnect clients for any or no reason
+2015-12-09 12:42:06	--	-
+2015-12-09 12:42:06	--	- First steps:
+2015-12-09 12:42:06	--	- o To register your nick: /msg NickServ HELP
+2015-12-09 12:42:06	--	- o To register your channel: /msg ChanServ HELP
+2015-12-09 12:42:06	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2015-12-09 12:42:06	--	- o For other help with Rizon: /join #help
+2015-12-09 12:42:06	--	-
+2015-12-09 12:42:06	--	- Usage of this network is a privilege, not a right. Rizon is a
+2015-12-09 12:42:06	--	- transit provider, therefore no person or entity involved with
+2015-12-09 12:42:06	--	- *.rizon.net or irc.rizon.io takes any responsibility for
+2015-12-09 12:42:06	--	- users' actions. Absolutely no warranty is expressed or implied.
+2015-12-09 12:42:06	--	End of /MOTD command.
+2015-12-09 12:42:06	--	User mode [+ix] by indeedwatson
+2015-12-09 12:42:06	--	metalgearsolid :Illegal channel name
+2015-12-09 12:42:06	--	CTCP requested by py-ctcp: VERSION (blocked)
+2015-12-09 12:42:06	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2015-12-09 12:42:06	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2015-12-09 12:42:06	--	Global (service@rizon.net): [Random News - Nov 29 2013] Want to make your vhost shiny by adding colors to it? Try your luck in #VIzon
+2015-12-09 12:42:06	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.220). This scan will not harm your computer.
+2015-12-09 15:27:50	--	irc: disconnected from server
+2016-02-28 12:24:27	--	irc: connecting to server irc.rizon.net/6670...
+2016-02-28 12:24:28	--	irc: connected to irc.rizon.net/6670 (192.161.191.29)
+2016-02-28 12:24:28	--	* :Please wait while we process your connection.
+2016-02-28 12:24:28	--	irc.rizon.io: *** Looking up your hostname...
+2016-02-28 12:24:28	--	irc.rizon.io: *** Checking Ident
+2016-02-28 12:24:29	--	irc.rizon.io: *** Couldn't look up your hostname
+2016-02-28 12:24:30	--	irc.rizon.io: *** No Ident response
+2016-02-28 12:24:30	--	irc.rizon.io: *** Your host is masked (4B8F8CCA.4616BE39.70E6E942.IP)
+2016-02-28 12:24:30	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-02-28 12:24:30	--	Your host is irc.rizon.io, running version hybrid-7.2.3+plexus-3.1.0(20151005_0-546)
+2016-02-28 12:24:30	--	This server was created Oct 23 2015 at 15:30:46
+2016-02-28 12:24:30	--	irc.rizon.io hybrid-7.2.3+plexus-3.1.0(20151005_0-546) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-02-28 12:24:30	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-02-28 12:24:30	--	CHANLIMIT=#:75 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz ELIST=CMNTU SAFELIST AWAYLEN=160 KNOCK FNC NAMESX UHNAMES EXCEPTS=e INVEX=I :are supported by this server
+2016-02-28 12:24:30	--	89CAARFH5 :your unique ID
+2016-02-28 12:24:30	--	There are 29 users and 22351 invisible on 13 servers
+2016-02-28 12:24:30	--	58 :IRC Operators online
+2016-02-28 12:24:30	--	11 :unknown connection(s)
+2016-02-28 12:24:30	--	20766 :channels formed
+2016-02-28 12:24:30	--	I have 22380 clients and 13 servers
+2016-02-28 12:24:30	--	22380 25636 :Current local users 22380, max 25636
+2016-02-28 12:24:30	--	22380 25636 :Current global users 22380, max 25636
+2016-02-28 12:24:30	--	- irc.rizon.io Message of the Day -
+2016-02-28 12:24:30	--	-          oo                            
+2016-02-28 12:24:30	--	-
+2016-02-28 12:24:30	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2016-02-28 12:24:30	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2016-02-28 12:24:30	--	- 88       88  .Y8P    88.  .88 88    88 
+2016-02-28 12:24:30	--	- dP       dP d888888P `88888P' dP    dP
+2016-02-28 12:24:30	--	-
+2016-02-28 12:24:30	--	- Rizon Chat Network -- http://rizon.net
+2016-02-28 12:24:30	--	-
+2016-02-28 12:24:30	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2016-02-28 12:24:30	--	-
+2016-02-28 12:24:30	--	- Rules:
+2016-02-28 12:24:30	--	- o No spamming or flooding
+2016-02-28 12:24:30	--	- o No clones or malicious bots
+2016-02-28 12:24:30	--	- o No takeovers
+2016-02-28 12:24:30	--	- o No distribution of child pornography
+2016-02-28 12:24:30	--	- o Clients must respond to VERSION requests
+2016-02-28 12:24:30	--	- o Rizon staff may disconnect clients for any or no reason
+2016-02-28 12:24:30	--	-
+2016-02-28 12:24:30	--	- First steps:
+2016-02-28 12:24:30	--	- o To register your nick: /msg NickServ HELP
+2016-02-28 12:24:30	--	- o To register your channel: /msg ChanServ HELP
+2016-02-28 12:24:30	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2016-02-28 12:24:30	--	- o For other help with Rizon: /join #help
+2016-02-28 12:24:30	--	-
+2016-02-28 12:24:30	--	- Usage of this network is a privilege, not a right. Rizon is a
+2016-02-28 12:24:30	--	- transit provider, therefore no person or entity involved with
+2016-02-28 12:24:30	--	- *.rizon.net or irc.rizon.io takes any responsibility for
+2016-02-28 12:24:30	--	- users' actions. Absolutely no warranty is expressed or implied.
+2016-02-28 12:24:30	--	End of /MOTD command.
+2016-02-28 12:24:30	--	User mode [+ix] by indeedwatson
+2016-02-28 12:24:30	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-02-28 12:24:30	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-02-28 12:24:30	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-02-28 12:24:30	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-02-28 12:24:30	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-02-28 12:24:30	--	Global (service@rizon.net): [Random News - Nov 29 2013] Want to make your vhost shiny by adding colors to it? Try your luck in #VIzon
+2016-02-28 12:24:30	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.222). This scan will not harm your computer.
+2016-02-28 13:10:39	--	irc: disconnected from server
+2016-03-06 23:49:50	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-06 23:49:51	--	irc: connected to irc.rizon.net/6670 (91.217.189.71)
+2016-03-06 23:49:51	--	* :Please wait while we process your connection.
+2016-03-06 23:49:51	--	irc.uworld.se: *** Looking up your hostname...
+2016-03-06 23:49:51	--	irc.uworld.se: *** Checking Ident
+2016-03-06 23:49:52	--	irc.uworld.se: *** Couldn't look up your hostname
+2016-03-06 23:49:53	--	irc.uworld.se: *** No Ident response
+2016-03-06 23:49:53	--	irc.uworld.se: *** Your host is masked (ED83D45B.C25C172E.70E6E942.IP)
+2016-03-06 23:49:53	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-06 23:49:53	--	Your host is irc.uworld.se, running version hybrid-7.2.3+plexus-3.1.0(20151028_0-547)
+2016-03-06 23:49:53	--	This server was created Dec 13 2015 at 04:33:51
+2016-03-06 23:49:53	--	irc.uworld.se hybrid-7.2.3+plexus-3.1.0(20151028_0-547) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-06 23:49:53	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-06 23:49:53	--	CHANLIMIT=#:500 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST NAMESX UHNAMES FNC EXCEPTS=e INVEX=I :are supported by this server
+2016-03-06 23:49:53	--	21CAAFOKI :your unique ID
+2016-03-06 23:49:53	--	There are 27 users and 21868 invisible on 13 servers
+2016-03-06 23:49:53	--	56 :IRC Operators online
+2016-03-06 23:49:53	--	2 :unknown connection(s)
+2016-03-06 23:49:53	--	20649 :channels formed
+2016-03-06 23:49:53	--	I have 21895 clients and 13 servers
+2016-03-06 23:49:53	--	21895 25635 :Current local users 21895, max 25635
+2016-03-06 23:49:53	--	21895 25635 :Current global users 21895, max 25635
+2016-03-06 23:49:53	--	- irc.uworld.se Message of the Day -
+2016-03-06 23:49:53	--	- _______ Welcome to the Rizon IRC Network!___________________________
+2016-03-06 23:49:53	--	-
+2016-03-06 23:49:53	--	- Welcome to irc.uworld.se part of the Rizon IRC Network!
+2016-03-06 23:49:53	--	- Bandwith sponsored by Portlane (www.portlane.com).
+2016-03-06 23:49:53	--	- Listening on ports: 6660 - 6669, 7000 SSL: 6697, 9999
+2016-03-06 23:49:53	--	-
+2016-03-06 23:49:53	--	- _______ Server Staff _______________________________________________
+2016-03-06 23:49:53	--	-
+2016-03-06 23:49:53	--	-  o Admin: suom1 <suom1@underworld.no>
+2016-03-06 23:49:53	--	-  o Opers: rockey
+2016-03-06 23:49:53	--	-           Smike
+2016-03-06 23:49:53	--	-
+2016-03-06 23:49:53	--	- _______ Server Rules _______________________________________________
+2016-03-06 23:49:53	--	-
+2016-03-06 23:49:53	--	-  o No Flooding
+2016-03-06 23:49:53	--	-  o No Bots (auto-detected)
+2016-03-06 23:49:53	--	-  o No Clones
+2016-03-06 23:49:53	--	-  o No Spamming
+2016-03-06 23:49:53	--	-  o No Takeovers
+2016-03-06 23:49:53	--	-  o Clients must respond to VERSION requests!
+2016-03-06 23:49:53	--	-  o We will not tolerate the distribution of child pornography.
+2016-03-06 23:49:53	--	-  o Access granted to this server is a privilege.
+2016-03-06 23:49:53	--	-  o Staff members may disconnect clients for any or no reason.
+2016-03-06 23:49:53	--	-
+2016-03-06 23:49:53	--	- _______ New to Rizon? _______________________________________________
+2016-03-06 23:49:53	--	-
+2016-03-06 23:49:53	--	-  o /join #help - network help channel
+2016-03-06 23:49:53	--	-  o /join #services - network staff help
+2016-03-06 23:49:53	--	-  o See /msg nickserv help to register your nick
+2016-03-06 23:49:53	--	-  o See /msg chanserv help to register your channel
+2016-03-06 23:49:53	--	-  o Want a vhost? /msg hostserv help request
+2016-03-06 23:49:53	--	-
+2016-03-06 23:49:53	--	- _______ Open Proxy's & Transit Provider ______________________________
+2016-03-06 23:49:53	--	-
+2016-03-06 23:49:53	--	-  o The use of this server & network is a privilege, not a right.
+2016-03-06 23:49:53	--	-
+2016-03-06 23:49:53	--	-  o IRC is a free media, therefore no person or entity involved
+2016-03-06 23:49:53	--	-  o with *.rizon.net and irc.uworld.se takes any responsibility
+2016-03-06 23:49:53	--	-  o whatsoever for the opinions expressed or the actions taken by
+2016-03-06 23:49:53	--	-  o users. Absolutely no warranty is either expressed or implied.
+2016-03-06 23:49:53	--	End of /MOTD command.
+2016-03-06 23:49:53	--	User mode [+ix] by indeedwatson
+2016-03-06 23:49:53	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-06 23:49:53	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-06 23:49:53	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-06 23:49:53	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-06 23:49:53	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-06 23:49:53	--	Global (service@rizon.net): [Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+2016-03-06 23:49:53	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.220). This scan will not harm your computer.
+2016-03-06 23:50:03	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-06 23:51:16	--	MSG(nickserv): help register
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): Syntax: REGISTER password [email]
+2016-03-06 23:51:16	--	NickServ (service@rizon.net):  
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): Registers your nickname in the NickServ database.  Once
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): your nick is registered, you can use the SET and ACCESS
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): commands to configure your nick's settings as you like
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): them.  Make sure you remember the password you use when
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): registering - you'll need it to make changes to your nick
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): later.  (Note that case matters!  ANOPE, Anope, and
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): anope are all different passwords!)
+2016-03-06 23:51:16	--	NickServ (service@rizon.net):  
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): Guidelines on choosing passwords:
+2016-03-06 23:51:16	--	NickServ (service@rizon.net):  
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): Passwords should not be easily guessable.  For example,
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): using your real name as a password is a bad idea.  Using
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): your nickname as a password is a much worse idea ;) and,
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): in fact, NickServ will not allow it.  Also, short
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): passwords are vulnerable to trial-and-error searches, so
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): you should choose a password at least 5 characters long.
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): Finally, the space character cannot be used in passwords.
+2016-03-06 23:51:16	--	NickServ (service@rizon.net):  
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): The parameter email is not optional on this
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): network and is used to verify that you are who you
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): say you are through a simple confirmation e-mail.
+2016-03-06 23:51:16	--	NickServ (service@rizon.net):  
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): Your privacy is respected; this e-mail won't be given to
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): any third-party person.
+2016-03-06 23:51:16	--	NickServ (service@rizon.net):  
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): This command also creates a new group for your nickname,
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): that will allow you to register other nicks later sharing
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): the same configuration, the same set of memos and the
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): same channel privileges. For more information on this
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): feature, type /msg NickServ HELP GROUP.
+2016-03-06 23:51:16	--	NickServ (service@rizon.net):  
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): Nicknames that are not identified to for 90 days automatically
+2016-03-06 23:51:16	--	NickServ (service@rizon.net): expire and are dropped from services.
+2016-03-06 23:52:45	--	MSG(nickserv): REGISTER ***********************************
+2016-03-06 23:52:45	--	NickServ (service@rizon.net): A passcode has been sent to beethovenopus111@gmail.com, please type /msg NickServ confirm <passcode> to complete registration
+2016-03-06 23:53:16	--	MSG(nickserv): confirm pCn7EYAym
+2016-03-06 23:53:16	--	NickServ (service@rizon.net): Nickname indeedwatson registered under your account: *yama@*.C25C172E.70E6E942.IP
+2016-03-06 23:53:16	--	User mode [+r] by indeedwatson
+2016-03-07 02:33:22	--	irc: disconnected from server
+2016-03-07 10:11:19	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-07 10:11:20	--	irc: connected to irc.rizon.net/6670 (80.65.57.18)
+2016-03-07 10:11:20	--	* :Please wait while we process your connection.
+2016-03-07 10:11:20	--	irc.rizon.no: *** Looking up your hostname...
+2016-03-07 10:11:20	--	irc.rizon.no: *** Checking Ident
+2016-03-07 10:11:21	--	irc.rizon.no: *** Couldn't look up your hostname
+2016-03-07 10:11:22	--	irc.rizon.no: *** No Ident response
+2016-03-07 10:11:22	--	irc.rizon.no: *** Your host is masked (E5462F4D.B4106902.321946A8.IP)
+2016-03-07 10:11:22	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-07 10:11:22	--	Your host is irc.rizon.no, running version hybrid-7.2.3+plexus-3.1.0(20141225_0-545)
+2016-03-07 10:11:22	--	This server was created Jun 25 2015 at 17:38:48
+2016-03-07 10:11:22	--	irc.rizon.no hybrid-7.2.3+plexus-3.1.0(20141225_0-545) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-07 10:11:22	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-07 10:11:22	--	CHANLIMIT=#:250 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz KNOCK ELIST=CMNTU SAFELIST NAMESX UHNAMES FNC AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2016-03-07 10:11:22	--	06CAA4VPQ :your unique ID
+2016-03-07 10:11:22	--	There are 24 users and 19446 invisible on 13 servers
+2016-03-07 10:11:22	--	57 :IRC Operators online
+2016-03-07 10:11:22	--	1 :unknown connection(s)
+2016-03-07 10:11:22	--	19814 :channels formed
+2016-03-07 10:11:22	--	I have 19470 clients and 13 servers
+2016-03-07 10:11:22	--	19470 25636 :Current local users 19470, max 25636
+2016-03-07 10:11:22	--	19470 25636 :Current global users 19470, max 25636
+2016-03-07 10:11:22	--	- irc.rizon.no Message of the Day -
+2016-03-07 10:11:22	--	-          oo                            
+2016-03-07 10:11:22	--	-
+2016-03-07 10:11:22	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2016-03-07 10:11:22	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2016-03-07 10:11:22	--	- 88       88  .Y8P    88.  .88 88    88 
+2016-03-07 10:11:22	--	- dP       dP d888888P `88888P' dP    dP
+2016-03-07 10:11:22	--	-
+2016-03-07 10:11:22	--	- Rizon Chat Network -- http://rizon.net
+2016-03-07 10:11:22	--	-
+2016-03-07 10:11:22	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2016-03-07 10:11:22	--	-
+2016-03-07 10:11:22	--	- Rules:
+2016-03-07 10:11:22	--	- o No spamming or flooding
+2016-03-07 10:11:22	--	- o No clones or malicious bots
+2016-03-07 10:11:22	--	- o No takeovers
+2016-03-07 10:11:22	--	- o No distribution of child pornography
+2016-03-07 10:11:22	--	- o Clients must respond to VERSION requests
+2016-03-07 10:11:22	--	- o Rizon staff may disconnect clients for any or no reason
+2016-03-07 10:11:22	--	-
+2016-03-07 10:11:22	--	- First steps:
+2016-03-07 10:11:22	--	- o To register your nick: /msg NickServ HELP
+2016-03-07 10:11:22	--	- o To register your channel: /msg ChanServ HELP
+2016-03-07 10:11:22	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2016-03-07 10:11:22	--	- o For other help with Rizon: /join #help
+2016-03-07 10:11:22	--	-
+2016-03-07 10:11:22	--	- Usage of this network is a privilege, not a right. Rizon is a
+2016-03-07 10:11:22	--	- transit provider, therefore no person or entity involved with
+2016-03-07 10:11:22	--	- *.rizon.net or irc.rizon.no takes any responsibility for
+2016-03-07 10:11:22	--	- users' actions. Absolutely no warranty is expressed or implied.
+2016-03-07 10:11:22	--	End of /MOTD command.
+2016-03-07 10:11:22	--	User mode [+ix] by indeedwatson
+2016-03-07 10:11:22	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-07 10:11:22	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-07 10:11:22	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-07 10:11:22	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-07 10:11:22	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-07 10:11:22	--	Global (service@rizon.net): [Random News - Mar 20 2009] Idle on Rizon a lot? Why not play our idlerpg game, you can check it out at #RizonIRPG for more information visit the website http://idlerpg.rizon.net -Rizon Staff
+2016-03-07 10:11:22	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-07 10:11:22	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-07 10:11:22	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-07 10:11:22	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.220). This scan will not harm your computer.
+2016-03-08 01:13:33	--	irc: disconnected from server
+2016-03-08 09:39:28	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-08 09:39:29	--	irc: connected to irc.rizon.net/6670 (213.80.41.222)
+2016-03-08 09:39:29	--	* :Please wait while we process your connection.
+2016-03-08 09:39:29	--	irc.infoqb.se: *** Looking up your hostname...
+2016-03-08 09:39:29	--	irc.infoqb.se: *** Checking Ident
+2016-03-08 09:39:30	--	irc.infoqb.se: *** Couldn't look up your hostname
+2016-03-08 09:39:31	--	irc.infoqb.se: *** No Ident response
+2016-03-08 09:39:31	--	irc.infoqb.se: *** Your host is masked (50CE34D8.6BBB5C99.1D9ED192.IP)
+2016-03-08 09:39:31	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-08 09:39:31	--	Your host is irc.infoqb.se, running version hybrid-7.2.3+plexus-3.1.0(20151028_0-547)
+2016-03-08 09:39:31	--	This server was created Nov 29 2015 at 21:26:36
+2016-03-08 09:39:31	--	irc.infoqb.se hybrid-7.2.3+plexus-3.1.0(20151028_0-547) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-08 09:39:31	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-08 09:39:31	--	CHANLIMIT=#:75 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz FNC KNOCK NAMESX UHNAMES AWAYLEN=160 ELIST=CMNTU SAFELIST EXCEPTS=e INVEX=I :are supported by this server
+2016-03-08 09:39:31	--	37CAAB10Q :your unique ID
+2016-03-08 09:39:31	--	There are 29 users and 20314 invisible on 13 servers
+2016-03-08 09:39:31	--	58 :IRC Operators online
+2016-03-08 09:39:31	--	2 :unknown connection(s)
+2016-03-08 09:39:31	--	20507 :channels formed
+2016-03-08 09:39:31	--	I have 20343 clients and 13 servers
+2016-03-08 09:39:31	--	20343 25634 :Current local users 20343, max 25634
+2016-03-08 09:39:31	--	20343 25634 :Current global users 20343, max 25634
+2016-03-08 09:39:31	--	- irc.infoqb.se Message of the Day -
+2016-03-08 09:39:31	--	-          oo                            
+2016-03-08 09:39:31	--	-
+2016-03-08 09:39:31	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2016-03-08 09:39:31	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2016-03-08 09:39:31	--	- 88       88  .Y8P    88.  .88 88    88 
+2016-03-08 09:39:31	--	- dP       dP d888888P `88888P' dP    dP
+2016-03-08 09:39:31	--	-
+2016-03-08 09:39:31	--	- Rizon Chat Network -- http://rizon.net
+2016-03-08 09:39:31	--	-
+2016-03-08 09:39:31	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2016-03-08 09:39:31	--	-
+2016-03-08 09:39:31	--	- Rules:
+2016-03-08 09:39:31	--	- o No spamming or flooding
+2016-03-08 09:39:31	--	- o No clones or malicious bots
+2016-03-08 09:39:31	--	- o No takeovers
+2016-03-08 09:39:31	--	- o No distribution of child pornography
+2016-03-08 09:39:31	--	- o Clients must respond to VERSION requests
+2016-03-08 09:39:31	--	- o Rizon staff may disconnect clients for any or no reason
+2016-03-08 09:39:31	--	-
+2016-03-08 09:39:31	--	- First steps:
+2016-03-08 09:39:31	--	- o To register your nick: /msg NickServ HELP
+2016-03-08 09:39:31	--	- o To register your channel: /msg ChanServ HELP
+2016-03-08 09:39:31	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2016-03-08 09:39:31	--	- o For other help with Rizon: /join #help
+2016-03-08 09:39:31	--	-
+2016-03-08 09:39:31	--	- Usage of this network is a privilege, not a right. Rizon is a
+2016-03-08 09:39:31	--	- transit provider, therefore no person or entity involved with
+2016-03-08 09:39:31	--	- *.rizon.net or irc.infoqb.se takes any responsibility for
+2016-03-08 09:39:31	--	- users' actions. Absolutely no warranty is expressed or implied.
+2016-03-08 09:39:31	--	End of /MOTD command.
+2016-03-08 09:39:31	--	User mode [+ix] by indeedwatson
+2016-03-08 09:39:31	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-08 09:39:31	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-08 09:39:31	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-08 09:39:31	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-08 09:39:31	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-08 09:39:31	--	Global (service@rizon.net): [Random News - Nov 29 2013] Want to make your vhost shiny by adding colors to it? Try your luck in #VIzon
+2016-03-08 09:39:31	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-08 09:39:31	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-08 09:39:31	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-08 09:39:31	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.219). This scan will not harm your computer.
+2016-03-08 13:46:40	=!=	irc: reading data on socket: error 104 Connection reset by peer
+2016-03-08 13:46:40	--	irc: disconnecting from server...
+2016-03-08 13:46:40	--	irc: disconnected from server
+2016-03-08 13:46:40	--	irc: reconnecting to server in 10 seconds
+2016-03-08 13:46:50	--	irc: reconnecting to server...
+2016-03-08 13:46:50	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-08 13:46:51	--	irc: connected to irc.rizon.net/6670 (91.217.189.71)
+2016-03-08 13:46:52	--	* :Please wait while we process your connection.
+2016-03-08 13:46:52	--	irc.uworld.se: *** Looking up your hostname...
+2016-03-08 13:46:52	--	irc.uworld.se: *** Checking Ident
+2016-03-08 13:46:52	--	irc.uworld.se: *** Couldn't look up your hostname
+2016-03-08 13:46:53	--	irc.uworld.se: *** No Ident response
+2016-03-08 13:46:53	--	irc.uworld.se: *** Your host is masked (50CE34D8.6BBB5C99.1D9ED192.IP)
+2016-03-08 13:46:53	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-08 13:46:53	--	Your host is irc.uworld.se, running version hybrid-7.2.3+plexus-3.1.0(20151028_0-547)
+2016-03-08 13:46:53	--	This server was created Dec 13 2015 at 04:33:51
+2016-03-08 13:46:53	--	irc.uworld.se hybrid-7.2.3+plexus-3.1.0(20151028_0-547) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-08 13:46:53	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-08 13:46:53	--	CHANLIMIT=#:500 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST NAMESX UHNAMES FNC EXCEPTS=e INVEX=I :are supported by this server
+2016-03-08 13:46:53	--	21CAAFU2J :your unique ID
+2016-03-08 13:46:53	--	There are 30 users and 21373 invisible on 13 servers
+2016-03-08 13:46:54	--	58 :IRC Operators online
+2016-03-08 13:46:54	--	1 :unknown connection(s)
+2016-03-08 13:46:54	--	20661 :channels formed
+2016-03-08 13:46:54	--	I have 21403 clients and 13 servers
+2016-03-08 13:46:54	--	21403 25635 :Current local users 21403, max 25635
+2016-03-08 13:46:54	--	21403 25635 :Current global users 21403, max 25635
+2016-03-08 13:46:54	--	- irc.uworld.se Message of the Day -
+2016-03-08 13:46:54	--	- _______ Welcome to the Rizon IRC Network!___________________________
+2016-03-08 13:46:54	--	-
+2016-03-08 13:46:54	--	- Welcome to irc.uworld.se part of the Rizon IRC Network!
+2016-03-08 13:46:54	--	- Bandwith sponsored by Portlane (www.portlane.com).
+2016-03-08 13:46:54	--	- Listening on ports: 6660 - 6669, 7000 SSL: 6697, 9999
+2016-03-08 13:46:54	--	-
+2016-03-08 13:46:54	--	- _______ Server Staff _______________________________________________
+2016-03-08 13:46:54	--	-
+2016-03-08 13:46:54	--	-  o Admin: suom1 <suom1@underworld.no>
+2016-03-08 13:46:54	--	-  o Opers: rockey
+2016-03-08 13:46:54	--	-           Smike
+2016-03-08 13:46:54	--	-
+2016-03-08 13:46:54	--	- _______ Server Rules _______________________________________________
+2016-03-08 13:46:54	--	-
+2016-03-08 13:46:54	--	-  o No Flooding
+2016-03-08 13:46:54	--	-  o No Bots (auto-detected)
+2016-03-08 13:46:54	--	-  o No Clones
+2016-03-08 13:46:54	--	-  o No Spamming
+2016-03-08 13:46:54	--	-  o No Takeovers
+2016-03-08 13:46:54	--	-  o Clients must respond to VERSION requests!
+2016-03-08 13:46:54	--	-  o We will not tolerate the distribution of child pornography.
+2016-03-08 13:46:54	--	-  o Access granted to this server is a privilege.
+2016-03-08 13:46:54	--	-  o Staff members may disconnect clients for any or no reason.
+2016-03-08 13:46:54	--	-
+2016-03-08 13:46:54	--	- _______ New to Rizon? _______________________________________________
+2016-03-08 13:46:54	--	-
+2016-03-08 13:46:54	--	-  o /join #help - network help channel
+2016-03-08 13:46:54	--	-  o /join #services - network staff help
+2016-03-08 13:46:54	--	-  o See /msg nickserv help to register your nick
+2016-03-08 13:46:54	--	-  o See /msg chanserv help to register your channel
+2016-03-08 13:46:54	--	-  o Want a vhost? /msg hostserv help request
+2016-03-08 13:46:54	--	-
+2016-03-08 13:46:54	--	- _______ Open Proxy's & Transit Provider ______________________________
+2016-03-08 13:46:54	--	-
+2016-03-08 13:46:54	--	-  o The use of this server & network is a privilege, not a right.
+2016-03-08 13:46:54	--	-
+2016-03-08 13:46:54	--	-  o IRC is a free media, therefore no person or entity involved
+2016-03-08 13:46:54	--	-  o with *.rizon.net and irc.uworld.se takes any responsibility
+2016-03-08 13:46:54	--	-  o whatsoever for the opinions expressed or the actions taken by
+2016-03-08 13:46:54	--	-  o users. Absolutely no warranty is either expressed or implied.
+2016-03-08 13:46:54	--	End of /MOTD command.
+2016-03-08 13:46:54	--	User mode [+ix] by indeedwatson
+2016-03-08 13:46:54	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-08 13:46:54	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-08 13:46:54	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-08 13:46:54	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-08 13:46:54	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-08 13:46:54	--	Global (service@rizon.net): [Random News - Mar 20 2009] Idle on Rizon a lot? Why not play our idlerpg game, you can check it out at #RizonIRPG for more information visit the website http://idlerpg.rizon.net -Rizon Staff
+2016-03-08 13:46:54	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-08 13:46:54	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-08 13:46:54	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-08 13:46:54	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.222). This scan will not harm your computer.
+2016-03-08 23:38:04	=!=	irc: reading data on socket: error 104 Connection reset by peer
+2016-03-08 23:38:04	--	irc: disconnecting from server...
+2016-03-08 23:38:04	--	irc: disconnected from server
+2016-03-08 23:38:04	--	irc: reconnecting to server in 10 seconds
+2016-03-08 23:38:14	--	irc: reconnecting to server...
+2016-03-08 23:38:14	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-08 23:38:15	--	irc: connected to irc.rizon.net/6670 (91.217.189.71)
+2016-03-08 23:38:16	--	* :Please wait while we process your connection.
+2016-03-08 23:38:16	--	irc.uworld.se: *** Looking up your hostname...
+2016-03-08 23:38:16	--	irc.uworld.se: *** Checking Ident
+2016-03-08 23:38:16	--	irc.uworld.se: *** Couldn't look up your hostname
+2016-03-08 23:38:17	--	irc.uworld.se: *** No Ident response
+2016-03-08 23:38:17	--	irc.uworld.se: *** Your host is masked (50CE34D8.6BBB5C99.1D9ED192.IP)
+2016-03-08 23:38:17	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-08 23:38:17	--	Your host is irc.uworld.se, running version hybrid-7.2.3+plexus-3.1.0(20151028_0-547)
+2016-03-08 23:38:17	--	This server was created Dec 13 2015 at 04:33:51
+2016-03-08 23:38:17	--	irc.uworld.se hybrid-7.2.3+plexus-3.1.0(20151028_0-547) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-08 23:38:17	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-08 23:38:17	--	CHANLIMIT=#:500 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST NAMESX UHNAMES FNC EXCEPTS=e INVEX=I :are supported by this server
+2016-03-08 23:38:17	--	21CAAFWWX :your unique ID
+2016-03-08 23:38:17	--	There are 28 users and 21507 invisible on 13 servers
+2016-03-08 23:38:17	--	58 :IRC Operators online
+2016-03-08 23:38:17	--	2 :unknown connection(s)
+2016-03-08 23:38:17	--	20598 :channels formed
+2016-03-08 23:38:17	--	I have 21535 clients and 13 servers
+2016-03-08 23:38:17	--	21535 25635 :Current local users 21535, max 25635
+2016-03-08 23:38:17	--	21535 25635 :Current global users 21535, max 25635
+2016-03-08 23:38:17	--	- irc.uworld.se Message of the Day -
+2016-03-08 23:38:17	--	- _______ Welcome to the Rizon IRC Network!___________________________
+2016-03-08 23:38:17	--	-
+2016-03-08 23:38:17	--	- Welcome to irc.uworld.se part of the Rizon IRC Network!
+2016-03-08 23:38:17	--	- Bandwith sponsored by Portlane (www.portlane.com).
+2016-03-08 23:38:17	--	- Listening on ports: 6660 - 6669, 7000 SSL: 6697, 9999
+2016-03-08 23:38:17	--	-
+2016-03-08 23:38:17	--	- _______ Server Staff _______________________________________________
+2016-03-08 23:38:17	--	-
+2016-03-08 23:38:17	--	-  o Admin: suom1 <suom1@underworld.no>
+2016-03-08 23:38:17	--	-  o Opers: rockey
+2016-03-08 23:38:17	--	-           Smike
+2016-03-08 23:38:17	--	-
+2016-03-08 23:38:17	--	- _______ Server Rules _______________________________________________
+2016-03-08 23:38:17	--	-
+2016-03-08 23:38:17	--	-  o No Flooding
+2016-03-08 23:38:17	--	-  o No Bots (auto-detected)
+2016-03-08 23:38:17	--	-  o No Clones
+2016-03-08 23:38:17	--	-  o No Spamming
+2016-03-08 23:38:17	--	-  o No Takeovers
+2016-03-08 23:38:17	--	-  o Clients must respond to VERSION requests!
+2016-03-08 23:38:17	--	-  o We will not tolerate the distribution of child pornography.
+2016-03-08 23:38:17	--	-  o Access granted to this server is a privilege.
+2016-03-08 23:38:17	--	-  o Staff members may disconnect clients for any or no reason.
+2016-03-08 23:38:17	--	-
+2016-03-08 23:38:17	--	- _______ New to Rizon? _______________________________________________
+2016-03-08 23:38:17	--	-
+2016-03-08 23:38:17	--	-  o /join #help - network help channel
+2016-03-08 23:38:17	--	-  o /join #services - network staff help
+2016-03-08 23:38:17	--	-  o See /msg nickserv help to register your nick
+2016-03-08 23:38:17	--	-  o See /msg chanserv help to register your channel
+2016-03-08 23:38:17	--	-  o Want a vhost? /msg hostserv help request
+2016-03-08 23:38:17	--	-
+2016-03-08 23:38:17	--	- _______ Open Proxy's & Transit Provider ______________________________
+2016-03-08 23:38:17	--	-
+2016-03-08 23:38:17	--	-  o The use of this server & network is a privilege, not a right.
+2016-03-08 23:38:17	--	-
+2016-03-08 23:38:17	--	-  o IRC is a free media, therefore no person or entity involved
+2016-03-08 23:38:17	--	-  o with *.rizon.net and irc.uworld.se takes any responsibility
+2016-03-08 23:38:17	--	-  o whatsoever for the opinions expressed or the actions taken by
+2016-03-08 23:38:17	--	-  o users. Absolutely no warranty is either expressed or implied.
+2016-03-08 23:38:17	--	End of /MOTD command.
+2016-03-08 23:38:17	--	User mode [+ix] by indeedwatson
+2016-03-08 23:38:17	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-08 23:38:17	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-08 23:38:17	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-08 23:38:17	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-08 23:38:17	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-08 23:38:17	--	Global (service@rizon.net): [Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+2016-03-08 23:38:17	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-08 23:38:17	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-08 23:38:17	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-08 23:38:17	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.220). This scan will not harm your computer.
+2016-03-09 20:57:04	=!=	irc: reading data on socket: error 104 Connection reset by peer
+2016-03-09 20:57:04	--	irc: disconnecting from server...
+2016-03-09 20:57:04	--	irc: disconnected from server
+2016-03-09 20:57:04	--	irc: reconnecting to server in 10 seconds
+2016-03-09 20:57:14	--	irc: reconnecting to server...
+2016-03-09 20:57:14	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-09 20:57:15	--	irc: connected to irc.rizon.net/6670 (192.161.191.29)
+2016-03-09 20:57:15	--	* :Please wait while we process your connection.
+2016-03-09 20:57:15	--	irc.rizon.io: *** Looking up your hostname...
+2016-03-09 20:57:15	--	irc.rizon.io: *** Checking Ident
+2016-03-09 20:57:16	--	irc.rizon.io: *** Couldn't look up your hostname
+2016-03-09 20:57:17	--	irc.rizon.io: *** No Ident response
+2016-03-09 20:57:17	--	irc.rizon.io: *** Your host is masked (2FFFBB16.C822036A.321946A8.IP)
+2016-03-09 20:57:17	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-09 20:57:17	--	Your host is irc.rizon.io, running version hybrid-7.2.3+plexus-3.1.0(20151005_0-546)
+2016-03-09 20:57:17	--	This server was created Oct 23 2015 at 15:30:46
+2016-03-09 20:57:17	--	irc.rizon.io hybrid-7.2.3+plexus-3.1.0(20151005_0-546) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-09 20:57:17	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-09 20:57:17	--	CHANLIMIT=#:75 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz ELIST=CMNTU SAFELIST AWAYLEN=160 KNOCK FNC NAMESX UHNAMES EXCEPTS=e INVEX=I :are supported by this server
+2016-03-09 20:57:17	--	89CAATGR1 :your unique ID
+2016-03-09 20:57:17	--	There are 36 users and 21816 invisible on 13 servers
+2016-03-09 20:57:18	--	59 :IRC Operators online
+2016-03-09 20:57:18	--	3 :unknown connection(s)
+2016-03-09 20:57:18	--	20641 :channels formed
+2016-03-09 20:57:18	--	I have 21852 clients and 13 servers
+2016-03-09 20:57:18	--	21852 25636 :Current local users 21852, max 25636
+2016-03-09 20:57:18	--	21852 25636 :Current global users 21852, max 25636
+2016-03-09 20:57:18	--	- irc.rizon.io Message of the Day -
+2016-03-09 20:57:18	--	-          oo                            
+2016-03-09 20:57:18	--	-
+2016-03-09 20:57:18	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2016-03-09 20:57:18	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2016-03-09 20:57:18	--	- 88       88  .Y8P    88.  .88 88    88 
+2016-03-09 20:57:18	--	- dP       dP d888888P `88888P' dP    dP
+2016-03-09 20:57:18	--	-
+2016-03-09 20:57:18	--	- Rizon Chat Network -- http://rizon.net
+2016-03-09 20:57:18	--	-
+2016-03-09 20:57:18	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2016-03-09 20:57:18	--	-
+2016-03-09 20:57:18	--	- Rules:
+2016-03-09 20:57:18	--	- o No spamming or flooding
+2016-03-09 20:57:18	--	- o No clones or malicious bots
+2016-03-09 20:57:18	--	- o No takeovers
+2016-03-09 20:57:18	--	- o No distribution of child pornography
+2016-03-09 20:57:18	--	- o Clients must respond to VERSION requests
+2016-03-09 20:57:18	--	- o Rizon staff may disconnect clients for any or no reason
+2016-03-09 20:57:18	--	-
+2016-03-09 20:57:18	--	- First steps:
+2016-03-09 20:57:18	--	- o To register your nick: /msg NickServ HELP
+2016-03-09 20:57:18	--	- o To register your channel: /msg ChanServ HELP
+2016-03-09 20:57:18	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2016-03-09 20:57:18	--	- o For other help with Rizon: /join #help
+2016-03-09 20:57:18	--	-
+2016-03-09 20:57:18	--	- Usage of this network is a privilege, not a right. Rizon is a
+2016-03-09 20:57:18	--	- transit provider, therefore no person or entity involved with
+2016-03-09 20:57:18	--	- *.rizon.net or irc.rizon.io takes any responsibility for
+2016-03-09 20:57:18	--	- users' actions. Absolutely no warranty is expressed or implied.
+2016-03-09 20:57:18	--	End of /MOTD command.
+2016-03-09 20:57:18	--	User mode [+ix] by indeedwatson
+2016-03-09 20:57:18	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-09 20:57:18	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-09 20:57:18	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-09 20:57:18	--	Global (service@rizon.net): [Random News - Mar 20 2009] Idle on Rizon a lot? Why not play our idlerpg game, you can check it out at #RizonIRPG for more information visit the website http://idlerpg.rizon.net -Rizon Staff
+2016-03-09 20:57:18	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-09 20:57:18	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-09 20:57:18	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-09 20:57:18	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.222). This scan will not harm your computer.
+2016-03-09 20:57:18	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-09 20:57:18	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-10 10:03:39	=!=	irc: reading data on socket: error 104 Connection reset by peer
+2016-03-10 10:03:39	--	irc: disconnecting from server...
+2016-03-10 10:03:39	--	irc: disconnected from server
+2016-03-10 10:03:39	--	irc: reconnecting to server in 10 seconds
+2016-03-10 10:03:49	--	irc: reconnecting to server...
+2016-03-10 10:03:49	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-10 10:03:50	--	irc: connected to irc.rizon.net/6670 (80.65.57.18)
+2016-03-10 10:03:50	--	* :Please wait while we process your connection.
+2016-03-10 10:03:50	--	irc.rizon.no: *** Looking up your hostname...
+2016-03-10 10:03:50	--	irc.rizon.no: *** Checking Ident
+2016-03-10 10:03:51	--	irc.rizon.no: *** Found your hostname
+2016-03-10 10:03:52	--	irc.rizon.no: *** No Ident response
+2016-03-10 10:03:52	--	irc.rizon.no: *** Your host is masked (Rizon-3C78CFA8.telecom.net.ar)
+2016-03-10 10:03:52	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-10 10:03:52	--	Your host is irc.rizon.no, running version hybrid-7.2.3+plexus-3.1.0(20141225_0-545)
+2016-03-10 10:03:52	--	This server was created Jun 25 2015 at 17:38:48
+2016-03-10 10:03:52	--	irc.rizon.no hybrid-7.2.3+plexus-3.1.0(20141225_0-545) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-10 10:03:52	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-10 10:03:52	--	CHANLIMIT=#:250 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz KNOCK ELIST=CMNTU SAFELIST NAMESX UHNAMES FNC AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2016-03-10 10:03:52	--	06CAA5FI0 :your unique ID
+2016-03-10 10:03:52	--	There are 37 users and 20139 invisible on 13 servers
+2016-03-10 10:03:52	--	59 :IRC Operators online
+2016-03-10 10:03:52	--	1 :unknown connection(s)
+2016-03-10 10:03:52	--	20438 :channels formed
+2016-03-10 10:03:52	--	I have 20176 clients and 13 servers
+2016-03-10 10:03:52	--	20176 25636 :Current local users 20176, max 25636
+2016-03-10 10:03:52	--	20176 25636 :Current global users 20176, max 25636
+2016-03-10 10:03:52	--	- irc.rizon.no Message of the Day -
+2016-03-10 10:03:52	--	-          oo                            
+2016-03-10 10:03:52	--	-
+2016-03-10 10:03:52	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2016-03-10 10:03:52	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2016-03-10 10:03:52	--	- 88       88  .Y8P    88.  .88 88    88 
+2016-03-10 10:03:52	--	- dP       dP d888888P `88888P' dP    dP
+2016-03-10 10:03:52	--	-
+2016-03-10 10:03:52	--	- Rizon Chat Network -- http://rizon.net
+2016-03-10 10:03:52	--	-
+2016-03-10 10:03:52	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2016-03-10 10:03:52	--	-
+2016-03-10 10:03:52	--	- Rules:
+2016-03-10 10:03:52	--	- o No spamming or flooding
+2016-03-10 10:03:52	--	- o No clones or malicious bots
+2016-03-10 10:03:52	--	- o No takeovers
+2016-03-10 10:03:52	--	- o No distribution of child pornography
+2016-03-10 10:03:52	--	- o Clients must respond to VERSION requests
+2016-03-10 10:03:52	--	- o Rizon staff may disconnect clients for any or no reason
+2016-03-10 10:03:52	--	-
+2016-03-10 10:03:52	--	- First steps:
+2016-03-10 10:03:52	--	- o To register your nick: /msg NickServ HELP
+2016-03-10 10:03:52	--	- o To register your channel: /msg ChanServ HELP
+2016-03-10 10:03:52	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2016-03-10 10:03:52	--	- o For other help with Rizon: /join #help
+2016-03-10 10:03:52	--	-
+2016-03-10 10:03:52	--	- Usage of this network is a privilege, not a right. Rizon is a
+2016-03-10 10:03:52	--	- transit provider, therefore no person or entity involved with
+2016-03-10 10:03:52	--	- *.rizon.net or irc.rizon.no takes any responsibility for
+2016-03-10 10:03:52	--	- users' actions. Absolutely no warranty is expressed or implied.
+2016-03-10 10:03:52	--	End of /MOTD command.
+2016-03-10 10:03:52	--	User mode [+ix] by indeedwatson
+2016-03-10 10:03:52	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-10 10:03:52	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-10 10:03:52	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-10 10:03:52	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-10 10:03:52	--	Global (service@rizon.net): [Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+2016-03-10 10:03:52	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-10 10:03:52	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-10 10:03:52	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-10 10:03:52	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-10 10:03:52	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.222). This scan will not harm your computer.
+2016-03-11 20:53:12	=!=	irc: reading data on socket: error 104 Connection reset by peer
+2016-03-11 20:53:12	--	irc: disconnecting from server...
+2016-03-11 20:53:12	--	irc: disconnected from server
+2016-03-11 20:53:12	--	irc: reconnecting to server in 10 seconds
+2016-03-11 20:53:22	--	irc: reconnecting to server...
+2016-03-11 20:53:22	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-11 20:53:23	--	irc: connected to irc.rizon.net/6670 (104.155.5.159)
+2016-03-11 20:53:24	--	* :Please wait while we process your connection.
+2016-03-11 20:53:24	--	irc.rizon.so: *** Looking up your hostname...
+2016-03-11 20:53:24	--	irc.rizon.so: *** Checking Ident
+2016-03-11 20:53:24	--	irc.rizon.so: *** Found your hostname
+2016-03-11 20:53:25	--	irc.rizon.so: *** No Ident response
+2016-03-11 20:53:25	--	irc.rizon.so: *** Your host is masked (Rizon-5AFD0D0E.telecom.net.ar)
+2016-03-11 20:53:25	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-11 20:53:25	--	Your host is irc.rizon.so, running version hybrid-7.2.3+plexus-3.1.0(20151005_0-546)
+2016-03-11 20:53:25	--	This server was created Oct 16 2015 at 22:03:36
+2016-03-11 20:53:25	--	irc.rizon.so hybrid-7.2.3+plexus-3.1.0(20151005_0-546) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-11 20:53:25	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-11 20:53:25	--	CHANLIMIT=#:75 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz FNC AWAYLEN=160 NAMESX UHNAMES KNOCK ELIST=CMNTU SAFELIST EXCEPTS=e INVEX=I :are supported by this server
+2016-03-11 20:53:25	--	87CAAN18B :your unique ID
+2016-03-11 20:53:25	--	There are 33 users and 22198 invisible on 13 servers
+2016-03-11 20:53:25	--	60 :IRC Operators online
+2016-03-11 20:53:25	--	2 :unknown connection(s)
+2016-03-11 20:53:25	--	20747 :channels formed
+2016-03-11 20:53:25	--	I have 22231 clients and 13 servers
+2016-03-11 20:53:25	--	22231 25634 :Current local users 22231, max 25634
+2016-03-11 20:53:25	--	22231 25634 :Current global users 22231, max 25634
+2016-03-11 20:53:25	--	- irc.rizon.so Message of the Day -
+2016-03-11 20:53:25	--	-          oo                            
+2016-03-11 20:53:25	--	-
+2016-03-11 20:53:25	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2016-03-11 20:53:25	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2016-03-11 20:53:25	--	- 88       88  .Y8P    88.  .88 88    88 
+2016-03-11 20:53:25	--	- dP       dP d888888P `88888P' dP    dP
+2016-03-11 20:53:25	--	-
+2016-03-11 20:53:25	--	- Rizon Chat Network -- http://rizon.net
+2016-03-11 20:53:25	--	-
+2016-03-11 20:53:25	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2016-03-11 20:53:25	--	-
+2016-03-11 20:53:25	--	- This server is partly sponsored by Darkness Reigns (Holding) B.V.
+2016-03-11 20:53:25	--	-
+2016-03-11 20:53:25	--	- Rules:
+2016-03-11 20:53:25	--	- o No spamming or flooding
+2016-03-11 20:53:25	--	- o No clones or malicious bots
+2016-03-11 20:53:25	--	- o No takeovers
+2016-03-11 20:53:25	--	- o No distribution of child pornography
+2016-03-11 20:53:25	--	- o Clients must respond to VERSION requests
+2016-03-11 20:53:25	--	- o Rizon staff may disconnect clients for any or no reason
+2016-03-11 20:53:25	--	-
+2016-03-11 20:53:25	--	- First steps:
+2016-03-11 20:53:25	--	- o To register your nick: /msg NickServ HELP
+2016-03-11 20:53:25	--	- o To register your channel: /msg ChanServ HELP
+2016-03-11 20:53:25	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2016-03-11 20:53:25	--	- o For other help with Rizon: /join #help
+2016-03-11 20:53:25	--	-
+2016-03-11 20:53:25	--	- Usage of this network is a privilege, not a right. Rizon is a
+2016-03-11 20:53:25	--	- transit provider, therefore no person or entity involved with
+2016-03-11 20:53:25	--	- *.rizon.net or irc.rizon.so takes any responsibility for
+2016-03-11 20:53:25	--	- users' actions. Absolutely no warranty is expressed or implied.
+2016-03-11 20:53:25	--	End of /MOTD command.
+2016-03-11 20:53:25	--	User mode [+ix] by indeedwatson
+2016-03-11 20:53:25	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-11 20:53:25	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-11 20:53:25	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-11 20:53:25	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-11 20:53:25	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-11 20:53:25	--	Global (service@rizon.net): [Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+2016-03-11 20:53:25	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-11 20:53:25	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-11 20:53:25	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-11 20:53:25	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.221). This scan will not harm your computer.
+2016-03-12 09:31:30	=!=	irc: reading data on socket: error 104 Connection reset by peer
+2016-03-12 09:31:30	--	irc: disconnecting from server...
+2016-03-12 09:31:30	--	irc: disconnected from server
+2016-03-12 09:31:30	--	irc: reconnecting to server in 10 seconds
+2016-03-12 09:31:40	--	irc: reconnecting to server...
+2016-03-12 09:31:40	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-12 09:31:41	--	irc: connected to irc.rizon.net/6670 (80.65.57.18)
+2016-03-12 09:31:41	--	* :Please wait while we process your connection.
+2016-03-12 09:31:41	--	irc.rizon.no: *** Looking up your hostname...
+2016-03-12 09:31:41	--	irc.rizon.no: *** Checking Ident
+2016-03-12 09:31:42	--	irc.rizon.no: *** Couldn't look up your hostname
+2016-03-12 09:31:43	--	irc.rizon.no: *** No Ident response
+2016-03-12 09:31:43	--	irc.rizon.no: *** Your host is masked (179A77BF.31FE2CE6.321946A8.IP)
+2016-03-12 09:31:43	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-12 09:31:43	--	Your host is irc.rizon.no, running version hybrid-7.2.3+plexus-3.1.0(20141225_0-545)
+2016-03-12 09:31:43	--	This server was created Jun 25 2015 at 17:38:48
+2016-03-12 09:31:43	--	irc.rizon.no hybrid-7.2.3+plexus-3.1.0(20141225_0-545) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-12 09:31:43	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-12 09:31:43	--	CHANLIMIT=#:250 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz KNOCK ELIST=CMNTU SAFELIST NAMESX UHNAMES FNC AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2016-03-12 09:31:43	--	06CAA5OLB :your unique ID
+2016-03-12 09:31:43	--	There are 34 users and 20976 invisible on 13 servers
+2016-03-12 09:31:43	--	59 :IRC Operators online
+2016-03-12 09:31:43	--	2 :unknown connection(s)
+2016-03-12 09:31:43	--	20544 :channels formed
+2016-03-12 09:31:43	--	I have 21010 clients and 13 servers
+2016-03-12 09:31:43	--	21010 25636 :Current local users 21010, max 25636
+2016-03-12 09:31:43	--	21010 25636 :Current global users 21010, max 25636
+2016-03-12 09:31:43	--	- irc.rizon.no Message of the Day -
+2016-03-12 09:31:43	--	-          oo                            
+2016-03-12 09:31:43	--	-
+2016-03-12 09:31:43	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2016-03-12 09:31:43	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2016-03-12 09:31:43	--	- 88       88  .Y8P    88.  .88 88    88 
+2016-03-12 09:31:43	--	- dP       dP d888888P `88888P' dP    dP
+2016-03-12 09:31:43	--	-
+2016-03-12 09:31:43	--	- Rizon Chat Network -- http://rizon.net
+2016-03-12 09:31:43	--	-
+2016-03-12 09:31:43	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2016-03-12 09:31:43	--	-
+2016-03-12 09:31:43	--	- Rules:
+2016-03-12 09:31:43	--	- o No spamming or flooding
+2016-03-12 09:31:43	--	- o No clones or malicious bots
+2016-03-12 09:31:43	--	- o No takeovers
+2016-03-12 09:31:43	--	- o No distribution of child pornography
+2016-03-12 09:31:43	--	- o Clients must respond to VERSION requests
+2016-03-12 09:31:43	--	- o Rizon staff may disconnect clients for any or no reason
+2016-03-12 09:31:43	--	-
+2016-03-12 09:31:43	--	- First steps:
+2016-03-12 09:31:43	--	- o To register your nick: /msg NickServ HELP
+2016-03-12 09:31:43	--	- o To register your channel: /msg ChanServ HELP
+2016-03-12 09:31:43	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2016-03-12 09:31:43	--	- o For other help with Rizon: /join #help
+2016-03-12 09:31:43	--	-
+2016-03-12 09:31:43	--	- Usage of this network is a privilege, not a right. Rizon is a
+2016-03-12 09:31:43	--	- transit provider, therefore no person or entity involved with
+2016-03-12 09:31:43	--	- *.rizon.net or irc.rizon.no takes any responsibility for
+2016-03-12 09:31:43	--	- users' actions. Absolutely no warranty is expressed or implied.
+2016-03-12 09:31:43	--	End of /MOTD command.
+2016-03-12 09:31:43	--	User mode [+ix] by indeedwatson
+2016-03-12 09:31:43	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-12 09:31:43	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-12 09:31:43	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-12 09:31:43	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-12 09:31:43	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-12 09:31:43	--	Global (service@rizon.net): [Random News - Mar 20 2009] Idle on Rizon a lot? Why not play our idlerpg game, you can check it out at #RizonIRPG for more information visit the website http://idlerpg.rizon.net -Rizon Staff
+2016-03-12 09:31:43	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-12 09:31:43	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-12 09:31:43	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-12 09:31:43	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.222). This scan will not harm your computer.
+2016-03-12 22:37:43	=!=	irc: sending data to server: error 32 Broken pipe
+2016-03-12 22:37:46	--	irc: disconnected from server
+2016-03-12 22:39:41	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-12 22:39:42	--	irc: connected to irc.rizon.net/6670 (80.65.57.18)
+2016-03-12 22:39:42	--	* :Please wait while we process your connection.
+2016-03-12 22:39:42	--	irc.rizon.no: *** Looking up your hostname...
+2016-03-12 22:39:42	--	irc.rizon.no: *** Checking Ident
+2016-03-12 22:39:42	--	irc.rizon.no: *** Couldn't look up your hostname
+2016-03-12 22:39:44	--	irc.rizon.no: *** No Ident response
+2016-03-12 22:39:44	--	irc.rizon.no: *** Your host is masked (179A77BF.31FE2CE6.321946A8.IP)
+2016-03-12 22:39:44	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-12 22:39:44	--	Your host is irc.rizon.no, running version hybrid-7.2.3+plexus-3.1.0(20141225_0-545)
+2016-03-12 22:39:44	--	This server was created Jun 25 2015 at 17:38:48
+2016-03-12 22:39:44	--	irc.rizon.no hybrid-7.2.3+plexus-3.1.0(20141225_0-545) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-12 22:39:44	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-12 22:39:44	--	CHANLIMIT=#:250 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz KNOCK ELIST=CMNTU SAFELIST NAMESX UHNAMES FNC AWAYLEN=160 EXCEPTS=e INVEX=I :are supported by this server
+2016-03-12 22:39:44	--	06CAA5RD8 :your unique ID
+2016-03-12 22:39:44	--	There are 32 users and 22391 invisible on 13 servers
+2016-03-12 22:39:44	--	61 :IRC Operators online
+2016-03-12 22:39:44	--	3 :unknown connection(s)
+2016-03-12 22:39:44	--	20591 :channels formed
+2016-03-12 22:39:44	--	I have 22423 clients and 13 servers
+2016-03-12 22:39:44	--	22423 25636 :Current local users 22423, max 25636
+2016-03-12 22:39:44	--	22423 25636 :Current global users 22423, max 25636
+2016-03-12 22:39:44	--	- irc.rizon.no Message of the Day -
+2016-03-12 22:39:44	--	-          oo                            
+2016-03-12 22:39:44	--	-
+2016-03-12 22:39:44	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2016-03-12 22:39:44	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2016-03-12 22:39:44	--	- 88       88  .Y8P    88.  .88 88    88 
+2016-03-12 22:39:44	--	- dP       dP d888888P `88888P' dP    dP
+2016-03-12 22:39:44	--	-
+2016-03-12 22:39:44	--	- Rizon Chat Network -- http://rizon.net
+2016-03-12 22:39:44	--	-
+2016-03-12 22:39:44	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2016-03-12 22:39:44	--	-
+2016-03-12 22:39:44	--	- Rules:
+2016-03-12 22:39:44	--	- o No spamming or flooding
+2016-03-12 22:39:44	--	- o No clones or malicious bots
+2016-03-12 22:39:44	--	- o No takeovers
+2016-03-12 22:39:44	--	- o No distribution of child pornography
+2016-03-12 22:39:44	--	- o Clients must respond to VERSION requests
+2016-03-12 22:39:44	--	- o Rizon staff may disconnect clients for any or no reason
+2016-03-12 22:39:44	--	-
+2016-03-12 22:39:44	--	- First steps:
+2016-03-12 22:39:44	--	- o To register your nick: /msg NickServ HELP
+2016-03-12 22:39:44	--	- o To register your channel: /msg ChanServ HELP
+2016-03-12 22:39:44	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2016-03-12 22:39:44	--	- o For other help with Rizon: /join #help
+2016-03-12 22:39:44	--	-
+2016-03-12 22:39:44	--	- Usage of this network is a privilege, not a right. Rizon is a
+2016-03-12 22:39:44	--	- transit provider, therefore no person or entity involved with
+2016-03-12 22:39:44	--	- *.rizon.net or irc.rizon.no takes any responsibility for
+2016-03-12 22:39:44	--	- users' actions. Absolutely no warranty is expressed or implied.
+2016-03-12 22:39:44	--	End of /MOTD command.
+2016-03-12 22:39:44	--	User mode [+ix] by indeedwatson
+2016-03-12 22:39:44	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-12 22:39:44	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-12 22:39:44	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-12 22:39:44	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-12 22:39:44	--	Global (service@rizon.net): [Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+2016-03-12 22:39:44	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-12 22:39:44	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-12 22:39:44	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-12 22:39:44	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-12 22:39:44	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.221). This scan will not harm your computer.
+2016-03-13 10:07:47	=!=	irc: reading data on socket: error 104 Connection reset by peer
+2016-03-13 10:07:47	--	irc: disconnecting from server...
+2016-03-13 10:07:47	--	irc: disconnected from server
+2016-03-13 10:07:47	--	irc: reconnecting to server in 10 seconds
+2016-03-13 10:07:57	--	irc: reconnecting to server...
+2016-03-13 10:07:57	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-13 10:07:58	--	irc: connected to irc.rizon.net/6670 (192.161.191.29)
+2016-03-13 10:07:58	--	* :Please wait while we process your connection.
+2016-03-13 10:07:58	--	irc.rizon.io: *** Looking up your hostname...
+2016-03-13 10:07:58	--	irc.rizon.io: *** Checking Ident
+2016-03-13 10:07:58	--	irc.rizon.io: *** Found your hostname
+2016-03-13 10:07:59	--	irc.rizon.io: *** No Ident response
+2016-03-13 10:07:59	--	irc.rizon.io: *** Your host is masked (Rizon-4522FB02.telecom.net.ar)
+2016-03-13 10:07:59	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-13 10:07:59	--	Your host is irc.rizon.io, running version hybrid-7.2.3+plexus-3.1.0(20151005_0-546)
+2016-03-13 10:07:59	--	This server was created Oct 23 2015 at 15:30:46
+2016-03-13 10:07:59	--	irc.rizon.io hybrid-7.2.3+plexus-3.1.0(20151005_0-546) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-13 10:07:59	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-13 10:07:59	--	CHANLIMIT=#:75 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz ELIST=CMNTU SAFELIST AWAYLEN=160 KNOCK FNC NAMESX UHNAMES EXCEPTS=e INVEX=I :are supported by this server
+2016-03-13 10:07:59	--	89CAAUL2N :your unique ID
+2016-03-13 10:07:59	--	There are 34 users and 21394 invisible on 13 servers
+2016-03-13 10:07:59	--	61 :IRC Operators online
+2016-03-13 10:07:59	--	4 :unknown connection(s)
+2016-03-13 10:07:59	--	20554 :channels formed
+2016-03-13 10:07:59	--	I have 21428 clients and 13 servers
+2016-03-13 10:07:59	--	21428 25636 :Current local users 21428, max 25636
+2016-03-13 10:07:59	--	21428 25636 :Current global users 21428, max 25636
+2016-03-13 10:07:59	--	- irc.rizon.io Message of the Day -
+2016-03-13 10:07:59	--	-          oo                            
+2016-03-13 10:07:59	--	-
+2016-03-13 10:07:59	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2016-03-13 10:07:59	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2016-03-13 10:07:59	--	- 88       88  .Y8P    88.  .88 88    88 
+2016-03-13 10:07:59	--	- dP       dP d888888P `88888P' dP    dP
+2016-03-13 10:07:59	--	-
+2016-03-13 10:07:59	--	- Rizon Chat Network -- http://rizon.net
+2016-03-13 10:07:59	--	-
+2016-03-13 10:07:59	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2016-03-13 10:07:59	--	-
+2016-03-13 10:07:59	--	- Rules:
+2016-03-13 10:07:59	--	- o No spamming or flooding
+2016-03-13 10:07:59	--	- o No clones or malicious bots
+2016-03-13 10:07:59	--	- o No takeovers
+2016-03-13 10:07:59	--	- o No distribution of child pornography
+2016-03-13 10:07:59	--	- o Clients must respond to VERSION requests
+2016-03-13 10:07:59	--	- o Rizon staff may disconnect clients for any or no reason
+2016-03-13 10:07:59	--	-
+2016-03-13 10:07:59	--	- First steps:
+2016-03-13 10:07:59	--	- o To register your nick: /msg NickServ HELP
+2016-03-13 10:07:59	--	- o To register your channel: /msg ChanServ HELP
+2016-03-13 10:07:59	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2016-03-13 10:07:59	--	- o For other help with Rizon: /join #help
+2016-03-13 10:07:59	--	-
+2016-03-13 10:07:59	--	- Usage of this network is a privilege, not a right. Rizon is a
+2016-03-13 10:07:59	--	- transit provider, therefore no person or entity involved with
+2016-03-13 10:07:59	--	- *.rizon.net or irc.rizon.io takes any responsibility for
+2016-03-13 10:07:59	--	- users' actions. Absolutely no warranty is expressed or implied.
+2016-03-13 10:07:59	--	End of /MOTD command.
+2016-03-13 10:07:59	--	User mode [+ix] by indeedwatson
+2016-03-13 10:07:59	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-13 10:07:59	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-13 10:07:59	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-13 10:07:59	--	Global (service@rizon.net): [Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+2016-03-13 10:07:59	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-13 10:07:59	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-13 10:07:59	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-13 10:07:59	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.222). This scan will not harm your computer.
+2016-03-13 10:07:59	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-13 10:08:00	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-14 20:47:03	=!=	irc: reading data on socket: error 104 Connection reset by peer
+2016-03-14 20:47:03	--	irc: disconnecting from server...
+2016-03-14 20:47:03	--	irc: disconnected from server
+2016-03-14 20:47:03	--	irc: reconnecting to server in 10 seconds
+2016-03-14 20:47:13	--	irc: reconnecting to server...
+2016-03-14 20:47:13	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-14 20:47:14	--	irc: connected to irc.rizon.net/6670 (91.217.189.71)
+2016-03-14 20:47:14	--	* :Please wait while we process your connection.
+2016-03-14 20:47:14	--	irc.uworld.se: *** Looking up your hostname...
+2016-03-14 20:47:14	--	irc.uworld.se: *** Checking Ident
+2016-03-14 20:47:15	--	irc.uworld.se: *** Found your hostname
+2016-03-14 20:47:15	--	irc.uworld.se: *** No Ident response
+2016-03-14 20:47:15	--	irc.uworld.se: *** Your host is masked (Rizon-A67E322D.telecom.net.ar)
+2016-03-14 20:47:15	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-14 20:47:15	--	Your host is irc.uworld.se, running version hybrid-7.2.3+plexus-3.1.0(20151028_0-547)
+2016-03-14 20:47:15	--	This server was created Dec 13 2015 at 04:33:51
+2016-03-14 20:47:15	--	irc.uworld.se hybrid-7.2.3+plexus-3.1.0(20151028_0-547) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-14 20:47:15	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-14 20:47:15	--	CHANLIMIT=#:500 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz AWAYLEN=160 KNOCK ELIST=CMNTU SAFELIST NAMESX UHNAMES FNC EXCEPTS=e INVEX=I :are supported by this server
+2016-03-14 20:47:15	--	21CAAGJFD :your unique ID
+2016-03-14 20:47:15	--	There are 35 users and 22137 invisible on 13 servers
+2016-03-14 20:47:16	--	60 :IRC Operators online
+2016-03-14 20:47:16	--	2 :unknown connection(s)
+2016-03-14 20:47:16	--	20608 :channels formed
+2016-03-14 20:47:16	--	I have 22172 clients and 13 servers
+2016-03-14 20:47:16	--	22172 25635 :Current local users 22172, max 25635
+2016-03-14 20:47:16	--	22172 25635 :Current global users 22172, max 25635
+2016-03-14 20:47:16	--	- irc.uworld.se Message of the Day -
+2016-03-14 20:47:16	--	- _______ Welcome to the Rizon IRC Network!___________________________
+2016-03-14 20:47:16	--	-
+2016-03-14 20:47:16	--	- Welcome to irc.uworld.se part of the Rizon IRC Network!
+2016-03-14 20:47:16	--	- Bandwith sponsored by Portlane (www.portlane.com).
+2016-03-14 20:47:16	--	- Listening on ports: 6660 - 6669, 7000 SSL: 6697, 9999
+2016-03-14 20:47:16	--	-
+2016-03-14 20:47:16	--	- _______ Server Staff _______________________________________________
+2016-03-14 20:47:16	--	-
+2016-03-14 20:47:16	--	-  o Admin: suom1 <suom1@underworld.no>
+2016-03-14 20:47:16	--	-  o Opers: rockey
+2016-03-14 20:47:16	--	-           Smike
+2016-03-14 20:47:16	--	-
+2016-03-14 20:47:16	--	- _______ Server Rules _______________________________________________
+2016-03-14 20:47:16	--	-
+2016-03-14 20:47:16	--	-  o No Flooding
+2016-03-14 20:47:16	--	-  o No Bots (auto-detected)
+2016-03-14 20:47:16	--	-  o No Clones
+2016-03-14 20:47:16	--	-  o No Spamming
+2016-03-14 20:47:16	--	-  o No Takeovers
+2016-03-14 20:47:16	--	-  o Clients must respond to VERSION requests!
+2016-03-14 20:47:16	--	-  o We will not tolerate the distribution of child pornography.
+2016-03-14 20:47:16	--	-  o Access granted to this server is a privilege.
+2016-03-14 20:47:16	--	-  o Staff members may disconnect clients for any or no reason.
+2016-03-14 20:47:16	--	-
+2016-03-14 20:47:16	--	- _______ New to Rizon? _______________________________________________
+2016-03-14 20:47:16	--	-
+2016-03-14 20:47:16	--	-  o /join #help - network help channel
+2016-03-14 20:47:16	--	-  o /join #services - network staff help
+2016-03-14 20:47:16	--	-  o See /msg nickserv help to register your nick
+2016-03-14 20:47:16	--	-  o See /msg chanserv help to register your channel
+2016-03-14 20:47:16	--	-  o Want a vhost? /msg hostserv help request
+2016-03-14 20:47:16	--	-
+2016-03-14 20:47:16	--	- _______ Open Proxy's & Transit Provider ______________________________
+2016-03-14 20:47:16	--	-
+2016-03-14 20:47:16	--	-  o The use of this server & network is a privilege, not a right.
+2016-03-14 20:47:16	--	-
+2016-03-14 20:47:16	--	-  o IRC is a free media, therefore no person or entity involved
+2016-03-14 20:47:16	--	-  o with *.rizon.net and irc.uworld.se takes any responsibility
+2016-03-14 20:47:16	--	-  o whatsoever for the opinions expressed or the actions taken by
+2016-03-14 20:47:16	--	-  o users. Absolutely no warranty is either expressed or implied.
+2016-03-14 20:47:16	--	End of /MOTD command.
+2016-03-14 20:47:16	--	User mode [+ix] by indeedwatson
+2016-03-14 20:47:16	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-14 20:47:16	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-14 20:47:16	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-14 20:47:16	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-14 20:47:16	--	Global (service@rizon.net): [Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+2016-03-14 20:47:16	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-14 20:47:16	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-14 20:47:16	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-14 20:47:16	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-14 20:47:16	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.219). This scan will not harm your computer.
+2016-03-15 09:30:34	=!=	irc: reading data on socket: error 104 Connection reset by peer
+2016-03-15 09:30:34	--	irc: disconnecting from server...
+2016-03-15 09:30:34	--	irc: disconnected from server
+2016-03-15 09:30:34	--	irc: reconnecting to server in 10 seconds
+2016-03-15 09:30:44	--	irc: reconnecting to server...
+2016-03-15 09:30:44	--	irc: connecting to server irc.rizon.net/6670...
+2016-03-15 09:30:45	--	irc: connected to irc.rizon.net/6670 (104.155.5.159)
+2016-03-15 09:30:46	--	* :Please wait while we process your connection.
+2016-03-15 09:30:46	--	irc.rizon.so: *** Looking up your hostname...
+2016-03-15 09:30:46	--	irc.rizon.so: *** Checking Ident
+2016-03-15 09:30:46	--	irc.rizon.so: *** Found your hostname
+2016-03-15 09:30:47	--	irc.rizon.so: *** No Ident response
+2016-03-15 09:30:47	--	irc.rizon.so: *** Your host is masked (Rizon-9A608D6C.telecom.net.ar)
+2016-03-15 09:30:47	--	Welcome to the Rizon Internet Relay Chat Network indeedwatson
+2016-03-15 09:30:47	--	Your host is irc.rizon.so, running version hybrid-7.2.3+plexus-3.1.0(20151005_0-546)
+2016-03-15 09:30:47	--	This server was created Oct 16 2015 at 22:03:36
+2016-03-15 09:30:47	--	irc.rizon.so hybrid-7.2.3+plexus-3.1.0(20151005_0-546) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv
+2016-03-15 09:30:47	--	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+2016-03-15 09:30:47	--	CHANLIMIT=#:75 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz FNC AWAYLEN=160 NAMESX UHNAMES KNOCK ELIST=CMNTU SAFELIST EXCEPTS=e INVEX=I :are supported by this server
+2016-03-15 09:30:47	--	87CAAOR7S :your unique ID
+2016-03-15 09:30:47	--	There are 34 users and 20264 invisible on 13 servers
+2016-03-15 09:30:48	--	60 :IRC Operators online
+2016-03-15 09:30:48	--	1 :unknown connection(s)
+2016-03-15 09:30:48	--	20414 :channels formed
+2016-03-15 09:30:48	--	I have 20298 clients and 13 servers
+2016-03-15 09:30:48	--	20298 25634 :Current local users 20298, max 25634
+2016-03-15 09:30:48	--	20298 25634 :Current global users 20298, max 25634
+2016-03-15 09:30:48	--	- irc.rizon.so Message of the Day -
+2016-03-15 09:30:48	--	-          oo                            
+2016-03-15 09:30:48	--	-
+2016-03-15 09:30:48	--	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2016-03-15 09:30:48	--	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2016-03-15 09:30:48	--	- 88       88  .Y8P    88.  .88 88    88 
+2016-03-15 09:30:48	--	- dP       dP d888888P `88888P' dP    dP
+2016-03-15 09:30:48	--	-
+2016-03-15 09:30:48	--	- Rizon Chat Network -- http://rizon.net
+2016-03-15 09:30:48	--	-
+2016-03-15 09:30:48	--	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2016-03-15 09:30:48	--	-
+2016-03-15 09:30:48	--	- This server is partly sponsored by Darkness Reigns (Holding) B.V.
+2016-03-15 09:30:48	--	-
+2016-03-15 09:30:48	--	- Rules:
+2016-03-15 09:30:48	--	- o No spamming or flooding
+2016-03-15 09:30:48	--	- o No clones or malicious bots
+2016-03-15 09:30:48	--	- o No takeovers
+2016-03-15 09:30:48	--	- o No distribution of child pornography
+2016-03-15 09:30:48	--	- o Clients must respond to VERSION requests
+2016-03-15 09:30:48	--	- o Rizon staff may disconnect clients for any or no reason
+2016-03-15 09:30:48	--	-
+2016-03-15 09:30:48	--	- First steps:
+2016-03-15 09:30:48	--	- o To register your nick: /msg NickServ HELP
+2016-03-15 09:30:48	--	- o To register your channel: /msg ChanServ HELP
+2016-03-15 09:30:48	--	- o To get a vHost: /msg HostServ HELP REQUEST
+2016-03-15 09:30:48	--	- o For other help with Rizon: /join #help
+2016-03-15 09:30:48	--	-
+2016-03-15 09:30:48	--	- Usage of this network is a privilege, not a right. Rizon is a
+2016-03-15 09:30:48	--	- transit provider, therefore no person or entity involved with
+2016-03-15 09:30:48	--	- *.rizon.net or irc.rizon.so takes any responsibility for
+2016-03-15 09:30:48	--	- users' actions. Absolutely no warranty is expressed or implied.
+2016-03-15 09:30:48	--	End of /MOTD command.
+2016-03-15 09:30:48	--	User mode [+ix] by indeedwatson
+2016-03-15 09:30:48	--	CTCP requested by py-ctcp: VERSION (blocked)
+2016-03-15 09:30:48	--	#rice: You need to identify to a registered nick to join that channel. Check /msg nickserv help register
+2016-03-15 09:30:48	--	Global (service@rizon.net): [Logon News - May 21 2011] First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+2016-03-15 09:30:48	--	Global (service@rizon.net): [Logon News - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+2016-03-15 09:30:48	--	Global (service@rizon.net): [Logon News - Dec 21 2015] Ready for a Rizon style Christmas decoration? Read http://s.rizon.net/xmas
+2016-03-15 09:30:48	--	Global (service@rizon.net): [Random News - May 07 2013] Looking for a quotes, trivia, or other extra bots? /msg funserv help
+2016-03-15 09:30:48	--	NickServ (service@rizon.net): This nickname is registered and protected. If it is your
+2016-03-15 09:30:48	--	NickServ (service@rizon.net): nick, type /msg NickServ IDENTIFY password. Otherwise,
+2016-03-15 09:30:48	--	NickServ (service@rizon.net): please choose a different nick.
+2016-03-15 09:30:48	--	peer (service@rizon.net): For network safety, your client is being scanned for open proxies by scanner.rizon.net (80.65.51.220). This scan will not harm your computer.

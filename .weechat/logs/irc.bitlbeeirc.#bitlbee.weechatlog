@@ -1,0 +1,243 @@
+2015-08-18 14:01:22	»	yama (~yama@186.153.40.215) has joined #bitlbee
+2015-08-18 14:01:22	--	Topic for #bitlbee is "Welcome to the BitlBeeHive | Latest version: 3.4.1 | http://bitlbee.org | http://wiki.bitlbee.org/FAQ | APT: http://code.bitlbee.org/debian/ | Facebook's oauth broke, use password or http://wiki.bitlbee.org/HowtoFacebookMQTT "
+2015-08-18 14:01:22	--	Topic set by wilmer (~ElDuderin@fiona.gaa.st) on Tue, 16 Jun 2015 19:53:39
+2015-08-18 14:01:22	--	Channel #bitlbee: 230 nicks (0 ops, 0 voices, 230 normals)
+2015-08-18 14:01:22	--	PvNotice(ChanServ): Welcome to #bitlbee. Note that the hottest FAQs are already answered in the channel topic, please read it before asking your question!
+2015-08-18 14:01:24	--	Channel created on Mon, 15 Sep 2008 23:59:52
+2015-08-18 14:01:49	yama	hello, I need help installing jgeboski's fb plugin
+2015-08-18 14:02:22	yama	I run into errors in the step where I have to run autogen.sh
+2015-08-18 14:02:31	dx	what distro?
+2015-08-18 14:02:39	yama	fedora
+2015-08-18 14:03:08	dx	what errors?
+2015-08-18 14:05:21	yama	https://paste.fedoraproject.org/256372/17513143/
+2015-08-18 14:05:55	dx	oh my. that's a special kind of broken. neat.
+2015-08-18 14:06:06	dx	pastebin the contents of config.log?
+2015-08-18 14:06:16	yama	I'm pretty sure it was giving me a different error a bit ago, not sure what changed
+2015-08-18 14:06:54	jgeboski	someone should just send me a spec file for OBS :)
+2015-08-18 14:07:42	»	Nihplod_ (~Nihplod@godfather.nihplod.com) has joined #bitlbee
+2015-08-18 14:07:46	«	Nihplod (~Nihplod@00018163.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-08-18 14:07:54	*	dx looks at gholms
+2015-08-18 14:08:22	*	gholms doesn't use OBS
+2015-08-18 14:08:23	yama	 http://ur1.ca/nh1ec
+2015-08-18 14:08:43	dx	gholms: jgeboski does, he just needs a spec file to get the builds going. can you do that? ♥
+2015-08-18 14:09:56	»	kumul (~NO@adsl-64-237-238-216.prtc.net) has joined #bitlbee
+2015-08-18 14:10:04	dx	yama: uh, i think you're missing most of it
+2015-08-18 14:10:28	dx	of config.log i mean
+2015-08-18 14:10:35	jgeboski	I mean, I will get around to it eventually
+2015-08-18 14:12:24	yama	dx: yeah I don't know what happened http://ur1.ca/nh1fe
+2015-08-18 14:13:46	--	Nihplod_ is now known as Nihplod
+2015-08-18 14:20:04	yama	bitlbee-steam gives me a different error
+2015-08-18 14:20:25	gholms	I can get you one for bitlbee-steam.  Would that help?
+2015-08-18 14:21:07	yama	http://ur1.ca/nh1hn
+2015-08-18 14:24:03	dx	yama: install libgcrypt-devel
+2015-08-18 14:24:10	dx	yama: for the other issue, try installing glibc-devel
+2015-08-18 14:25:37	dx	or "glibc-devel.x86_64"
+2015-08-18 14:28:09	gholms	Here's what I'm using, FWIW:  http://temp.devzero.com/l/bitlbee-steam-1.2.0-0.2.el7.src.rpm
+2015-08-18 14:28:09		[ http://is.gd/ZgafuA ]
+2015-08-18 14:28:28	*	gholms still needs to add that patch from yesterday
+2015-08-18 14:28:43	»	yuri (~yuri@yuri.ynet.sk) has joined #bitlbee
+2015-08-18 14:30:28	«	seschwar (~seschwar@2a02:8109:b00:1e84::4) has quit (Quit: rebooting)
+2015-08-18 14:32:15	»	seschwar (~seschwar@2a02:8109:b00:1e84::4) has joined #bitlbee
+2015-08-18 14:33:25	yama	dx: now when i run automake.sh it goes on for longer but eventually it says: "No package 'bitlbee' found"
+2015-08-18 14:33:35	yama	I do have bitlbee installed
+2015-08-18 14:34:00	dx	bitlbee-devel
+2015-08-18 14:34:16	dx	or if you compiled it yourself, "make install-dev" in the bitlbee source tree
+2015-08-18 14:35:53	yama	ok that seems to work, do I need to restart bitlbee/weechat now?
+2015-08-18 14:36:25	dx	bitlbee yes, weechat no
+2015-08-18 14:37:13	«	kb1ooo (~marc@cpe-45-46-72-255.maine.res.rr.com) has quit (Read error: Connection reset by peer)
+2015-08-18 14:37:13	zer0def	do i need to restart my donkey?
+2015-08-18 14:37:27	yama	oh wait i forgot to run make
+2015-08-18 14:37:29	zer0def	don't mind me, yama, i'm not playing off of you
+2015-08-18 14:37:40	yama	facebook.h:23:21: fatal error: bitlbee.h: No such file or directory
+2015-08-18 14:37:57	yama	zer0def: it's ok I don't get easily offended
+2015-08-18 14:38:08	»	kb1ooo (~marc@cpe-45-46-72-255.maine.res.rr.com) has joined #bitlbee
+2015-08-18 14:38:55	»	ojdo_ (~johannes@x590fccdc.dyn.telefonica.de) has joined #bitlbee
+2015-08-18 14:39:38	dx	yama: uhhh... did anything happen when you installed bitlbee-devel?
+2015-08-18 14:40:28	yama	installed bitlbee-devel.x86_64 3.4.1-1.fc22 complete!
+2015-08-18 14:40:32	yama	that's all
+2015-08-18 14:41:11	yama	brb
+2015-08-18 14:43:52	--	irc: disconnected from server
+2015-08-18 15:38:46	»	yama (~yama@186.153.40.215) has joined #bitlbee
+2015-08-18 15:38:46	--	Topic for #bitlbee is "Welcome to the BitlBeeHive | Latest version: 3.4.1 | http://bitlbee.org | http://wiki.bitlbee.org/FAQ | APT: http://code.bitlbee.org/debian/ | Facebook's oauth broke, use password or http://wiki.bitlbee.org/HowtoFacebookMQTT "
+2015-08-18 15:38:46	--	Topic set by wilmer (~ElDuderin@fiona.gaa.st) on Tue, 16 Jun 2015 19:53:39
+2015-08-18 15:38:46	--	Channel #bitlbee: 231 nicks (0 ops, 0 voices, 231 normals)
+2015-08-18 15:38:46	--	PvNotice(ChanServ): Welcome to #bitlbee. Note that the hottest FAQs are already answered in the channel topic, please read it before asking your question!
+2015-08-18 15:38:48	--	Channel created on Mon, 15 Sep 2008 23:59:52
+2015-08-18 15:39:01	krisfremen	I wanted something that uses rst and git as a backend
+2015-08-18 15:39:06	krisfremen	but.. nope
+2015-08-18 15:39:20	dx	for example the list of notes in the home page is an inline directive with archive="yes". it can be tuned with some templating, but it's still too simple for my taste
+2015-08-18 15:39:40	krisfremen	Gitit came close.. but it's... weird
+2015-08-18 15:39:50	dx	and it seems like ikiwiki has some powerful metadata management stuff behind the scenes
+2015-08-18 15:39:52	krisfremen	also not sure about haskell
+2015-08-18 15:45:20	yama	dx: seems to be working fine now, thanks for the help
+2015-08-18 15:46:08	*	krisfremen gives gitit another try
+2015-08-18 15:49:28	zer0def	meh, haskell
+2015-08-18 15:49:31	zer0def	more like hask-hell
+2015-08-18 15:50:01	zer0def	static compile all the things, blow out the binary 10x out of proportion, put C static linking to shame!
+2015-08-18 15:50:04	krisfremen	run 'cabal update'... gets killed
+2015-08-18 15:54:36	krisfremen	wtf
+2015-08-18 15:54:39	krisfremen	how much memory does it need?
+2015-08-18 15:54:52	gholms	All of it
+2015-08-18 15:55:23	krisfremen	well.. I only have 512 megs on this vps
+2015-08-18 15:57:19	krisfremen	well, git it doesn't qualify anymore
+2015-08-18 15:59:05	krisfremen	lol
+2015-08-18 15:59:09	krisfremen	not even on my laptop
+2015-08-18 15:59:12	krisfremen	fuck haskell
+2015-08-18 15:59:14	krisfremen	lol
+2015-08-18 16:05:51	«	SylvieLorxu (~SylvieLor@dhcp-077-251-165-191.chello.nl) has quit (Remote host closed the connection)
+2015-08-18 16:06:52	»	meh (~meh@adsl-ull-147-148.42-151.net24.it) has joined #bitlbee
+2015-08-18 16:09:26	»	SylvieLorxu (~SylvieLor@dhcp-077-251-165-191.chello.nl) has joined #bitlbee
+2015-08-18 16:09:52	«	meh` (~meh@adsl-ull-15-119.42-151.net24.it) has quit (Ping timeout: 480 seconds)
+2015-08-18 16:19:53	»	meh` (~meh@151.42.114.109) has joined #bitlbee
+2015-08-18 16:23:10	«	meh (~meh@adsl-ull-147-148.42-151.net24.it) has quit (Ping timeout: 480 seconds)
+2015-08-18 16:29:21	«	LoRez (~lorez@0000f999.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-08-18 16:42:59	»	meh (~meh@151.42.123.213) has joined #bitlbee
+2015-08-18 16:46:20	«	meh` (~meh@151.42.114.109) has quit (Ping timeout: 480 seconds)
+2015-08-18 17:03:59	»	meh` (~meh@151.42.144.218) has joined #bitlbee
+2015-08-18 17:06:25	«	meh (~meh@151.42.123.213) has quit (Ping timeout: 480 seconds)
+2015-08-18 17:29:03	gholms	If you think that's bad wait until you try building chromium.
+2015-08-18 17:29:54	jgeboski	libreoffice is by far the worst
+2015-08-18 17:31:05	gholms	It bundles so many libraries that it is literally impossible to link the executable on a 32-bit computer.
+2015-08-18 17:31:54	krisfremen	well, if I'm building chromium.. I probably won't be doing it on a headless $5 512MB ram vps
+2015-08-18 17:31:57	krisfremen	:D
+2015-08-18 17:32:02	gholms	:)
+2015-08-18 17:33:14	jgeboski	krisfremen: just create a huge as swap
+2015-08-18 17:33:24	jgeboski	it's not like it's your box!
+2015-08-18 17:33:27	gholms	Heh
+2015-08-18 17:33:36	krisfremen	yeah, but I'd rather not
+2015-08-18 17:33:38	MK_FG	pypy also takes like 10+ gigs of ram to build iirc
+2015-08-18 17:33:44	gholms	It'll take a week to finish running the program, but what's the rush?  :P
+2015-08-18 17:33:53	jgeboski	yeah lmao
+2015-08-18 17:33:58	gholms	pypy takes about 3.
+2015-08-18 17:34:15	MK_FG	Fairly sure it was way more
+2015-08-18 17:34:35	krisfremen	that's what she said
+2015-08-18 17:34:49	gholms	If I hadn't built it in a 32-bit environment I'd go back and double-check, but meh.
+2015-08-18 17:35:09	krisfremen	.weather miami, fl
+2015-08-18 17:35:21	krisfremen	hmm.. I need to bring botlbee back
+2015-08-18 17:35:28	gholms	Heh
+2015-08-18 17:35:45	MK_FG	Yeah, google says "2 GB of memory on a 32-bit machine and 4GB on a 64-bit machine."
+2015-08-18 17:36:05	gholms	That sounds more like it
+2015-08-18 17:37:15	meh`	gholms, not me :(
+2015-08-18 17:37:17	MK_FG	krisfremen, Does botlbee has something to do with your rampant alcoholism?
+2015-08-18 17:37:29	krisfremen	I'm not an alcoholic
+2015-08-18 17:37:32	»	aoeui_ (~aoeui@93.174.93.84) has joined #bitlbee
+2015-08-18 17:37:33	krisfremen	I'm a botoholic
+2015-08-18 17:37:46	MK_FG	That's what they all say
+2015-08-18 17:37:49	krisfremen	if I can make bots for everything.. I'd do it.. and I usually end up doing it anyway
+2015-08-18 17:38:05	krisfremen	anyway.. I have a question for you guys
+2015-08-18 17:38:26	krisfremen	how much would you pay for a DNS service?
+2015-08-18 17:38:36	gholms	What do you need it to do?
+2015-08-18 17:38:53	krisfremen	my company is trying to launch a product.. which isn't even real DNS.. but they market it as DNS..
+2015-08-18 17:39:03	krisfremen	and they're planning on charging like $40/year for it
+2015-08-18 17:39:16	krisfremen	and all it does is resolve IP
+2015-08-18 17:39:35	krisfremen	so I need input from devs and non-devs
+2015-08-18 17:39:48	krisfremen	so I can make a spreadsheet telling them how stupid their pricing is
+2015-08-18 17:39:51	gholms	I can get that service from dns.he.net for free.
+2015-08-18 17:39:58	gholms	Better, in fact
+2015-08-18 17:40:07	tribut	so... 8.8.8.8 but it costs money?
+2015-08-18 17:40:30	krisfremen	no, as in we act as a dns server.. something like dyndns
+2015-08-18 17:40:49	krisfremen	but very hackishly done. because the idiots before who handled this.. apparently couldn't code for shit
+2015-08-18 17:41:04	krisfremen	they must've been on crack all the time
+2015-08-18 17:41:07	gholms	Yeah... there's a service that already does that and more.  For free.
+2015-08-18 17:41:12	gholms	As in, the price is zero.
+2015-08-18 17:41:29	krisfremen	I know, I tried to tell them that, but they don't want to listen
+2015-08-18 17:41:34	gholms	That's how much I would pay for something that braindead.
+2015-08-18 17:41:43	krisfremen	it's currently being offered as free, but they want to "monetise" it
+2015-08-18 17:41:48	krisfremen	because they're losing money
+2015-08-18 17:41:49	MK_FG	I'd probably setup it myself anyway
+2015-08-18 17:41:59	MK_FG	Also not worth paying, really
+2015-08-18 17:42:00	krisfremen	I mean.. first of, they're using windows servers.. on amazon ec2
+2015-08-18 17:42:02	krisfremen	lolol
+2015-08-18 17:42:18	gholms	Cool, but for that it would need to actually have value.
+2015-08-18 17:42:22	krisfremen	like $4000 per month
+2015-08-18 17:43:06	gholms	No one in my price range was willing to support all of the features I want, so I'm doing everything myself for ~15 USD per month.
+2015-08-18 17:43:36	krisfremen	well.. it's a security company that I work for now, so this is basically a way for customers to get to their devices
+2015-08-18 17:43:48	krisfremen	arm/disarm and see the video
+2015-08-18 17:43:59	MK_FG	Eh, people pay for weirder stuff
+2015-08-18 17:44:11	krisfremen	on top of the security devices themselves being over the top expensive
+2015-08-18 17:44:16	MK_FG	I wouldn't dismiss them right away, maybe they have a point
+2015-08-18 17:44:22	«	aoeui (~aoeui@1J2AAA433.tor-irc.dnsbl.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-08-18 17:44:23	krisfremen	you have to pay $$$ for the app also
+2015-08-18 17:44:27	gholms	Ohhhh, it's an integration-with-proprietary-device thing.
+2015-08-18 17:44:28	krisfremen	which I was lolling at
+2015-08-18 17:44:44	gholms	Sure, they'll probably find a few suckers willing to pay for it.
+2015-08-18 17:44:49	MK_FG	Isn't it the way of the "enterprise"?
+2015-08-18 17:44:51	krisfremen	a lot of suckers
+2015-08-18 17:45:03	gholms	No, the "enterprise" has a DNS server already.
+2015-08-18 17:45:25	MK_FG	I mean being suckers and paying ridiculous amount for everything
+2015-08-18 17:45:29	krisfremen	btw, thanks for HE dns
+2015-08-18 17:45:36	MK_FG	Because their sales people profit or such
+2015-08-18 17:45:38	krisfremen	didn't know that they offered that
+2015-08-18 17:45:59	gholms	They have a pretty good feature set, too.
+2015-08-18 17:46:21	krisfremen	yep
+2015-08-18 17:47:23	krisfremen	also, TIL.. SSHFP
+2015-08-18 17:47:49	gholms	No DNSSEC, though, rendering them largely useless
+2015-08-18 17:48:19	krisfremen	can't expect everything from a free service
+2015-08-18 17:48:35	gholms	Indeed.  That's why I don't use it any more.
+2015-08-18 17:48:39	gholms	Still recommend it, though
+2015-08-18 17:50:07	krisfremen	good for backup dns
+2015-08-18 17:50:50	*	krisfremen is going to implement sshfp
+2015-08-18 17:50:53	krisfremen	nifty
+2015-08-18 17:50:55	gholms	Not really.  It's primary-only.
+2015-08-18 17:51:34	krisfremen	oh, it is? hmm
+2015-08-18 17:51:58	krisfremen	I thought it mentioned slave dns servers on there
+2015-08-18 17:52:19	gholms	Maybe they added it.
+2015-08-18 17:52:21	gholms	Tjat
+2015-08-18 17:52:26	gholms	That's be nice.
+2015-08-18 17:52:30	gholms	*That'd
+2015-08-18 17:52:32	gholms	GAH
+2015-08-18 17:52:51	krisfremen	heh
+2015-08-18 17:55:11	»	meh (~meh@151.42.140.128) has joined #bitlbee
+2015-08-18 17:59:31	«	meh` (~meh@151.42.144.218) has quit (Ping timeout: 480 seconds)
+2015-08-18 18:11:12	»	meh` (~meh@adsl-ull-97-127.42-151.net24.it) has joined #bitlbee
+2015-08-18 18:15:31	«	meh (~meh@151.42.140.128) has quit (Ping timeout: 480 seconds)
+2015-08-18 18:30:16	»	hoyhoy (~hoyhoy@gw.aspera.us) has joined #bitlbee
+2015-08-18 18:32:03	»	explodingferret (~ferret@o.o.explodingferret.com) has joined #bitlbee
+2015-08-18 18:35:30	»	Nihplod_ (~Nihplod@godfather.nihplod.com) has joined #bitlbee
+2015-08-18 18:38:49	»	Hedge (sami@shell.wilan.org) has joined #bitlbee
+2015-08-18 18:39:17	«	meh` (~meh@adsl-ull-97-127.42-151.net24.it) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	SylvieLorxu (~SylvieLor@dhcp-077-251-165-191.chello.nl) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	Nihplod (~Nihplod@00018163.user.oftc.net) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	Haudegen (~quassel@85.124.51.57) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	wgreenhouse (~wgreenhou@00017989.user.oftc.net) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	bitkid_ (~bitkid@x1-6-c0-ff-d4-9c-db-ec.cpe.webspeed.dk) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	dandersson (~daniel@c83-248-160-230.bredband.comhem.se) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	Jesper_ (~jesper@h-145-215.a357.priv.bahnhof.se) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	Fanthomas90_ (~quassel@p200300750F6CF5001C9EEEA870441D42.dip0.t-ipconnect.de) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	szagul (~quassel@keller-server.de) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	ferret (~ferret@00010d10.user.oftc.net) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	teff (~teff@000196b3.user.oftc.net) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	Natacha (~nat@rebma.instinctive.eu) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	SpComb (terom@zapotek.paivola.fi) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	Zedde (~mircwars@c-94-255-129-20.cust.bredband2.com) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	Gehock (sami@shell.wilan.org) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	fantomas (~OnkelTem@pppoe-62-84-112-224.dubna.ru) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	tribut (~tribut@0001c0a0.user.oftc.net) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	mcepl (~mcepl@2a02:2b88:2:1:5054:ff:fe00:1cde) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	wilmer (~ElDuderin@fiona.gaa.st) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	«	saltsa (~joonas@dsl-hkibrasgw1-58c018-65.dhcp.inet.fi) has quit (charon.oftc.net dacia.oftc.net)
+2015-08-18 18:39:17	--	explodingferret is now known as ferret
+2015-08-18 18:39:17	--	Hedge is now known as Gehock
+2015-08-18 18:39:27	»	meh` (~meh@adsl-ull-97-127.42-151.net24.it) has joined #bitlbee
+2015-08-18 18:39:27	»	SylvieLorxu (~SylvieLor@dhcp-077-251-165-191.chello.nl) has joined #bitlbee
+2015-08-18 18:39:27	»	Haudegen (~quassel@85.124.51.57) has joined #bitlbee
+2015-08-18 18:39:27	»	wgreenhouse (~wgreenhou@00017989.user.oftc.net) has joined #bitlbee
+2015-08-18 18:39:27	»	bitkid_ (~bitkid@x1-6-c0-ff-d4-9c-db-ec.cpe.webspeed.dk) has joined #bitlbee
+2015-08-18 18:39:27	»	dandersson (~daniel@c83-248-160-230.bredband.comhem.se) has joined #bitlbee
+2015-08-18 18:39:27	»	Jesper (~jesper@h-145-215.a357.priv.bahnhof.se) has joined #bitlbee
+2015-08-18 18:39:27	»	Fanthomas90_ (~quassel@p200300750F6CF5001C9EEEA870441D42.dip0.t-ipconnect.de) has joined #bitlbee
+2015-08-18 18:39:27	»	szagul (~quassel@keller-server.de) has joined #bitlbee
+2015-08-18 18:39:27	»	teff (~teff@000196b3.user.oftc.net) has joined #bitlbee
+2015-08-18 18:39:27	»	Natacha (~nat@rebma.instinctive.eu) has joined #bitlbee
+2015-08-18 18:39:27	»	SpComb (terom@zapotek.paivola.fi) has joined #bitlbee
+2015-08-18 18:39:27	»	Zedde (~mircwars@c-94-255-129-20.cust.bredband2.com) has joined #bitlbee
+2015-08-18 18:39:27	»	fantomas (~OnkelTem@pppoe-62-84-112-224.dubna.ru) has joined #bitlbee
+2015-08-18 18:39:27	»	tribut (~tribut@0001c0a0.user.oftc.net) has joined #bitlbee
+2015-08-18 18:39:27	»	mcepl (~mcepl@2a02:2b88:2:1:5054:ff:fe00:1cde) has joined #bitlbee
+2015-08-18 18:39:27	»	wilmer (~ElDuderin@fiona.gaa.st) has joined #bitlbee
+2015-08-18 18:39:27	»	saltsa (~joonas@dsl-hkibrasgw1-58c018-65.dhcp.inet.fi) has joined #bitlbee
+2015-08-18 18:40:56	«	meh` (~meh@adsl-ull-97-127.42-151.net24.it) has quit (Ping timeout: 480 seconds)
+2015-08-18 18:43:02	--	Guest2158 is now known as wxl
+2015-08-18 18:43:45	--	Nihplod_ is now known as Nihplod
+2015-08-18 18:45:13	»	meh (~meh@adsl-ull-205-126.42-151.net24.it) has joined #bitlbee
+2015-08-18 18:58:15	--	irc: disconnected from server
