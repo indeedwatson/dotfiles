@@ -1,0 +1,15 @@
+Metadata-Version: 1.0
+Name: ranger
+Version: 1.7.2
+Summary: Vim-like file manager
+Home-page: http://ranger.nongnu.org
+Author: Roman Zimbelmann
+Author-email: hut@hut.pm
+License: GPL3
+Description: A console file manager with VI key bindings.
+        
+        It provides a minimalistic and nice curses interface with a view on the
+        directory hierarchy.  The secondary task of ranger is to figure out which
+        program you want to use to open your files with.
+        
+Platform: UNKNOWN
