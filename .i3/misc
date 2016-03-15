@@ -1,0 +1,3 @@
+# info for getting Steam layout
+# chat window name	
+for_window [title="(?i)chat$"] move to workspace 2
