@@ -1,1 +1,3 @@
-INDEEDWATSON's dotfiles
+indeedwatson's dotfiles
+
+my first attempt
