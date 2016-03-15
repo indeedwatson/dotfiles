@@ -1,3 +1,3 @@
 indeedwatson's dotfiles
 
-my first attempt
+my first attempt.
