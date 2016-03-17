@@ -1,8 +1,0 @@
-2016-01-09 15:30:38	root	facebook - Logging in: Connecting
-2016-01-09 15:30:38	root	facebook - Logging in: Fetching contacts
-2016-01-09 15:30:46	root	facebook - Login error: HTTP: 401 Unauthorized
-2016-01-09 15:30:46	root	facebook - Logging in: Signing off..
-2016-01-09 15:30:46	root	facebook - Logging in: Reconnecting in 900 seconds..
-2016-01-09 15:35:46	yama	 /quit
-2016-01-09 15:35:46	root	Unknown command: . Please use help commands to get a list of available commands.
-2016-01-09 15:35:51	--	irc: disconnected from server
