@@ -1,0 +1,110 @@
+2016-03-07 11:26:28		indeedwatson (~yama@181.95.168.27) has joined #weechat-android
+2016-03-07 11:26:28	--	Topic for #weechat-android is "Weechat-Android Lives! Github: https://github.com/ubergeek42/weechat-android | Latest Development Build: http://weechat-android.ubergeek42.com"
+2016-03-07 11:26:28	--	Topic set by ubergeek42 (ubergeek@ipv6.ubergeek42.com) on Wed, 08 Oct 2014 22:07:25
+2016-03-07 11:26:28	--	Channel #weechat-android: 38 nicks (1 op, 0 voices, 37 normals)
+2016-03-07 11:26:29	--	Channel created on Sat, 21 Jul 2012 18:03:06
+2016-03-07 11:29:42	indeedwatson	hello, how can I know why weechat-android isn't connecting?
+2016-03-07 11:29:45	indeedwatson	I'm getting time out
+2016-03-07 11:31:17	@ubergeek42	the app doesn't have good logs, but double check your port/firewall, and that the hostname you typed is correct
+2016-03-07 11:31:26	@ubergeek42	sometimes spaces sneak into the hostname when using autocorrect I find
+2016-03-07 11:43:24	indeedwatson	i think i'm out of my depth, i'm not sure how to check the port
+2016-03-07 11:43:36	indeedwatson	and i'm using the ip, not hostname
+2016-03-07 11:54:31	@ubergeek42	indeedwatson: ok. did you configure your weechat relay? can you include the output of /relay listrelay?
+2016-03-07 11:54:55	@ubergeek42	also, what connection method are you using(plain,ssl,ssh,websocket,etc)
+2016-03-07 11:55:25	indeedwatson	Listening on ports:
+2016-03-07 11:55:25	indeedwatson	  port 8001, relay: weechat, IPv4+6, started on: Mon, 07 Mar 2016 11:31:1
+2016-03-07 11:55:31	indeedwatson	plain for now
+2016-03-07 11:55:41	indeedwatson	i wanted to get it going before i bother with that
+2016-03-07 12:03:27	@ubergeek42	indeedwatson: right, ok. What linux distribution? do you know if you have a firewall runnning? is it on the same network as your android device?
+2016-03-07 12:04:36	indeedwatson	Fedora, I've not set up a firewall afair, and yes same network, but I'd like for it to work also on a different network
+2016-03-07 12:05:21	@ubergeek42	ok, from your linux machine does 'telnet ip.add.re.ss 8001 work?
+2016-03-07 12:06:00	@ubergeek42	also, if they're on the same network, what are you using for an ip address? your internal or external ip?
+2016-03-07 12:08:16	indeedwatson	well it's stuck in "trying..." so i guess it's blocked
+2016-03-07 12:09:25	@ubergeek42	does it work if you replace ipaddress with localhost/127.0.0.1?
+2016-03-07 12:12:55	indeedwatson	telnet localhost/127.0.01?
+2016-03-07 12:13:12	@ubergeek42	telnet 127.0.0.1 8001
+2016-03-07 12:13:26	@ubergeek42	or telnet localhost 8001, sorry if that wasn't clear
+2016-03-07 12:14:09	indeedwatson	yes, says connected to localhost
+2016-03-07 12:15:24	@ubergeek42	ok, so weechat is listening, and there's some firewall/etc in the way
+2016-03-07 12:15:58	@ubergeek42	are you using your internal IP address when trying to connect? or the one your ISP provided? If it's your external/ISP provided address, did you set up port forwarding on your router?
+2016-03-07 12:16:03	@ubergeek42	(assumign that's all applicable)
+2016-03-07 12:16:12	indeedwatson	tried both
+2016-03-07 12:16:26	@ubergeek42	ok, so then it seems likely there is a local firewall on your fedora box.
+2016-03-07 12:16:31	indeedwatson	also tried port forwarding, which I'm guessing I did right
+2016-03-07 12:16:44	indeedwatson	I could ask about that in #fedora
+2016-03-07 12:17:05	indeedwatson	isn't that configurable through iptables?
+2016-03-07 12:17:15	@ubergeek42	yes, probably for the best, I'm usually using ubuntu or similar
+2016-03-07 12:17:21	@ubergeek42	yeah, typically iptables
+2016-03-07 12:17:33	@ubergeek42	but fedora probably has its own program for managing the rules
+2016-03-07 12:17:47	@ubergeek42	you could at least check with 'iptables -L' to see if there are rules that look like they block everything
+2016-03-07 12:18:18	@ubergeek42	http://stackoverflow.com/questions/21709827/how-to-turn-firewall-off-fedora seems like an easy thing to try
+2016-03-07 12:18:18		[ http://is.gd/8GAEWF ]
+2016-03-07 12:19:16	indeedwatson	i've used this "sudo iptables -I OUTPUT -p tcp --dport 8001 --syn -j ACCEPT"
+2016-03-07 12:19:43	@ubergeek42	shouldn't it be the INPUT chain? not OUTPUT?
+2016-03-07 12:20:18	indeedwatson	I'll try
+2016-03-07 12:25:13	indeedwatson	nope
+2016-03-07 12:25:33	indeedwatson	i tried with LOCALHOST as the host in android, is that ok?
+2016-03-07 12:30:07	@ubergeek42	no, that would mean it's trying to connect to a weechat instance running on the android device
+2016-03-07 12:30:16	@ubergeek42	you have to set it to the ip address of your linux machine
+2016-03-07 12:30:29	@ubergeek42	probably the internal ip address for now to rule out port forwarding things
+2016-03-07 12:32:02	indeedwatson	ah
+2016-03-07 12:32:07	indeedwatson	well doesn't seem to work either
+2016-03-07 12:32:13	indeedwatson	i have to go lunch brb
+2016-03-07 12:58:50	indeedwatson	back
+2016-03-07 12:59:01	indeedwatson	anything else to try? or to ask in #fedora?
+2016-03-07 13:00:13	@ubergeek42	honestly I'd try turning off the firewall following instructions from the stackoverflow link, but #fedora is probably best
+2016-03-07 13:03:07	indeedwatson	ok turned it off
+2016-03-07 13:03:17	indeedwatson	still not connecting
+2016-03-07 13:03:29	indeedwatson	should i restart weechat or something?
+2016-03-07 13:07:11	@ubergeek42	nah, weechat is listening if telnet localhost 8001 worked
+2016-03-07 13:08:34	@ubergeek42	I'm not really sure anything else to try though
+2016-03-07 13:09:31	indeedwatson	out of curiosity, if it was the router blocking ports, shouldn't torrent programs not work too?
+2016-03-07 13:10:08	@ubergeek42	not necessarily. some routers support UPNP which lets the computer dynamically set up "port forward" type things as far as I know
+2016-03-07 13:11:33	indeedwatson	yes, i can see that in my router, and it's done that for Tixati, which I run on windows. But here I'm running Deluge and there's no UPNP rule for Deluge and it's working fine
+2016-03-07 13:12:38	indeedwatson	well thanks for your time anyway :)
+2016-03-07 13:13:20	@ubergeek42	sure. I hope you're able to get it working
+2016-03-07 15:49:19		Petzku has joined #weechat-android
+2016-03-07 15:50:31		binaryplease has joined #weechat-android
+2016-03-07 15:58:52	binaryplease	Hi Im new to weechat-android. Do I need to the server via ssh oder does it connect over a weechat itself?
+2016-03-07 15:59:57	@ubergeek42	weechat must be running on the server. if it's running and configured the android application will connect to it on whatever port your configured(commonly 8001 or 9001)
+2016-03-07 16:00:55	binaryplease	ubergeek42: so I need to open that port in the router too to reach it from outside? Currently only ssh is open
+2016-03-07 16:01:29	@ubergeek42	right. You could also use the ssh connection method but it may be less reliable when reconnecting
+2016-03-07 16:03:18	Petzku	binaryplease: you'll want to read https://github.com/ubergeek42/weechat-android/wiki/Quickstart-Guide
+2016-03-07 16:03:19		[ http://is.gd/VpDMrE ]
+2016-03-07 16:06:18	binaryplease	ubergeek42: Petzku I read it. Call me paranoid but isn't this quite unsafe? unencrypted connection and password authentication
+2016-03-07 16:06:39	Petzku	yes, but you can use SSL
+2016-03-07 16:06:55	Petzku	or the SSH tunnel
+2016-03-07 16:07:25	Petzku	/relay add ssl.weechat 9001
+2016-03-07 16:08:01	Petzku	then connect the app on port 9001 (or another port), and check "SSL connection" under connection settings
+2016-03-07 16:09:07	binaryplease	Petzku: I have a vpn running at home.  If I dont open anything else in the router it should limit the connections to inside the Lan, am I right?
+2016-03-07 16:09:17	Petzku	I believe so
+2016-03-07 16:31:19	binaryplease	I cant connect, this is the error message: TLS handshake failed for client 1/ssl.weechat/192.168.1.55: error -87 No supported cipher suites have been found.
+2016-03-07 16:32:56	@ubergeek42	did you change the android client to use ssl rather than plain?
+2016-03-07 16:33:30	binaryplease	yes
+2016-03-07 16:34:02	binaryplease	connection type "Weechat ssl", port host and passsword entered
+2016-03-07 16:34:27	binaryplease	keep getting:
+2016-03-07 16:34:30	binaryplease	20:34 =!= relay: warning: no SSL certificate/key found (option relay.network.ssl_cert_key)
+2016-03-07 16:34:32	binaryplease	20:34 relay: new client on port 9001: 1/ssl.weechat/192.168.1.55
+2016-03-07 16:34:34	binaryplease	20:34 =!= relay: TLS handshake failed for client 1/ssl.weechat/192.168.1.55: error -87 No supported cipher suites have been found.
+2016-03-07 16:34:36	binaryplease	20:34 relay: disconnected from client 1/ssl.weechat/192.168.1.55
+2016-03-07 16:34:58	binaryplease	(on the server that is)
+2016-03-07 16:35:00	@ubergeek42	you didn't fully configure weechat
+2016-03-07 16:35:04	@ubergeek42	it needs a certificate
+2016-03-07 16:35:22	@ubergeek42	https://github.com/ubergeek42/weechat-android/wiki/Using-SSL-with-Weechat
+2016-03-07 16:35:22		[ http://is.gd/fnlNAB ]
+2016-03-07 16:36:03	binaryplease	that should be in the quickstart for weechat-android maybe
+2016-03-07 16:36:21	@ubergeek42	feel free to edit :)
+2016-03-07 16:38:06	binaryplease	nice, works now. will weechat autostart the relay on starup?
+2016-03-07 16:38:54	@ubergeek42	provided you /save, it should
+2016-03-07 16:39:33	binaryplease	Ok
+2016-03-07 16:42:32	meffe	it works flawless, im really glad you made this application ubergeek42
+2016-03-07 16:42:43	@ubergeek42	glad to hear it :)
+2016-03-07 16:43:08	binaryplease	I second that, it works great!
+2016-03-07 17:44:58		binaryplease1 has joined #weechat-android
+2016-03-07 17:47:39		binaryplease has quit (Ping timeout: 246 seconds)
+2016-03-07 18:50:39		binaryplease1 has quit (Ping timeout: 246 seconds)
+2016-03-07 22:14:27	--	godlessfather is now known as collyrium
+2016-03-08 00:08:15	mhoran	Woo!
+2016-03-08 00:18:59		azizLIGHT has quit (Ping timeout: 248 seconds)
+2016-03-08 00:21:47		azizLIGHT has joined #weechat-android
+2016-03-08 01:13:33	--	irc: disconnected from server

@@ -1,0 +1,70 @@
+2015-11-06 22:03:39	--	irc: connecting to server irc.brokensphere.net/6667...
+2015-11-06 22:03:40	--	irc: connected to irc.brokensphere.net/6667 (64.62.231.247)
+2015-11-06 22:03:40	--	agony.irc.brokensphere.net: *** Looking up your hostname...
+2015-11-06 22:03:41	--	agony.irc.brokensphere.net: *** Couldn't resolve your hostname; using your IP address instead
+2015-11-06 22:03:41	--	agony.irc.brokensphere.net: *** If you are having problems connecting due to ping timeouts, please type /quote pong 461D4964 or /raw pong 461D4964 now.
+2015-11-06 22:03:41	--	Welcome to the BrokenSphere IRC Network indeedwatson!yama@181.88.252.202
+2015-11-06 22:03:41	--	Your host is agony.irc.brokensphere.net, running version Unreal3.2.3
+2015-11-06 22:03:41	--	This server was created Thu Sep 7 2006 at 17:46:07 EDT
+2015-11-06 22:03:41	--	agony.irc.brokensphere.net Unreal3.2.3 iowghraAsORTVSxNCWqBzvdHtGp lvhopsmntikrRcaqOALQbSeIKVfMCuzNTGj
+2015-11-06 22:03:41	--	SAFELIST HCN MAXCHANNELS=30 CHANLIMIT=#:30 MAXLIST=b:60,e:60,I:60 NICKLEN=30 CHANNELLEN=32 TOPICLEN=307 KICKLEN=307 AWAYLEN=307 MAXTARGETS=20 WALLCHOPS WATCH=128 :are supported by this server
+2015-11-06 22:03:41	--	SILENCE=15 MODES=12 CHANTYPES=# PREFIX=(qaohv)~&@%+ CHANMODES=beI,kfL,lj,psmntirRcOAQKVGCuzNSMTG NETWORK=BrokenSphere CASEMAPPING=ascii EXTBAN=~,cqnr ELIST=MNUCT STATUSMSG=~&@%+ EXCEPTS INVEX CMDS=KNOCK,MAP,DCCALLOW,USERIP :are supported by this server
+2015-11-06 22:03:41	--	There are 15 users and 208 invisible on 6 servers
+2015-11-06 22:03:41	--	13 :operator(s) online
+2015-11-06 22:03:41	--	36 :channels formed
+2015-11-06 22:03:41	--	I have 48 clients and 2 servers
+2015-11-06 22:03:41	--	Current Local Users: 48  Max: 103
+2015-11-06 22:03:41	--	Current Global Users: 223  Max: 488
+2015-11-06 22:03:41	--	- agony.irc.brokensphere.net Message of the Day -
+2015-11-06 22:03:41	--	- 9/10/2010 15:35
+2015-11-06 22:03:41	--	-           ____
+2015-11-06 22:03:41	--	-       ,dP9CGG88,
+2015-11-06 22:03:41	--	-     ,IP""YICCG8\   ,
+2015-11-06 22:03:41	--	-    dIi   ,IICGG/  /@b
+2015-11-06 22:03:41	--	-   dCIIiciIICCGG/  \@@b   BrokenSphere
+2015-11-06 22:03:41	--	-  _GCCIIIICCCGG/   /@@@__________________
+2015-11-06 22:03:41	--	-   GGCCCCCCCGG/  /88@@@     Networks
+2015-11-06 22:03:41	--	-   GGGGCCCGGGG`/888@@@@...
+2015-11-06 22:03:41	--	-   Y8GGGGGG8888888@@@@P.....
+2015-11-06 22:03:41	--	-    Y88888888888@@@@@P......
+2015-11-06 22:03:42	--	-    `Y8888888@@@@@@@P'......
+2015-11-06 22:03:42	--	-       `@@@@@@@@@P'.......
+2015-11-06 22:03:42	--	-           """"........
+2015-11-06 22:03:42	--	-                            http://www.irc.brokensphere.net/
+2015-11-06 22:03:42	--	-
+2015-11-06 22:03:42	--	- : ----------------------------------------------------------- :
+2015-11-06 22:03:42	--	-                                Servers
+2015-11-06 22:03:42	--	-
+2015-11-06 22:03:42	--	-             irc.brokensphere.net  -  Round Robin
+2015-11-06 22:03:42	--	-         ssl.irc.brokensphere.net  -  Round Robin  (SSL Only)
+2015-11-06 22:03:42	--	-
+2015-11-06 22:03:42	--	-       agony.irc.brokensphere.net  -  US, California
+2015-11-06 22:03:42	--	-        pain.irc.brokensphere.net  -  US, Texas
+2015-11-06 22:03:42	--	-      strain.irc.brokensphere.net  -  US, New Jersey
+2015-11-06 22:03:42	--	-       gloom.irc.brokensphere.net  -  US, Illinois
+2015-11-06 22:03:42	--	-        grim.irc.brokensphere.net  -  US, California
+2015-11-06 22:03:42	--	-      strain.irc.brokensphere.net  -  US, New Jersey
+2015-11-06 22:03:42	--	-         ill.irc.brokensphere.net  -  US, Missouri (SSL Only)
+2015-11-06 22:03:42	--	-        ache.irc.brokensphere.net  -  UK, England
+2015-11-06 22:03:42	--	-     torment.irc.brokensphere.net  -  NL, Amsterdam
+2015-11-06 22:03:42	--	-       grief.irc.brokensphere.net  -  RO, Brasov
+2015-11-06 22:03:42	--	-
+2015-11-06 22:03:42	--	-
+2015-11-06 22:03:42	--	-                 Ports
+2015-11-06 22:03:42	--	-         6665,6666,6667,7000          SSL on 6697
+2015-11-06 22:03:42	--	-
+2015-11-06 22:03:42	--	-  : ----------------------------------------------------------- :
+2015-11-06 22:03:42	--	-            The following staff are here to help you
+2015-11-06 22:03:42	--	-
+2015-11-06 22:03:42	--	-         Admins:  Dissy     Majes     Digit
+2015-11-06 22:03:42	--	-          Opers:  dbdbdbdb  emperor13 stefflbw
+2015-11-06 22:03:42	--	-                  charred   OsiriS    fervor
+2015-11-06 22:03:42	--	-  : ----------------------------------------------------------- :
+2015-11-06 22:03:42	--	-         [ Donations:  PayPal to dissy@brokensphere.net ]
+2015-11-06 22:03:42	--	-
+2015-11-06 22:03:42	--	-                            Thank You
+2015-11-06 22:03:42	--	-
+2015-11-06 22:03:42	--	End of /MOTD command.
+2015-11-06 22:03:42	--	User mode [+iwx] by indeedwatson
+2015-11-06 22:03:42	--	CTCP requested by StatServ: VERSION (blocked)
+2015-11-07 01:57:34	--	irc: disconnected from server

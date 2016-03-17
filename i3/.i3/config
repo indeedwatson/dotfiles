@@ -1,0 +1,276 @@
+# i3 config file (v1.1)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# 26-11-2015
+
+#.......
+# Font
+#.......
+font pango:System San Francisco Display 9, FontAwesome 10
+
+#..........
+# Look
+#..........
+new_window pixel 2
+new_float pixel 2
+
+# Hybrid colors
+#set $back               #1d1F21
+set $back               #1c1c1c
+set $black              #282A2E
+set $grey               #373B41
+set $lightgrey          #707880
+set $white              #C5C8C6
+set $yellow             #F0C674
+set $red                #CC6666
+set $darkred            #A54242
+set $green              #B5BD56
+
+#class                  border      backgr.     text        split
+client.focused          $green      $green      $black      $green
+client.focused_inactive $back       $back       $lightgrey  $back
+client.unfocused        $back       $grey       $lightgrey  $back
+client.urgent           $red        $red        $black      $black
+client.background       $background
+
+#..........
+# Applications
+#..........
+# mod1 = Alt (xmodmap to show)
+# mod4 = Winkey (xmodmap to show)
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Steam Friend list
+for_window [class="Steam" title="^Friends$"] resize shrink width 150 px or 30 ppt
+for_window [class="Steam" title="(?i)chat$"] resize shrink width 100 px or 5 ppt
+# Terminal (mod+Enter)
+bindsym $mod+t exec urxvt256c
+for_window [class="^URxvt$" instance="^SideTerm$"] resize shrink width 270 px or 18 ppt
+
+# start rofi with j4dmenu (mod+t)
+bindsym $mod+Shift+d exec j4-dmenu-desktop --dmenu='rofi -i -dmenu -p "> " -show window -font "Inconsolata-dz 10" -no-disable-history -levenshtein-sort -fg $green -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85'
+bindsym $mod+space exec rofi -show run -run-list-command ". ~/.bashrc_aliases" -run-command "/bin/bash -i -c '{cmd}'" -rnow
+
+# firefox
+bindsym $mod+F1 [class="Firefox"] exec ~/.i3/i3_focus_or_run.sh -t firefox firefox
+# steam
+bindsym $mod+F2 [class="Steam"] exec ~/.i3/i3_focus_or_run.sh -t steam steam
+# mpsyt
+bindsym $mod+F3 exec urxvt -e mpsyt, exec urxvt -e alsamixer
+# edit .bashrc
+bindsym $mod+F10 exec urxvt256c -name SideTerm -e sh -c "vim ~/.bashrc"
+# edit .Xresources
+bindsym $mod+F11 exec urxvt256c -name SideTerm -e sh -c "vim ~/.Xresources"
+# config
+bindsym $mod+F12 exec urxvt256c -name SideTerm -e sh -c "vim ~/.i3/config"
+# file manager
+bindsym $mod+p exec pcmanfm
+# task manager
+bindsym $mod+o exec urxvt -e htop -u yama
+
+# assign apps to workspaces
+assign [class="Firefox"] 1: web
+assign [title="weechat"] 2:  irc
+assign [class="mpv"] 3: video
+assign [class="Steam"]  steam
+# youtube sticky
+bindsym $mod+y fullscreen disable, floating enable, resize set 400 300, sticky enable, move window to position 1515 20
+
+# Layout
+for_window [class="(?i)feh"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="(?i)deluge"] floating enable
+for_window [class="(?i)deluge"] move scratchpad
+for_window [class="(?i)xfce4-taskmanager"] floating enable
+force_focus_wrapping yes
+new_window pixel 2
+new_float pixel 2
+# Go back to previous workspace
+workspace_auto_back_and_forth yes
+for_window [class="mpv"] border pixel 0
+for_window [class="(?i)transmission-gtk"] border pixel 0
+# focus not follow mose
+focus_follows_mouse no
+popup_during_fullscreen smart
+
+# lockscreen
+# exec --no-startup-id xautolock -time 10 -locker '~/.lock.sh'
+bindsym $mod+mod1+X exec --no-startup-id ~/.lock.sh
+
+# wallpaper
+exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
+
+# Startup
+exec --no-startup-id xmodmap ~/.Xmodmap
+exec dropbox start
+exec --no-startup-id exec urxvt256c -e weechat
+exec --no-startup-id  firefox
+exec bitlbee -F
+exec compton --config ~/.config/compton.conf -b
+exec --no-startup-id deluge
+# exec --no-startup-id transmission-gtk
+
+#...........
+# Keybinds i3
+#...........
+
+# kill focused window
+bindsym $mod+x kill
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+mod1j move left
+bindsym $mod+mod1+k move down
+bindsym $mod+mod1+l move up
+bindsym $mod+mod1+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+mod1+Left move left
+bindsym $mod+mod1+Down move down
+bindsym $mod+mod1+Up move up
+bindsym $mod+mod1+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacked
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+z focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+d focus child
+
+# enter resize mode
+bindsym $mod+r mode "resize"
+
+# workspaces aliases
+set $workspace1 workspace number 1
+set $workspace2 workspace number 2
+set $workspace3 workspace number 3
+set $workspace4 workspace number 4
+set $workspace5 workspace number 5
+set $workspace6 workspace number 6
+set $workspace7 workspace number 7
+set $workspace8 workspace number 8
+set $workspace9 workspace number 9
+set $workspace10 workspace number 10
+
+# switch to workspace
+bindsym $mod+1 $workspace1
+bindsym $mod+2 $workspace2
+bindsym $mod+3 $workspace3
+bindsym $mod+4 $workspace4
+bindsym $mod+5 $workspace5
+bindsym $mod+6 $workspace6
+bindsym $mod+7 $workspace7
+bindsym $mod+8 $workspace8
+bindsym $mod+9 $workspace9
+bindsym $mod+0 $workspace10
+
+# move focused container to workspace
+bindsym $mod+mod1+1 move container to $workspace1
+bindsym $mod+mod1+2 move container to $workspace2
+bindsym $mod+mod1+3 move container to $workspace3
+bindsym $mod+mod1+4 move container to $workspace4
+bindsym $mod+mod1+5 move container to $workspace5
+bindsym $mod+mod1+6 move container to $workspace6
+bindsym $mod+mod1+7 move container to $workspace7
+bindsym $mod+mod1+8 move container to $workspace8
+bindsym $mod+mod1+9 move container to $workspace9
+bindsym $mod+mod1+0 move container to $workspace10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Power off:' -b 'Sleep (RAM)' 'exec sudo pm-suspend' -b 'Sleep (HDD)' 'exec sudo pm-hibernate' -b 'Exit i3' 'i3-msg exit' -b 'Reboot' 'exec reboot' -b 'Shutdown' 'exec sudo shutdown now'"
+
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# suspend
+bindsym $mod+Shift+n exec systemctl suspend
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+		}
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status -c ~/.i3/i3status.conf
+	position top
+	#tray_output primary
+	colors {
+		background $back
+		separator $green
+	        statusline $lightgrey
+	#			border		background	text
+	focused_workspace	$background	$background	$white
+        active_workspace	$background	$background	$lightgrey
+	inactive_workspace	$background	$background	$lightgrey
+        urgent_workspace	$darkred	$darkred	$white
+	}
+	
+	mode dock 
+	strip_workspace_numbers yes
+	hidden_state hide
+	modifier Mod4
+}
+
+# Make the currently focused window a scratchpad
+bindsym $mod+mod1+q move scratchpad
+
+# # Show the first scratchpad window
+bindsym $mod+q scratchpad show

@@ -1,0 +1,104 @@
+2016-03-06 23:53:28		indeedwatson (~yama@ED83D45B.C25C172E.70E6E942.IP) has joined #rice
+2016-03-06 23:53:28	--	Topic for #rice is "Technology community with a focus on customization, configuration, and design. | Please visit: http://ochazuke.org/ | Before you ask, `.help` | I like systemd"
+2016-03-06 23:53:28	--	Topic set by Leliana (~fox@revthefox.co.uk) on Wed, 24 Feb 2016 12:06:17
+2016-03-06 23:53:28	--	Channel #rice: 133 nicks (6 ops, 2 halfops, 7 voices, 118 normals)
+2016-03-06 23:53:28	--	PvNotice(Onee-chan): Welcome to #rice. We're currently hosting a ricing contest! More info at http://ochazuke.org/contest/. Also check out http://ref.ochazuke.org/
+2016-03-06 23:53:29	--	Channel created on Sat, 29 Dec 2012 21:07:54
+2016-03-06 23:54:09	homu	tfw the rubberized coating on my mouse is wearing off
+2016-03-06 23:56:24	R0b0t1	yeah
+2016-03-06 23:56:26	R0b0t1	tfw
+2016-03-07 00:08:18		R0b0t1 has quit (Ping timeout: 240 seconds)
+2016-03-07 00:08:44	eric_	homu: tfw you think the steelseries sensei is metal but it's not and the coating wears off and it looks gross
+2016-03-07 00:09:10	homu	a metal mouse would be nice
+2016-03-07 00:09:24	homu	maybe a little cold though
+2016-03-07 00:10:42	indeedwatson	plasticseries sensei doesn't have the same ring to it
+2016-03-07 00:11:34	homu	steel might not be a good choice though, years of hand moisture would make it rust
+2016-03-07 00:11:41	+LambdaComplex	stainless steel
+2016-03-07 00:11:46	+LambdaComplex	or copper
+2016-03-07 00:11:52	+LambdaComplex	verdigrisseries
+2016-03-07 00:12:00	homu	aluminum imo
+2016-03-07 00:16:12	+LambdaComplex	copper looks nicer
+2016-03-07 00:19:36	homu	until it gets all old
+2016-03-07 00:27:01		kbw has joined #rice
+2016-03-07 00:27:13	+LambdaComplex	homu: verdigris?
+2016-03-07 00:28:04	homu	that'd be shitty on a mouse
+2016-03-07 00:28:55	+LambdaComplex	why
+2016-03-07 00:29:27	homu	it'd look ugly imo
+2016-03-07 00:29:42	+LambdaComplex	i think it'd be neat
+2016-03-07 00:30:19	+LambdaComplex	i'm pretty sure verdigris is a certified v a p o r w a v e color
+2016-03-07 00:30:38	+LambdaComplex	along with cotton candy
+2016-03-07 00:30:44	*	homu doesn't like blue, or green for that matter
+2016-03-07 00:31:06	+LambdaComplex	but if it's both then they cancel out and you like it :^)
+2016-03-07 00:31:14	homu	nnnnnnn
+2016-03-07 00:31:27		fullsalvo has left #rice
+2016-03-07 00:32:21	+LambdaComplex	did i make fullsalvo mad
+2016-03-07 00:32:46	homu	extremely
+2016-03-07 00:35:58	+codedwrench	lol okay, so the software i need for school works and is quick, but compiling a simple programming for the altera takes >10min
+2016-03-07 00:36:00	+codedwrench	lol
+2016-03-07 00:37:15	mikel	isn't it always slow as balls to compile for fpgas
+2016-03-07 00:37:46	+codedwrench	yes, but this is on 2006 hardware
+2016-03-07 00:37:51	+codedwrench	lol
+2016-03-07 00:37:56	mikel	ah
+2016-03-07 00:38:10	+codedwrench	it takes 1-2 min on my own laptop
+2016-03-07 00:38:24	+codedwrench	i was curious how much worse it would be on this one
+2016-03-07 00:38:26	homu	just get faster 2006 hardware
+2016-03-07 00:38:45	mikel	it's funny, our university's compute cluster uses super slow amd opterons
+2016-03-07 00:39:14	mikel	you need to be using a full 140W 8 core node to be faster than calculating directly on a modern laptop
+2016-03-07 00:39:53	+codedwrench	lol
+2016-03-07 00:40:34	homu	for single-thread performance, my 12" tablet is the fastest thing i own
+2016-03-07 00:41:37	+codedwrench	 https://a.pste.pw/K8b.png 
+2016-03-07 00:41:44	+codedwrench	lower right corner is compile time
+2016-03-07 00:42:08	homu	that's a lot
+2016-03-07 00:42:34	+codedwrench	yep, still that the program ran and compiled
+2016-03-07 00:42:43	+codedwrench	i'm genuinely impressed
+2016-03-07 00:43:42	+codedwrench	but if you want to get any serious work done with fpgas on this thing you better not make any programming errors :O
+2016-03-07 00:44:06	+codedwrench	oh srry i got to wait another 10 minutes, i forgot a semicolon
+2016-03-07 00:44:28	homu	sounds like a good excuse to get snacks
+2016-03-07 00:44:39	mikel	sounds a lot like building in c++
+2016-03-07 00:45:01	+codedwrench	the 1 minute my current laptop takes is pretty crappy already imo
+2016-03-07 00:45:25	+codedwrench	but still, could be even worse
+2016-03-07 00:45:50	homu	i compiled a thing on a raspberry pi once
+2016-03-07 00:45:51	homu	it was awful
+2016-03-07 00:46:06	+codedwrench	i ran gentoo on my pi for a little while
+2016-03-07 00:46:24	+codedwrench	even with buildcc, fuck no
+2016-03-07 00:46:32	@Tomoko_A_Best	night rice
+2016-03-07 00:46:35	+codedwrench	or what is the buildserver thing called
+2016-03-07 00:51:34	+LambdaComplex	i wonder how long compiling iceweasel will take me
+2016-03-07 00:52:39	winny	forever
+2016-03-07 00:53:08	mikel	like actually forever
+2016-03-07 00:53:15	mikel	even more forever if you enable PGO
+2016-03-07 00:53:31		sdothum_ has quit (Quit: ZNC - 1.6.0 - http://znc.in)
+2016-03-07 00:53:51		NinjaFruit has joined #rice
+2016-03-07 00:55:00	+LambdaComplex	idk, last time it only took like 15 minutes i think
+2016-03-07 00:55:10	+LambdaComplex	and i just set -j in makepkg.conf
+2016-03-07 01:01:44	ajimu	.seen array
+2016-03-07 01:02:05	*	brushy eats some rice
+2016-03-07 01:02:21	ajimu	oh hey brushy 
+2016-03-07 01:02:26	ajimu	how've you been?
+2016-03-07 01:02:47	brushy	I've been okay, just woke up
+2016-03-07 01:02:52	brushy	how about you?
+2016-03-07 01:03:01	ajimu	ups and downs
+2016-03-07 01:03:06	ajimu	pretty good this week
+2016-03-07 01:13:21		aaro has quit (Ping timeout: 240 seconds)
+2016-03-07 01:17:36		R0b0t1` has joined #rice
+2016-03-07 01:19:07		shmibs has quit (Quit: leaving =o)
+2016-03-07 01:21:05		shmibs has joined #rice
+2016-03-07 01:25:57		Valkyrie has joined #rice
+2016-03-07 01:28:59		Ayumi has quit (*.net *.split)
+2016-03-07 01:28:59		lennox has quit (*.net *.split)
+2016-03-07 01:28:59		vista has quit (*.net *.split)
+2016-03-07 01:28:59		apt-get has quit (*.net *.split)
+2016-03-07 01:28:59		welpo has quit (*.net *.split)
+2016-03-07 01:28:59		arianon has quit (*.net *.split)
+2016-03-07 01:29:40		apt-get has joined #rice
+2016-03-07 01:32:10	--	skruff is now known as Skruff
+2016-03-07 01:53:33		aaro has joined #rice
+2016-03-07 02:00:52		therue has joined #rice
+2016-03-07 02:02:43		zakame has joined #rice
+2016-03-07 02:02:59		zakame has quit
+2016-03-07 02:04:11		zakame has joined #rice
+2016-03-07 02:12:05		NinjaFruit has quit (Quit: WeeChat 1.4)
+2016-03-07 02:13:27		NinjaFruit has joined #rice
+2016-03-07 02:15:16		LambdaComplex has quit (Quit: WeeChat 1.4)
+2016-03-07 02:17:32		NinjaFruit has quit (Ping timeout: 240 seconds)
+2016-03-07 02:33:22	--	irc: disconnected from server

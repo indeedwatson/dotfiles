@@ -1,0 +1,311 @@
+2015-10-15 20:57:22	Oberbuntu	bruv
+2015-10-15 20:57:42	indeedwatson	wut
+2015-10-15 20:58:03	Oberbuntu	have you tried tinder by you
+2015-10-15 20:58:12	Oberbuntu	i just installed it this morning
+2015-10-15 20:58:19	Oberbuntu	it's so easy dude
+2015-10-15 20:58:32	Oberbuntu	and i've been talking to a few qtsloots all day
+2015-10-15 21:00:08	indeedwatson	i dont wanna use fb for it
+2015-10-15 21:00:22	Oberbuntu	why?
+2015-10-15 21:00:49	indeedwatson	i don't like fb
+2015-10-15 21:00:55	indeedwatson	i don't wanna have a pic of me
+2015-10-15 21:01:01	indeedwatson	and a full decent profile
+2015-10-15 21:01:16	Oberbuntu	there isn't a profile really
+2015-10-15 21:01:34	Oberbuntu	and you can set a picture on fb that's permission is set to only you
+2015-10-15 21:01:39	Oberbuntu	and then use that for tinder
+2015-10-15 21:01:49	Oberbuntu	and it uses your likes
+2015-10-15 21:01:53	indeedwatson	i dont like login into shit with fb
+2015-10-15 21:01:56	Oberbuntu	that's basically it
+2015-10-15 21:02:38	Oberbuntu	meh you do you
+2015-10-15 21:02:38	indeedwatson	that and fb having access to all your flirty tinder convos
+2015-10-15 21:02:49	Oberbuntu	does fb own tinder?
+2015-10-15 21:03:04	indeedwatson	dunno
+2015-10-15 21:03:08	indeedwatson	but they don't need to
+2015-10-15 21:03:11	Oberbuntu	don't think so
+2015-10-15 21:03:26	Oberbuntu	and using fb for auth doesn't give them access to other things from the app
+2015-10-15 21:03:32	Oberbuntu	that's totally illogical
+2015-10-15 21:04:09	indeedwatson	why does it even require fb
+2015-10-15 21:04:28	Oberbuntu	to lessen how many duplicate accts get made
+2015-10-15 21:04:45	Oberbuntu	because fb has better acct creation standards than what most startups can cook up
+2015-10-15 21:06:41	indeedwatson	and what does fb get in return
+2015-10-15 21:07:26	Oberbuntu	to know when people are logged into an app and higher acct retention on their own site because other things that their users depend on are tied to their mainland fb acct
+2015-10-15 21:08:33	indeedwatson	why would you trust fb tho
+2015-10-15 21:08:45	Oberbuntu	trust?
+2015-10-15 21:08:47	Oberbuntu	trust how
+2015-10-15 21:09:22	indeedwatson	that they're just doing that and not snooping on messages for data
+2015-10-15 21:09:55	Oberbuntu	because i've used their api before and i understand what oauth2 is and how it's implemented -_-
+2015-10-15 21:10:04	Oberbuntu	what you're saying doesn't make sense
+2015-10-15 21:10:13	Oberbuntu	it sounds like some fox news fear mongering
+2015-10-15 21:11:03	Oberbuntu	using fb oauth doesn't give fb access to the app's servers at all
+2015-10-15 21:11:11	Oberbuntu	it's a 3rd party library/sdk
+2015-10-15 21:11:14	indeedwatson	have you never had fb ads about something you googled recently
+2015-10-15 21:11:38	Oberbuntu	i have
+2015-10-15 21:11:52	Oberbuntu	but i also understand how ad networks work
+2015-10-15 21:11:57	Oberbuntu	and you're being paranoid
+2015-10-15 21:12:46	Oberbuntu	ad networks only work like that because you allow them to run and see so much of your web traffic from their iframes on the front end
+2015-10-15 21:13:09	indeedwatson	https://np.reddit.com/r/jailbreak/comments/3nxjwt/discussion_facebook_listening_to_conversations/
+2015-10-15 21:13:30	Oberbuntu	ad networks are totally separate from fb as auth
+2015-10-15 21:13:51	Oberbuntu	the only way they intersect is browser fingerprinting
+2015-10-15 21:13:54	Oberbuntu	to isolate you
+2015-10-15 21:14:33	indeedwatson	so tinder doesn't ask for your fb pass?
+2015-10-15 21:15:21	Oberbuntu	it asks for you to authorize with facebook yeah, but it has facebook deal with that
+2015-10-15 21:15:59	indeedwatson	mm, last thing i used oauth with fb generated a pass for that app
+2015-10-15 21:16:32	Oberbuntu	we don't use oauth anymore it's all oauth2
+2015-10-15 21:16:45	Oberbuntu	and fb using your mic would need to be the fb app itself
+2015-10-15 21:16:58	Oberbuntu	not authorization in another app
+2015-10-15 21:17:01	indeedwatson	ye
+2015-10-15 21:17:09	indeedwatson	im just saying the kind of shit fb does
+2015-10-15 21:17:18	indeedwatson	so i dont trust it or like it
+2015-10-15 21:17:24	Oberbuntu	#yolo
+2015-10-15 21:17:27	Oberbuntu	everyone does it
+2015-10-15 21:17:29	indeedwatson	and even less when other apps force me to use it
+2015-10-15 21:17:35	indeedwatson	that's the most bs excuse
+2015-10-15 21:17:36	Oberbuntu	it's unavoidable
+2015-10-15 21:18:04	indeedwatson	meh
+2015-10-15 21:18:13	indeedwatson	literally only talk to 2 people there
+2015-10-15 21:18:20	indeedwatson	one of which i talk somewhere else too
+2015-10-15 21:18:26	indeedwatson	and another who i haven't talked in a while
+2015-10-15 21:18:58	Oberbuntu	regardless it's cool
+2015-10-15 21:19:09	indeedwatson	fb?
+2015-10-15 21:19:10	indeedwatson	or tinder
+2015-10-15 21:19:11	indeedwatson	?
+2015-10-15 21:19:23	Oberbuntu	it forces the sloots to concede some to swipe people right and be proactive in that way
+2015-10-15 21:19:30	Oberbuntu	so it's nice that way
+2015-10-15 21:19:47	indeedwatson	it also forces to judge quick on appearance alone
+2015-10-15 21:20:01	Oberbuntu	you can assume that they are talking to less people that way because they aren't being bombarded with messages
+2015-10-15 21:20:08	Oberbuntu	yeah but that's kind of a good thing i think
+2015-10-15 21:20:14	Oberbuntu	appearance is important
+2015-10-15 21:20:29	indeedwatson	but it's literally the most important, and only important thing for the app
+2015-10-15 21:21:33	Oberbuntu	right and if a grill matches you, you can feel free to be you because she already finds you physically attractive
+2015-10-15 21:21:46	Oberbuntu	you know you can get away with a lot more in this scenario
+2015-10-15 21:22:23	indeedwatson	meh, same applies in okc
+2015-10-15 21:22:26	indeedwatson	just go full chad
+2015-10-15 21:22:34	indeedwatson	pls tell me you've seen chad 
+2015-10-15 21:25:24	Oberbuntu	i know what a chad is
+2015-10-15 21:25:38	Oberbuntu	but i'm not sure i fully know what you're talking about
+2015-10-15 21:25:53	Oberbuntu	i'm sure i've read a chad thundercock greentext before
+2015-10-15 21:31:04	indeedwatson	http://imgur.com/gallery/F9hRS
+2015-10-15 21:39:06	Oberbuntu	prolly gonna diaper up and watch some cartoons B)
+2015-10-15 21:39:10	Oberbuntu	jesus that's funny
+2015-10-15 21:39:47	indeedwatson	try it on tinder
+2015-10-15 21:40:21	Oberbuntu	lol i'm not good looking enough to get away with such things
+2015-10-15 21:40:24	Oberbuntu	not even close
+2015-10-15 21:41:05	indeedwatson	just grow lats
+2015-10-15 21:41:50	indeedwatson	so when are you meeting tg
+2015-10-15 21:42:14	Oberbuntu	tg?
+2015-10-15 21:42:23	indeedwatson	tall grill
+2015-10-15 21:49:54	Oberbuntu	we talked about meeting up tonight
+2015-10-15 21:50:01	Oberbuntu	but not sure what's up
+2015-10-15 21:50:06	indeedwatson	DO IT
+2015-10-15 21:50:18	Oberbuntu	kinda don't feel like messaging her to see where we're going
+2015-10-15 21:50:29	indeedwatson	just fucking do it
+2015-10-15 21:50:57	Oberbuntu	maybe
+2015-10-15 21:51:27	indeedwatson	or you can stay home and fap to midget porn again
+2015-10-15 21:51:54	Oberbuntu	lol how do you know me so well gorden
+2015-10-15 21:52:18	indeedwatson	midget mixed asian pr0n
+2015-10-15 21:52:51	Oberbuntu	lol
+2015-10-15 21:53:04	Oberbuntu	sexing a tall grill is on the bucket list for sure
+2015-10-15 21:53:50	Oberbuntu	if we are meeting that means i have to take a nap
+2015-10-15 21:53:56	Oberbuntu	she doesn't get off work till 11
+2015-10-15 21:53:58	Oberbuntu	-_-
+2015-10-15 21:54:31	Oberbuntu	i have work tomorrow
+2015-10-15 21:55:27	indeedwatson	does she seem like she want sexo tonight?
+2015-10-15 21:55:52	Oberbuntu	nah this would just be meeting up for coffee or something and talking
+2015-10-15 21:56:03	Oberbuntu	all we've had is super nerdy talks about philosophy and astrophysics
+2015-10-15 21:56:30	indeedwatson	sounds hreat
+2015-10-15 21:56:31	indeedwatson	great
+2015-10-15 21:56:39	indeedwatson	wtf do you know about astrophyskcs
+2015-10-15 21:56:51	Oberbuntu	lol nothing, that's what she was telling me about
+2015-10-15 21:56:59	Oberbuntu	sounded goddamn fascinating
+2015-10-15 21:58:42	Oberbuntu	meh maybe i'll take the nap anyway and see if i want to hit her up later tonight
+2015-10-15 21:58:48	Oberbuntu	that sounds like good plan right
+2015-10-15 21:59:29	indeedwatson	why would you not wanna
+2015-10-15 21:59:36	indeedwatson	a cute tall female wants to talk to you irl
+2015-10-15 22:02:14	Oberbuntu	i kinda bailed on her last night she wanted to meet up now i feel weird
+2015-10-15 22:02:15	Oberbuntu	idk
+2015-10-15 22:02:19	Oberbuntu	my autism is leaking
+2015-10-15 22:03:16	indeedwatson	ur gonna make me upset
+2015-10-15 22:04:19	Oberbuntu	y
+2015-10-15 22:04:53	indeedwatson	cause you have everything in your favor and you just wanna do nuthin
+2015-10-15 22:05:18	Oberbuntu	imma take a nap now which is oddly doing something
+2015-10-15 22:05:33	Oberbuntu	proactive
+2015-10-15 22:06:26	indeedwatson	not it's not
+2015-10-15 22:06:30	indeedwatson	it's running away
+2015-10-15 22:07:00	Oberbuntu	it's not running away it's making it so that i can actually get coffee tonight wihtout falling asleep on the grill
+2015-10-15 22:07:13	indeedwatson	maybe she likes that
+2015-10-15 22:07:19	indeedwatson	wants to touch youy while you sleep
+2015-10-15 22:07:34	Oberbuntu	i'd be okay with that
+2015-10-15 22:07:41	Oberbuntu	though not on a first date ;)
+2015-10-15 22:08:47	Oberbuntu	wow
+2015-10-15 22:09:11	indeedwatson	:0)
+2015-10-15 22:09:32	Oberbuntu	nn watty
+2015-10-15 22:10:02	indeedwatson	you better have good news when you come back
+2015-10-15 22:10:14	Oberbuntu	from sleeping?
+2015-10-15 22:10:20	Oberbuntu	s/sleep/nap
+2015-10-15 22:11:16	indeedwatson	from interacting with a female
+2015-10-15 22:12:52	Oberbuntu	that's potentially after napping
+2015-10-15 22:12:55	Oberbuntu	but whatever
+2015-10-15 22:12:56	Oberbuntu	nn
+2015-10-15 22:16:16	«	Oberbuntu (OberonTheSe@Snoonet-n2p.rvp.rahg2g.IP) has quit (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+2015-10-15 23:23:45	Oberbuntu	nigga
+2015-10-15 23:23:48	Oberbuntu	i can't sleep
+2015-10-15 23:23:56	Oberbuntu	i think it's the curse of the watson sham
+2015-10-15 23:23:59	Oberbuntu	shame
+2015-10-15 23:24:00	Oberbuntu	-_-
+2015-10-15 23:30:05	indeedwatson	wut
+2015-10-15 23:30:23	Oberbuntu	knowing that you were dissapoint
+2015-10-15 23:30:36	indeedwatson	so you already know you won't see her
+2015-10-15 23:30:51	Oberbuntu	i just messaged her to see if she's still down
+2015-10-15 23:30:55	Oberbuntu	and she said yeah
+2015-10-15 23:31:10	indeedwatson	then i won't be disappoint
+2015-10-15 23:36:18	Oberbuntu	ugh this is too much work
+2015-10-15 23:36:29	Oberbuntu	i could have jacked off in about 15 minutes
+2015-10-15 23:36:33	indeedwatson	stop fucking whinning
+2015-10-15 23:36:42	Oberbuntu	and then gone to get dinner and watched some bjj on youtube
+2015-10-15 23:36:44	Oberbuntu	called it a night
+2015-10-15 23:36:52	Oberbuntu	lol why
+2015-10-15 23:37:02	indeedwatson	would you not give up all that for a kiss
+2015-10-15 23:37:15	Oberbuntu	a kiss? prob would not give that up for a kiss
+2015-10-15 23:38:35	Oberbuntu	watson how many different grills have you had sex with
+2015-10-15 23:38:44	indeedwatson	you might be gayt
+2015-10-15 23:38:46	indeedwatson	gay
+2015-10-15 23:38:57	indeedwatson	uh not enough to tell
+2015-10-15 23:39:50	Oberbuntu	is the number >= 1?
+2015-10-15 23:40:09	Oberbuntu	i'm trying very nicely to ask if you're a virgin
+2015-10-15 23:42:00	indeedwatson	no
+2015-10-15 23:42:11	Oberbuntu	so then what's the number
+2015-10-15 23:42:25	indeedwatson	im not telling
+2015-10-15 23:42:30	Oberbuntu	lmao why
+2015-10-15 23:42:40	Oberbuntu	you're being a weirdo
+2015-10-15 23:42:48	Oberbuntu	i'm only at 5, hardly a playboy
+2015-10-15 23:44:29	indeedwatson	you don't accept me in fb but im the weirdo
+2015-10-15 23:44:52	Oberbuntu	tbf you're not a real human on fb
+2015-10-15 23:45:22	indeedwatson	why would you give a shit
+2015-10-15 23:45:26	indeedwatson	it's a stupid site
+2015-10-15 23:45:28	Oberbuntu	you're a picture of a retreiver with 50 friends
+2015-10-15 23:45:40	Oberbuntu	and a pseudoname
+2015-10-15 23:46:16	indeedwatson	and you're pictures of gay sex in robes
+2015-10-15 23:46:42	Oberbuntu	because privacy is a two way street, the more i think about it it's weird for me to give you unwavering access to pictures of me over the past ten years and cliffnotes of all the places i've been when i don't really have any clue what you look like or what your name is
+2015-10-15 23:46:59	indeedwatson	you know what i look like
+2015-10-15 23:47:04	indeedwatson	an my name isn't a secret
+2015-10-15 23:47:09	Oberbuntu	i might have seen you for a moment once
+2015-10-15 23:47:15	Oberbuntu	but i don't even think it was a whole face
+2015-10-15 23:47:38	indeedwatson	and why you care about privacy when it comes to someone you know for months but you don't care about privacy from strangers who can read your whole message history and more
+2015-10-15 23:47:43	Oberbuntu	well if it's not a secret i don't know it
+2015-10-15 23:47:46	indeedwatson	ive posted pics, im sure you've seen it
+2015-10-15 23:48:00	Oberbuntu	js
+2015-10-15 23:48:03	indeedwatson	my name's German Prida
+2015-10-15 23:48:09	indeedwatson	you just don't pay attention i guess
+2015-10-15 23:48:13	Oberbuntu	you're my e-brother for sure
+2015-10-15 23:48:26	Oberbuntu	fair enough
+2015-10-15 23:48:27	Oberbuntu	ty
+2015-10-15 23:48:28	indeedwatson	i really don't get that privacy thing tho
+2015-10-15 23:48:31	indeedwatson	pot does the same
+2015-10-15 23:48:44	indeedwatson	doesn't want to share pics showing her face on irc
+2015-10-15 23:49:08	indeedwatson	but any pic posted in fb or even saved in fb in private can be seen by some stranger
+2015-10-15 23:49:11	Oberbuntu	yeah i totally didn't mean to put that picture in the main channel that day
+2015-10-15 23:49:18	Oberbuntu	it was an accident with newlines
+2015-10-15 23:49:28	indeedwatson	which pic
+2015-10-15 23:49:30	Oberbuntu	but after that the floodgates were kinda open
+2015-10-15 23:49:41	Oberbuntu	the first and only time i've put my face in irc
+2015-10-15 23:49:46	Oberbuntu	you were there for sure
+2015-10-15 23:50:02	indeedwatson	i mean with her i sort of get it because she doesn't know much i guess, or is naive about internet privacy
+2015-10-15 23:50:39	indeedwatson	i just find it weird
+2015-10-15 23:50:49	Oberbuntu	lol we're all naive about privacy in general
+2015-10-15 23:50:54	Oberbuntu	no one understands the whole system
+2015-10-15 23:51:01	indeedwatson	but you are tech-savvy
+2015-10-15 23:51:18	Oberbuntu	i obviously understand the internet and software more than you but the hardware issues are way over my head
+2015-10-15 23:51:20	indeedwatson	i mean pot maybe doesn't even know who Snowden is
+2015-10-15 23:51:31	Oberbuntu	and i've succumbed to a lot of it
+2015-10-15 23:51:48	Oberbuntu	i only do the stuff that takes the least effort
+2015-10-15 23:51:55	Oberbuntu	privacy badger and ghostery and what not
+2015-10-15 23:51:57	Oberbuntu	vpn
+2015-10-15 23:52:05	indeedwatson	i don't think it's a secret or that you need to know much to know google and fb aren't private
+2015-10-15 23:52:12	Oberbuntu	lol right
+2015-10-15 23:52:29	Oberbuntu	but imo it's worth it to give up that privacy for the convenience
+2015-10-15 23:52:38	Oberbuntu	my uncle got rid of his cell phone and computer
+2015-10-15 23:52:46	Oberbuntu	insisted that i send him postal mail to talk to him
+2015-10-15 23:52:55	Oberbuntu	i just stopped talking to him because it's too much work
+2015-10-15 23:53:15	indeedwatson	so it's worth a random NSA dude looking at your donger whenever he wants but someone you talk to for months seeing that you were in las vegas with hookers is crossing a line?
+2015-10-15 23:53:18	Oberbuntu	i have a fb chat with my two best friends that we talk in every single day all day.
+2015-10-15 23:53:58	indeedwatson	yeah i use fb too for that convenience, i just don't upload my life to it
+2015-10-15 23:54:05	Oberbuntu	that's worth the tradeoff for me. well yeah there needs to be a tradeoff between you and i too right?
+2015-10-15 23:54:10	indeedwatson	not just cause of privacy, i just don't enjoy it
+2015-10-15 23:54:32	indeedwatson	i dont like taking pics of me, i don't like writing random posts
+2015-10-15 23:54:44	Oberbuntu	if you go on my facebook you'll see that almost the only things that get posted are either friends posting bjj techniques or me looking for people to go watch ufc with :P
+2015-10-15 23:55:31	indeedwatson	well the downside of that is that strangers can know your hobbies and the places and times you will be
+2015-10-15 23:55:47	Oberbuntu	well at least the strangers thing should be fairly minimized
+2015-10-15 23:56:01	Oberbuntu	without being my friend you shouldn't be able to see much on my facebook right?
+2015-10-15 23:56:16	Oberbuntu	they make it kinda hard to be sure that everything is always set to friends only
+2015-10-15 23:56:24	indeedwatson	im talking about people who have access to your fb that you don't know about
+2015-10-15 23:56:37	Oberbuntu	like what scraping bots?
+2015-10-15 23:56:47	Oberbuntu	agency that have infiltrated fb
+2015-10-15 23:57:03	indeedwatson	dunno
+2015-10-15 23:57:27	Oberbuntu	shit i refuse to talk about drugs over facebook chat, i know that there is business going on
+2015-10-15 23:57:35	Oberbuntu	but it's still worth the freedom
+2015-10-15 23:57:37	Oberbuntu	imo
+2015-10-15 23:57:45	indeedwatson	i just don't see what the worst possible scenario of me seeing that information could be, compared to people who already could have access
+2015-10-15 23:58:17	Oberbuntu	my grandma posted on a picture of me with world bjj champion roberto 'cyborg' abreu and told me that we are both handsome men
+2015-10-15 23:58:20	Oberbuntu	that shit is priceless
+2015-10-15 23:58:27	indeedwatson	lol
+2015-10-15 23:58:38	Oberbuntu	chill out nigga i added you
+2015-10-15 23:58:55	indeedwatson	im chill it's just weird to me like i said
+2015-10-15 23:59:12	Oberbuntu	and i actually do recognize your mug
+2015-10-15 23:59:15	Oberbuntu	i must have seen it once
+2015-10-15 23:59:19	Oberbuntu	-_-
+2015-10-15 23:59:31	indeedwatson	im not mad or anything, and the main reason is cause you're so bipolar with irc nicks i don't know where to write you when you're offline
+2015-10-15 23:59:49	indeedwatson	i told you, you don't pay attention
+2015-10-15 23:59:55	indeedwatson	and those pictures are very old
+2015-10-16 00:00:01	indeedwatson	and not taken by me
+2015-10-16 00:00:22	Oberbuntu	well now you can write me on fb
+2015-10-16 00:00:31	Oberbuntu	i have fb messaging on 24/7
+2015-10-16 00:00:57	Oberbuntu	if you can't get a hold of me their i'm either legitimately indisposed or am ignoring you for reals :P
+2015-10-16 00:01:04	Oberbuntu	there*
+2015-10-16 00:02:00	Oberbuntu	i agree with you about taking pictures though
+2015-10-16 00:02:11	Oberbuntu	i really do wish someone would force me to take a picture :P
+2015-10-16 00:02:23	indeedwatson	if im out i fb scarcely cause i don't have the app, only the slow ass browser
+2015-10-16 00:02:26	Oberbuntu	besides my bjj pictures i don't have anything remotely recent or satisfying
+2015-10-16 00:02:44	indeedwatson	none of my irl friends are picture people either
+2015-10-16 00:03:11	indeedwatson	those pics on fb where with a group of people i don't see anymore
+2015-10-16 00:03:58	Oberbuntu	ah
+2015-10-16 00:04:36	indeedwatson	my friends only take pictures of memes
+2015-10-16 00:04:36	Oberbuntu	#bwf irc attracts some weirdos
+2015-10-16 00:04:40	Oberbuntu	you and i not exempt
+2015-10-16 00:04:55	indeedwatson	i added rhine recently cause im curious
+2015-10-16 00:05:12	Oberbuntu	curious about what
+2015-10-16 00:05:20	Oberbuntu	she's probably a legit insane person
+2015-10-16 00:05:40	indeedwatson	why she insists on referring to herself as a dude
+2015-10-16 00:05:51	Oberbuntu	she likes the game and the attention
+2015-10-16 00:06:05	indeedwatson	but she was quiet for a long time
+2015-10-16 00:06:09	indeedwatson	liek rudantu
+2015-10-16 00:06:29	indeedwatson	im not sure if you were here back then but he was quiet and normal
+2015-10-16 00:06:36	indeedwatson	and suddenly he became a memelord
+2015-10-16 00:07:17	Oberbuntu	rudantu is super next level
+2015-10-16 00:07:35	Oberbuntu	how long have you been coming to this chat? longer than me i think right?
+2015-10-16 00:07:46	indeedwatson	like a year i gues
+2015-10-16 00:07:49	indeedwatson	im bad with time
+2015-10-16 00:08:17	Oberbuntu	before me?
+2015-10-16 00:08:21	Oberbuntu	me too
+2015-10-16 00:08:29	indeedwatson	no idk when you started coming
+2015-10-16 00:09:53	indeedwatson	at least we have 3 gurls now
+2015-10-16 00:13:06	Oberbuntu	that one new girl is cute as fuck
+2015-10-16 00:13:57	indeedwatson	when did she post pic?
+2015-10-16 00:14:03	Oberbuntu	idk
+2015-10-16 00:14:07	indeedwatson	link
+2015-10-16 00:14:14	indeedwatson	isn't she like 40
+2015-10-16 00:14:24	Oberbuntu	idk
+2015-10-16 00:14:28	indeedwatson	link
+2015-10-16 00:14:33	Oberbuntu	may or may not be thinking of same person
+2015-10-16 00:14:38	Oberbuntu	i didn't save a link
+2015-10-16 00:14:39	Oberbuntu	wtf
+2015-10-16 00:14:44	indeedwatson	wow noob
+2015-10-16 00:14:47	indeedwatson	what girl then
+2015-10-16 00:14:59	indeedwatson	fuck i forgot her name
+2015-10-16 00:15:10	indeedwatson	something with T
+2015-10-16 00:15:58	Oberbuntu	doesn't even matter
+2015-10-16 00:16:20	Oberbuntu	man it feels so late because i tried to sleep for a couple hours
+2015-10-16 00:16:29	Oberbuntu	but this girl won't be out of work for like 3 hours
+2015-10-16 00:16:33	Oberbuntu	it feels late as fuck
+2015-10-16 00:16:36	indeedwatson	nap now
+2015-10-16 00:16:37	Oberbuntu	i can still get food
+2015-10-16 00:16:45	Oberbuntu	nah i won't be able to fall asleep
+2015-10-16 00:26:55	indeedwatson	why not
