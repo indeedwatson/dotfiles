@@ -10,6 +10,7 @@ case "$1" in
     ohn) channel=outerheaven;;
     prec) channel=previouslyrecorded_live;;
     tftv) channel=teamfortresstv;;
+    dist) channel=distortion2;;
     $1) channel=$1;;
 esac
 
