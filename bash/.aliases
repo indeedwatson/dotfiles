@@ -4,6 +4,7 @@ alias santzo='twitch santzo'
 alias tftv='twitch tftv'
 alias ohn='twitch ohn'
 alias prec='twitch prec'
+alias dist='twitch dist'
 
 # global aliases
 alias l='ls -la'

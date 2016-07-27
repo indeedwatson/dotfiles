@@ -46,11 +46,11 @@ floating_modifier $mod
 for_window [class="Steam" title="^Friends$"] resize shrink width 150 px or 30 ppt
 for_window [class="Steam" title="(?i)chat$"] resize shrink width 100 px or 5 ppt
 # Terminal (mod+Enter)
-bindsym $mod+t exec urxvt256c
+bindsym $mod+t exec termite
 for_window [class="^URxvt$" instance="^SideTerm$"] resize shrink width 270 px or 18 ppt
 
 # start rofi with j4dmenu (mod+t)
-bindsym $mod+Shift+space exec j4-dmenu-desktop --dmenu='rofi -i -dmenu -p "> " -show window -font "Inconsolata-dz 10" -no-disable-history -levenshtein-sort -fg $green -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85'
+bindsym $mod+Shift+d exec j4-dmenu-desktop --dmenu='rofi -i -dmenu -p "> " -show window -font "Inconsolata-dz 10" -no-disable-history -levenshtein-sort -fg $green -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85'
 bindsym $mod+space exec rofi -show run -run-list-command ". ~/.bashrc_aliases" -run-command "/bin/bash -i -c '{cmd}'" -rnow
 
 # firefox
@@ -111,6 +111,7 @@ exec --no-startup-id  firefox
 exec bitlbee -F
 exec compton --config ~/.config/compton.conf -b
 exec --no-startup-id deluge
+exec mount -t vboxsf share ~/media/
 # exec --no-startup-id transmission-gtk
 
 #...........
