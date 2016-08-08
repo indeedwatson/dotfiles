@@ -6,7 +6,8 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
+
+[ -z "$DISPLAY" -a "$(fgconsole)" -eq 1 ] && exec startx
