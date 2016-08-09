@@ -10,8 +10,6 @@ EDITOR=vim
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-# User specific aliases and functions
-
 # Normal Colors
 Black='\e[0;30m'        # Black
 Red='\e[0;31m'          # Red
@@ -21,7 +19,6 @@ Blue='\e[0;34m'         # Blue
 Purple='\e[0;35m'       # Purple
 Cyan='\e[0;36m'         # Cyan
 White='\e[0;37m'        # White
-
 # Bold
 BBlack='\e[1;30m'       # Black
 BRed='\e[1;31m'         # Red
@@ -31,7 +28,6 @@ BBlue='\e[1;34m'        # Blue
 BPurple='\e[1;35m'      # Purple
 BCyan='\e[1;36m'        # Cyan
 BWhite='\e[1;37m'       # White
-
 # Background
 On_Black='\e[40m'       # Black
 On_Red='\e[41m'         # Red
