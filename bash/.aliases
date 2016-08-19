@@ -7,18 +7,19 @@ alias prec='twitch prec'
 alias dist='twitch dist'
 
 # global aliases
-alias l='ls -la'
+alias l='ls -a'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias upgrade='sudo dnf upgrade --exclude=kernel*,xorg*'
-alias install='sudo dnf install'
 alias pip3='sudo python3 -m pip'
 alias g='git'
 alias gitc='git clone'
 alias v=vim
+alias suvim='sudo vim'
 alias rr='rm -rf'
 alias rbash='xrdb ~/.Xresources'
+alias pacget='sudo pacman -S'
+alias pacu='sudo pacman -Syu'
 
 # List aliases
 alias listaliases="alias | sed 's/=.*//'"
