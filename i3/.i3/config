@@ -72,7 +72,8 @@ bindsym $mod+o exec termite -e htop -u yama
 
 # assign apps to workspaces
 assign [class="Firefox"] 1: web
-assign [title="weechat"] 2:  irc
+assign [title="WeeChat 1.5"] 2:  chat 
+assign [class="discord"] 2:  chat
 assign [class="mpv"] 4: video
 assign [class="Steam"]  steam
 # youtube sticky
@@ -82,8 +83,8 @@ bindsym $mod+y fullscreen disable, floating enable, resize set 400 300, sticky e
 for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-for_window [class="(?i)deluge"] floating enable
-for_window [class="(?i)deluge"] move scratchpad
+for_window [class="(?i)transmission-gtk"] floating enable
+for_window [class="(?i)transmission-gtk"] move scratchpad
 for_window [class="(?i)xfce4-taskmanager"] floating enable
 force_focus_wrapping yes
 new_window pixel 2
@@ -91,7 +92,7 @@ new_float pixel 2
 # Go back to previous workspace
 workspace_auto_back_and_forth yes
 for_window [class="mpv"] border pixel 0
-for_window [class="(?i)transmission-gtk"] border pixel 0
+# for_window [class="(?i)transmission-gtk"] border pixel 0
 # focus not follow mose
 focus_follows_mouse no
 popup_during_fullscreen smart
@@ -109,10 +110,8 @@ exec dropbox start
 exec --no-startup-id exec termite -e weechat
 exec --no-startup-id  firefox
 exec bitlbee -F
-# exec compton --config ~/.config/compton.conf -b
 exec --no-startup-id transmission-gtk
-# exec mount -t vboxsf share ~/media/
-
+exec discord-canary
 #...........
 # Keybinds i3
 #...........
