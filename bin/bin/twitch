@@ -27,6 +27,4 @@ case "${2:-b}" in
 esac
 
 # exec livestreamer
-livestreamer $twitch$channel $quality $mpv
-
-
+livestreamer $twitch$channel $quality $mpv &
