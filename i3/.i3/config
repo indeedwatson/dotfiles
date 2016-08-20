@@ -57,27 +57,18 @@ bindsym $mod+space exec rofi -show run -run-list-command ". ~/.bashrc_aliases" -
 bindsym $mod+F1 [class="Firefox"] exec ~/.i3/i3_focus_or_run.sh -t firefox firefox
 # steam
 bindsym $mod+F2 [class="Steam"] exec ~/.i3/i3_focus_or_run.sh -t steam steam
-# mpsyt
-bindsym $mod+F3 exec urxvt -e mpsyt, exec urxvt -e alsamixer
-# edit .bashrc
-bindsym $mod+F10 exec termite -name SideTerm -e sh -c "vim ~/.bashrc"
-# edit .Xresources
-bindsym $mod+F11 exec termite -name SideTerm -e sh -c "vim ~/.Xresources"
-# config
-bindsym $mod+F12 exec termite -name SideTerm -e sh -c "vim ~/.i3/config"
 # file manager
 bindsym $mod+p exec pcmanfm
-# task manager
+# task manager (doesn't work)
 bindsym $mod+o exec termite -e htop -u yama
 
 # assign apps to workspaces
 assign [class="Firefox"] 1: web
-assign [title="WeeChat 1.5"] 2:  chat 
 assign [class="discord"] 2:  chat
 assign [class="mpv"] 4: video
 assign [class="Steam"]  steam
 # youtube sticky
-bindsym $mod+y fullscreen disable, floating enable, resize set 400 300, sticky enable, move window to position 1515 20
+# bindsym $mod+y fullscreen disable, floating enable, resize set 400 300, sticky enable, move window to position 1515 20
 
 # Layout
 for_window [class="(?i)feh"] floating enable
@@ -107,7 +98,7 @@ exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
 # Startup
 exec --no-startup-id xmodmap ~/.Xmodmap
 exec dropbox start
-exec --no-startup-id exec termite -e weechat
+exec --no-startup-id i3-msg 'workspace 2:  chat; exec termite -e weechat'
 exec --no-startup-id  firefox
 exec bitlbee -F
 exec --no-startup-id transmission-gtk
