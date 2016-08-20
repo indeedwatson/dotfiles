@@ -22,4 +22,4 @@ alias pacget='sudo pacman -S'
 alias pacu='sudo pacman -Syu'
 
 # List aliases
-alias listaliases="alias | sed 's/=.*//'"
+alias aliasls="alias | sed 's/=.*//'"
