@@ -1,0 +1,38 @@
+*.foreground:   #FFFFE2
+*.background:   #110025
+*.cursorColor:  #f595a7
+*.color0:       #404040
+*.color8:       #262626
+*.color1:       #b9454b
+*.color9:       #e75252
+*.color2:       #bd8d46
+*.color10:      #dea552
+*.color3:       #f6e497
+*.color11:      #d1c180
+*.color4:       #f595a7
+*.color12:      #d1a5ad
+*.color5:       #d28e2a
+*.color13:      #b47a24
+*.color6:       #ebcd4f
+*.color14:      #b9a659
+*.color7:       #fcfae1
+*.color15:      #f3f2e7
+
+!red             #D12E15
+!light purple    #7A6677
+!dark purple     #4B1C38
+!light blue      #56CEF1
+!dark blue       #343D66
+!black           #2F153C
+!skin            #E8A96A
+!brownish        #716369
+!pink            #EF7179
+!light green     #D0D3C4
+!white           #FFFFE2
+!orange          #F58528
+!light pink      #F8E9FF
+!pale red        #B24738
+!pale blue       #5F5A6F
+!bright purple   #D63870
+
+
