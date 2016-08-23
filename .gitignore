@@ -10,3 +10,6 @@ vim/.vim/bundle/vim-indent-guides/
 vim/.vim/bundle/webapi-vim/
 vim/.vim/bundle/
 weechat/.weechat/weechat_crash_20160811_1001.log
+mpd/.config/mpd/log
+mpd/.config/mpd/pid
+mpd/.confg/mpd/state
