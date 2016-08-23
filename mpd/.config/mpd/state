@@ -1,0 +1,26 @@
+sw_volume: 78
+audio_device_state:1:default detected output
+state: pause
+current: 3
+time: 14.001000
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Classical/Bach - Partitas ect. - Pinnock/CD1/01 - Partita No.1 in Bb, BWV 825- I. Praeludium.flac
+1:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/01 - Familiarity.flac
+2:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/02 - Julep.flac
+3:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/03 - Passepied (Debussy).flac
+4:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/04 - I Blew It Off.flac
+5:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/05 - Magnet.flac
+6:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/06 - My Oh My.flac
+7:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/07 - Boll Weevil.flac
+8:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/08 - Prelude (Scriabin).flac
+9:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/09 - Forgotten.flac
+10:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/10 - Between 1st and A.flac
+11:Punch Brothers - The Phosphorescent Blues (2015) [FLAC]/11 - Little Lights.flac
+playlist_end
