@@ -1,4 +1,5 @@
 /weechat/.weechat/sec.conf
+/weecat/.weechat/logs
 default.json
 vim/.vim/bundle/delimitMate/
 vim/.vim/bundle/gist-vim/
