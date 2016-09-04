@@ -56,7 +56,7 @@ bindsym $mod+space exec rofi -show run -run-list-command ". ~/.bashrc_aliases" -
 # firefox
 bindsym $mod+F1 [class="Firefox"] exec ~/.i3/i3_focus_or_run.sh -t firefox firefox
 # steam
-bindsym $mod+F2 [class="Steam"] exec ~/.i3/i3_focus_or_run.sh -t STEAM_RUNTIME=0 steam
+bindsym $mod+F2 [class="Steam"] exec ~/.i3/i3_focus_or_run.sh -t steam steam
 # file manager
 bindsym $mod+p exec pcmanfm
 # task manager (doesn't work)
@@ -66,7 +66,7 @@ bindsym $mod+o exec termite -e htop -u yama
 assign [class="Firefox"] 1: web
 assign [class="discord"] 2:  chat
 assign [class="mpv"] 4: video
-assign [class="Steam"]  steam
+assign [class="Steam"] 5: steam
 # youtube sticky
 # bindsym $mod+y fullscreen disable, floating enable, resize set 400 300, sticky enable, move window to position 1515 20
 
