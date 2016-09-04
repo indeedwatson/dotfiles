@@ -21,6 +21,7 @@ alias rbash='xrdb ~/.Xresources'
 alias pacget='sudo pacman -S'
 alias pacu='sudo pacman -Syu'
 alias p='python'
+alias zzz='systemctl suspend'
 
 # List aliases
 alias aliasls="alias | sed 's/=.*//'"
