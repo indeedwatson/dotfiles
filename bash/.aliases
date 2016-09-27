@@ -22,6 +22,7 @@ alias pacget='sudo pacman -S'
 alias pacu='sudo pacman -Syu'
 alias p='python'
 alias zzz='systemctl suspend'
+alias stm='STEAM_RUNTIME=0 steam &'
 
 # List aliases
 alias aliasls="alias | sed 's/=.*//'"
