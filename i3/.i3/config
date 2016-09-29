@@ -63,10 +63,10 @@ bindsym $mod+p exec pcmanfm
 bindsym $mod+o exec termite -e htop -u yama
 
 # assign apps to workspaces
-assign [class="Firefox"] 1: web
-assign [class="discord"] 2:  chat
-assign [class="mpv"] 4: video
-assign [class="Steam"] 5: steam
+assign [class="Firefox"] 1:  web
+assign [class="discord"] 2:   chat
+assign [class="mpv"] 4:  video
+assign [class="Steam"] 5:  steam
 # youtube sticky
 # bindsym $mod+y fullscreen disable, floating enable, resize set 400 300, sticky enable, move window to position 1515 20
 
@@ -252,11 +252,11 @@ bindsym $mod+q scratchpad show
  		background $back
 		separator $green
  	    statusline $lightgrey
- 	#			border		background	text
- 	focused_workspace	$background	$background	$white
+ 	#			        border		background  text
+ 	focused_workspace	$grey   	$grey   	$white
     active_workspace	$background	$background	$lightgrey
  	inactive_workspace	$background	$background	$lightgrey
-    urgent_workspace	$darkred	$darkred	$white
+    urgent_workspace	$background	$background	$red
 	}
 	
 	mode dock 
