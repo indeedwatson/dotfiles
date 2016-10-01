@@ -68,6 +68,7 @@ assign [class="discord"] 2:   chat
 assign [class="Virt-manager"] 3:   virt-manager 
 assign [class="mpv"] 4:  video 
 assign [class="Steam"] 5:  steam 
+assign [class="calibre"] 6:  calibre 
 # youtube sticky
 # bindsym $mod+y fullscreen disable, floating enable, resize set 400 300, sticky enable, move window to position 1515 20
 
