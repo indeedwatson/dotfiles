@@ -100,7 +100,7 @@ exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
 # Startup
 exec --no-startup-id xmodmap ~/.Xmodmap
 exec dropbox start
-exec --no-startup-id i3-msg 'workspace 2:  chat; exec termite -e weechat'
+exec --no-startup-id i3-msg 'workspace 2:  chat ; exec termite -e weechat'
 # exec --no-startup-id  firefox
 exec bitlbee -F
 exec --no-startup-id transmission-gtk
