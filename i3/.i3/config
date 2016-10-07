@@ -102,9 +102,10 @@ exec --no-startup-id xmodmap ~/.Xmodmap
 exec dropbox start
 exec --no-startup-id i3-msg 'workspace 2:   chat ; exec termite -e weechat'
 # exec --no-startup-id  firefox
-exec bitlbee -F
+# exec bitlbee -F
 exec --no-startup-id transmission-gtk
 exec discord-canary
+exec sudo ldm -u yama
 #...........
 # Keybinds i3
 #...........
@@ -261,6 +262,7 @@ bindsym $mod+q scratchpad show
     urgent_workspace	$background	$background	$red
 	}
 	
+    tray_output none
 	mode dock 
 	strip_workspace_numbers yes
 	hidden_state hide
