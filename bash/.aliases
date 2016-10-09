@@ -23,7 +23,7 @@ alias pacu='sudo pacman -Syu'
 alias p='python'
 alias zzz='systemctl suspend'
 alias off='systemctl poweroff'
-alias stm='STEAM_RUNTIME=0 steam &'
+alias stm='DRI_PRIME=1 steam-native &'
 
 # List aliases
 alias lsalias="alias | sed 's/=.*//'"
