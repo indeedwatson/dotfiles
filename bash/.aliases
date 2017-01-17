@@ -5,6 +5,7 @@ alias tftv='twitch tftv'
 alias ohn='twitch ohn'
 alias prec='twitch prec'
 alias dist='twitch dist'
+alias gdq='twitch gamesdonequick'
 
 # global aliases
 alias l='ls -a'
