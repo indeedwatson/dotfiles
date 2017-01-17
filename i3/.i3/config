@@ -51,7 +51,7 @@ for_window [class="^termite$" instance="^SideTerm$"] resize shrink width 270 px 
 
 # start rofi with j4dmenu (mod+t)
 # bindsym $mod+Shift+D exec j4-dmenu-desktop --dmenu='rofi -i -dmenu -p "> " -show window -font "Inconsolata-dz 10" -no-disable-history -levenshtein-sort -fg $green -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85'
-bindsym $mod+space exec rofi -font "Inconsolata-dz for Powerline 11" -show combi -run-list-command ". ~/.bashrc_aliases" -run-command "/bin/bash -i -c '{cmd}'" -fuzzy -separator-style none -hide-scrollbar -rnow
+bindsym $mod+space exec rofi -font "Inconsolata-dz for Powerline 11" -show combi -run-list-command "~/.aliases" -run-command "/bin/bash -i -c '{cmd}'" -fuzzy -separator-style none -hide-scrollbar -rnow
 
 # firefox
 bindsym $mod+F1 [class="Firefox"] exec ~/.i3/i3_focus_or_run.sh -t firefox firefox
@@ -105,7 +105,10 @@ exec --no-startup-id i3-msg 'workspace 2:   chat ; exec termite -e weechat'
 # exec bitlbee -F
 exec --no-startup-id transmission-gtk
 exec discord-canary
-exec sudo ldm -d -u yama ~/kindle/
+exec "sudo ldm -d -u yama ~/kindle/"
+exec "compton -b"
+exec redshift
+
 #...........
 # Keybinds i3
 #...........
