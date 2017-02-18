@@ -25,7 +25,7 @@ alias p='python'
 alias zzz='systemctl suspend'
 alias off='systemctl poweroff'
 alias stm='DRI_PRIME=1 steam-native &'
-alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1 &'
+alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1 -no-cef-sandbox &'
 
 # List aliases
 alias lsalias="alias | sed 's/=.*//'"

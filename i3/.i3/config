@@ -73,6 +73,8 @@ assign [class="calibre"] 6:  calibre
 # bindsym $mod+y fullscreen disable, floating enable, resize set 400 300, sticky enable, move window to position 1515 20
 
 # Layout
+floating_maximum_size 1920 x 1080
+for_window [class="(?i)sxiv"] floating enable
 for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
