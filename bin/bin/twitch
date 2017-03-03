@@ -2,7 +2,6 @@
 # shortcuts for livestreamer channels and quality
 
 twitch=http://www.twitch.tv/
-mpv=--player=mpv
 
 # get channel from list of most watched channels
 case "$1" in
@@ -27,4 +26,4 @@ case "${2:-b}" in
 esac
 
 # exec livestreamer
-livestreamer $twitch$channel $quality $mpv &
+streamlink $twitch$channel $quality &
