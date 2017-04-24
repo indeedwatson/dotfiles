@@ -10,6 +10,7 @@ vim/.vim/bundle/
 mpd/.config/mpd/pid
 mpd/.confg/mpd/state
 bash/.bash_*
+log
 
 # logs and databases
 *.log
