@@ -9,6 +9,7 @@ vim/.vim/bundle/webapi-vim/
 vim/.vim/bundle/
 mpd/.config/mpd/pid
 mpd/.confg/mpd/state
+bash/.bash_*
 
 # logs and databases
 *.log
