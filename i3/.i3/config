@@ -132,10 +132,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+mod1j move left
-bindsym $mod+mod1+k move down
-bindsym $mod+mod1+l move up
-bindsym $mod+mod1+semicolon move right
+bindsym $mod+mod1h move left
+bindsym $mod+mod1+j move down
+bindsym $mod+mod1+k move up
+bindsym $mod+mod1+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+mod1+Left move left
