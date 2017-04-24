@@ -42,6 +42,6 @@ fi
 # exec bspwm
 
 # Colors based on wallpaper with https://github.com/dylanaraps/wal#dependencies
-wal -i "$(< "${HOME}/.cache/wal/wal")"
+wal -i -t "$(< "${HOME}/.cache/wal/wal")"
 
 exec i3
