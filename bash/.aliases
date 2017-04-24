@@ -12,20 +12,18 @@ alias l='ls -a'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias pip3='sudo python3 -m pip'
 alias g='git'
-alias gitc='git clone'
 alias v=vim
 alias suvim='sudo vim'
 alias rr='rm -rf'
-alias rbash='xrdb ~/.Xresources'
 alias pacget='sudo pacman -S'
 alias pacu='sudo pacman -Syu'
-alias p='python'
+alias py='python'
 alias zzz='systemctl suspend'
 alias off='systemctl poweroff'
 alias stm='DRI_PRIME=1 steam-native &'
 alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1 -no-cef-sandbox &'
+alias mkdir='mkdir -p'
 
 # List aliases
 alias lsalias="alias | sed 's/=.*//'"
