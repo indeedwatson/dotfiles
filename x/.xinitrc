@@ -30,4 +30,18 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# sxkhd &
+# # get rid of X in bspwm
+# xsetroot -cursor_name left_ptr &
+# exec feh --randomize --bg-fill ~/Pictures/wallpapers/* &
+# exec termite -e weechat &
+# exec deluged &
+# exec deluge &
+# exec discord-canary &
+# exec redshift &
+# exec bspwm
+
+# Colors based on wallpaper with https://github.com/dylanaraps/wal#dependencies
+wal -i "$(< "${HOME}/.cache/wal/wal")"
+
 exec i3
