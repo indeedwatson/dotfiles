@@ -11,24 +11,22 @@ font pango:Inconsolata-dz for Powerline 9, FontAwesome 10
 # Look
 #..........
 
-# Hybrid colors
-#set $back               #1d1F21
-set $back               #1c1c1c
-set $black              #282A2E
-set $grey               #373B41
-set $lightgrey          #707880
-set $white              #C5C8C6
-set $yellow             #F0C674
-set $red                #CC6666
-set $darkred            #A54242
-set $green              #B5BD56
+# Set colors from Xresources
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources for some reason
 
-#class                  border      backgr.     text        split
-client.focused          $green      $green      $black      $green
-client.focused_inactive $back       $back       $lightgrey  $back
-client.unfocused        $back       $grey       $lightgrey  $back
-client.urgent           $red        $red        $black      $black
-client.background       $background
+set_from_resource $fg           i3wm.color7 #f0f0f0
+set_from_resource $bg           i3wm.color0 #f0f0f0
+set_from_resource $urgent       i3wm.color3 #f0f0f0
+set_from_resource $unfocused    i3wm.color10 #f0f0f0
+set_from_resource $focused      i3wm.color4 #f0f0f0
+
+#class                  border      backgr.     text     split
+client.focused          $focused    $focused    $fg      $focused
+client.focused_inactive $bg         $bg         $fg      $bg
+client.unfocused        $bg         $bg         $fg      $bg
+client.urgent           $urgent     $urgent     $fg      $bg
+client.background       $bg
 
 #..........
 # Applications
@@ -57,8 +55,8 @@ bindsym $mod+F1 [class="Firefox"] exec ~/.i3/i3_focus_or_run.sh -t firefox firef
 bindsym $mod+F2 [class="Steam"] exec ~/.i3/i3_focus_or_run.sh -t steam steam
 # file manager
 bindsym $mod+p exec pcmanfm
-# task manager (doesn't work)
-bindsym $mod+o exec termite -e htop -u yama
+# Cycle wallpapers and apply new colorscheme
+bindsym $mod+o exec "wal -t -i ~/Pictures/Fetch -o wal-set"; restart
 
 # assign apps to workspaces
 assign [class="Firefox"] 1:  web 
@@ -98,7 +96,7 @@ gaps outer 0
 bindsym $mod+mod1+X exec --no-startup-id ~/.lock.sh
 
 # wallpaper
-exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
+# exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
 
 # Startup
 exec_always --no-startup-id ~/.config/polybar/launch.sh
