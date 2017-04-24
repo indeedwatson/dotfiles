@@ -10,8 +10,6 @@ font pango:Inconsolata-dz for Powerline 9, FontAwesome 10
 #..........
 # Look
 #..........
-new_window pixel 2
-new_float pixel 2
 
 # Hybrid colors
 #set $back               #1d1F21
@@ -77,9 +75,9 @@ floating_maximum_size 1920 x 1080
 for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-for_window [class="(?i)transmission-gtk"] floating enable
-for_window [class="(?i)transmission-gtk"] move scratchpad
-force_focus_wrapping yes
+for_window [class="(?i)deluge"] floating enable
+for_window [class="(?i)deluge"] move scratchpad
+force_focus_wrapping no
 new_window pixel 2
 new_float pixel 2
 # Go back to previous workspace
@@ -88,6 +86,12 @@ workspace_auto_back_and_forth yes
 # focus not follow mose
 focus_follows_mouse no
 popup_during_fullscreen smart
+# disable windows titlebars for i3-gaps
+for_window [class="^.*"] border pixel 3
+
+# gaps
+gaps inner 15
+gaps outer 0
 
 # lockscreen
 # exec --no-startup-id xautolock -time 10 -locker '~/.lock.sh'
@@ -97,12 +101,12 @@ bindsym $mod+mod1+X exec --no-startup-id ~/.lock.sh
 exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpapers/*
 
 # Startup
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id xmodmap ~/.Xmodmap
 exec dropbox start
 exec --no-startup-id i3-msg 'workspace 2:   chat ; exec termite -e weechat'
-# exec --no-startup-id  firefox
-# exec bitlbee -F
-exec --no-startup-id transmission-gtk
+exec --no-startup-id deluged
+exec --no-startup-id deluge
 exec discord-canary
 exec "sudo ldm -d -u yama ~/kindle/"
 exec "compton -b"
@@ -116,10 +120,10 @@ exec redshift
 bindsym $mod+x kill
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -140,7 +144,7 @@ bindsym $mod+mod1+Up move up
 bindsym $mod+mod1+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -225,10 +229,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -249,24 +253,24 @@ bindsym $mod+q scratchpad show
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
- bar {
-    status_command i3blocks -c ~/.i3/i3blocks.conf
- 	position top
- 	#tray_output primary
- 	colors {
- 		background $back
-		separator $green
- 	    statusline $lightgrey
- 	#			        border		background  text
- 	focused_workspace	$grey   	$grey   	$white
-    active_workspace	$background	$background	$lightgrey
- 	inactive_workspace	$background	$background	$lightgrey
-    urgent_workspace	$background	$background	$red
-	}
-	
-    tray_output none
-	mode dock 
-	strip_workspace_numbers yes
-	hidden_state hide
-	modifier Mod4
-}
+#  bar {
+#     status_command i3blocks -c ~/.i3/i3blocks.conf
+#  	position top
+#  	#tray_output primary
+#  	colors {
+#  		background $back
+# 		separator $green
+#  	    statusline $lightgrey
+#  	#			        border		background  text
+#  	focused_workspace	$grey   	$grey   	$white
+#     active_workspace	$background	$background	$lightgrey
+#  	inactive_workspace	$background	$background	$lightgrey
+#     urgent_workspace	$background	$background	$red
+# 	}
+# 	
+#     tray_output none
+# 	mode dock 
+# 	strip_workspace_numbers yes
+# 	hidden_state hide
+# 	modifier Mod4
+# }
