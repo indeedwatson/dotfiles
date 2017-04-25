@@ -299,4 +299,14 @@
     appname = "weechat"
     format = "%s: %b"
     urgency = normal
+
+[torrent_complete]
+appname = Deluge
+summary ="Torrent complete"
+urgency = critical
+
+[twitch]
+appname = twitchnotifier
+summary = "Twitch * just went live"
+
 # vim: ft=cfg
