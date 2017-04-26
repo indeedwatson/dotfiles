@@ -6,6 +6,8 @@ alias ohn='twitch ohn'
 alias prec='twitch prec'
 alias dist='twitch dist'
 alias gdq='twitch gamesdonequick'
+# Check for online channels
+alias tcc='twitchnotifier -c tacticcarrotcake -n'
 
 # global aliases
 alias l='ls -a'
@@ -16,8 +18,8 @@ alias g='git'
 alias v=vim
 alias suvim='sudo vim'
 alias rr='rm -rf'
-alias pacget='sudo pacman -S'
-alias pacu='sudo pacman -Syu'
+alias pacget='pacaur -S'
+alias pacu='pacaur -Syu'
 alias py='python'
 alias zzz='systemctl suspend'
 alias off='systemctl poweroff'
