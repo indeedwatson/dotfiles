@@ -45,9 +45,8 @@ for_window [class="Steam" title="(?i)chat$"] resize shrink width 100 px or 5 ppt
 bindsym $mod+t exec termite
 for_window [class="^termite$" instance="^SideTerm$"] resize shrink width 270 px or 18 ppt
 
-# start rofi with j4dmenu (mod+t)
-# bindsym $mod+Shift+D exec j4-dmenu-desktop --dmenu='rofi -i -dmenu -p "> " -show window -font "Inconsolata-dz 10" -no-disable-history -levenshtein-sort -fg $green -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85'
-bindsym $mod+space exec rofi -font "Inconsolata-dz for Powerline 11" -show combi -run-list-command "~/.aliases" -run-command "/bin/bash -i -c '{cmd}'" -fuzzy -separator-style none -hide-scrollbar -rnow
+# Rofi
+bindsym $mod+space exec rofi -show combi -run-list-command "~/.aliases" -run-command "/bin/zsh -i -c '{cmd}'" -rnow
 
 # firefox
 bindsym $mod+F1 [class="Firefox"] exec ~/.i3/i3_focus_or_run.sh -t firefox firefox
@@ -80,16 +79,37 @@ new_window pixel 2
 new_float pixel 2
 # Go back to previous workspace
 workspace_auto_back_and_forth yes
-# for_window [class="mpv"] border pixel 0
 # focus not follow mose
 focus_follows_mouse no
 popup_during_fullscreen smart
+
+
+# # # GAPS # # #
+#
 # disable windows titlebars for i3-gaps
 for_window [class="^.*"] border pixel 3
-
-# gaps
+# gaps size
+# inner space between windows
 gaps inner 15
+# space between windows and border of the screen
 gaps outer 0
+# draw borders only if there's more than one window
+smart_borders on
+# disable gaps for mpv
+workspace 4 gaps inner 0
+
+# resize gaps
+bindsym $mod+c mode "gaps"
+mode "gaps" {
+    bindsym j gaps inner current plus 5
+    bindsym k gaps inner current minus 5
+    bindsym h gaps outer current plus 5
+    bindsym l gaps outer current minus 5
+    bindsym $mod+c mode "default"
+    bindsym $mod+r mode "resize"
+    bindsym Enter mode "default"
+    bindsym Escape mode "default"
+    }
 
 # lockscreen
 # exec --no-startup-id xautolock -time 10 -locker '~/.lock.sh'
@@ -102,10 +122,10 @@ bindsym $mod+mod1+X exec --no-startup-id ~/.lock.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id xmodmap ~/.Xmodmap
 exec dropbox start
+exec discord-canary
 exec --no-startup-id i3-msg 'workspace 2:   chat ; exec termite -e weechat'
 exec --no-startup-id deluged
 exec --no-startup-id deluge
-exec discord-canary
 exec "sudo ldm -d -u yama ~/kindle/"
 exec "compton -b"
 exec redshift
@@ -241,6 +261,7 @@ mode "resize" {
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
 		}
 
 # Make the currently focused window a scratchpad
