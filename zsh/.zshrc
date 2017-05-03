@@ -48,3 +48,6 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
+
+# Import colorscheme from 'wal'
+(wal -r &)
