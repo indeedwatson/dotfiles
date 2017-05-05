@@ -49,7 +49,7 @@ font-3 = "fontawesome:size=10;1"
 
 modules-left = bspwm i3
 modules-center = xwindow 
-modules-right = volume filesystem filesystem2 memory cpu eth temperature weather date powermenu
+modules-right = volume filesystem filesystem2 temperature weather date time powermenu
 
 ; tray-position = right
 ; tray-padding = 1
@@ -251,17 +251,20 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
-
-time = %H:%M
-time-alt = %H:%M:%S
+date = " %d/%m"
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #d0d0ff
+# format-underline = #d0d0ff
+label = %date% 
 
-label = %date% %time%
+[module/time]
+type = internal/date
+interval = 5
+time = " %H:%M"
+format-prefix = 
+format-prefix-foreground = ${colors.foreground}
+label = %time%
 
 [module/volume]
 type = internal/volume
@@ -351,7 +354,7 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
