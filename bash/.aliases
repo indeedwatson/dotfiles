@@ -16,18 +16,16 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias g='git'
 alias v=vim
-alias suvim='sudoedit'
+alias suvim='sudo vim'
 alias rr='rm -rf'
 alias pacget='pacaur -S'
 alias pacu='pacaur -Syu'
 alias py='python'
 alias zzz='systemctl suspend'
 alias off='systemctl poweroff'
-alias stm='DRI_PRIME=1 steam &'
-alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1 -no-cef-sandbox &'
+alias steam-wine='DRI_PRIME=1 WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1 -no-cef-sandbox &'
 alias mkdir='mkdir -p'
 alias pstbn='xclip -o | pbpst -S'
-alias mpv='DRI_PRIME=1 mpv'
-
+alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi'
 # List aliases
 alias lsalias="alias | sed 's/=.*//'"
