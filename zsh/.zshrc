@@ -25,15 +25,6 @@ promptinit
 
 EDITOR=vim
 
-# Powerline
-# if [ -f /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh ];
-#     then
-#         powerline-daemon -q
-#         POWERLINE_BASH_CONTINUATION=1
-#         POWERLINE_BASH_SELECT=1
-#         . /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
-# fi
-
 if [ -f $HOME/.aliases ]; then
     . $HOME/.aliases
 fi
@@ -48,6 +39,14 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
+
+# start ssh-agent automatically
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
 
 # Import colorscheme from 'wal'
 (wal -r &)
