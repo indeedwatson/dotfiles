@@ -26,4 +26,4 @@ case "${2:-b}" in
 esac
 
 # exec livestreamer
-streamlink $twitch$channel $quality &
+DRI_PRIME=1 VDPAU_DRIVER=radeonsi streamlink $twitch$channel $quality &
