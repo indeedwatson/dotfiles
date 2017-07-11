@@ -27,6 +27,9 @@ Plugin 'https://github.com/jeetsukumaran/vim-buffergator'
 Plugin 'https://github.com/dylanaraps/wal'
 " status/tabline
 Plugin 'https://github.com/vim-airline/vim-airline'
+" markdown
+Plugin 'godlygeek/tabular'
+Plugin 'https://github.com/plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,6 +58,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set relativenumber
 " syntax
 set t_Co=256
 syntax on
