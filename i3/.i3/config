@@ -19,7 +19,7 @@ set_from_resource $fg           i3wm.color7 #f0f0f0
 set_from_resource $bg           i3wm.color0 #f0f0f0
 set_from_resource $urgent       i3wm.color3 #f0f0f0
 set_from_resource $unfocused    i3wm.color10 #f0f0f0
-set_from_resource $focused      i3wm.color4 #f0f0f0
+set_from_resource $focused      i3wm.color2 #f0f0f0
 
 #class                  border      backgr.     text     split
 client.focused          $focused    $focused    $fg      $focused
@@ -42,7 +42,7 @@ floating_modifier $mod
 bindsym $mod+t exec termite
 
 # Rofi
-bindsym $mod+space exec rofi -show combi -run-list-command "~/.aliases" -run-command "/bin/zsh -i -c '{cmd}'" -rnow
+bindsym $mod+space exec rofi -show combi -modi combi -run-list-command "~/zsh_aliases_functions.sh" -run-command "/bin/zsh -i -c '{cmd}'"
 
 # file manager
 bindsym $mod+p exec pcmanfm
@@ -83,7 +83,7 @@ popup_during_fullscreen smart
 # # # GAPS # # #
 #
 # disable windows titlebars for i3-gaps
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 3
 # gaps size
 # inner space between windows
 gaps inner 15
@@ -114,7 +114,7 @@ bindsym $mod+mod1+X exec --no-startup-id ~/.lock.sh
 
 # Startup
 exec --no-startup-id xmodmap ~/.Xmodmap
-exec_always wal -t -i ~/Pictures/Fetch -o wal-set
+exec_always wal -t -i ~/Pictures/Fetch/shure_55_desktop.jpg -o wal-set
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id i3-msg 'workspace 2: ; exec termite -e weechat; exec discord'
 exec --no-startup-id qbittorrent
