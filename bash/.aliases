@@ -15,7 +15,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias g='git'
-alias v=vim
+#alias v=vim
 alias suvim='sudo vim'
 alias rr='rm -rf'
 alias pacget='pacaur -S'
@@ -29,3 +29,7 @@ alias pstbn='xclip -o | pbpst -S'
 alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi'
 # List aliases
 alias lsalias="alias | sed 's/=.*//'"
+
+alias v='f -e vim '
+alias m='f -e DRI_PRIME=1 VDPAU_DRIVER=radeonsi mpv'
+alias o='a -e xdg-open'

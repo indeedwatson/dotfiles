@@ -48,5 +48,8 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
+# start fasd
+eval "$(fasd --init auto)"
+
 # Import colorscheme from 'wal'
 (wal -r &)
