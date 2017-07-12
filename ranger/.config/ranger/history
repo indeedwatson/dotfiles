@@ -1,0 +1,50 @@
+search s
+search bett
+j
+search a gir
+search control
+search be
+search home
+cd down
+dele
+search vf
+'f
+search vfi
+search vfio
+shell mkpkg
+search pic
+search pi
+!unp
+shell unp shure_55.zip
+shell timidity funklet.mid -Ow -o funklet.wav
+shell timidity funklet.mid -Ow -o - | ffmpeg -i -acodec libmp3lame -ab 256k funklet.mp3
+search 
+search ardour
+default_linemode 
+shell ncdu
+search pdf
+;
+search bac
+search doc
+
+search com
+search back
+d
+search comp
+search twin
+search star
+search twi
+delete 
+fasd twin
+fasd 
+filter 
+search range
+search conf
+search .conf
+search rang
+search scop
+search dot
+search rna
+cd .config/
+search ran
+delete
