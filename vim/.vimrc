@@ -30,6 +30,8 @@ Plugin 'https://github.com/vim-airline/vim-airline'
 " markdown
 Plugin 'godlygeek/tabular'
 Plugin 'https://github.com/plasticboy/vim-markdown'
+" wiki
+Plugin 'vimwiki/vimwiki'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -73,6 +75,7 @@ set backspace=indent,eol,start
 set complete-=i
 set smarttab
 
+" BINDINGS
 let mapleader = "\<Space>"
 
 nnoremap <Leader>o :CtrlP<CR>
@@ -85,8 +88,7 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
-
-" move lines up and down NOT WORKING
+" move lines up and down 
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 inoremap <C-j> <Esc>:m .+1<CR>==gi
@@ -164,5 +166,12 @@ nmap <leader>bl :BuffergatorOpen<cr>
 " Shared bindings from Solution #1 from earlier
 nmap <leader>T :enew<cr>
 nmap <leader>bq :bp <BAR> bd #<cr>
+
+" Indent guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=blue    ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green    ctermbg=236
+
 " let g:hybrid_custom_term_colors = 1
 colorscheme wal
