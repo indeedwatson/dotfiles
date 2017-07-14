@@ -27,3 +27,5 @@ config files for my current setup on Arch Linux with i3wm
 - better polybar colors
 - global mpv keybinds
 - setup a music player once and for all
+- set notify-send to display currently online twitch channels
+- organize i3 config
