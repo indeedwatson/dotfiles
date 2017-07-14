@@ -101,7 +101,7 @@ workspace 1 gaps inner 0
 bindsym $mod1+a mode "apps"
 mode "apps" {
     bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", move scratchpad, mode default
-    bindsym w exec --no-startup-id emacs, mode default
+    bindsym w exec --no-startup-id emacs "~/Documents/Journal/workout.org", mode default
     # bindsym t exec notify-send "`twitchnotifier -c tacticcarrotcake -b'"
     bindsym Escape mode "default"
     bindsym Enter mode "default"
@@ -118,6 +118,7 @@ mode "screenshot" {
 # resize gaps
 bindsym $mod+c mode "gaps"
 mode "gaps" {
+    bindsym c gaps inner current set 0, mode default
     bindsym j gaps inner current plus 5
     bindsym k gaps inner current minus 5
     bindsym h gaps outer current plus 5
@@ -134,7 +135,7 @@ bindsym $mod+mod1+X exec --no-startup-id ~/.lock.sh
 
 # Startup
 exec --no-startup-id xmodmap ~/.Xmodmap
-exec_always wal -t -i ~/Pictures/Fetch/shure_55_desktop.jpg -o wal-set
+exec_always wal -t -i ~/Pictures/Fetch/ -o wal-set
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id i3-msg 'workspace 2: ; exec termite -e weechat; exec discord'
 exec --no-startup-id qbittorrent
