@@ -66,9 +66,6 @@ bindsym $mod+o restart
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Power off:' -b 'Sleep (RAM)' 'exec sudo pm-suspend' -b 'Sleep (HDD)' 'exec sudo pm-hibernate' -b 'Exit i3' 'i3-msg exit' -b 'Reboot' 'exec reboot' -b 'Shutdown' 'exec sudo shutdown now'"
-
 # suspend
 bindsym $mod+Shift+n exec systemctl suspend
 
@@ -89,7 +86,7 @@ assign [class="Firefox"] 1:
 assign [class="discord"] 2: 
 assign [class="mpv"] 4:
 assign [class="Steam"] 5: 
-assign [class="calibre"] 
+assign [class="calibre"] 20:  
 assign [class="qBittorrent"] 7:  
 
 # Steam Friend list
@@ -99,49 +96,26 @@ for_window [class="Steam" title="(?i)chat$"] resize shrink width 100 px or 5 ppt
 # Twitch chat for streamlink
 for_window [class="Firefox" title="Twitch - Nightly"] move container to workspace "4:"; resize shrink width 150 px or 30 ppt
 
-# sticky floating window
-bindsym $mod+y floating enable, resize set 500 350, sticky enable, move window to position 1415 40
-
-# Layout
-floating_maximum_size 1920 x 1080
+# Floating windows
 for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-force_focus_wrapping no
+
+# sticky floating window
+bindsym $mod+y floating enable, resize set 500 350, sticky enable, move window to position 1415 40
+
+
+###########################################################################
+# LAYOUT AND MISC
+###########################################################################
+
+floating_maximum_size 1920 x 1080
 new_window pixel 2
 new_float pixel 2
-# Go back to previous workspace
 workspace_auto_back_and_forth yes
-# focus not follow mose
 focus_follows_mouse no
 popup_during_fullscreen smart
-
-
-###########################################################################
-# GAPS 
-###########################################################################
-# disable windows titlebars for i3-gaps
-for_window [class="^.*"] border pixel 3
-
-# gaps size
-# inner space between windows
-gaps inner 15
-# space between windows and border of the screen
-gaps outer 0
-# draw borders only if there's more than one window
-smart_borders on
-# disable gaps for mpv & ff
-workspace 4 gaps inner 0
-workspace 1 gaps inner 0
-
-# resize gaps
-bindsym $mod+c mode "gaps"
-
-
-###########################################################################
-# KEYBINDS i3
-###########################################################################
-
+force_focus_wrapping no
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -230,6 +204,27 @@ bindsym $mod+mod1+7 move container to $workspace7
 bindsym $mod+mod1+8 move container to $workspace8
 bindsym $mod+mod1+9 move container to $workspace9
 bindsym $mod+mod1+0 move container to $workspace10
+
+
+###########################################################################
+# GAPS 
+###########################################################################
+# disable windows titlebars for i3-gaps
+for_window [class="^.*"] border pixel 3
+
+# gaps size
+# inner space between windows
+gaps inner 15
+# space between windows and border of the screen
+gaps outer 0
+# draw borders only if there's more than one window
+smart_borders on
+# disable gaps for mpv & ff
+workspace 4 gaps inner 0
+workspace 1 gaps inner 0
+
+# resize gaps
+bindsym $mod+c mode "gaps"
 
 
 ###########################################################################
