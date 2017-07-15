@@ -23,9 +23,8 @@ config files for my current setup on Arch Linux with i3wm
 - clean up local repo and ignored files
 - remove powerline
 - add layouts in i3
-- make i3 open Firefox with Twitch chat next to mpv when opening a stream
+- make twitch chat shrink when opened next to mpv
 - better polybar colors
 - global mpv keybinds
 - setup a music player once and for all
 - set notify-send to display currently online twitch channels
-- organize i3 config
