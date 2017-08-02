@@ -36,6 +36,8 @@ exec --no-startup-id qbittorrent
 exec "sudo ldm -d -u yama ~/kindle/"
 exec "compton -b"
 exec dropbox start
+# make mouse invisible after some time
+exec --no-startup-id unclutter
 
 
 ###########################################################################
