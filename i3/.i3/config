@@ -26,7 +26,9 @@ client.background       $bg
 ###########################################################################
 # STARTUP
 ###########################################################################
+# capslock as mod4
 exec --no-startup-id xmodmap ~/.Xmodmap
+# set wallpaper at random and get colors with wal
 exec_always wal -t -i ~/Pictures/Fetch/ -o wal-set
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id i3-msg 'workspace 2: ; exec termite -e weechat; exec discord'
