@@ -68,10 +68,11 @@ for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown
 bindsym $mod+i [instance="dropdown"] scratchpad show
-
+# mute system
+bindsym $mod+m exec amixer -q -D pulse set Master toggle
 # Rofi
 bindsym $mod+space exec rofi -show combi -modi combi -run-list-command "~/zsh_aliases_functions.sh" -run-command "/bin/zsh -i -c '{cmd}'"
-bindsym $mod+m exec ~/bin/rofi-bangs.sh
+bindsym $mod+; exec ~/bin/rofi-bangs.sh
 
 # file manager
 bindsym $mod+p exec pcmanfm
