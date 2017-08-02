@@ -47,6 +47,7 @@ exec --no-startup-id unclutter
 # mod4 = Winkey (xmodmap to show)
 set $mod Mod4
 set $mod1 Mod1
+set $term termite
 
 # kill focused window
 bindsym $mod+x kill
@@ -55,7 +56,15 @@ bindsym $mod+x kill
 floating_modifier $mod
 
 # Terminal
-bindsym $mod+t exec termite
+bindsym $mod+t exec $term
+
+# Dropdown/scratchpad terminal
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 625 400
+for_window [instance="dropdown"] move position center
+for_window [instance="dropdown"] move scratchpad
+exec --no-startup-id $term -name dropdown
+bindsym $mod+i [instance="dropdown"] scratchpad show; move position center
 
 # Rofi
 bindsym $mod+space exec rofi -show combi -modi combi -run-list-command "~/zsh_aliases_functions.sh" -run-command "/bin/zsh -i -c '{cmd}'"
@@ -65,7 +74,7 @@ bindsym $mod+m exec ~/bin/rofi-bangs.sh
 bindsym $mod+p exec pcmanfm
 
 # Cycle wallpapers and apply new colorscheme
-bindsym $mod+o restart
+bindsym $mod+shift+r restart
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -126,11 +135,17 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+#resize
+bindsym $mod1+h resize shrink width 10 px or 10 ppt
+bindsym $mod1+j resize shrink height 10 px or 10 ppt
+bindsym $mod1+k resize grow height 10 px or 10 ppt
+bindsym $mod1+l resize grow width 10 px or 10 ppt
+
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+left focus left
+bindsym $mod+down focus down
+bindsym $mod+up focus up
+bindsym $mod+right focus right
 
 # move focused window
 bindsym $mod+mod1h move left
@@ -234,31 +249,6 @@ bindsym $mod+c mode "gaps"
 ###########################################################################
 # MODES
 ###########################################################################
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-		}
 
 mode "apps" {
     bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
