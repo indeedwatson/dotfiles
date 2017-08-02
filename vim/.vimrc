@@ -32,6 +32,9 @@ Plugin 'godlygeek/tabular'
 Plugin 'https://github.com/plasticboy/vim-markdown'
 " wiki
 Plugin 'vimwiki/vimwiki'
+" i3 syntax
+Plugin 'https://github.com/PotatoesMaster/i3-vim-syntax'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

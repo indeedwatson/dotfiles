@@ -94,7 +94,7 @@ for_window [class="Steam" title="^Friends$"] resize shrink width 150 px or 30 pp
 for_window [class="Steam" title="(?i)chat$"] resize shrink width 100 px or 5 ppt
 
 # Twitch chat for streamlink
-for_window [class="Firefox" title="Twitch - Nightly"] move container to workspace "4:"; resize shrink width 150 px or 30 ppt
+for_window [class="Firefox" title="Twitch - Nightly"] move container to workspace "4:". resize shrink width 150 px or 30 ppt
 
 # Floating windows
 for_window [class="(?i)feh"] floating enable
@@ -257,7 +257,7 @@ mode "resize" {
 		}
 
 mode "apps" {
-    bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", move scratchpad, mode default
+    bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
     bindsym w exec --no-startup-id emacs "~/Documents/Journal/workout.org", mode default
     # bindsym t exec notify-send "`twitchnotifier -c tacticcarrotcake -b'"
     bindsym Escape mode "default"
@@ -297,3 +297,5 @@ mode "gaps" {
 # # Testing https://www.youtube.com/watch?v=kPGXqFPnswc
 # bindsym $mod1+d sticky enable
 # bindsym $mod1+s exec --no-startup-id i3-input -F "[con_id=__focused__] mark _sticky_%s"
+#
+# vim:filetype=i3
