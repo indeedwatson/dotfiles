@@ -22,6 +22,15 @@ client.unfocused        $bg         $bg         $fg      $bg
 client.urgent           $urgent     $urgent     $fg      $bg
 client.background       $bg
 
+###########################################################################
+# ALIASES
+###########################################################################
+# mod1 = Alt (xmodmap to show)
+# mod4 = Winkey (xmodmap to show)
+set $mod Mod4
+set $mod1 Mod1
+set $term termite
+
 
 ###########################################################################
 # STARTUP
@@ -31,7 +40,7 @@ exec --no-startup-id xmodmap ~/.Xmodmap
 # set wallpaper at random and get colors with wal
 exec_always wal -t -i ~/Pictures/Fetch/ -o wal-set
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id i3-msg 'workspace 2: ; exec termite -e weechat; exec discord'
+exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat; exec discord'
 exec --no-startup-id qbittorrent
 exec "sudo ldm -d -u yama ~/kindle/"
 exec "compton -b"
@@ -43,12 +52,6 @@ exec --no-startup-id unclutter
 ###########################################################################
 # BINDS
 ###########################################################################
-# mod1 = Alt (xmodmap to show)
-# mod4 = Winkey (xmodmap to show)
-set $mod Mod4
-set $mod1 Mod1
-set $term termite
-
 # kill focused window
 bindsym $mod+x kill
 
@@ -64,7 +67,7 @@ for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown
-bindsym $mod+i [instance="dropdown"] scratchpad show; move position center
+bindsym $mod+i [instance="dropdown"] scratchpad show
 
 # Rofi
 bindsym $mod+space exec rofi -show combi -modi combi -run-list-command "~/zsh_aliases_functions.sh" -run-command "/bin/zsh -i -c '{cmd}'"
