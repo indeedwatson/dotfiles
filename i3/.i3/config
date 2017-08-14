@@ -97,7 +97,7 @@ bindsym $mod1+a mode "apps"
 
 # screenshot
 bindsym $mod1+s mode "screenshot"
-
+bindsym Print exec --no-startup-id "~/bin/screenshot"
 # assign apps to workspaces
 assign [class="Firefox"] 1:
 assign [class="discord"] 2: 
@@ -140,10 +140,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 #resize
-bindsym $mod1+h resize shrink width 10 px or 10 ppt
-bindsym $mod1+j resize shrink height 10 px or 10 ppt
-bindsym $mod1+k resize grow height 10 px or 10 ppt
-bindsym $mod1+l resize grow width 10 px or 10 ppt
+bindsym $mod+Shift+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Shift+j resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+k resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+l resize grow width 10 px or 10 ppt
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+left focus left
@@ -256,17 +256,10 @@ bindsym $mod+c mode "gaps"
 
 mode "apps" {
     bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
-    bindsym w exec --no-startup-id emacs "~/Documents/Journal/workout.org", mode default
+    bindsym w exec --no-startup-id emacs "~/Dropbox/orgzly/workout.org", mode default
     # bindsym t exec notify-send "`twitchnotifier -c tacticcarrotcake -b'"
     bindsym Escape mode "default"
     bindsym Enter mode "default"
-    }
-
-mode "screenshot" {
-    bindsym s exec --no-startup-id "~/bin/screenshot", exec notify-send 'SCREENSHOT' 'select an area to save to ~/Pictures/Screenshots', mode default
-    bindsym d exec --no-startup-id "~/bin/imgur", exec notify-send 'IMGUR' 'select an area to upload picture', mode default
-    bindsym Escape mode default
-    bindsym Enter mode default
     }
 
 mode "screenshot" {
