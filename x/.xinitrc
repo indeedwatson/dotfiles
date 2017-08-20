@@ -44,5 +44,5 @@ fi
 # Colors based on wallpaper with https://github.com/dylanaraps/wal#dependencies
 wal -t -i "$(< "${HOME}/.cache/wal/wal")"
 
-exec twitchnotifier -c tacticcarrotcake -n &
+numlockx &
 exec i3
