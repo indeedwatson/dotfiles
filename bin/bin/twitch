@@ -25,5 +25,10 @@ case "${2:-b}" in
         ;;
 esac
 
+if [ -z $channel ]; then
+    exit
+fi
+
 # exec livestreamer
 DRI_PRIME=1 VDPAU_DRIVER=radeonsi streamlink $twitch$channel $quality &
+firefox-nightly --new-window $twitch$channel/chat?popout= &
