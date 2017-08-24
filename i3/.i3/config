@@ -47,6 +47,7 @@ exec "sudo ldm -d -u yama ~/kindle/"
 exec dropbox start
 # make mouse invisible after some time
 exec --no-startup-id unclutter
+exec --no-startup-id $term --name dropdown
 
 
 ###########################################################################
@@ -61,13 +62,6 @@ floating_modifier $mod
 # Terminal
 bindsym $mod+t exec $term
 
-# Dropdown/scratchpad terminal
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 625 400
-for_window [instance="dropdown"] move position center
-for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id $term -name dropdown
-bindsym $mod+i [instance="dropdown"] scratchpad show
 # mute system
 bindsym $mod+m exec amixer -q -D pulse set Master toggle
 # Rofi
@@ -94,12 +88,16 @@ bindsym $mod+mod1+u move scratchpad
 # Show the first scratchpad window
 bindsym $mod+u scratchpad show
 
+# Show dropdown terminal
+bindsym $mod+i [instance="dropdown"] scratchpad show
+
 # open apps mode
 bindsym $mod1+a mode "apps"
 
 # screenshot
 bindsym $mod1+s mode "screenshot"
 bindsym Print exec --no-startup-id "~/bin/screenshot"
+
 # assign apps to workspaces
 assign [class="Firefox"] 1:
 assign [class="discord"] 2: 
@@ -119,6 +117,7 @@ for_window [class="Firefox" title="Twitch - Nightly"] move container to workspac
 for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [instance="dropdown"] floating enable, resize set 800 600, move position center, move scratchpad
 
 # sticky floating window
 bindsym $mod+y floating enable, resize set 500 350, sticky enable, move window to position 1415 40
@@ -294,3 +293,5 @@ mode "gaps" {
 # bindsym $mod1+s exec --no-startup-id i3-input -F "[con_id=__focused__] mark _sticky_%s"
 #
 # vim:filetype=i3
+
+# Dropdown/scratchpad terminal
