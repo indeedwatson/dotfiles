@@ -65,8 +65,7 @@ bindsym $mod+t exec $term
 # mute system
 bindsym $mod+m exec amixer -q -D pulse set Master toggle
 # Rofi
-# bindsym $mod+space exec rofi -show combi -modi combi -run-list-command "~/zsh_aliases_functions.sh" -run-command "/bin/zsh -i -c '{cmd}'"
-bindsym $mod+space exec "rofi -modi combi -show combi -combi-modi run,drun,bangs:~/bin/rofi-bangs.sh"
+bindsym $mod+space exec "rofi -show run"
 bindsym $mod+semicolon exec ~/bin/rofi-bangs.sh
 bindsym $mod+slash exec ~/bin/rofi-locate.sh
 
