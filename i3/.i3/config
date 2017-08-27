@@ -1,5 +1,5 @@
-# i3 config file (v1.1)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# Yama's i3 config
+# https://github.com/indeedwatson/dotfiles/tree/master/i3/.i3
 
 ###########################################################################
 # LOOK
@@ -22,12 +22,13 @@ client.unfocused        $bg         $bg         $fg      $bg
 client.urgent           $urgent     $urgent     $fg      $bg
 client.background       $bg
 
+
 ###########################################################################
 # ALIASES
 ###########################################################################
-# mod1 = Alt (xmodmap to show)
 # mod4 = Winkey (xmodmap to show)
 set $mod Mod4
+# mod1 = Alt (xmodmap to show)
 set $mod1 Mod1
 set $term termite
 
@@ -35,14 +36,16 @@ set $term termite
 ###########################################################################
 # STARTUP
 ###########################################################################
-# capslock as mod4
+# map capslock as mod4
 exec --no-startup-id xmodmap ~/.Xmodmap
 # set wallpaper at random and get colors with wal
-bindsym $mod+o exec wal -t -i ~/Pictures/Fetch/ -o wal-set
+bindsym $mod+o exec wal -t -i ~/Pictures/wal/ -o wal-set
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec "compton -b"
+# chat apps
 exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat; exec discord'
 exec --no-startup-id qbittorrent
+# start daemon to mount kindle
 exec "sudo ldm -d -u yama ~/kindle/"
 exec dropbox start
 # make mouse invisible after some time
@@ -64,6 +67,7 @@ bindsym $mod+t exec $term
 
 # mute system
 bindsym $mod+m exec amixer -q -D pulse set Master toggle
+
 # Rofi
 bindsym $mod+space exec "rofi -show run"
 bindsym $mod+semicolon exec ~/bin/rofi-bangs.sh
@@ -93,7 +97,7 @@ bindsym $mod+i [instance="dropdown"] scratchpad show
 # open apps mode
 bindsym $mod1+a mode "apps"
 
-# screenshot
+# screenshot/screencast mode
 bindsym $mod1+s mode "screenshot"
 bindsym Print exec --no-startup-id "~/bin/screenshot"
 
@@ -116,7 +120,7 @@ for_window [class="Firefox" title="Twitch - Nightly"] move container to workspac
 for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-for_window [instance="dropdown"] floating enable, resize set 800 600, move position center, move scratchpad
+for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
 
 # sticky floating window
 bindsym $mod+y floating enable, resize set 500 350, sticky enable, move window to position 1415 40
@@ -140,28 +144,20 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 #resize
-bindsym $mod+Shift+h resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+j resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+k resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+l resize grow width 10 px or 10 ppt
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+left focus left
-bindsym $mod+down focus down
-bindsym $mod+up focus up
-bindsym $mod+right focus right
+bindsym $mod1+h resize shrink width 10 px or 10 ppt
+bindsym $mod1+j resize shrink height 10 px or 10 ppt
+bindsym $mod1+k resize grow height 10 px or 10 ppt
+bindsym $mod1+l resize grow width 10 px or 10 ppt
+bindsym $mod1+Shift+ resize shrink width 50 px or 50 ppt
+bindsym $mod1+Shift+J resize shrink height 50 px or 50 ppt
+bindsym $mod1+Shift+K resize grow height 50 px or 50 ppt
+bindsym $mod1+Shift+L resize grow width 50 px or 50 ppt
 
 # move focused window
 bindsym $mod+mod1h move left
 bindsym $mod+mod1+j move down
 bindsym $mod+mod1+k move up
 bindsym $mod+mod1+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+mod1+Left move left
-bindsym $mod+mod1+Down move down
-bindsym $mod+mod1+Up move up
-bindsym $mod+mod1+Right move right
 
 # split in horizontal orientation
 bindsym $mod+g split h
@@ -188,9 +184,6 @@ bindsym $mod+a focus parent
 
 # focus the child container
 bindsym $mod+d focus child
-
-# enter resize mode
-bindsym $mod+r mode "resize"
 
 # workspaces aliases
 set $workspace1 workspace number 1
@@ -253,32 +246,37 @@ bindsym $mod+c mode "gaps"
 ###########################################################################
 # MODES
 ###########################################################################
-
+# apps shortcuts
 mode "apps" {
+    # music software
     bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
+    # workout log
     bindsym w exec --no-startup-id emacs "~/Dropbox/orgzly/workout.org", mode default
-    # bindsym t exec notify-send "`twitchnotifier -c tacticcarrotcake -b'"
     bindsym Escape mode "default"
     bindsym Enter mode "default"
     }
 
 mode "screenshot" {
+    # take screenshot locally
     bindsym s exec --no-startup-id "~/bin/screenshot", exec notify-send -t 100 'SCREENSHOT' 'select an area to save to ~/Pictures/Screenshots', mode default
+    # take screenshot and upload to imgur
     bindsym d exec --no-startup-id "~/bin/imgur", exec notify-send  -t 100 'IMGUR' 'select an area to upload picture', mode default
-    bindsym h exec notify-send -t 5000 'SCREENSHOT MODE:' '<b>s</b> to locally save a screenshot\n <b>d</b> to upload to imgur\n <b>Shift+S</b> to record a screencast'
+    # record screencast and upload to imgur
     bindsym Shift+S exec teiler --togglecast
+    # help message
+    bindsym h exec notify-send -t 5000 'SCREENSHOT MODE:' '<b>s</b> to locally save a screenshot\n <b>d</b> to upload to imgur\n <b>Shift+S</b> to record a screencast, press again to stop it'
     bindsym Escape mode default
     bindsym Enter mode default
     }
 
 mode "gaps" {
+    # get rid of all gaps in current ws
     bindsym c gaps inner current set 0, mode default
-    bindsym j gaps inner current plus 5
-    bindsym k gaps inner current minus 5
-    bindsym h gaps outer current plus 5
-    bindsym l gaps outer current minus 5
+    bindsym j gaps inner current plus 15
+    bindsym k gaps inner current minus 15
+    bindsym h gaps outer current plus 15
+    bindsym l gaps outer current minus 15
     bindsym $mod+c mode "default"
-    bindsym $mod+r mode "resize"
     bindsym Enter mode "default"
     bindsym Escape mode "default"
     }
@@ -292,5 +290,3 @@ mode "gaps" {
 # bindsym $mod1+s exec --no-startup-id i3-input -F "[con_id=__focused__] mark _sticky_%s"
 #
 # vim:filetype=i3
-
-# Dropdown/scratchpad terminal
