@@ -92,7 +92,7 @@ bindsym $mod+mod1+u move scratchpad
 bindsym $mod+u scratchpad show
 
 # Show dropdown terminal
-bindsym $mod+i [instance="dropdown"] scratchpad show
+bindsym $mod+i [instance="dropdown"] scratchpad show, move position center
 
 # open apps mode
 bindsym $mod1+a mode "apps"
@@ -121,6 +121,7 @@ for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
+for_window [instance="workout"] floating enable, move scratchpad
 
 # sticky floating window
 bindsym $mod+y floating enable, resize set 500 350, sticky enable, move window to position 1415 40
@@ -247,7 +248,7 @@ mode "apps" {
     # music software
     bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
     # workout log
-    bindsym w exec --no-startup-id emacs "~/Dropbox/orgzly/workout.org", mode default
+    bindsym w exec --no-startup-id emacs --name workout "~/Dropbox/orgzly/workout.org", mode default
     bindsym Escape mode "default"
     bindsym Enter mode "default"
     }
@@ -268,6 +269,7 @@ mode "screenshot" {
 mode "gaps" {
     # get rid of all gaps in current ws
     bindsym c gaps inner current set 0, mode default
+    # resize gaps
     bindsym j gaps inner current plus 15
     bindsym k gaps inner current minus 15
     bindsym h gaps outer current plus 15
