@@ -1,5 +1,3 @@
-# Yama's i3 config
-# https://github.com/indeedwatson/dotfiles/tree/master/i3/.i3
 
 ###########################################################################
 # LOOK
@@ -246,7 +244,7 @@ bindsym $mod+c mode "gaps"
 # apps shortcuts
 mode "apps" {
     # music software
-    bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
+    # bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
     # workout log
     bindsym w exec --no-startup-id emacs --name workout "~/Dropbox/orgzly/workout.org", mode default
     bindsym Escape mode "default"
@@ -256,12 +254,13 @@ mode "apps" {
 mode "screenshot" {
     # take screenshot locally
     bindsym s exec --no-startup-id "~/bin/screenshot", exec notify-send -t 100 'SCREENSHOT' 'select an area to save to ~/Pictures/Screenshots', mode default
-    # take screenshot and upload to imgur
-    bindsym d exec --no-startup-id "~/bin/imgur", exec notify-send  -t 100 'IMGUR' 'select an area to upload picture', mode default
+    # take screenshot and upload to teknik.io (even tho the script used is
+    # called imgur
+    bindsym d exec --no-startup-id "~/bin/imgur", exec notify-send  -t 100 'TEKNIK.IO' 'select an area to upload picture', mode default
     # record screencast and upload to imgur
     bindsym Shift+S exec teiler --togglecast
-    # help message
-    bindsym h exec notify-send -t 5000 'SCREENSHOT MODE:' '<b>s</b> to locally save a screenshot\n <b>d</b> to upload to imgur\n <b>Shift+S</b> to record a screencast, press again to stop it'
+    # help message ## broke in recent update, not sure why
+    # bindsym h exec notify-send -t 5000 'SCREENSHOT MODE:' '<b>s</b> to locally save a screenshot\n <b>d</b> to upload to imgur\n <b>Shift+S</b> to record a screencast, press again to stop it'
     bindsym Escape mode default
     bindsym Enter mode default
     }
