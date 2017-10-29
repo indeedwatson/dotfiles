@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/yama/dotfiles/i3/.i3'
+let g:netrw_dirhist_2='/home/yama/dotfiles/polybar/.config'
+let g:netrw_dirhist_3='/home/yama'
+let g:netrw_dirhist_4='/home/yama/Dropbox/todo'
+let g:netrw_dirhist_5='/home/yama/.task'
+let g:netrw_dirhist_6='/home/yama/dotfiles/.git'
