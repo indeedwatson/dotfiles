@@ -12,7 +12,7 @@ config files for my current setup on Arch Linux with i3wm
 - [mpv](https://mpv.io/)
 - [zsh](http://www.zsh.org/)
 - [dunst](https://github.com/dunst-project/dunst)
-- [vim](http://www.vim.org/)
+- [neovim](https://neovim.io/)  
 - [termite](https://github.com/thestinger/termite/)
 - [streamlink](https://github.com/streamlink/streamlink)
 - [qutebrowser](https://qutebrowser.org/)
@@ -20,11 +20,7 @@ config files for my current setup on Arch Linux with i3wm
 
 ## TODO
 
-- clean up local repo and ignored files
-- remove powerline
 - add layouts in i3
-- make twitch chat shrink when opened next to mpv
 - better polybar colors
 - global mpv keybinds
 - setup a music player once and for all
-- set notify-send to display currently online twitch channels
