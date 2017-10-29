@@ -13,3 +13,4 @@ rofi.separator-style: solid
 rofi.matching: fuzzy
 rofi.padding: 8
 rofi.bw: 0
+# rofi.show-icons: true
