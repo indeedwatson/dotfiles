@@ -3,7 +3,7 @@
 
 twitch=http://www.twitch.tv/
 
-# get channel from list of most watched channels
+# alias most watched channels
 case "$1" in
     santzo) channel=santzo84;;
     ohn) channel=outerheaven;;
@@ -19,16 +19,21 @@ case "${2:-b}" in
     l*) quality=low;;
     m*) quality=medium;;
     *)
+        # print error if not one of the above quality
         printf '%s: unkown quality option: %s (one of [l]ow,
         [m]edium, [b]est)'"$0" "$2" >&2
         exit 1
         ;;
 esac
 
+# exit if no channel was given
 if [ -z $channel ]; then
     exit
 fi
 
 # exec livestreamer
-DRI_PRIME=1 VDPAU_DRIVER=radeonsi streamlink $twitch$channel $quality &
-firefox-nightly --new-window $twitch$channel/chat?popout= &
+# to use with iGPU and dri
+# DRI_PRIME=1 VDPAU_DRIVER=radeonsi streamlink $twitch$channel $quality &
+streamlink $twitch$channel $quality &
+# twitch chat in popout mode
+# firefox-nightly --new-window $twitch$channel/chat?popout= &
