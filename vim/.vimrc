@@ -14,13 +14,11 @@ Plugin 'VundleVim/Vundle.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 " indentation guides
-Plugin 'https://github.com/nathanaelkane/vim-indent-guides'
+" Plugin 'https://github.com/nathanaelkane/vim-indent-guides'
 " automatic closing of quotes, parenthesis, brackets, etc
 Plugin 'https://github.com/raimondi/delimitMate'
 " syntax checking
 Plugin 'https://github.com/scrooloose/syntastic'
-" fuzzy file, buffer, tag finder
-Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 " buffer manager
 Plugin 'https://github.com/jeetsukumaran/vim-buffergator'
 " colors from wal
@@ -28,13 +26,17 @@ Plugin 'https://github.com/dylanaraps/wal'
 " status/tabline
 Plugin 'https://github.com/vim-airline/vim-airline'
 " markdown
-Plugin 'godlygeek/tabular'
+" Plugin 'godlygeek/tabular'
 Plugin 'https://github.com/plasticboy/vim-markdown'
 " wiki
 Plugin 'vimwiki/vimwiki'
 " i3 syntax
 Plugin 'https://github.com/PotatoesMaster/i3-vim-syntax'
-
+" fzf
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+" Git wrapper
+Plugin 'https://github.com/tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -81,9 +83,8 @@ set smarttab
 " BINDINGS
 let mapleader = "\<Space>"
 
-nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>g :Gist<CR>
+nnoremap <Leader>g :Gist -a<CR>
 nnoremap <Leader>q :q!<CR>
 vmap <Leader>y "+y
 vmap <Leader>d "+d
@@ -124,29 +125,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" CtrlP and Buffergator settings from
-" http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
-
-" CtrlP
-" Setup some default ignores
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-\}
-
-" Use the nearest .git directory as the cwd
-" This makes a lot of sense if you are working on a project that is in version
-" control. It also supports works with .svn, .hg, .bzr.
-let g:ctrlp_working_path_mode = 'r'
-
-" Use a leader instead of the actual named binding
-nmap <leader>p :CtrlP<cr>
-
-" Easy bindings for its various modes
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs :CtrlPMRU<cr>
-
 " Buffergator
 " Use the right side of the screen
 let g:buffergator_viewport_split_policy = 'R'
@@ -169,6 +147,7 @@ nmap <leader>bl :BuffergatorOpen<cr>
 " Shared bindings from Solution #1 from earlier
 nmap <leader>T :enew<cr>
 nmap <leader>bq :bp <BAR> bd #<cr>
+map <C-n> :NERDTreeToggle<CR>
 
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1
@@ -177,4 +156,4 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=blue    ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green    ctermbg=236
 
 " let g:hybrid_custom_term_colors = 1
-colorscheme wal
+" colorscheme wal
