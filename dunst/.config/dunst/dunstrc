@@ -86,7 +86,7 @@
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = no
+    shrink = yes
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
@@ -96,7 +96,7 @@
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
     # Set to 0 to disable.
-    idle_threshold = 120
+    idle_threshold = 0
 
     # Which monitor should the notifications be displayed on.
     monitor = 0
@@ -167,7 +167,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/firefox-nightly -new-tab
 
     # Align icons left/right/off
     icon_position = off
@@ -295,18 +295,21 @@
 #    summary = *twitter.com*
 #    urgency = normal
 #
+[Discord]
+    appname = Discord
+    format = "<b>%s\n%b"
+    new_icon = /home/yama/Downloads/discord.png
 [irc]
     appname = "weechat"
     format = "%s: %b"
     urgency = normal
 
 [torrent_complete]
-appname = Deluge
-summary ="Torrent complete"
-urgency = critical
+    appname = Deluge
+    summary ="Torrent complete"
+    urgency = critical
 
 [twitch]
-appname = twitchnotifier
-summary = "Twitch * just went live"
-
-# vim: ft=cfg
+    appname = twitchnotifier
+    format = "%s: %b"
+    new_icon = /home/yama/Downloads/Twitch_icon.png
