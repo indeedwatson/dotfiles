@@ -1,0 +1,298 @@
+###########################################################################
+# LOOK
+###########################################################################
+font pango:Inconsolata-dz for Powerline 9, FontAwesome 10
+
+# Set colors from Xresources
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources for some reason
+set_from_resource $fg           i3wm.color7 #f0f0f0
+set_from_resource $bg           i3wm.color0 #f0f0f0
+set_from_resource $urgent       i3wm.color3 #f0f0f0
+set_from_resource $unfocused    i3wm.color10 #f0f0f0
+set_from_resource $focused      i3wm.color2 #f0f0f0
+
+#class                  border      backgr.     text     split
+client.focused          $focused    $focused    $fg      $focused
+client.focused_inactive $bg         $bg         $fg      $bg
+client.unfocused        $bg         $bg         $fg      $bg
+client.urgent           $urgent     $urgent     $fg      $bg
+client.background       $bg
+
+
+###########################################################################
+# ALIASES
+###########################################################################
+# mod4 = Winkey or capslock (xmodmap to show)
+set $mod Mod4
+# mod1 = Alt (xmodmap to show)
+set $mod1 Mod1
+set $term termite
+
+
+###########################################################################
+# STARTUP
+###########################################################################
+# map capslock as mod4 when held and Escape when pressed and released
+exec --no-startup-id xmodmap ~/.Xmodmap &
+exec xcape -e "Hyper_L=Escape"
+# set wallpaper at random and get colors with wal
+exec_always --no-startup-id wal -t -i ~/Pictures/wal/ -o wal-set &
+exec --no-startup-id ~/.config/polybar/launch.sh &
+exec "compton"
+# chat apps
+exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat &; exec discord &'
+exec --no-startup-id i3-msg 'workspace 3: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md" &'
+exec --no-startup-id exec transmission-gtk &
+# start daemon to mount kindle
+# exec "sudo ldm -d -u yama ~/kindle/ &"
+exec dropbox start &
+# make mouse invisible after some time
+exec --no-startup-id unclutter &
+# dropdown terminal, show/hide with capslock + i
+exec --no-startup-id $term --name dropdown &
+# start vimwiki index file
+exec --no-startup-id ~/Downloads/start_jack &
+exec --no-startup-id redshift &
+
+###########################################################################
+# BINDS
+###########################################################################
+# kill focused window
+bindsym $mod+x kill
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Terminal
+bindsym $mod+t exec $term
+
+# mute system
+bindsym $mod+m exec amixer -q -D pulse set Master toggle
+
+# Rofi
+bindsym $mod+space exec "rofi -show run"
+bindsym $mod+semicolon exec ~/bin/rofi-bangs.sh
+bindsym $mod+slash exec ~/bin/rofi-locate.sh
+
+# file manager
+bindsym $mod+p exec pcmanfm &
+
+# Restart i3
+bindsym $mod+F5 restart
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# suspend
+bindsym $mod+Shift+n exec systemctl suspend
+
+# Make the currently focused window a scratchpad
+bindsym $mod+mod1+u move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+u scratchpad show
+
+# Show dropdown terminal
+bindsym $mod+i [instance="dropdown"] scratchpad show, move position center
+
+# make focused window sticky
+bindsym $mod+o sticky enable
+
+# open apps mode
+bindsym $mod1+a mode "apps"
+
+# screenshot/screencast mode
+bindsym $mod1+s mode "screenshot"
+bindsym Print exec --no-startup-id "~/bin/screenshot"
+
+# assign apps to workspaces
+assign [class="Firefox"] 1:
+assign [class="discord"] 2: 
+assign [class="mpv"] 4:
+assign [class="Steam"] 5: 
+assign [class="calibre"] 20:  
+assign [class="Transmission-gtk"] 7:  
+
+# Steam Friend list
+for_window [class="Steam" title="^Friends$"] resize shrink width 150 px or 30 ppt
+for_window [class="Steam" title="(?i)chat$"] resize shrink width 100 px or 5 ppt
+
+# Twitch chat for streamlink
+# for_window [class="Firefox" title="Twitch - Nightly"] move container to workspace "4:". resize shrink width 150 px or 30 ppt
+
+# Floating windows
+for_window [class="(?i)feh"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
+for_window [instance="workout"] floating enable, move scratchpad
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+
+# sticky floating window
+bindsym $mod+y floating enable, resize set 500 350, sticky enable, move window to position 1415 40
+
+
+###########################################################################
+# LAYOUT AND MISC
+###########################################################################
+
+floating_maximum_size 1920 x 1080
+new_window pixel 2
+new_float pixel 2
+workspace_auto_back_and_forth yes
+focus_follows_mouse no
+popup_during_fullscreen smart
+force_focus_wrapping no
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+#resize
+bindsym $mod+Shift+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Shift+j resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+k resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+l resize grow width 10 px or 10 ppt
+
+# move focused window
+bindsym $mod+mod1h move left
+bindsym $mod+mod1+j move down
+bindsym $mod+mod1+k move up
+bindsym $mod+mod1+l move right
+
+# split in horizontal orientation
+bindsym $mod+g split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacked
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+z focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+d focus child
+
+# workspaces aliases
+set $workspace1 workspace number 1
+set $workspace2 workspace number 2
+set $workspace3 workspace number 3: 
+set $workspace4 workspace number 4: 
+set $workspace5 workspace number 5
+set $workspace6 workspace number 6
+set $workspace7 workspace number 7
+set $workspace8 workspace number 8
+set $workspace9 workspace number 9
+set $workspace10 workspace number 10
+
+# switch to workspace
+bindsym $mod+1 $workspace1
+bindsym $mod+2 $workspace2
+bindsym $mod+3 $workspace3
+bindsym $mod+4 $workspace4
+bindsym $mod+5 $workspace5
+bindsym $mod+6 $workspace6
+bindsym $mod+q $workspace7
+bindsym $mod+8 $workspace8
+bindsym $mod+9 $workspace9
+bindsym $mod+0 $workspace10
+
+# move focused container to workspace
+bindsym $mod+mod1+1 move container to $workspace1
+bindsym $mod+mod1+2 move container to $workspace2
+bindsym $mod+mod1+3 move container to $workspace3
+bindsym $mod+mod1+4 move container to $workspace4
+bindsym $mod+mod1+5 move container to $workspace5
+bindsym $mod+mod1+6 move container to $workspace6
+bindsym $mod+mod1+7 move container to $workspace7
+bindsym $mod+mod1+8 move container to $workspace8
+bindsym $mod+mod1+9 move container to $workspace9
+bindsym $mod+mod1+0 move container to $workspace10
+
+
+###########################################################################
+# GAPS 
+###########################################################################
+# disable windows titlebars for i3-gaps
+for_window [class="^.*"] border pixel 3
+
+# gaps size
+# inner space between windows
+gaps inner 15
+# space between windows and border of the screen
+gaps outer 0
+# draw borders only if there's more than one window
+smart_borders on
+# disable gaps for mpv & ff
+workspace 4 gaps inner 0
+workspace 1 gaps inner 0
+
+# resize gaps
+bindsym $mod+c mode "gaps"
+
+
+###########################################################################
+# MODES
+###########################################################################
+# apps shortcuts
+mode "apps" {
+    # music software
+    # bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
+    # workout log
+    bindsym w exec --no-startup-id emacs --name workout "~/Dropbox/orgzly/workout.org", mode default
+    bindsym Escape mode "default"
+    bindsym Enter mode "default"
+    }
+
+mode "screenshot" {
+    # take screenshot locally
+    bindsym s exec --no-startup-id "~/bin/screenshot", exec notify-send -t 100 'SCREENSHOT' 'select an area to save to ~/Pictures/Screenshots', mode default
+    # take screenshot and upload to teknik.io (even tho the script used is
+    # called imgur
+    bindsym d exec --no-startup-id "~/bin/imgur", exec notify-send  -t 100 'TEKNIK.IO' 'select an area to upload picture', mode default
+    # record screencast and upload to imgur
+    bindsym Shift+S exec teiler --togglecast
+    # help message ## broke in recent update, not sure why
+    # bindsym h exec notify-send -t 5000 'SCREENSHOT MODE:' '<b>s</b> to locally save a screenshot\n <b>d</b> to upload to imgur\n <b>Shift+S</b> to record a screencast, press again to stop it'
+    bindsym Escape mode default
+    bindsym Enter mode default
+    }
+
+mode "gaps" {
+    # get rid of all gaps in current ws
+    bindsym c gaps inner current set 0, mode default
+    # resize gaps
+    bindsym j gaps inner current plus 15
+    bindsym k gaps inner current minus 15
+    bindsym h gaps outer current plus 15
+    bindsym l gaps outer current minus 15
+    bindsym $mod+c mode "default"
+    bindsym Enter mode "default"
+    bindsym Escape mode "default"
+    }
+
+
+###########################################################################
+# TESTS
+###########################################################################
+# # Testing https://www.youtube.com/watch?v=kPGXqFPnswc
+# bindsym $mod1+s exec --no-startup-id i3-input -F "[con_id=__focused__] mark _sticky_%s"
+#
+# vim:filetype=i3
+
+workspace_layout tabbed
