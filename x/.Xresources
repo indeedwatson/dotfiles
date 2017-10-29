@@ -6,12 +6,32 @@ Xft.hintstyle: hintslight
 Xft.rgba: rgb
 Xft.dpi: 96
 
-! ------------------------------------------------------------------------------
-! ! ROFI Color theme
-! !
-! ------------------------------------------------------------------------------
-! rofi.color-enabled: true
-! rofi.color-window: #282a2e, #cc6666, #282a2e
-! rofi.color-normal: #1c1c1c, #c5c8c6, #282a2e, #b5bd56, #1c1c1c
-! rofi.color-active: #1c1c1c, #6e98a4, #282a2e, #6e98a4, #1c1c1c
-! rofi.color-urgent: #1c1c1c, #cc6666, #282a2e, #cc6666, #1c1c1c
+*background: #1c1c1c
+*foreground: #C5C8C6
+*cursorColor: #a54242
+!*cursorColor: #C3FF00
+
+! black
+*color0: #282A2E
+*color8: #373B41
+! red
+*color1: #A54242
+*color9: #CC6666
+! green
+*color2: #8C9440
+*color10: #B5BD68
+! yellow
+*color3: #DE935F
+*color11: #F0C674
+! blue
+*color4: #5F819D
+*color12: #81A2BE
+! magenta
+*color5: #85678F
+*color13: #B294BB
+! cyan
+*color6: #5E8D87
+*color14: #8ABEB7
+! white
+*color7: #707880
+*color15: #C5C8C6 
