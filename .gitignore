@@ -1,18 +1,3 @@
-/weechat/.weechat/sec.conf
-/weecat/.weechat/logs
-default.json
-vim/.vim/bundle/delimitMate/
-vim/.vim/bundle/gist-vim/
-vim/.vim/bundle/syntastic/
-vim/.vim/bundle/vim-indent-guides/
-vim/.vim/bundle/webapi-vim/
-vim/.vim/bundle/
-mpd/.config/mpd/pid
-mpd/.confg/mpd/state
-bash/.bash_*
-log
-mpv/.config/mpv/watch_later/
-
 # logs and databases
 *.log
 *.logs
