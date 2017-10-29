@@ -1,4 +1,4 @@
-# Aliases for .bashrc
+# Aliases for bash/zsh
 # twitch channels
 alias santzo='twitch santzo'
 alias tftv='twitch tftv'
@@ -6,28 +6,27 @@ alias ohn='twitch ohn'
 alias prec='twitch prec'
 alias dist='twitch dist'
 alias gdq='twitch gamesdonequick'
-# Check for online channels
-alias tcc='twitchnotifier -c tacticcarrotcake -n'
+alias tcc='twitchnotifier -c tacticcarrotcake -n' # Check for online channels
 
 # global aliases
-alias l='ls -a'
+alias l='ls -a' # show hidden files
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias g='git'
-alias suvim='sudo vim'
-alias rr='rm -rf'
+alias svim='sudoedit'
 alias pacget='pacaur -S'
 alias pacu='pacaur -Syu'
 alias py='python'
-alias batman='sudo pacman -Rns $(pacman -Qtdq)'
+alias batman='sudo pacman -Rns $(pacman -Qtdq) && pacaur -S polybar' # delete orphan packages
 alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-cef-sandbox >/dev/null 2>&1  &'
-alias mkdir='mkdir -p'
-alias pstbn='xclip -o | pbpst -S'
-alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi'
-# List aliases
-alias lsalias="alias | sed 's/=.*//'"
+alias mkdir='mkdir -p' # no error if existing, make parents directories as needed
+alias pstbn='xclip -o | pbpst -Sf' # not working
+# alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi' # user DRI PRIME for dGPU
+alias ranger='. ranger' # open ranger in last visited directory
+alias lsalias="alias | sed 's/=.*//'" # List aliases
 
+# aliases for fasd
 alias v='f -e nvim '
 alias m='f -e mpv '
 alias o='a -e xdg-open'
