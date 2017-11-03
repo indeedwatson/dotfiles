@@ -42,7 +42,7 @@ exec --no-startup-id ~/.config/polybar/launch.sh &
 exec "compton"
 # chat apps
 exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat &; exec discord &'
-exec --no-startup-id i3-msg 'workspace 3: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md" &'
+exec --no-startup-id i3-msg 'workspace 3: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md /home/yama/.i3/config" &'
 exec --no-startup-id exec transmission-gtk &
 # start daemon to mount kindle
 # exec "sudo ldm -d -u yama ~/kindle/ &"
@@ -52,7 +52,7 @@ exec --no-startup-id unclutter &
 # dropdown terminal, show/hide with capslock + i
 exec --no-startup-id $term --name dropdown &
 # start vimwiki index file
-exec --no-startup-id ~/Downloads/start_jack &
+# exec --no-startup-id ~/Downloads/start_jack &
 exec --no-startup-id redshift &
 
 ###########################################################################
@@ -69,6 +69,9 @@ bindsym $mod+t exec $term
 
 # mute system
 bindsym $mod+m exec amixer -q -D pulse set Master toggle
+
+# switch audio device
+bindsym $mod+F4 exec switch_audio.py
 
 # Rofi
 bindsym $mod+space exec "rofi -show run"
