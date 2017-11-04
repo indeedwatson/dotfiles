@@ -6,6 +6,7 @@ rofi.color-enabled: true
 # rofi.color-urgent: #1c1c1c, #cc6666, #282a2e, #cc6666, #1c1c1c
 
 rofi.font: Inconsolata-dz for Powerline 11
+rofi.display-run: run: 
 rofi.hide-scrollbar: true
 rofi.width: 30
 rofi.case-sensitive: no
