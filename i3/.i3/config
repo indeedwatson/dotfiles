@@ -42,8 +42,9 @@ exec --no-startup-id ~/.config/polybar/launch.sh &
 exec "compton"
 # chat apps
 exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat &; exec discord &'
+# start vim with commonly edited files
 exec --no-startup-id i3-msg 'workspace 3: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md /home/yama/.i3/config" &'
-exec --no-startup-id exec transmission-gtk &
+exec --no-startup-id exec qbittorrent &
 # start daemon to mount kindle
 # exec "sudo ldm -d -u yama ~/kindle/ &"
 exec dropbox start &
@@ -51,7 +52,6 @@ exec dropbox start &
 exec --no-startup-id unclutter &
 # dropdown terminal, show/hide with capslock + i
 exec --no-startup-id $term --name dropdown &
-# start vimwiki index file
 # exec --no-startup-id ~/Downloads/start_jack &
 exec --no-startup-id redshift &
 
@@ -114,7 +114,7 @@ assign [class="Firefox"] 1:
 assign [class="discord"] 2: 
 assign [class="mpv"] 4:
 assign [class="Steam"] 5: 
-assign [class="calibre"] 20:  
+assign [class="calibre"] 9:  
 assign [class="Transmission-gtk"] 7:  
 
 # Steam Friend list
