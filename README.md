@@ -2,7 +2,7 @@
 
 Config files for my current setup on Arch Linux with i3-gaps
 
-*Screenshots*
+## Screenshots
 ![1](screenshots/1.png)
 ![2](screenshots/2.png)
 ![3](screenshots/3.png)
@@ -16,6 +16,7 @@ Config files for my current setup on Arch Linux with i3-gaps
 - [rofi](https://davedavenport.github.io/rofi/)
 - [polybar](https://davedavenport.github.io/rofi/)
 - [weechat](https://weechat.org/)
+- [pywal](https://github.com/dylanaraps/pywal)
 - [mpv](https://mpv.io/)
 - [zsh](http://www.zsh.org/)
 - [dunst](https://github.com/dunst-project/dunst)
