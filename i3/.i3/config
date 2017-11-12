@@ -2,7 +2,7 @@
 # LOOK
 ###########################################################################
 font pango:Inconsolata-dz for Powerline 9, FontAwesome 10
-
+font pango:lucy tewii 8
 # Set colors from Xresources
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources for some reason
@@ -100,7 +100,7 @@ bindsym $mod+u scratchpad show
 bindsym $mod+i [instance="dropdown"] scratchpad show, move position center
 
 # make focused window sticky
-bindsym $mod+o sticky enable
+bindsym $mod+o sticky toggle
 
 # open apps mode
 bindsym $mod1+a mode "apps"
@@ -110,12 +110,12 @@ bindsym $mod1+s mode "screenshot"
 bindsym Print exec --no-startup-id "~/bin/screenshot"
 
 # assign apps to workspaces
-assign [class="Firefox"] 1:
+assign [class="Nightly"] 1:
 assign [class="discord"] 2: 
 assign [class="mpv"] 4:
 assign [class="Steam"] 5: 
 assign [class="calibre"] 9:  
-assign [class="Transmission-gtk"] 7:  
+assign [class="qBittorrent"] 7:  
 
 # Steam Friend list
 for_window [class="Steam" title="^Friends$"] resize shrink width 150 px or 30 ppt
@@ -131,6 +131,7 @@ for_window [window_role="task_dialog"] floating enable
 for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
 for_window [instance="workout"] floating enable, move scratchpad
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 
 # sticky floating window
 bindsym $mod+y floating enable, resize set 500 350, sticky enable, move window to position 1415 40
@@ -189,7 +190,7 @@ bindsym $mod+z focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
 
 # workspaces aliases
 set $workspace1 workspace number 1
@@ -232,7 +233,7 @@ bindsym $mod+mod1+0 move container to $workspace10
 # GAPS 
 ###########################################################################
 # disable windows titlebars for i3-gaps
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 5
 
 # gaps size
 # inner space between windows
