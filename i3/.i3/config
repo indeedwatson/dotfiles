@@ -53,7 +53,7 @@ exec --no-startup-id unclutter &
 # dropdown terminal, show/hide with capslock + i
 exec --no-startup-id $term --name dropdown &
 # exec --no-startup-id ~/Downloads/start_jack &
-exec --no-startup-id redshift &
+# exec --no-startup-id redshift &
 
 ###########################################################################
 # BINDS
@@ -299,4 +299,4 @@ mode "gaps" {
 #
 # vim:filetype=i3
 
-workspace_layout tabbed
+workspace_layout default
