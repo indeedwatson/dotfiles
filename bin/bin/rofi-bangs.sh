@@ -29,6 +29,10 @@ LABELS["reboot"]=""
 COMMANDS["sleep"]="systemctl suspend"
 LABELS["sleep"]=""
 
+# kill x
+COMMANDS["killx"]="pkill x"
+LABELS["killx"]=""
+
 # launch twitch channels
 COMMANDS["twitch"]="twitch \${input}"
 LABELS["twitch"]=""
@@ -93,7 +97,7 @@ function print_menu()
 function start()
 {
     # print_menu | rofi -dmenu -p "?=>" 
-    print_menu | sort | rofi -kb-row-select "Tab" -kb-row-tab "Control+space" -lines 8 -width 30 -dmenu  -i -p "rofi-bangs: "
+    print_menu | sort | rofi -kb-row-select "Tab" -kb-row-tab "Control+space" -lines 8 -width 30 -dmenu  -i -p "rofi-bangs"
 
 }
 
