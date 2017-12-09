@@ -9,7 +9,7 @@ alias gdq='twitch gamesdonequick'
 alias tcc='twitchnotifier -c tacticcarrotcake -n' # Check for online channels
 
 # global aliases
-alias l='ls -a' # show hidden files
+alias l='exa -Gxa' # show hidden files
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -23,7 +23,6 @@ alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/St
 alias mkdir='mkdir -p' # no error if existing, make parents directories as needed
 alias pstbn='xclip -o | pbpst -Sf' # not working
 # alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi' # user DRI PRIME for dGPU
-alias ranger='. ranger' # open ranger in last visited directory
 alias lsalias="alias | sed 's/=.*//'" # List aliases
 
 # aliases for fasd
