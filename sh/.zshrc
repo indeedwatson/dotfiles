@@ -65,16 +65,16 @@ antigen theme denysdovhan/spaceship-zsh-theme
 # antigen bundles bulk
 antigen bundles <<EOBUNDLES
     # vi-mode for zsh
-    vi-mode
+    # vi-mode
 
     # search backward in history for line matching what's been typed
     history-substring-search
 
     # enhance terminal with 256 colors
-    chrissicool/zsh-256color
+    # chrissicool/zsh-256color
     
     # Interactive cd with fzf
-    changyuheng/zsh-interactive-cd
+    # changyuheng/zsh-interactive-cd
 
     # track most used directories based on "frecency"
     z
