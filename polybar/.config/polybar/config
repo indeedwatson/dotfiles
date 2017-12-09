@@ -9,10 +9,8 @@
 
 [colors]
 background = ${xrdb:color0}
-;background = #1c1c1c
 background-alt = ${xrdb:color8}
 foreground = ${xrdb:color7}
-;foreground = #dfdfdf
 foreground-alt = ${xrdb:color3}
 primary = ${xrdb:color10}
 secondary = ${xrdb:color3}
@@ -42,7 +40,6 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 3
 
-; font-0 = fixed:pixelsize=10;1
 font-0 = "lucy tewii:pixelsize=8;0"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
@@ -50,13 +47,8 @@ font-3 = "fontawesome:size=10;1"
 font-4 = "VulfMono-Bold:pixelsize=10;0"
 
 modules-left = i3
-modules-center = xwindow 
-modules-right = filesystem filesystem2 temperature weather date time
-
-; tray-position = right
-; tray-padding = 1
-;tray-transparent = true
-;tray-background = #0063ff
+modules-center = xwindow mpris
+modules-right = pavolume filesystem filesystem2 temperature weathericons date time
 
 ;wm-restack = i3
 
@@ -302,6 +294,18 @@ bar-volume-empty = ─
 bar-volume-empty-font = 3
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+[module/pavolume]
+type = custom/script
+interval = 2
+label = %output%
+exec = ~/.config/polybar/pavolume.sh
+exec-if = pacmd list-sinks | grep -q available
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/pavolume.sh --up
+scroll-down = ~/.config/polybar/pavolume.sh --down
+format-label-foreground = ${colors.foreground-alt}
+
 [module/weather]
 type = custom/script
 interval = 10
@@ -310,6 +314,14 @@ format-prefix = " "
 format-prefix-font = 3
 format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/weather
+
+[module/weathericons]
+type = custom/script
+interval = 10
+format = <label>
+format-ICON-foreground = ${colors.foreground-alt}
+format-
+exec = ~/.config/polybar/weathericons
 
 [module/battery]
 type = internal/battery
