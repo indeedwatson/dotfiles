@@ -17,21 +17,19 @@ Plugin 'VundleVim/Vundle.vim'
 
 
 " Plugins ---------------------------------------------------------
+" wiki
+Plugin 'vimwiki/vimwiki'
 " Gist for vim
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 " automatic closing of quotes, parenthesis, brackets, etc
 Plugin 'https://github.com/raimondi/delimitMate'
 " lint while you type
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
 " colors from wal
 Plugin 'dylanaraps/wal.vim'
-" status/tabline
-" Plugin 'https://github.com/vim-airline/vim-airline'
 " tables
 Plugin 'dhruvasagar/vim-table-mode'
-" wiki
-Plugin 'vimwiki/vimwiki'
 " i3 syntax
 Plugin 'https://github.com/PotatoesMaster/i3-vim-syntax'
 " fzf
@@ -281,10 +279,6 @@ nnoremap <silent> <Leader>b :call fzf#run({
 
 " vimwiki settings ----------------------------------------------------------
 
-" use vimwiki for markdown
-" let g:vimwiki_ext2syntax = {'.md': 'markdown',
-"                   \ '.mkd': 'markdown',
-"                   \ '.wiki': 'media'}
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
 " code syntax highlight in code blocks
@@ -292,6 +286,7 @@ let wiki = {}
 let wiki.automatic_nested_syntaxes = 1
 " alternating header colors
 let g:vimwiki_hl_headers = 1
+let g:vimwiki_url_maxsave=1
 
 let g:lightline = {
         \ 'colorscheme': 'wal',
