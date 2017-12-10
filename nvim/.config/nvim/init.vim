@@ -92,7 +92,6 @@ set t_Co=256
 syntax enable
 set modeline
 set ls=2
-set autoindent
 set backspace=indent,eol,start
 set complete-=i
 set smarttab
@@ -102,9 +101,21 @@ set conceallevel=2
 set laststatus=2
 " powerline
 let g:airline_powerline_fonts = 1
-" disabled due to lack of bold/italics support
-colorscheme monokai
 
+" set transparent background and colorscheme
+function! NoBackground() abort
+    highlight Normal ctermbg=none guibg=none
+    highlight NonText ctermbg=none guibg=none
+    highlight LineNr ctermbg=none guibg=none
+endfunction
+
+
+augroup transparentBg
+    autocmd!
+    autocmd colorscheme * call NoBackground()
+augroup END
+
+colorscheme monokai
 
 " binds --------------------------------------------------------------
 " space as leader
