@@ -2,5 +2,5 @@ rofi.font: FantasqueSansMono 12
 rofi.display-run: > 
 rofi.case-sensitive: no
 rofi.matching: fuzzy
-rofi.theme: ~/.config/rofi/Monokai2.rasi
+rofi.theme: ~/.config/rofi/Monokai.rasi
 # rofi.show-icons: true
