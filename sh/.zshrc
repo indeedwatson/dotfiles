@@ -58,14 +58,18 @@ export FZF_DEFAULT_COMMAND='rg --no-messages --files --no-ignore --hidden --foll
 # load the oh-my-zsh library
 antigen use oh-my-zsh
 
-# set the prompt theme
-antigen theme denysdovhan/spaceship-zsh-theme
+# options for geometry theme
+GEOMETRY_SYMBOL_PROMPT=">"
+GEOMETRY_COLOR_DIR="5"
+PROMPT_GEOMETRY_EXEC_TIME="true"
+# set geometry theme
+antigen theme geometry-zsh/geometry
 
 
 # antigen bundles bulk
 antigen bundles <<EOBUNDLES
     # vi-mode for zsh
-    # vi-mode
+    vi-mode
 
     # search backward in history for line matching what's been typed
     history-substring-search
@@ -91,3 +95,4 @@ EOBUNDLES
 
 # Tell antigen that you're done
 antigen apply
+
