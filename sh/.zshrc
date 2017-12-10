@@ -60,6 +60,8 @@ antigen use oh-my-zsh
 
 # options for geometry theme
 GEOMETRY_SYMBOL_PROMPT=">"
+GEOMETRY_SYMBOL_EXIT_VALUE="✗"
+GEOMETRY_COLOR_EXIT_VALUE="red"
 GEOMETRY_COLOR_DIR="5"
 PROMPT_GEOMETRY_EXEC_TIME="true"
 # set geometry theme
