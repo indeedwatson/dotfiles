@@ -8,13 +8,23 @@
 ;=====================================================
 
 [colors]
+; black
 background = ${xrdb:color0}
+; grey
 background-alt = ${xrdb:color8}
-foreground = ${xrdb:color7}
-foreground-alt = ${xrdb:color3}
+; white
+foreground = ${xrdb:color15}
+; silver
+foreground-alt = ${xrdb:color7}
+; green
 primary = ${xrdb:color10}
-secondary = ${xrdb:color3}
-alert = ${xrdb:color2}
+; blue
+secondary = ${xrdb:color4}
+; red
+alert = ${xrdb:color1}
+; teal
+extra = ${xrdb:color6}
+purple = ${xrdb:color5}
 
 [bar/example]
 ;monitor = ${env:MONITOR:VGA1}
@@ -28,11 +38,11 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 2
 line-color = ${colors.foreground}
 
-border-size = 0
-border-color = #0000000
+border-bottom-size= 0
+border-color = ${colors.background-alt}
 
 padding-left = 0
 padding-right = 2
@@ -47,7 +57,7 @@ font-3 = "fontawesome:size=10;1"
 font-4 = "VulfMono-Bold:pixelsize=10;0"
 
 modules-left = i3
-modules-center = xwindow mpris
+modules-center = xwindow 
 modules-right = pavolume filesystem filesystem2 temperature weathericons date time
 
 ;wm-restack = i3
@@ -65,6 +75,7 @@ content-background = ${colors.background}
 type = internal/xwindow
 label = %title:0:50:...%
 label-font = 0
+label-foreground = ${colors.foreground-alt}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -131,19 +142,21 @@ wrapping-scroll = true
 ; Only show workspaces on the same output as the bar
 pin-workspaces = false
 
-label-mode-padding = 0
-label-mode-foreground = ${colors.alert}
-label-mode-background = ${colors.background}
+label-mode-padding = 5
+label-mode-foreground = ${colors.secondary}
+label-mode-background = ${colors.background-alt}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
+label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background}
-label-focused-underline = ${colors.primary}
+label-focused-underline = ${colors.purple}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-foreground = ${colors.background-alt}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
@@ -254,7 +267,7 @@ interval = 5
 date = " %d/%m"
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.secondary}
 # format-underline = #d0d0ff
 label = %date% 
 
@@ -263,8 +276,9 @@ type = internal/date
 interval = 5
 time = " %H:%M"
 format-prefix = 
-format-prefix-foreground = ${colors.secondary}
+format-prefix-foreground = ${colors.primary}
 label = %time%
+background = ${background-alt}
 
 [module/volume]
 type = internal/volume
@@ -359,15 +373,14 @@ format = <ramp> <label>
 # format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 # format-warn-underline = ${self.format-underline}
-
 label = %temperature%
 label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.alert}
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.secondary}
 
 [module/powermenu]
 type = custom/menu

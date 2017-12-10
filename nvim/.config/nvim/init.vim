@@ -27,7 +27,9 @@ Plugin 'https://github.com/raimondi/delimitMate'
 " lint while you type
 "Plugin 'w0rp/ale'
 " colors from wal
-Plugin 'dylanaraps/wal.vim'
+" Plugin 'dylanaraps/wal.vim'
+" monokai colorscheme
+Plugin 'crusoexia/vim-monokai'
 " tables
 Plugin 'dhruvasagar/vim-table-mode'
 " i3 syntax
@@ -79,6 +81,7 @@ set softtabstop=4
 set expandtab
 set wildmenu
 set wildmode=full
+set termguicolors
 " highlight search term as you type
 set incsearch
 " don't display line numbers
@@ -100,7 +103,7 @@ set laststatus=2
 " powerline
 let g:airline_powerline_fonts = 1
 " disabled due to lack of bold/italics support
-colorscheme wal
+colorscheme monokai
 
 
 " binds --------------------------------------------------------------
@@ -289,5 +292,5 @@ let g:vimwiki_hl_headers = 1
 let g:vimwiki_url_maxsave=1
 
 let g:lightline = {
-        \ 'colorscheme': 'wal',
+        \ 'colorscheme': 'molokai',
         \ }

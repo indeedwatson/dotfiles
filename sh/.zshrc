@@ -6,7 +6,7 @@ if [ -f $HOME/.antigen/antigen.zsh ]; then
 fi
 
 # Import colorscheme from 'wal'
-(wal -r &)
+# (wal -r &)
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile

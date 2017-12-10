@@ -10,7 +10,7 @@ set_from_resource $fg           i3wm.color7 #f0f0f0
 set_from_resource $bg           i3wm.color0 #f0f0f0
 set_from_resource $urgent       i3wm.color3 #f0f0f0
 set_from_resource $unfocused    i3wm.color10 #f0f0f0
-set_from_resource $focused      i3wm.color2 #f0f0f0
+set_from_resource $focused      i3wm.color8 #f0f0f0
 
 #class                  border      backgr.     text     split
 client.focused          $focused    $focused    $fg      $focused
@@ -36,8 +36,10 @@ set $term termite
 # map capslock as mod4 when held and Escape when pressed and released
 exec --no-startup-id xmodmap ~/.Xmodmap &
 exec xcape -e "Hyper_L=Escape"
-exec_always --no-startup-id wal -t -i ~/Pictures/wal/ -o wal-set &
-exec --no-startup-id ~/.config/polybar/launch.sh &
+# exec_always --no-startup-id wal -t -i ~/Pictures/wal/ -o wal-set &
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
+# exec_always --no-starup-id polybar example
+exec_always --no-startup-id feh --bg-scale '~/Downloads/tobias-van-schneider-88137.jpg'
 exec "compton"
 exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat &; exec discord &'
 exec --no-startup-id exec qbittorrent &
@@ -230,7 +232,7 @@ bindsym $mod+mod1+0 move container to $workspace10
 # GAPS 
 ###########################################################################
 # disable windows titlebars for i3-gaps
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 4
 # gaps size
 # inner space between windows
 gaps inner 15
