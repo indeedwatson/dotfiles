@@ -67,7 +67,8 @@ antigen theme geometry-zsh/geometry
 # antigen bundles bulk
 antigen bundles <<EOBUNDLES
     # vi-mode for zsh
-    vi-mode
+    laurenkt/zsh-vimto
+
 
     # search backward in history for line matching what's been typed
     history-substring-search
@@ -87,7 +88,7 @@ antigen bundles <<EOBUNDLES
     # Bundles from the default repo
     git
     zsh-users/zsh-autosuggestions
-    zsh-users/zsh-syntax-highlighting
+    zdharma/fast-syntax-highlighting
 EOBUNDLES
 
 # Tell antigen that you're done
