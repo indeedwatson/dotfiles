@@ -15,10 +15,6 @@ SAVEHIST=1000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-# aliases
-if [ -f $HOME/.aliases ]; then
-    . $HOME/.aliases
-fi
 
 # Colored man pages
 man() {
@@ -77,10 +73,10 @@ antigen bundles <<EOBUNDLES
     history-substring-search
 
     # enhance terminal with 256 colors
-    # chrissicool/zsh-256color
+    chrissicool/zsh-256color
     
     # Interactive cd with fzf
-    # changyuheng/zsh-interactive-cd
+    changyuheng/zsh-interactive-cd
 
     # track most used directories based on "frecency"
     z
@@ -89,12 +85,15 @@ antigen bundles <<EOBUNDLES
     andrewferrier/fzf-z
     
     # Bundles from the default repo
-    caiogondim/bullet-train.zsh
     git
-    command-not-found
+    zsh-users/zsh-autosuggestions
     zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
 # Tell antigen that you're done
 antigen apply
 
+# aliases
+if [ -f $HOME/.aliases ]; then
+    . $HOME/.aliases
+fi
