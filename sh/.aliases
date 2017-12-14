@@ -24,6 +24,7 @@ alias mkdir='mkdir -p' # no error if existing, make parents directories as neede
 alias pstbn='xclip -o | pbpst -Sf' # not working
 # alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi' # user DRI PRIME for dGPU
 alias lsalias="alias | sed 's/=.*//'" # List aliases
+alias nt='termite . &'
 
 # aliases for fasd
 alias v='f -ae nvim '
