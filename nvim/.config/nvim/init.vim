@@ -82,10 +82,9 @@ set expandtab
 set wildmenu
 set wildmode=full
 set termguicolors
-" highlight search term as you type
-set incsearch
-" don't display line numbers
-set nonumber
+set incsearch " highlight search term as you type
+set ignorecase
+set nonumber " don't display line numbers
 " syntax
 set t_Co=256
 " enable is better than `on`, doesn't reset colors when sourcing config file
