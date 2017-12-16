@@ -10,10 +10,10 @@ set_from_resource $fg           i3wm.color7 #f0f0f0
 set_from_resource $bg           i3wm.color0 #f0f0f0
 set_from_resource $urgent       i3wm.color3 #f0f0f0
 set_from_resource $unfocused    i3wm.color10 #f0f0f0
-set_from_resource $focused      i3wm.color8 #f0f0f0
+set_from_resource $focused      i3wm.color7 #f0f0f0
 
 #class                  border      backgr.     text     split
-client.focused          $focused    $focused    $fg      $focused
+client.focused          $focused    $focused    $bg      $focused
 client.focused_inactive $bg         $bg         $fg      $bg
 client.unfocused        $bg         $bg         $fg      $bg
 client.urgent           $urgent     $urgent     $fg      $bg
@@ -39,9 +39,9 @@ exec xcape -e "Hyper_L=Escape"
 # exec_always --no-startup-id wal -t -i ~/Pictures/wal/ -o wal-set &
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 # exec_always --no-starup-id polybar example
-exec_always --no-startup-id feh --bg-scale '~/Downloads/tobias-van-schneider-88137.jpg'
+exec_always --no-startup-id feh -z --bg-fill ~/Pictures/texture_wp/
 exec "compton"
-exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat &; exec discord &'
+exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat &'
 exec --no-startup-id exec qbittorrent &
 # start daemon to mount kindle
 # exec "sudo ldm -d -u yama ~/kindle/ &"
@@ -50,7 +50,7 @@ exec dropbox start &
 exec --no-startup-id unclutter &
 # dropdown terminal, show/hide with capslock + i
 exec --no-startup-id $term --name dropdown &
-exec --no-startup-id i3-msg 'workspace 3: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config" &'
+exec --no-startup-id i3-msg 'workspace 3: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config /home/yama/dotfiles/nvim/.config/nvim/init.vim" &'
 exec_always --no-startup-id ~/bin/alternating_layouts.py &
 
 ###########################################################################
@@ -80,10 +80,11 @@ bindsym $mod+slash exec ~/bin/rofi-search.sh
 bindsym $mod+p exec pcmanfm &
 
 # Restart i3
-bindsym $mod+F5 restart
+bindsym $mod+F5 exec --no-startup-id feh -z --bg-fill ~/Pictures/texture_wp/
+
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
 
 # suspend
 bindsym $mod+Shift+n exec systemctl suspend
@@ -109,6 +110,7 @@ bindsym Print exec --no-startup-id "~/bin/screenshot"
 
 # assign apps to workspaces
 assign [class="Nightly"] 1:
+assign [class="Firefox"] 1:
 assign [class="discord"] 2: 
 assign [class="mpv"] 4:
 assign [class="Steam"] 5: 
@@ -127,10 +129,12 @@ for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
-for_window [instance="workout"] floating enable, move scratchpad
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="(?i)pinentry"] floating enable
+for_window [title="(?i)calfjackhost"] floating enable
+for_window [title="(?i)Calf JACK Host - session: Calf Studio Gear"] floating enable
+for_window [title="(?i)Calf - Fluidsynth"] floating enable
 
 # sticky floating window
 bindsym $mod+y floating enable, resize set 500 350, sticky enable, move window to position 1415 40
