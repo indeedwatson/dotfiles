@@ -75,6 +75,7 @@ bindsym $mod+F4 exec switch_audio.py
 bindsym $mod+space exec "rofi -show run"
 bindsym $mod+semicolon exec ~/bin/rofi-bangs.sh
 bindsym $mod+slash exec ~/bin/rofi-search.sh
+bindsym $mod+period exec "rofi -show top -modi top -theme-str '#window { width: 900; }'"
 
 # file manager
 bindsym $mod+p exec pcmanfm &
@@ -84,7 +85,7 @@ bindsym $mod+F5 exec --no-startup-id feh -z --bg-fill ~/Pictures/texture_wp/
 
 
 # reload the configuration file
-bindsym $mod+Shift+r reload
+bindsym $mod+F12 reload
 
 # suspend
 bindsym $mod+Shift+n exec systemctl suspend
