@@ -98,8 +98,6 @@ set smarttab
 set conceallevel=2
 " Always show statusline
 set laststatus=2
-" powerline
-let g:airline_powerline_fonts = 1
 
 " set transparent background and colorscheme
 function! NoBackground() abort
@@ -122,10 +120,8 @@ let mapleader = "\<Space>"
 " tab for folding
 nnoremap <Leader><Tab> za
 vnoremap <Leader><Tab> za
-" save with leader-w
-nnoremap <Leader>w :w<CR>
 " make gist with leader-g
-nnoremap <Leader>g :Gist -a<CR>
+nnoremap <Leader>g :Gist -ac<CR>
 " quit without saving with leader-q
 nnoremap <Leader>q :q!<CR>
 " Y copy to the end of line
@@ -303,4 +299,14 @@ let g:vimwiki_url_maxsave=1
 
 let g:lightline = {
         \ 'colorscheme': 'molokai',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'fugitive#head'
+        \ },
         \ }
+
+
+
