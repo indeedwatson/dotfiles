@@ -121,7 +121,7 @@ let mapleader = "\<Space>"
 nnoremap <Leader><Tab> za
 vnoremap <Leader><Tab> za
 " make gist with leader-g
-nnoremap <Leader>g :Gist -ac<CR>
+nnoremap <Leader>g :Gist -a<CR>
 " quit without saving with leader-q
 nnoremap <Leader>q :q!<CR>
 " Y copy to the end of line
@@ -309,4 +309,4 @@ let g:lightline = {
         \ }
 
 
-
+let g:gist_put_url_to_clipboard_after_post = 1
