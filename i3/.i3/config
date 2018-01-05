@@ -10,7 +10,7 @@ set_from_resource $fg           i3wm.color7 #f0f0f0
 set_from_resource $bg           i3wm.color0 #f0f0f0
 set_from_resource $urgent       i3wm.color3 #f0f0f0
 set_from_resource $unfocused    i3wm.color10 #f0f0f0
-set_from_resource $focused      i3wm.color7 #f0f0f0
+set_from_resource $focused      i3wm.color4 #f0f0f0
 
 #class                  border      backgr.     text     split
 client.focused          $focused    $focused    $bg      $focused
@@ -78,7 +78,7 @@ bindsym $mod+slash exec ~/bin/rofi-search.sh
 bindsym $mod+period exec "rofi -show top -modi top -theme-str '#window { width: 900; }'"
 
 # file manager
-bindsym $mod+p exec pcmanfm &
+bindsym $mod+p exec pavucontrol &
 
 # Restart i3
 bindsym $mod+F5 exec --no-startup-id feh -z --bg-fill ~/Pictures/texture_wp/
