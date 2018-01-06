@@ -39,7 +39,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 2
-line-color = ${colors.foreground}
+line-color = ${colors.alert}
 
 border-bottom-size= 0
 border-color = ${colors.background-alt}
@@ -54,11 +54,10 @@ font-0 = "lucy tewii:pixelsize=8;0"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = "fontawesome:size=10;1"
-font-4 = "VulfMono-Bold:pixelsize=10;0"
 
 modules-left = i3
 modules-center = xwindow 
-modules-right = pavolume filesystem filesystem2 temperature weathericons date time
+modules-right = filesystem filesystem2 temperature weathericons date time
 
 ;wm-restack = i3
 
@@ -106,7 +105,7 @@ label-mounted-foreground = ${colors.secondary}
 [module/filesystem2]
 type = internal/fs
 interval = 25
-label-font = ${colors.alert}
+font-foreground = ${colors.background-alt}
 
 mount-0 = /home
 label-mounted = %{F-} %free%
@@ -271,6 +270,7 @@ format-prefix = 
 format-prefix-foreground = ${colors.secondary}
 # format-underline = #d0d0ff
 label = %date% 
+label-foreground = ${colors.background-alt}
 
 [module/time]
 type = internal/date
@@ -319,7 +319,7 @@ click-right = exec pavucontrol
 click-left = ~/.config/polybar/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/pavolume.sh --up
 scroll-down = ~/.config/polybar/pavolume.sh --down
-format-label-foreground = ${colors.foreground-alt}
+format-label-foreground = ${colors.alert}
 
 [module/weather]
 type = custom/script
@@ -371,9 +371,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-# format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-# format-warn-underline = ${self.format-underline}
 label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.alert}
