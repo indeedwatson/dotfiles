@@ -21,10 +21,10 @@ alias py='python'
 alias batman='sudo pacman -Rns $(pacman -Qtdq) && pacaur -S polybar-git' # delete orphan packages
 alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-cef-sandbox >/dev/null 2>&1  &'
 alias mkdir='mkdir -p' # no error if existing, make parents directories as needed
-alias pstbn='xclip -o | pbpst -Sf' # not working
 # alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi' # user DRI PRIME for dGPU
 alias lsalias="alias | sed 's/=.*//'" # List aliases
 alias nt='termite . &'
+alias phone='kdeconnect-cli -d 35ae67aa3fec869'
 
 # aliases for fasd
 alias v='f -ae nvim '
@@ -35,3 +35,11 @@ alias o='a -ae xdg-open'
 function pb() {
   pbpst -Sf "$1" | xclip -selection clipboard
 }
+
+unalias z 2> /dev/null
+z() {
+  [ $# -gt 0 ] && _z "$*" && return
+  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+}
+
+alias j='z'
