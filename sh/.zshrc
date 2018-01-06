@@ -47,6 +47,10 @@ eval "$(fasd --init auto)"
 
 export FZF_DEFAULT_COMMAND='rg --no-messages --files --no-ignore --hidden --follow --glob "!.git/*"'
 
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+
+export FZF_COMPLETION_TRIGGER='~~'
+
 #######################################################
 # ANTIGEN PLUGINS
 #######################################################
@@ -67,8 +71,7 @@ antigen theme geometry-zsh/geometry
 # antigen bundles bulk
 antigen bundles <<EOBUNDLES
     # vi-mode for zsh
-    laurenkt/zsh-vimto
-
+    # laurenkt/zsh-vimto # breaks history search when pressing up arrow
 
     # search backward in history for line matching what's been typed
     history-substring-search
@@ -98,3 +101,6 @@ antigen apply
 if [ -f $HOME/.aliases ]; then
     . $HOME/.aliases
 fi
+
+set -o vi
+source ~/.fzf.zsh
