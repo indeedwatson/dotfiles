@@ -31,7 +31,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # Colors based on wallpaper with https://github.com/dylanaraps/wal#dependencies
-wal -t -i "$(< "${HOME}/.cache/wal/wal")"
+# wal -t -i "$(< "${HOME}/.cache/wal/wal")"
 
 # turn on numlock on startup
 numlockx &
