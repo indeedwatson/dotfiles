@@ -46,13 +46,13 @@ exec --no-startup-id exec qbittorrent &
 # exec "sudo ldm -d -u yama ~/kindle/ &"
 exec dropbox start &
 # make mouse invisible after some time
+exec_always --no-startup-id ~/bin/alternating_layouts.py &
 exec --no-startup-id unclutter &
 # dropdown terminal, show/hide with capslock + i
 exec --no-startup-id $term --name dropdown &
 exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config /home/yama/dotfiles/nvim/.config/nvim/init.vim"; exec $term -e weechat; exec $term -e ranger &'
 exec --no-startup-id kdeconnect-cli
 exec firefox-nightly
-exec_always --no-startup-id ~/bin/alternating_layouts.py &
 
 ###########################################################################
 # BINDS
