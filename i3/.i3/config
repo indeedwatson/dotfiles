@@ -38,10 +38,9 @@ exec --no-startup-id xmodmap ~/.Xmodmap &
 exec xcape -e "Hyper_L=Escape"
 # exec_always --no-startup-id wal -t -i ~/Pictures/wal/ -o wal-set &
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
-# exec_always --no-starup-id polybar example
 exec_always --no-startup-id feh -z --bg-fill ~/Pictures/texture_wp/
 exec "compton"
-exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat &'
+# exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat &'
 exec --no-startup-id exec qbittorrent &
 # start daemon to mount kindle
 # exec "sudo ldm -d -u yama ~/kindle/ &"
@@ -50,7 +49,9 @@ exec dropbox start &
 exec --no-startup-id unclutter &
 # dropdown terminal, show/hide with capslock + i
 exec --no-startup-id $term --name dropdown &
-exec --no-startup-id i3-msg 'workspace 3: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config /home/yama/dotfiles/nvim/.config/nvim/init.vim" &'
+exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config /home/yama/dotfiles/nvim/.config/nvim/init.vim"; exec $term -e weechat; exec $term -e ranger &'
+exec --no-startup-id kdeconnect-cli
+exec firefox-nightly
 exec_always --no-startup-id ~/bin/alternating_layouts.py &
 
 ###########################################################################
@@ -198,8 +199,8 @@ bindsym $mod+Shift+a focus child
 
 # workspaces aliases
 set $workspace1 workspace number 1
-set $workspace2 workspace number 2
-set $workspace3 workspace number 3: 
+set $workspace2 workspace number 2: 
+set $workspace3 workspace number 3
 set $workspace4 workspace number 4: 
 set $workspace5 workspace number 5
 set $workspace6 workspace number 6
