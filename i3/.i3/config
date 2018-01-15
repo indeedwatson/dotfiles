@@ -13,10 +13,10 @@ set_from_resource $unfocused    i3wm.color10 #f0f0f0
 set_from_resource $focused      i3wm.color4 #f0f0f0
 
 #class                  border      backgr.     text     split
-client.focused          $focused    $focused    $bg      $focused
+client.focused          $fg         $fg         $bg      $fg
 client.focused_inactive $bg         $bg         $fg      $bg
 client.unfocused        $bg         $bg         $fg      $bg
-client.urgent           $urgent     $urgent     $fg      $bg
+client.urgent           $urgent     $urgent     $bg      $bg
 client.background       $bg
 
 
@@ -35,6 +35,7 @@ set $term termite
 ###########################################################################
 # map capslock as mod4 when held and Escape when pressed and released
 exec --no-startup-id xmodmap ~/.Xmodmap &
+# exec_always --no-startup-id ~/bin/alternating_layouts.py &
 exec xcape -e "Hyper_L=Escape"
 # exec_always --no-startup-id wal -t -i ~/Pictures/wal/ -o wal-set &
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -49,83 +50,66 @@ exec dropbox start &
 exec --no-startup-id unclutter &
 # dropdown terminal, show/hide with capslock + i
 exec --no-startup-id $term --name dropdown &
-exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config /home/yama/dotfiles/nvim/.config/nvim/init.vim"; exec $term -e weechat; exec $term -e ranger &'
+exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config /home/yama/dotfiles/nvim/.config/nvim/init.vim";  exec $term -e ranger &'
 exec --no-startup-id kdeconnect-cli
 exec firefox-nightly
-exec_always --no-startup-id ~/bin/alternating_layouts.py &
+exec --no-startup-id twitchnotifier -c tacticcarrotcake
+
 
 ###########################################################################
 # BINDS
 ###########################################################################
 # kill focused window
 bindsym $mod+x kill
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
 # Terminal
 bindsym $mod+t exec --no-startup-id $term
-
 # mute system
 bindsym $mod+m exec amixer -q -D pulse set Master toggle
-
 # switch audio device
 bindsym $mod+F4 exec switch_audio.py
-
 # Rofi
 bindsym $mod+space exec "rofi -show run"
 bindsym $mod+semicolon exec ~/bin/rofi-bangs.sh
-bindsym $mod+slash exec ~/bin/rofi-search.sh
+bindsym $mod+slash exec "rofi -show window -theme-str '#window { width: 900; }'"
 bindsym $mod+period exec "rofi -show top -modi top -theme-str '#window { width: 900; }'"
-
 # file manager
 bindsym $mod+p exec pavucontrol &
-
 # Restart i3
 bindsym $mod+F5 exec --no-startup-id feh -z --bg-fill ~/Pictures/texture_wp/
-
-
+# check live twitch streams
+bindsym $mod+F6 exec --no-startup-id 'notify-send -i /usr/share/icons/Numix/16/status/twitch-indicator.svg "$(twitchnotifier -c tacticcarrotcake -n)"'
 # reload the configuration file
 bindsym $mod+F12 reload
-
-# suspend
-bindsym $mod+Shift+n exec systemctl suspend
-
 # Make the currently focused window a scratchpad
 bindsym $mod+mod1+u move scratchpad
-
 # Show the first scratchpad window
 bindsym $mod+u scratchpad show
-
+# jump to urgent window
+bindsym $mod+n [urgent=latest] focus
 # Show dropdown terminal
 bindsym $mod+i [instance="dropdown"] scratchpad show, move position center
-
 # make focused window sticky
 bindsym $mod+o sticky toggle
-
 # open apps mode
 bindsym $mod1+a mode "apps"
-
-# screenshot/screencast mode
-bindsym $mod1+s mode "screenshot"
-bindsym Print exec --no-startup-id "~/bin/screenshot"
+# take screenshot locally
+bindsym Shift+Print exec --no-startup-id "~/bin/screenshot", exec notify-send -t 1900 'SCREENSHOT' 'select an area to save to ~/Pictures/Screenshots'
+# take screenshot and upload to teknik.io (even tho the script used is
+# called imgur
+bindsym Print exec --no-startup-id "~/bin/imgur", exec notify-send  -t 100 'TEKNIK.IO' 'select an area to upload picture'
 
 # assign apps to workspaces
 assign [class="Nightly"] 1:
 assign [class="Firefox"] 1:
 assign [class="discord"] 2: 
-assign [class="mpv"] 4:
+# assign [class="mpv"] 4:
 assign [class="Steam"] 5: 
 assign [class="calibre"] 9:  
 assign [class="qBittorrent"] 7:  
-
-# Steam Friend list
-for_window [class="Steam" title="^Friends$"] resize shrink width 150 px or 30 ppt
-for_window [class="Steam" title="(?i)chat$"] resize shrink width 100 px or 5 ppt
-
 # Twitch chat for streamlink
 # for_window [class="Firefox" title="Twitch - Nightly"] move container to workspace "4:". resize shrink width 150 px or 30 ppt
-
 # Floating windows
 for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
@@ -137,7 +121,6 @@ for_window [class="(?i)pinentry"] floating enable
 for_window [title="(?i)calfjackhost"] floating enable
 for_window [title="(?i)Calf JACK Host - session: Calf Studio Gear"] floating enable
 for_window [title="(?i)Calf - Fluidsynth"] floating enable
-
 # sticky floating window
 bindsym $mod+y floating enable, resize set 500 350, sticky enable, move window to position 1415 40
 
@@ -173,13 +156,10 @@ bindsym $mod+mod1+l move right
 
 # split in horizontal orientation
 bindsym $mod+g split h
-
 # split in vertical orientation
 bindsym $mod+v split v
-
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacked
 bindsym $mod+w layout tabbed
@@ -187,13 +167,10 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
 # change focus between tiling / floating windows
 bindsym $mod+z focus mode_toggle
-
 # focus the parent container
 bindsym $mod+a focus parent
-
 # focus the child container
 bindsym $mod+Shift+a focus child
 
@@ -238,7 +215,7 @@ bindsym $mod+mod1+0 move container to $workspace10
 # GAPS 
 ###########################################################################
 # disable windows titlebars for i3-gaps
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 2
 # gaps size
 # inner space between windows
 gaps inner 15
@@ -247,7 +224,7 @@ gaps outer 0
 # draw borders only if there's more than one window
 smart_borders on
 # disable gaps for mpv & ff
-workspace 4 gaps inner 0
+# workspace 4 gaps inner 0
 workspace 1 gaps inner 0
 
 # resize gaps
@@ -260,25 +237,10 @@ bindsym $mod+c mode "gaps"
 # apps shortcuts
 mode "apps" {
     # music software
-    # bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
-    # workout log
-    bindsym w exec --no-startup-id emacs --name workout "~/Dropbox/orgzly/workout.org", mode default
+    bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
+    bindsym t exec --no-startup-id notify-send -i /usr/share/icons/Numix/16/status/twitch-indicator.svg "$(twitchnotifier -c tacticcarrotcake -n)", mode default
     bindsym Escape mode "default"
     bindsym Enter mode "default"
-    }
-
-mode "screenshot" {
-    # take screenshot locally
-    bindsym s exec --no-startup-id "~/bin/screenshot", exec notify-send -t 100 'SCREENSHOT' 'select an area to save to ~/Pictures/Screenshots', mode default
-    # take screenshot and upload to teknik.io (even tho the script used is
-    # called imgur
-    bindsym d exec --no-startup-id "~/bin/imgur", exec notify-send  -t 100 'TEKNIK.IO' 'select an area to upload picture', mode default
-    # record screencast and upload to imgur
-    bindsym Shift+S exec teiler --togglecast
-    # help message ## broke in recent update, not sure why
-    # bindsym h exec notify-send -t 5000 'SCREENSHOT MODE:' '<b>s</b> to locally save a screenshot\n <b>d</b> to upload to imgur\n <b>Shift+S</b> to record a screencast, press again to stop it'
-    bindsym Escape mode default
-    bindsym Enter mode default
     }
 
 mode "gaps" {
@@ -303,14 +265,4 @@ mode "gaps" {
 #
 # vim:filetype=i3
 
-workspace_layout default
-
-# testing i3fyra
-# bindsym $mod+mod1+h exec --no-startup-id fyra -m l
-# bindsym $mod+mod1+j exec --no-startup-id fyra -m d
-# bindsym $mod+mod1+k exec --no-startup-id fyra -m u
-# bindsym $mod+mod1+l exec --no-startup-id fyra -m r
-# bindsym $mod+n exec --no-startup-id fyra -a
-# for_window [class="^.*"] focus, floating enable; exec --no-startup-id fyra -a
-
-bindsym $mod+7 exec "~/.i3/focus_or_run"
+workspace_layout tabbed
