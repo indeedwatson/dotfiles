@@ -3,4 +3,7 @@ rofi.display-run: >
 rofi.case-sensitive: no
 rofi.matching: fuzzy
 rofi.theme: ~/.config/rofi/Monokai.rasi
-# rofi.show-icons: true
+rofi.window-format:  {w} {n} {t} 
+rofi.levenshtein-sort: true
+rofi.window-command: i3-msg \[id={window}\] move workspace current 
+
