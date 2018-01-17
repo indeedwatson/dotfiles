@@ -40,13 +40,6 @@ LABELS["twitch"]=""
 # view online twitch channels
 COMMANDS["live"]="~/bin/rofi-twitch"
 LABELS["live"]=""
-# if [ -z ${input} ]; then
-#     # twitch
-#     COMMANDS["twitch"]="twitch \${input}"
-# else
-#     # live twitch
-#     COMMANDS["twitch"]="~/bin/rofi-twitch"
-# fi
 
 # password manager
 COMMANDS["pass"]="rofi-pass"
