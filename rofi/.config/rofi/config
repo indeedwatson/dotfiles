@@ -6,4 +6,3 @@ rofi.theme: ~/.config/rofi/Monokai.rasi
 rofi.window-format:  {w} {n} {t} 
 rofi.levenshtein-sort: true
 rofi.window-command: i3-msg \[id={window}\] move workspace current 
-
