@@ -185,7 +185,7 @@ set $workspace10 workspace number 10
 bindsym $mod+1 $workspace1
 bindsym $mod+2 $workspace2
 bindsym $mod+3 $workspace3
-bindsym $mod+4 [class="mpv"] focus, fullscreen, exec --no-startup-id "playerctl play"
+bindsym $mod+4 [class="mpv"] focus, exec --no-startup-id "playerctl play"
 bindsym $mod+5 $workspace5
 bindsym $mod+6 $workspace6
 bindsym $mod+q $workspace7
