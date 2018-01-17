@@ -37,14 +37,10 @@ set $term termite
 exec --no-startup-id xmodmap ~/.Xmodmap &
 # exec_always --no-startup-id ~/bin/alternating_layouts.py &
 exec xcape -e "Hyper_L=Escape"
-# exec_always --no-startup-id wal -t -i ~/Pictures/wal/ -o wal-set &
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec_always --no-startup-id feh -z --bg-fill ~/Pictures/texture_wp/
 exec "compton"
-# exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e weechat &'
 exec --no-startup-id exec qbittorrent &
-# start daemon to mount kindle
-# exec "sudo ldm -d -u yama ~/kindle/ &"
 exec dropbox start &
 # make mouse invisible after some time
 exec --no-startup-id unclutter &
@@ -73,7 +69,7 @@ bindsym $mod+F4 exec switch_audio.py
 bindsym $mod+space exec "rofi -show run"
 bindsym $mod+semicolon exec ~/bin/rofi-bangs.sh
 bindsym $mod+slash exec "rofi -show window -theme-str '#window { width: 900; }'"
-bindsym $mod+period exec "rofi -show top -modi top -theme-str '#window { width: 900; }'"
+bindsym $mod+period exec "rofi -show top -modi top -theme-str '#window { width: 900; }'" 
 # file manager
 bindsym $mod+p exec pavucontrol &
 # Restart i3
@@ -95,17 +91,16 @@ bindsym $mod+o sticky toggle
 # open apps mode
 bindsym $mod1+a mode "apps"
 # take screenshot locally
-bindsym Shift+Print exec --no-startup-id "~/bin/screenshot", exec notify-send -t 1900 'SCREENSHOT' 'select an area to save to ~/Pictures/Screenshots'
-# take screenshot and upload to teknik.io (even tho the script used is
-# called imgur
-bindsym Print exec --no-startup-id "~/bin/imgur", exec notify-send  -t 100 'TEKNIK.IO' 'select an area to upload picture'
+bindsym Shift+Print exec --no-startup-id "~/bin/screenshot.py"
+bindsym Print exec --no-startup-id "~/bin/screenshot.py -u"
 
+bindsym $mod+b move container workspace back_and_forth; workspace back_and_forth
 # assign apps to workspaces
 assign [class="Nightly"] 1:
 assign [class="Firefox"] 1:
 assign [class="discord"] 2: 
 # assign [class="mpv"] 4:
-assign [class="Steam"] 5: 
+# assign [class="Steam"] 5: 
 assign [class="calibre"] 9:  
 assign [class="qBittorrent"] 7:  
 # Twitch chat for streamlink
@@ -190,7 +185,7 @@ set $workspace10 workspace number 10
 bindsym $mod+1 $workspace1
 bindsym $mod+2 $workspace2
 bindsym $mod+3 $workspace3
-bindsym $mod+4 $workspace4
+bindsym $mod+4 [class="mpv"] focus, fullscreen, exec --no-startup-id "playerctl play"
 bindsym $mod+5 $workspace5
 bindsym $mod+6 $workspace6
 bindsym $mod+q $workspace7
