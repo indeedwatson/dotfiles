@@ -10,6 +10,7 @@ case "$1" in
     prec) channel=previouslyrecorded_live;;
     tftv) channel=teamfortresstv;;
     dist) channel=distortion2;;
+    gdq) channel=gamesdonequick;;
     $1) channel=$1;;
 esac
 
