@@ -1,3 +1,0 @@
-pic=$HOME/Pictures/Screenshots/$(date +%F-%H:%M).png
-
-maim -s $pic; tekup -c $pic
