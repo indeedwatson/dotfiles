@@ -1,13 +1,4 @@
 # Aliases for bash/zsh
-# twitch channels
-alias santzo='twitch santzo'
-alias tftv='twitch tftv'
-alias ohn='twitch ohn'
-alias prec='twitch prec'
-alias dist='twitch dist'
-alias gdq='twitch gamesdonequick'
-alias tcc='twitchnotifier -c tacticcarrotcake -n' # Check for online channels
-
 # global aliases
 alias l='exa -xa'
 alias ..='cd ..'
