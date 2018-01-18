@@ -12,11 +12,12 @@
     teal:                    #a1efe4;
 }
 #window {
+    location: center;
     background-color: @background;
     border:           1;
     border-color:     @red;
     padding:          1;
-    width:            250;
+    width:            450;
 }
 #mainbox {
     border:  0;
@@ -34,8 +35,10 @@
     background-color: @background;
 }
 #listview {
-    fixed-height: 0;
+    fixed-height: false;
+    dynamic: true;
     border:       1px 0px 0px ;
+    cycle: 1;
     border-color: @grey;
     spacing:      2px ;
     scrollbar:    false;
