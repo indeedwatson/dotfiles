@@ -151,6 +151,11 @@ inoremap <F5> <C-R>=strftime("%Y.%m.%d %a")<CR>
 " remap tab for following links in vimwiki
 nnoremap <Leader>n <Plug>VimwikiNextLink
 
+" fugitive binds
+nnoremap <space>ga :Gwrite<CR>
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gc :Gcommit<CR>
+nnoremap <space>gp :Gpush<CR>
 
 " Disable swap files
 set noswapfile
