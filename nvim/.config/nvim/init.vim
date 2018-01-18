@@ -31,7 +31,7 @@ Plugin 'https://github.com/raimondi/delimitMate'
 " monokai colorscheme
 Plugin 'crusoexia/vim-monokai'
 " tables
-Plugin 'dhruvasagar/vim-table-mode'
+" Plugin 'dhruvasagar/vim-table-mode'
 " i3 syntax
 Plugin 'https://github.com/PotatoesMaster/i3-vim-syntax'
 " fzf
@@ -52,6 +52,8 @@ Plugin 'machakann/vim-sandwich'
 Plugin 'junegunn/vim-slash'
 " status line
 Plugin 'itchyny/lightline.vim'
+" Show git diff in the gutter
+Plugin 'airblade/vim-gitgutter'
 
 " ------------------------------------------------------------------
 " All of your Plugins must be added before the following line
