@@ -6,18 +6,24 @@ font pango:lucy tewii 8
 # Set colors from Xresources
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources for some reason
-set_from_resource $fg           i3wm.color7 #f0f0f0
-set_from_resource $bg           i3wm.color0 #f0f0f0
-set_from_resource $urgent       i3wm.color3 #f0f0f0
-set_from_resource $unfocused    i3wm.color10 #f0f0f0
-set_from_resource $focused      i3wm.color4 #f0f0f0
+set_from_resource $white           i3wm.color7 #f0f0f0
+set_from_resource $black           i3wm.color0 #f0f0f0
+set_from_resource $red       i3wm.color3 #f0f0f0
+set_from_resource $green    i3wm.color10 #f0f0f0
+set_from_resource $blue      i3wm.color4 #f0f0f0
+set_from_resource $grey         i3wm.color8
+set_from_resource $teal         i3wm.color6
+set_from_resource $dark_orange  i3wm.color17
+set_from_resource $grey2    i3wm.color18
+set_from_resource $grey1        i3wm.color19
+set_from_resource $light_grey    i3wm.color20
 
 #class                  border      backgr.     text     split
-client.focused          $fg         $fg         $bg      $fg
-client.focused_inactive $bg         $bg         $fg      $bg
-client.unfocused        $bg         $bg         $fg      $bg
-client.urgent           $urgent     $urgent     $bg      $bg
-client.background       $bg
+client.focused          $grey2      $grey1      $white      $white
+client.focused_inactive $black      $black      $light_grey      $black
+client.unfocused        $black      $black     $light_grey      $black
+client.urgent           $urgent     $urgent     $black      $black
+client.background       $black
 
 
 ###########################################################################
@@ -28,28 +34,30 @@ set $mod Mod4
 # mod1 = Alt (xmodmap to show)
 set $mod1 Mod1
 set $term termite
+set $exec exec --no-startup-id
+set $exec_always exec_always --no-startup-id
 
 
 ###########################################################################
 # STARTUP
 ###########################################################################
 # map capslock as mod4 when held and Escape when pressed and released
-exec --no-startup-id xmodmap ~/.Xmodmap &
-# exec_always --no-startup-id ~/bin/alternating_layouts.py &
-exec xcape -e "Hyper_L=Escape"
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
-exec_always --no-startup-id feh -z --bg-fill ~/Pictures/texture_wp/
-exec "compton"
-exec --no-startup-id exec qbittorrent &
-exec dropbox start &
-# make mouse invisible after some time
-exec --no-startup-id unclutter &
-# dropdown terminal, show/hide with capslock + i
-exec --no-startup-id $term --name dropdown &
-exec --no-startup-id i3-msg 'workspace 2: ; exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config /home/yama/dotfiles/nvim/.config/nvim/init.vim";  exec $term -e ranger &'
-exec --no-startup-id kdeconnect-cli
-exec firefox-nightly
-exec --no-startup-id twitchnotifier -c tacticcarrotcake
+# $exec i3-msg open, mark _a
+# $exec i3-msg open, mark _b
+$exec xmodmap ~/.Xmodmap &
+$exec xcape -e "Hyper_L=Escape"
+$exec_always ~/.config/polybar/launch.sh &
+$exec_always feh -z --bg-fill ~/Pictures/texture_wp/
+$exec "compton"
+$exec qbittorrent &
+$exec dropbox start &
+$exec unclutter &
+$exec kdeconnect-cli
+$exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md \
+/home/yama/dotfiles/i3/.i3/config /home/yama/dotfiles/nvim/.config/nvim/init.vim"
+$exec $term --name dropdown &
+$exec firefox-nightly
+$exec twitchnotifier -c tacticcarrotcake -n
 
 
 ###########################################################################
@@ -60,88 +68,38 @@ bindsym $mod+x kill
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # Terminal
-bindsym $mod+t exec --no-startup-id $term
+bindsym $mod+t $exec $term # terminal
 # mute system
-bindsym $mod+m exec amixer -q -D pulse set Master toggle
+bindsym $mod+m $exec volume.py
 # switch audio device
-bindsym $mod+F4 exec switch_audio.py
+bindsym $mod+F4 $exec audioSwitch.py
 # Rofi
-bindsym $mod+space exec "rofi -show run"
-bindsym $mod+semicolon exec ~/bin/rofi-bangs.sh
-bindsym $mod+slash exec "rofi -show window -theme-str '#window { width: 900; }'"
-bindsym $mod+period exec "rofi -show top -modi top -theme-str '#window { width: 900; }'" 
-# file manager
-bindsym $mod+p exec pavucontrol &
-# Restart i3
-bindsym $mod+F5 exec --no-startup-id feh -z --bg-fill ~/Pictures/texture_wp/
-# check live twitch streams
-bindsym $mod+F6 exec --no-startup-id 'notify-send -i /usr/share/icons/Numix/16/status/twitch-indicator.svg "$(twitchnotifier -c tacticcarrotcake -n)"'
+bindsym $mod+space $exec "rofi -show run"
+bindsym $mod+semicolon $exec ~/bin/rofi-bangs.sh
+bindsym $mod+slash $exec "rofi -show window \
+-theme-str '#window { width: 1920; location: south; border: 1 0 0; }'"
+bindsym $mod+period $exec "rofi -show top -modi top -theme-str '#window { width: 900; }'" 
+bindsym $mod+p $exec pavucontrol &
 # reload the configuration file
+bindsym $mod+F11 $exec "~/.config/polybar/launch.sh"
 bindsym $mod+F12 reload
-# Make the currently focused window a scratchpad
-bindsym $mod+mod1+u move scratchpad
 # Show the first scratchpad window
 bindsym $mod+u scratchpad show
-# jump to urgent window
-bindsym $mod+n [urgent=latest] focus
+bindsym $mod+Tab workspace back_and_forth
 # Show dropdown terminal
 bindsym $mod+i [instance="dropdown"] scratchpad show, move position center
-# make focused window sticky
 bindsym $mod+o sticky toggle
-# open apps mode
-bindsym $mod1+a mode "apps"
 # take screenshot locally
-bindsym Shift+Print exec --no-startup-id "~/bin/screenshot.py"
-bindsym Print exec --no-startup-id "~/bin/screenshot.py -u"
-
+bindsym Shift+Print $exec "~/bin/screenshot.py"
+bindsym Print $exec "~/bin/screenshot.py -u"
 bindsym $mod+b move container workspace back_and_forth; workspace back_and_forth
-# assign apps to workspaces
-assign [class="Nightly"] 1:
-assign [class="Firefox"] 1:
-assign [class="discord"] 2: 
-# assign [class="mpv"] 4:
-# assign [class="Steam"] 5: 
-assign [class="calibre"] 9:  
-assign [class="qBittorrent"] 7:  
-# Twitch chat for streamlink
-# for_window [class="Firefox" title="Twitch - Nightly"] move container to workspace "4:". resize shrink width 150 px or 30 ppt
-# Floating windows
-for_window [class="(?i)feh"] floating enable
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [class="(?i)pavucontrol"] floating enable, move position mouse
-for_window [class="(?i)pinentry"] floating enable
-for_window [title="(?i)calfjackhost"] floating enable
-for_window [title="(?i)Calf JACK Host - session: Calf Studio Gear"] floating enable
-for_window [title="(?i)Calf - Fluidsynth"] floating enable
-# sticky floating window
-bindsym $mod+y floating enable, resize set 500 350, sticky enable, move window to position 1415 40
+bindsym $mod+c mode "nav"
 
-
-###########################################################################
-# LAYOUT AND MISC
-###########################################################################
-
-floating_maximum_size 1920 x 1080
-new_window pixel 2
-new_float pixel 2
-workspace_auto_back_and_forth yes
-focus_follows_mouse no
-popup_during_fullscreen smart
-force_focus_wrapping no
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-#resize
-bindsym $mod+Shift+h resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+j resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+k resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+l resize grow width 10 px or 10 ppt
+bindsym $mod+h $exec i3viswiz l
+bindsym $mod+j $exec i3viswiz d
+bindsym $mod+k $exec i3viswiz u
+bindsym $mod+l $exec i3viswiz r
 
 # move focused window
 bindsym $mod+mod1+h move left
@@ -149,16 +107,10 @@ bindsym $mod+mod1+j move down
 bindsym $mod+mod1+k move up
 bindsym $mod+mod1+l move right
 
-# split in horizontal orientation
-bindsym $mod+g split h
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split vertical
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacked
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -169,48 +121,90 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
 
-# workspaces aliases
-set $workspace1 workspace number 1
-set $workspace2 workspace number 2: 
-set $workspace3 workspace number 3
-set $workspace4 workspace number 4: 
-set $workspace5 workspace number 5
-set $workspace6 workspace number 6
-set $workspace7 workspace number 7
-set $workspace8 workspace number 8
-set $workspace9 workspace number 9
-set $workspace10 workspace number 10
-
-# switch to workspace
-bindsym $mod+1 $workspace1
-bindsym $mod+2 $workspace2
-bindsym $mod+3 $workspace3
-bindsym $mod+4 [class="mpv"] focus, exec --no-startup-id "playerctl play"
-bindsym $mod+5 $workspace5
-bindsym $mod+6 $workspace6
-bindsym $mod+q $workspace7
-bindsym $mod+8 $workspace8
-bindsym $mod+9 $workspace9
-bindsym $mod+0 $workspace10
+bindsym $mod+n workspace next
+bindsym $mod+$mod1+n workspace prev
+bindsym $mod+1 [con_mark="_a"] focus
+bindsym $mod+2 [con_mark="_b"] focus
+bindsym $mod+3 exec run_or_focus.py "NVIM" "termite -e nvim"
+bindsym $mod+4 exec run_or_focus.py "mpv" 
+#; $exec xdotool key space
+bindsym $mod+r exec run_or_focus.py "^ranger" "termite -e ranger"
+bindsym $mod+w exec run_or_focus.py "Weechat" "termite -e weechat"
+bindsym $mod+s exec run_or_focus.py "^Steam" steam
+bindsym $mod+5 $ws5
+bindsym $mod+6 $ws6
+bindsym $mod+q $ws7
+bindsym $mod+8 $ws8
+bindsym $mod+9 $ws9
+bindsym $mod+0 $ws10
 
 # move focused container to workspace
-bindsym $mod+mod1+1 move container to $workspace1
-bindsym $mod+mod1+2 move container to $workspace2
-bindsym $mod+mod1+3 move container to $workspace3
-bindsym $mod+mod1+4 move container to $workspace4
-bindsym $mod+mod1+5 move container to $workspace5
-bindsym $mod+mod1+6 move container to $workspace6
-bindsym $mod+mod1+7 move container to $workspace7
-bindsym $mod+mod1+8 move container to $workspace8
-bindsym $mod+mod1+9 move container to $workspace9
-bindsym $mod+mod1+0 move container to $workspace10
+bindsym $mod+mod1+1 move container to $ws1
+bindsym $mod+mod1+2 move container to $ws2
+bindsym $mod+mod1+3 move container to $ws3
+bindsym $mod+mod1+4 move container to $ws4
+bindsym $mod+mod1+5 move container to $ws5
+bindsym $mod+mod1+6 move container to $ws6
+bindsym $mod+mod1+7 move container to $ws7
+bindsym $mod+mod1+8 move container to $ws8
+bindsym $mod+mod1+9 move container to $ws9
+bindsym $mod+mod1+0 move container to $ws10
+
+###########################################################################
+# LAYOUT AND MISC
+###########################################################################
+
+workspace_layout tabbed
+floating_maximum_size 1920 x 1080
+new_window pixel 2
+new_float pixel 2
+workspace_auto_back_and_forth yes
+focus_follows_mouse no
+popup_during_fullscreen smart
+force_focus_wrapping no
+
+for_window [class="mpv"] move to mark _a
+for_window [class="(?i)termite" title="(?i)weechat"] move to mark _b
+for_window [class="(?i)termite" title="(?i)ranger"] move to mark _b
+for_window [class="Steam"] move to mark _a
+for_window [class="Steam" title="Friends"] move to mark _b
+for_window [class="Steam" title="- Chat$"] move to mark _b
+assign [class="calibre"] 9:  
+assign [class="qBittorrent"] $ws7
+# Floating windows
+for_window [class="(?i)feh"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
+for_window [class="^Steam$" title="^Steam Guard - \
+Computer Authorization Required$"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="(?i)pavucontrol"] floating enable, move position mouse
+for_window [class="(?i)pinentry"] floating enable
+for_window [title="(?i)calfjackhost"] floating enable
+for_window [title="(?i)Calf JACK Host - session: Calf Studio Gear"] floating enable
+for_window [title="(?i)Calf - Fluidsynth"] floating enable
+
+# workspaces aliases
+set $ws1 workspace number 1
+set $ws2 workspace number 2
+set $ws3 workspace number 3
+set $ws4 workspace number 4
+set $ws5 workspace number 5
+set $ws6 workspace number 6
+set $ws7 workspace number 7
+set $ws8 workspace number 8
+set $ws9 workspace number 9
+set $ws10 workspace number 10
+
 
 
 ###########################################################################
 # GAPS 
 ###########################################################################
 # disable windows titlebars for i3-gaps
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 4
 # gaps size
 # inner space between windows
 gaps inner 15
@@ -222,42 +216,50 @@ smart_borders on
 # workspace 4 gaps inner 0
 workspace 1 gaps inner 0
 
-# resize gaps
-bindsym $mod+c mode "gaps"
-
 
 ###########################################################################
 # MODES
 ###########################################################################
-# apps shortcuts
-mode "apps" {
-    # music software
-    bindsym m workspace "6: "; exec "cadence", exec "calfjackhost", exec "pavucontrol", mode default
-    bindsym t exec --no-startup-id notify-send -i /usr/share/icons/Numix/16/status/twitch-indicator.svg "$(twitchnotifier -c tacticcarrotcake -n)", mode default
-    bindsym Escape mode "default"
-    bindsym Enter mode "default"
-    }
 
-mode "gaps" {
-    # get rid of all gaps in current ws
+mode "nav" {
+    # secondary mode, still in testing, to perform all the actions that are not
+    # in default mode
+    bindsym 1 mark _a, mode "default"
+    bindsym 2 mark _b, mode "default"
+    #resize
+    bindsym h resize shrink width 300 px
+    bindsym j resize shrink height 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize grow width 300 px or 10 ppt
+    bindsym comma [con_mark="b"] focus, resize set 100 300, mode "default"
+    #gaps
+    bindsym Shift+j gaps inner current plus 15
+    bindsym Shift+k gaps inner current minus 15
+    bindsym Shift+h gaps outer current plus 15
+    bindsym Shift+l gaps outer current minus 15
     bindsym c gaps inner current set 0, mode default
-    # resize gaps
-    bindsym j gaps inner current plus 15
-    bindsym k gaps inner current minus 15
-    bindsym h gaps outer current plus 15
-    bindsym l gaps outer current minus 15
-    bindsym $mod+c mode "default"
-    bindsym Enter mode "default"
+    # Make the currently focused window a scratchpad
+    bindsym u move scratchpad
+    # volume
+    bindsym 9 $exec "volume.py -down"
+    bindsym 0 $exec "volume.py -max", mode default
+    # live twitch channels
+    bindsym Shift+t $exec notify-send -i /usr/share/icons/Numix/16/status/twitch-indicator.svg \
+    "$(twitchnotifier -c tacticcarrotcake -n)", mode default
+    # toggle redshift
+    bindsym r $exec redshift_toggle, mode default
+    bindsym t layout toggle all
+    bindsym F5 $exec feh -z --bg-fill ~/Pictures/texture_wp/
+    bindsym $mod+y floating enable, resize set 500 350, sticky enable, \
+    move window to position 1415 40, mode default
     bindsym Escape mode "default"
     }
-
 
 ###########################################################################
 # TESTS
 ###########################################################################
 # # Testing https://www.youtube.com/watch?v=kPGXqFPnswc
-# bindsym $mod1+s exec --no-startup-id i3-input -F "[con_id=__focused__] mark _sticky_%s"
+# bindsym $mod1+s $exec i3-input -F "[con_id=__focused__] mark _sticky_%s"
 #
-# vim:filetype=i3
 
-workspace_layout tabbed
+# vim:filetype=i3
