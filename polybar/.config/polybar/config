@@ -386,6 +386,7 @@ exec = ~/.config/polybar/redshift.sh
 
 [module/music]
 type = custom/script
+label = %output:0:50%
 exec = ~/.config/polybar/player-mpris-simple.sh
 label-foreground = ${colors.label_foreground}
 label-background = ${colors.label_background}
