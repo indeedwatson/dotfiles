@@ -31,7 +31,7 @@ Plugin 'https://github.com/raimondi/delimitMate'
 " monokai colorscheme
 Plugin 'crusoexia/vim-monokai'
 " tables
-" Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'dhruvasagar/vim-table-mode'
 " i3 syntax
 Plugin 'https://github.com/PotatoesMaster/i3-vim-syntax'
 " fzf
@@ -123,7 +123,7 @@ let mapleader = "\<Space>"
 nnoremap <Leader><Tab> za
 vnoremap <Leader><Tab> za
 " make gist with leader-g
-nnoremap <Leader>g :Gist -a<CR>
+nnoremap <Leader>gi :Gist -a<CR>
 nnoremap <Leader>G :Gist <CR>
 " quit without saving with leader-q
 nnoremap <Leader>q :q!<CR>
@@ -152,7 +152,7 @@ inoremap <F5> <C-R>=strftime("%Y.%m.%d %a")<CR>
 nnoremap <Leader>n <Plug>VimwikiNextLink
 
 " fugitive binds
-nnoremap <space>ga :Gwrite<CR>
+nnoremap <space>gw :Gwrite<CR>
 nnoremap <space>gs :Gstatus<CR>
 nnoremap <space>gc :Gcommit<CR>
 nnoremap <space>gp :Gpush<CR>
