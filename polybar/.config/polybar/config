@@ -90,24 +90,10 @@ label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.blue}
 
 [module/filesystem2]
-type = internal/fs
-interval = 25
-
+inherit = module/filesystem
 mount-0 = /home
 format-mounted-prefix = 
 format-mounted-prefix-background = ${colors.blue}
-format-mounted-prefix-foreground = ${colors.black}
-format-mounted-prefix-padding = 1
-format-unmounted-prefix-background = ${colors.grey}
-format-unmounted-prefix-foreground = ${colors.light_grey}
-format-unmounted-prefix-padding = 1
-
-label-mounted =%free%
-label-mounted-foreground = ${colors.label_foreground}
-label-mounted-background = ${colors.label_background}
-label-mounted-padding = 1
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.grey}
 
 [module/bspwm]
 type = internal/bspwm
