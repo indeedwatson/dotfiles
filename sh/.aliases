@@ -13,7 +13,6 @@ alias batman='sudo pacman -Rns $(pacman -Qtdq) && pacaur -S polybar-git' # delet
 alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-cef-sandbox >/dev/null 2>&1  &'
 alias mkdir='mkdir -p' # no error if existing, make parents directories as needed
 # alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi' # user DRI PRIME for dGPU
-alias lsalias="alias | sed 's/=.*//'" # List aliases
 alias nt='termite . &'
 alias phone='kdeconnect-cli -d 35ae67aa3fec869'
 
