@@ -23,7 +23,7 @@ client.focused          $grey2      $grey1      $white      $white
 client.focused_inactive $black      $black      $light_grey      $black
 client.unfocused        $black      $black     $light_grey      $black
 client.urgent           $urgent     $urgent     $black      $black
-client.background       $black
+client.background       #000000
 
 
 ###########################################################################
@@ -49,15 +49,13 @@ $exec xcape -e "Hyper_L=Escape"
 $exec_always ~/.config/polybar/launch.sh &
 $exec_always feh -z --bg-fill ~/Pictures/texture_wp/
 $exec "compton"
-$exec qbittorrent &
 $exec dropbox start &
 $exec unclutter &
 $exec kdeconnect-cli
 $exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md \
 /home/yama/dotfiles/i3/.i3/config /home/yama/dotfiles/nvim/.config/nvim/init.vim"
 $exec $term --name dropdown &
-$exec firefox-nightly
-$exec twitchnotifier -c tacticcarrotcake -n
+$exec i3-msg "ws1; $exec firefox-nightly; ws7; $exec qbittorrent"
 
 
 ###########################################################################
@@ -123,14 +121,14 @@ bindsym $mod+Shift+a focus child
 
 bindsym $mod+n workspace next
 bindsym $mod+$mod1+n workspace prev
-bindsym $mod+1 [con_mark="_a"] focus
-bindsym $mod+2 [con_mark="_b"] focus
-bindsym $mod+3 exec run_or_focus.py "NVIM" "termite -e nvim"
-bindsym $mod+4 exec run_or_focus.py "mpv" 
+bindsym $mod+1 fullscreen disable, [con_mark="_a"] focus
+bindsym $mod+2 fullscreen disable, [con_mark="_b"] focus
+bindsym $mod+3 fullscreen disable, $exec run_or_focus.py "NVIM" "termite -e nvim"
+bindsym $mod+4 fullscreen disable, $exec run_or_focus.py "mpv" 
 #; $exec xdotool key space
-bindsym $mod+r exec run_or_focus.py "^ranger" "termite -e ranger"
-bindsym $mod+w exec run_or_focus.py "Weechat" "termite -e weechat"
-bindsym $mod+s exec run_or_focus.py "^Steam" steam
+bindsym $mod+r fullscreen disable, $exec run_or_focus.py "^ranger" "termite -e ranger"
+bindsym $mod+w fullscreen disable, $exec run_or_focus.py "Weechat" "termite -e weechat"
+bindsym $mod+s fullscreen disable, $exec run_or_focus.py "^Steam" steam
 bindsym $mod+5 $ws5
 bindsym $mod+6 $ws6
 bindsym $mod+q $ws7
