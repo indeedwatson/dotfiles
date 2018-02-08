@@ -1,3 +1,1 @@
-#twitch "$($1 | rofi -threads 0 -dmenu -i -p "twitch:")"
-
-twitch "$(twitchnotifier -c tacticcarrotcake -n | rofi -dmenu -markup-rows -i -p "twitch:")"
+twitch $(twitchnotifier -c tacticcarrotcake -n | rofi -dmenu -markup-rows -i -p "" | grep -Po '.+?(?=\:)')
