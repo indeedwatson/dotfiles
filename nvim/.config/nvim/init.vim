@@ -320,6 +320,7 @@ let g:lightline = {
 let g:gist_put_url_to_clipboard_after_post = 1
 
 " follow symlinks always
+" https://www.reddit.com/r/vim/comments/1x5rhh/how_to_follow_symlinks/cfbck18/
 function! MyFollowSymlink(...)
     if exists('w:no_resolve_symlink') && w:no_resolve_symlink
         return
