@@ -270,7 +270,7 @@ autocmd! User FzfStatusLine call <SID>fzf_statusline()
 " --color: Search color options
 
 " Search for files containing a term
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --no-messages --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --no-messages --fixed-strings --smart-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " use ripgrep for grepprg (vim search)
 set grepprg=rg\ --vimgrep
@@ -318,3 +318,29 @@ let g:lightline = {
 
 
 let g:gist_put_url_to_clipboard_after_post = 1
+
+" follow symlinks always
+function! MyFollowSymlink(...)
+    if exists('w:no_resolve_symlink') && w:no_resolve_symlink
+        return
+    endif
+    let fname = a:0 ? a:1 : expand('%')
+    if fname =~ '^\w\+:/'
+        " do no mess with fugitive:// etc
+        return
+    endif
+    let fname = simplify(fname)
+
+    let resolvedfile = resolve(fname)
+    if resolvedfile == fname
+        retur
+    endif
+    let resolvedfile = fnameescape(resolvedfile)
+    "echohl WarningMsg | echomsg 'Resolving syminlk' fname '=>' resolvedfile | echohl None
+    exec 'file ' . resolvedfile
+endfunction
+command! FollowSymlink call MyfollowSymlink()
+command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>" w:no_resolve_symlink
+augroup FollowSymlinks
+    au BufReadPost * call MyFollowSymlink(expand('<afile>'))
+augroup END
