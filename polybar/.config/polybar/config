@@ -47,17 +47,17 @@ line-color = ${colors.red}
 border-color = ${colors.grey}
 padding-left = 2
 padding-right = 2
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = "lucy tewii:pixelsize=8;0"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = "fontawesome:size=10;1"
+font-2 = "fontawesome:size=10;1"
+font-3 = "WunconSiji:size=10;1"
 
-modules-left = i3 music
+modules-left = i3  
 modules-center = taskwarrior  
-modules-right = twitch filesystem filesystem2 temperature time
+modules-right = music redshift  filesystem filesystem2 temperature time
 
 [module/xwindow]
 type = internal/xwindow
@@ -74,7 +74,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-format-mounted-prefix = /
+format-mounted-prefix = 
 format-mounted-prefix-background = ${colors.teal}
 format-mounted-prefix-foreground = ${colors.black}
 format-mounted-prefix-padding = 1
@@ -264,7 +264,7 @@ label-padding = 1
 [module/time]
 type = internal/date
 interval = 5
-time = "%d/%m %H:%M"
+time = "%d/%m - %H:%M"
 format-prefix = 
 format-prefix-foreground = ${colors.black}
 format-prefix-background = ${colors.orange}
@@ -319,6 +319,11 @@ click-left = ~/.config/polybar/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/pavolume.sh --up
 scroll-down = ~/.config/polybar/pavolume.sh --down
 
+[module/pulseaudio-tail]
+type = custom/script
+exec = ~/.config/polybar/pulseaudio-tail.sh
+tail = true
+
 [module/weather]
 type = custom/script
 interval = 10
@@ -339,7 +344,7 @@ exec = ~/.config/polybar/weathericons
 interval = 30
 format = "  <label>  "
 type = custom/script
-exec = ~/.config/polybar/twitch_polybar.sh
+exec = ~/bin/twitch_loop
 format-prefix = ""
 format-prefix-foreground = ${colors.black}
 format-prefix-background = ${colors.purple}
@@ -368,6 +373,8 @@ format-warn = <ramp> <label-warn>
 label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.red}
+label-warn-background = ${colors.label_background}
+label-warn-padding = 1
 label-foreground = ${colors.label_foreground}
 label-background = ${colors.label_background}
 label-padding = 1
@@ -383,6 +390,9 @@ ramp-padding = 1
 type = custom/script
 interval = 5
 exec = ~/.config/polybar/redshift.sh
+label-background = ${colors.label_background}
+label-padding = 1
+click-left = ~/bin/redshift_toggle
 
 [module/music]
 type = custom/script
@@ -391,10 +401,11 @@ exec = ~/.config/polybar/player-mpris-simple.sh
 label-foreground = ${colors.label_foreground}
 label-background = ${colors.label_background}
 label-padding = 1
+tail = true
 
-format-prefix = ""
+format-prefix = ""
 format-prefix-foreground = ${colors.black}
-format-prefix-background = ${colors.red}
+format-prefix-background = ${colors.yellow}
 format-prefix-padding = 1
 
 [settings]

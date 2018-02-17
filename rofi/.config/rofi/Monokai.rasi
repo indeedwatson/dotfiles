@@ -10,12 +10,14 @@
     silver:                  #f9f8f5;
     purple:                  #ae81ff;
     teal:                    #a1efe4;
+    darkgrey:                #49483e;
+    lightgrey:               #a59f85;
 }
 #window {
     location: center;
     background-color: @background;
     border:           1;
-    border-color:     @red;
+    border-color:     @darkgrey;
     padding:          1;
     width:            450;
 }
@@ -39,7 +41,7 @@
     dynamic: true;
     border:       1px 0px 0px ;
     cycle: 1;
-    border-color: @grey;
+    border-color: @darkgrey;
     spacing:      2px ;
     scrollbar:    false;
     padding:      8px 0px 0px ;
@@ -51,35 +53,35 @@
 }
 #element.normal.normal {
     background-color: @background;
-    text-color:       @foreground;
+    text-color:       @lightgrey;
 }
 #element.normal.urgent {
     background-color: @red;
-    text-color:       @foreground;
+    text-color:       @lightgrey;
 }
 #element.normal.active {
     background-color: @background;
-    text-color:       @foreground;
+    text-color:       @lightgrey;
 }
 #element.selected.normal {
     background-color: @background;
-    text-color:       @green;
+    text-color:       @foreground;
 }
 #element.selected.urgent {
     background-color: @background;
-    text-color:       @foreground;
+    text-color:       @lightgrey;
 }
 #element.selected.active {
     background-color: @background;
-    text-color:       @foreground;
+    text-color:       @lightgrey;
 }
 #element.alternate.normal {
     background-color: @background;
-    text-color:       @foreground;
+    text-color:       @lightgrey;
 }
 #element.alternate.urgent {
     background-color: @background;
-    text-color:       @foreground;
+    text-color:       @lightgrey;
 }
 #element.alternate.active {
     background-color: @background;
@@ -112,6 +114,6 @@
 }
 #prompt {
     spacing:    9;
-    text-color: @blue;
+    text-color: @green;
     background-color: @background;
 }
