@@ -1,7 +1,7 @@
 #!/bin/bash
 # shortcuts for livestreamer channels and quality
-
 twitch=http://www.twitch.tv/
+user=tacticcarrotcake
 
 # alias most watched channels
 case "$1" in
@@ -10,7 +10,6 @@ case "$1" in
     prec) channel=previouslyrecorded_live;;
     tftv) channel=teamfortresstv;;
     dist) channel=distortion2;;
-    gdq) channel=gamesdonequick;;
     $1) channel=$1;;
 esac
 
@@ -21,20 +20,20 @@ case "${2:-b}" in
     m*) quality=medium;;
     *)
         # print error if not one of the above quality
-        printf '%s: unkown quality option: %s (one of [l]ow,
-        [m]edium, [b]est)'"$0" "$2" >&2
+        printf '%s: unkown quality option: %s\n
+        [l]ow\n
+        [m]edium\n
+        [b]est)'"$0" "$2" >&2
         exit 1
         ;;
 esac
 
-# exit if no channel was given
-if [ -z $channel ]; then
-    exit
-fi
+[ -z "$channel" ] && channel=$(twitchnotifier -c $user -n | rofi \
+    -dmenu -markup-rows -i -p "" | grep -Po '^.+?(?=\:)')
+[ -z "$channel" ] && exit
+streamlink $twitch$channel $quality &
 
-# exec livestreamer
 # to use with iGPU and dri
 # DRI_PRIME=1 VDPAU_DRIVER=radeonsi streamlink $twitch$channel $quality &
-streamlink $twitch$channel $quality &
 # twitch chat in popout mode
 # firefox-nightly --new-window $twitch$channel/chat?popout= &
