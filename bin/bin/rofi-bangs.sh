@@ -37,10 +37,6 @@ LABELS["killx"]=""
 COMMANDS["twitch"]="twitch \${input}"
 LABELS["twitch"]=""
 
-# view online twitch channels
-COMMANDS["live"]="~/bin/rofi-twitch"
-LABELS["live"]=""
-
 # password manager
 COMMANDS["pass"]="rofi-pass"
 LABELS["pass"]=""
