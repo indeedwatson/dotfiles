@@ -34,7 +34,7 @@ COMMANDS["killx"]="pkill x"
 LABELS["killx"]=""
 
 # launch twitch channels
-COMMANDS["twitch"]="twitch \${input}"
+COMMANDS["twitch"]="rofi-twitch \${input}"
 LABELS["twitch"]=""
 
 # password manager
