@@ -76,8 +76,8 @@ bindsym $mod+F4 $exec audioSwitch.py
 bindsym $mod+space $exec "rofi -show run"
 bindsym $mod+semicolon $exec ~/bin/rofi-bangs.sh
 bindsym $mod+slash $exec "rofi -show window \
--theme-str '#window { width: 1920; location: south; border: 1 0 0; }'"
-bindsym $mod+period $exec "rofi -show top -sort -modi top -theme-str '#window { width: 900; }'" 
+-theme-str '#window { width: 100%; location: south; border: 1 0 0; }'"
+bindsym $mod+period $exec "rofi -show top -sort -modi top -theme-str '#window { width: 90%; }'" 
 bindsym $mod+p $exec pavucontrol &
 # reload the configuration file
 bindsym $mod+F11 $exec "~/.config/polybar/launch.sh"
@@ -124,7 +124,7 @@ bindsym $mod+$mod1+n workspace prev
 bindsym $mod+1 [con_mark="_a"] focus
 bindsym $mod+2 [con_mark="_b"] focus
 bindsym $mod+3 $exec run_or_focus.py " - NVIM$" "termite -e nvim"
-bindsym $mod+4 $exec run_or_focus.py "- mpv$" 
+bindsym $mod+4 $exec run_or_focus.py "mpv$" 
 bindsym $mod+r $exec run_or_focus.py "^ranger" "termite -e ranger"
 bindsym $mod+w $exec run_or_focus.py "Weechat" "termite -e weechat"
 bindsym $mod+s $exec run_or_focus.py "^Steam" steam

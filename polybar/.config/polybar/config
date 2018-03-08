@@ -26,8 +26,8 @@ darkest_grey = ${xrdb:color18}
 label_foreground = ${colors.light_grey}
 label_background = ${colors.darkest_grey}
 
-[bar/example]
-;monitor = ${env:MONITOR:VGA1}
+[bar/left_screen]
+monitor = ${env:MONITOR:HDMI-A-0}
 width = 100%
 height = 20
 offset-x = 0%
@@ -56,8 +56,14 @@ font-2 = "fontawesome:size=10;1"
 font-3 = "WunconSiji:size=10;1"
 
 modules-left = i3  
-modules-center = taskwarrior  
-modules-right = music redshift  filesystem filesystem2 temperature time
+modules-center = xwindow 
+modules-right = filesystem filesystem2 temperature time
+
+[bar/right_screen]
+inherit = bar/left_screen
+monitor = ${env:MONITOR:DVI-I-0}
+modules-center = taskwarrior   
+modules-right = music redshift 
 
 [module/xwindow]
 type = internal/xwindow
@@ -67,7 +73,6 @@ label-font = 0
 label-foreground = ${colors.silver}
 label-background = ${colors.black}
 label-padding = 0
-
 
 [module/filesystem]
 type = internal/fs
@@ -152,9 +157,13 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 strip-wsnumbers = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 7;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 4;
+ws-icon-3 = 7;
+ws-icon-4 = 8;
 ws-icon-default = 
+pin-workspaces = true
 
 
 [module/mpd]
@@ -369,7 +378,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp><label>
-format-warn = <ramp> <label-warn>
+format-warn = <ramp><label-warn>
 label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.red}
