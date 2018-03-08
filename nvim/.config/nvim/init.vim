@@ -54,6 +54,8 @@ Plugin 'junegunn/vim-slash'
 Plugin 'itchyny/lightline.vim'
 " Show git diff in the gutter
 Plugin 'airblade/vim-gitgutter'
+" distraction-free mode
+Plugin 'junegunn/goyo.vim'
 
 " ------------------------------------------------------------------
 " All of your Plugins must be added before the following line
@@ -334,14 +336,16 @@ function! MyFollowSymlink(...)
 
     let resolvedfile = resolve(fname)
     if resolvedfile == fname
-        retur
+        return
     endif
     let resolvedfile = fnameescape(resolvedfile)
     "echohl WarningMsg | echomsg 'Resolving syminlk' fname '=>' resolvedfile | echohl None
     exec 'file ' . resolvedfile
 endfunction
+
 command! FollowSymlink call MyfollowSymlink()
 command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>" w:no_resolve_symlink
+
 augroup FollowSymlinks
     au BufReadPost * call MyFollowSymlink(expand('<afile>'))
 augroup END

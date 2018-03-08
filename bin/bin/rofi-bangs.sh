@@ -44,14 +44,50 @@ LABELS["pass"]=""
 # COMMANDS["bookmarks"]="~/.scripts/rofi-scripts-collection/rofi-surfraw-bookmarks.sh"
 # LABELS["bookmarks"]=""
 
-# open custom web searches
-COMMANDS["websearch"]="~/bin/rofi-websearch.sh"
-LABELS["websearch"]=""
+# greenclip clipboard history
+COMMANDS["clipboard"]='rofi -modi "clipboard:greenclip print" -show clipboard -theme-str "#window { width: 1000; }"'
+LABELS["clipboard"]=""
 
-# show clipboard history
-# source: https://bitbucket.org/pandozer/rofi-clipboard-manager/overview
-# COMMANDS["clipboard"]='rofi -modi "clipboard:~/.bin/rofi-clipboard-manager/mclip.py menu" -show clipboard && ~/.bin/rofi-clipboard-manager/mclip.py paste'
-# LABELS["clipboard"]=""
+# SEARCH
+# open custom web searches
+# COMMANDS["websearch"]="~/bin/rofi-websearch.sh"
+# LABELS["websearch"]=""
+
+COMMANDS["yt"]="surfraw youtube \${input}"
+LABELS["yt"]=""
+
+COMMANDS["g"]="surfraw google \${input}"
+LABELS["g"]=""
+
+COMMANDS["w"]="surfraw wikipedia \${input}"
+LABELS["w"]=""
+
+COMMANDS["wa"]="surfraw wolfram \${input}"
+LABELS["wa"]=""
+
+COMMANDS["imdb"]="surfraw imdb \${input}"
+LABELS["imdb"]=""
+
+COMMANDS["aw"]="surfraw archwiki \${input}"
+LABELS["aw"]=""
+
+COMMANDS["ddg"]="surfraw duckduckgo \${input}"
+LABELS["ddg"]=""
+
+COMMANDS["git"]="surfraw github \${input}"
+LABELS["git"]=""
+
+COMMANDS["gis"]="surfraw gis \${input}"
+LABELS["gis"]=""
+
+COMMANDS["r"]="surfraw reddit \${input}"
+LABELS["r"]=""
+
+COMMANDS["se"]="surfraw seriouseats \${input}"
+LABELS["se"]=""
+
+# translate
+# seriouseats
 
 # references --------------------------
 # COMMANDS[";sr2"]="chromium 'wikipedia.org/search-redirect.php?search=\" \${input}\""

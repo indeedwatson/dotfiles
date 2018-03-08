@@ -28,7 +28,7 @@ Config files for my current setup on Arch Linux with i3-gaps
 
 ## TODO
 
-- add layouts in i3
-- better polybar colors
 - global mpv keybinds
-- setup a music player once and for all
+- dual monitor setup
+- easier way to open a ff window with twitch chat alongside mpv
+- figure out a better way for containers a and b

@@ -52,10 +52,11 @@ $exec "compton"
 $exec dropbox start &
 $exec unclutter &
 $exec kdeconnect-cli
-$exec $term -e "nvim /home/yama/Dropbox/vimwiki/index.md \
-/home/yama/dotfiles/i3/.i3/config /home/yama/dotfiles/nvim/.config/nvim/init.vim"
+$exec greenclip daemon &
 $exec $term --name dropdown &
-$exec i3-msg "ws1; $exec firefox-nightly; ws7; $exec qbittorrent"
+$exec i3-msg "$ws1; exec firefox-nightly, exec "$term -e nvim \
+/home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config \
+/home/yama/dotfiles/nvim/.config/nvim/init.vim"; $ws7; exec qbittorrent
 
 
 ###########################################################################
@@ -76,11 +77,11 @@ bindsym $mod+space $exec "rofi -show run"
 bindsym $mod+semicolon $exec ~/bin/rofi-bangs.sh
 bindsym $mod+slash $exec "rofi -show window \
 -theme-str '#window { width: 1920; location: south; border: 1 0 0; }'"
-bindsym $mod+period $exec "rofi -show top -modi top -theme-str '#window { width: 900; }'" 
+bindsym $mod+period $exec "rofi -show top -sort -modi top -theme-str '#window { width: 900; }'" 
 bindsym $mod+p $exec pavucontrol &
 # reload the configuration file
 bindsym $mod+F11 $exec "~/.config/polybar/launch.sh"
-bindsym $mod+F12 reload
+bindsym $mod+F12 reload; $exec "notify-send 'i3 reloaded'"
 # Show the first scratchpad window
 bindsym $mod+u scratchpad show
 bindsym $mod+Tab workspace back_and_forth
@@ -118,17 +119,15 @@ bindsym $mod+z focus mode_toggle
 bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
-
 bindsym $mod+n workspace next
 bindsym $mod+$mod1+n workspace prev
-bindsym $mod+1 fullscreen disable, [con_mark="_a"] focus
-bindsym $mod+2 fullscreen disable, [con_mark="_b"] focus
-bindsym $mod+3 fullscreen disable, $exec run_or_focus.py "NVIM" "termite -e nvim"
-bindsym $mod+4 fullscreen disable, $exec run_or_focus.py "mpv" 
-#; $exec xdotool key space
-bindsym $mod+r fullscreen disable, $exec run_or_focus.py "^ranger" "termite -e ranger"
-bindsym $mod+w fullscreen disable, $exec run_or_focus.py "Weechat" "termite -e weechat"
-bindsym $mod+s fullscreen disable, $exec run_or_focus.py "^Steam" steam
+bindsym $mod+1 [con_mark="_a"] focus
+bindsym $mod+2 [con_mark="_b"] focus
+bindsym $mod+3 $exec run_or_focus.py " - NVIM$" "termite -e nvim"
+bindsym $mod+4 $exec run_or_focus.py "- mpv$" 
+bindsym $mod+r $exec run_or_focus.py "^ranger" "termite -e ranger"
+bindsym $mod+w $exec run_or_focus.py "Weechat" "termite -e weechat"
+bindsym $mod+s $exec run_or_focus.py "^Steam" steam
 bindsym $mod+5 $ws5
 bindsym $mod+6 $ws6
 bindsym $mod+q $ws7
@@ -158,13 +157,13 @@ new_window pixel 2
 new_float pixel 2
 workspace_auto_back_and_forth yes
 focus_follows_mouse no
-popup_during_fullscreen smart
+popup_during_fullscreen ignore
 force_focus_wrapping no
 
-for_window [class="mpv"] move to mark _a
-for_window [class="(?i)termite" title="(?i)weechat"] move to mark _b
-for_window [class="(?i)termite" title="(?i)ranger"] move to mark _b
-for_window [class="Steam"] move to mark _a
+assign [class="mpv"] 3
+assign [class="(?i)termite" title="(?i)weechat"] 2
+assign [class="(?i)termite" title="(?i)ranger"] 2
+assign [class="Steam"] 6
 for_window [class="Steam" title="Friends"] move to mark _b
 for_window [class="Steam" title="- Chat$"] move to mark _b
 assign [class="calibre"] 9:  
@@ -185,16 +184,16 @@ for_window [title="(?i)Calf JACK Host - session: Calf Studio Gear"] floating ena
 for_window [title="(?i)Calf - Fluidsynth"] floating enable
 
 # workspaces aliases
-set $ws1 workspace number 1
-set $ws2 workspace number 2
-set $ws3 workspace number 3
-set $ws4 workspace number 4
-set $ws5 workspace number 5
-set $ws6 workspace number 6
-set $ws7 workspace number 7
-set $ws8 workspace number 8
-set $ws9 workspace number 9
-set $ws10 workspace number 10
+set $ws1 workspace 1
+set $ws2 workspace 2
+set $ws3 workspace 3
+set $ws4 workspace 4
+set $ws5 workspace 5
+set $ws6 workspace 6
+set $ws7 workspace 7
+set $ws8 workspace 8
+set $ws9 workspace 9
+set $ws10 workspace 10
 
 
 
@@ -211,8 +210,8 @@ gaps outer 0
 # draw borders only if there's more than one window
 smart_borders on
 # disable gaps for mpv & ff
-# workspace 4 gaps inner 0
 workspace 1 gaps inner 0
+workspace 4 gaps inner 0
 
 
 ###########################################################################
@@ -238,6 +237,9 @@ mode "nav" {
     bindsym c gaps inner current set 0, mode default
     # Make the currently focused window a scratchpad
     bindsym u move scratchpad
+    bindsym Shift+1 $ws1
+    bindsym Shift+2 $ws2
+    bindsym Shift+3 $ws3
     # volume
     bindsym 9 $exec "volume.py -down"
     bindsym 0 $exec "volume.py -max", mode default
@@ -260,4 +262,9 @@ mode "nav" {
 # bindsym $mod1+s $exec i3-input -F "[con_id=__focused__] mark _sticky_%s"
 #
 
+
 # vim:filetype=i3
+$ws1 output HDMI-A-0
+$ws2 output DVI-I-0
+$ws3 output HDMI-A-0
+$ws4 output HDMI-A-0
