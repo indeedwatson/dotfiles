@@ -23,7 +23,7 @@ Plugin 'vimwiki/vimwiki'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 " automatic closing of quotes, parenthesis, brackets, etc
-Plugin 'https://github.com/raimondi/delimitMate'
+Plugin 'jiangmiao/auto-pairs'
 " lint while you type
 "Plugin 'w0rp/ale'
 " colors from wal
@@ -168,10 +168,17 @@ if !&diff
     set undofile
 endif
 
+" remember cursor position when opening a file
+augroup resCur
+    autocmd!
+    autocmd BufReadPost * call setpos(".", getpos("'\'"))
+augroup END
+
 " text width 80 for specific file formats
 augroup Formatting
     autocmd!
-    autocmd BufNew,BufRead *.txt,*.py setlocal formatoptions=cqt textwidth=78 wrapmargin=0
+    autocmd BufNew,BufRead *.txt,*.py setlocal formatoptions=cqt textwidth=80
+                \ colorcolumn=80 wrapmargin=0
 augroup END
 
 " set .md and .markdown to use markdown filetype
@@ -339,13 +346,24 @@ function! MyFollowSymlink(...)
         return
     endif
     let resolvedfile = fnameescape(resolvedfile)
-    "echohl WarningMsg | echomsg 'Resolving syminlk' fname '=>' resolvedfile | echohl None
+    "echohl WarningMsg | echomsg 'Resolving syminlk' fname '=>' resolvedfile |
+    "\ echohl None
     exec 'file ' . resolvedfile
 endfunction
 
 command! FollowSymlink call MyfollowSymlink()
-command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>" w:no_resolve_symlink
+command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 
+            \ 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>"
+            \ w:no_resolve_symlink
 
 augroup FollowSymlinks
     au BufReadPost * call MyFollowSymlink(expand('<afile>'))
 augroup END
+
+" tests -----------------------------------------------------------------------
+inoremap (; (<CR>);<C-c>O)
+inoremap (, (<CR>),<C-c>O)
+inoremap {; (<CR>);<C-c>O)
+inoremap {, (<CR>),<C-c>O)
+inoremap [; (<CR>);<C-c>O)
+inoremap [, (<CR>),<C-c>O)

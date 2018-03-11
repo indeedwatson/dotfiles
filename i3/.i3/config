@@ -6,23 +6,23 @@ font pango:lucy tewii 8
 # Set colors from Xresources
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources for some reason
-set_from_resource $white           i3wm.color7 #f0f0f0
-set_from_resource $black           i3wm.color0 #f0f0f0
-set_from_resource $red       i3wm.color3 #f0f0f0
-set_from_resource $green    i3wm.color10 #f0f0f0
-set_from_resource $blue      i3wm.color4 #f0f0f0
+set_from_resource $white        i3wm.color7 #f0f0f0
+set_from_resource $black        i3wm.color0 #f0f0f0
+set_from_resource $red          i3wm.color3 #f0f0f0
+set_from_resource $green        i3wm.color10 #f0f0f0
+set_from_resource $blue         i3wm.color4 #f0f0f0
 set_from_resource $grey         i3wm.color8
 set_from_resource $teal         i3wm.color6
 set_from_resource $dark_orange  i3wm.color17
-set_from_resource $grey2    i3wm.color18
+set_from_resource $grey2        i3wm.color18
 set_from_resource $grey1        i3wm.color19
-set_from_resource $light_grey    i3wm.color20
+set_from_resource $light_grey   i3wm.color20
 
-#class                  border      backgr.     text     split
-client.focused          $grey2      $grey1      $white      $white
-client.focused_inactive $black      $black      $light_grey      $black
-client.unfocused        $black      $black     $light_grey      $black
-client.urgent           $urgent     $urgent     $black      $black
+#class                  border      backgr.     text            split
+client.focused          $grey2      $grey1      $white          $white
+client.focused_inactive $black      $black      $light_grey     $black
+client.unfocused        $black      $black      $light_grey     $black
+client.urgent           $blue       $blue       $black          $black
 client.background       #000000
 
 
@@ -54,9 +54,11 @@ $exec unclutter &
 $exec kdeconnect-cli
 $exec greenclip daemon &
 $exec $term --name dropdown &
-$exec i3-msg "$ws1; exec firefox-nightly, exec "$term -e nvim \
+$exec i3-msg "$ws1; exec firefox-nightly"
+$exec i3-msg "$ws2 exec "$term -e nvim \
 /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config \
-/home/yama/dotfiles/nvim/.config/nvim/init.vim"; $ws7; exec qbittorrent
+/home/yama/dotfiles/nvim/.config/nvim/init.vim"
+$exec i3-msg "$ws7; exec qbittorrent"
 
 
 ###########################################################################
@@ -95,10 +97,10 @@ bindsym $mod+b move container workspace back_and_forth; workspace back_and_forth
 bindsym $mod+c mode "nav"
 
 # change focus
-bindsym $mod+h $exec i3viswiz l
-bindsym $mod+j $exec i3viswiz d
-bindsym $mod+k $exec i3viswiz u
-bindsym $mod+l $exec i3viswiz r
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
 bindsym $mod+mod1+h move left
@@ -152,7 +154,7 @@ bindsym $mod+mod1+0 move container to $ws10
 ###########################################################################
 
 workspace_layout tabbed
-floating_maximum_size 1920 x 1080
+floating_maximum_size 3600 x 1080
 new_window pixel 2
 new_float pixel 2
 workspace_auto_back_and_forth yes
@@ -160,10 +162,11 @@ focus_follows_mouse no
 popup_during_fullscreen ignore
 force_focus_wrapping no
 
-assign [class="mpv"] 3
+assign [class="mpv"] 4
+for_window [class="mpv"] focus
 assign [class="(?i)termite" title="(?i)weechat"] 2
 assign [class="(?i)termite" title="(?i)ranger"] 2
-assign [class="Steam"] 6
+assign [class="Steam"] 8
 for_window [class="Steam" title="Friends"] move to mark _b
 for_window [class="Steam" title="- Chat$"] move to mark _b
 assign [class="calibre"] 9:  
@@ -266,5 +269,5 @@ mode "nav" {
 # vim:filetype=i3
 $ws1 output HDMI-A-0
 $ws2 output DVI-I-0
-$ws3 output HDMI-A-0
+$ws3 output DVI-I-0
 $ws4 output HDMI-A-0
