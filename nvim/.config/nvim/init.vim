@@ -1,77 +1,55 @@
-set background=dark
+" set background=dark
 set foldenable
 set foldlevelstart=0
 set hidden
-filetype plugin on
-
-
-" Vundle stuff ----------------------------------------------------
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
- call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
 
 " Plugins ---------------------------------------------------------
-" wiki
-Plugin 'vimwiki/vimwiki'
-" Gist for vim
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-" automatic closing of quotes, parenthesis, brackets, etc
-Plugin 'jiangmiao/auto-pairs'
-" lint while you type
-"Plugin 'w0rp/ale'
-" colors from wal
-" Plugin 'dylanaraps/wal.vim'
-" monokai colorscheme
-Plugin 'crusoexia/vim-monokai'
-" tables
-Plugin 'dhruvasagar/vim-table-mode'
-" i3 syntax
-Plugin 'https://github.com/PotatoesMaster/i3-vim-syntax'
-" fzf
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-" Git wrapper
-Plugin 'https://github.com/tpope/vim-fugitive'
-" tabular
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-" taskwarrior plugin
-Plugin 'tbabej/taskwiki'
-" folding
-Plugin 'nelstrom/vim-markdown-folding'
-" sandwiched textobject
-Plugin 'machakann/vim-sandwich'
-" enhance in-buffer search
-Plugin 'junegunn/vim-slash'
-" status line
-Plugin 'itchyny/lightline.vim'
-" Show git diff in the gutter
-Plugin 'airblade/vim-gitgutter'
-" distraction-free mode
-Plugin 'junegunn/goyo.vim'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" ------------------------------------------------------------------
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line"
+call plug#begin('~/.vim/bundle')
+" wiki
+Plug 'vimwiki/vimwiki'
+" Gist for vim
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+" automatic closing of quotes, parenthesis, brackets, etc
+Plug 'jiangmiao/auto-pairs'
+" monokai colorscheme
+Plug 'crusoexia/vim-monokai'
+" tables
+Plug 'dhruvasagar/vim-table-mode'
+" i3 syntax
+Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
+" fzf
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+" Git wrapper
+Plug 'https://github.com/tpope/vim-fugitive'
+" tabular
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+" taskwarrior Plug
+Plug 'tbabej/taskwiki'
+" folding
+Plug 'nelstrom/vim-markdown-folding'
+" sandwiched textobject
+Plug 'machakann/vim-sandwich'
+" enhance in-buffer search
+Plug 'junegunn/vim-slash'
+" status line
+" Plug 'itchyny/lightline.vim'
+" Show git diff in the gutter
+Plug 'airblade/vim-gitgutter'
+" distraction-free mode
+Plug 'junegunn/goyo.vim'
+" smooth scroll
+Plug 'yuttie/comfortable-motion.vim'
+call plug#end()
+
 
 " format ------------------------------------------------------------
 set autoindent
@@ -208,19 +186,19 @@ let g:fzf_layout = { 'down': '~40%' }
 " let g:fzf_layout = { 'window': '-tabnew' }
 
 " Customize fzf colors to match your color scheme
-" let g:fzf_colors =
-" \ { 'fg':      ['fg', 'Normal'],
-"   \ 'bg':      ['bg', 'Normal'],
-"   \ 'hl':      ['fg', 'Comment'],
-"   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-"   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-"   \ 'hl+':     ['fg', 'Statement'],
-"   \ 'info':    ['fg', 'PreProc'],
-"   \ 'prompt':  ['fg', 'Conditional'],
-"   \ 'pointer': ['fg', 'Exception'],
-"   \ 'marker':  ['fg', 'Keyword'],
-"   \ 'spinner': ['fg', 'Label'],
-"   \ 'header':  ['fg', 'Comment'] }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -232,8 +210,10 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_buffers_jump = 1
 
 " Open file with fzf
-noremap <leader>f :Files<CR>
+noremap <leader>f :FZF<CR>
+noremap <leader>F :FZF ~/Dropbox/vimwiki<CR>
 noremap <leader>/ :Find<CR>
+noremap <leader>b :Buffers<CR>
 
 " Mapping selecting mappings
 " nmap <leader><tab> <plug>(fzf-maps-n)
@@ -296,12 +276,9 @@ function! s:bufopen(e)
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 endfunction
 
-nnoremap <silent> <Leader>b :call fzf#run({
-\   'source':  reverse(<sid>buflist()),
-\   'sink':    function('<sid>bufopen'),
-\   'options': '+m',
-\   'down':    len(<sid>buflist()) + 2
-\ })<CR>
+autocmd! FileType fzf
+autocmd FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 " vimwiki settings ----------------------------------------------------------
 
@@ -361,9 +338,17 @@ augroup FollowSymlinks
 augroup END
 
 " tests -----------------------------------------------------------------------
-inoremap (; (<CR>);<C-c>O)
-inoremap (, (<CR>),<C-c>O)
-inoremap {; (<CR>);<C-c>O)
-inoremap {, (<CR>),<C-c>O)
-inoremap [; (<CR>);<C-c>O)
-inoremap [, (<CR>),<C-c>O)
+
+function! WordCount()
+    let s:old_status = v:statusmsg
+    let position = getpos(".")
+    exe ":silent normal g\<c-g>"
+    let stat = v:statusmsg
+    let s:word_count = 0
+    if stat != '--No lines in buffer--'
+        let s:word_count = str2nr(split(v:statusmsg)[11])
+        let v:statusmsg = s:old_status
+    end
+    call setpos('.', position)
+    return s:word_count
+endfunction
