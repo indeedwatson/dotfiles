@@ -1,8 +1,5 @@
 #!/bin/bash
-# mpv "$(< '/home/yama/.config/mpv/mpvhistory.log' | rofi -theme-str \
-#     "#window { width: 90%; }" -dmenu -markup-rows -i -p "mpv" | grep -P -o \
-#     '\/home\/yama.*|http.*')"
-
+# use with https://gist.github.com/garoto/e0eb539b210ee077c980e01fb2daef4a
 mpv "$(rofi -theme-str "#window {width: 90%;}" -dmenu -markup-rows -i -p \
     "video" < /home/yama/.config/mpv/mpvhistory.log \
     | grep -Po '\/home\/yama.*|http.*|ytdl:\/\/.*')"
