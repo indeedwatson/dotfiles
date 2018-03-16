@@ -21,17 +21,16 @@ Plug 'jiangmiao/auto-pairs'
 " monokai colorscheme
 Plug 'crusoexia/vim-monokai'
 " tables
-Plug 'dhruvasagar/vim-table-mode'
+" Plug 'dhruvasagar/vim-table-mode'
 " i3 syntax
 Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
 " fzf
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 " Git wrapper
 Plug 'https://github.com/tpope/vim-fugitive'
 " tabular
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " taskwarrior Plug
 Plug 'tbabej/taskwiki'
 " folding
@@ -116,6 +115,9 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+nnoremap <F2> :let &cc = &cc == '' ? '80' : ''<CR>
+nnoremap <F5> :so ~/.config/nvim/init.vim<CR>
+
 " move lines up and down with Ctrl + j/k in normal, insert and visual mode
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -125,8 +127,8 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv=
 
 " insert current date with F5 in normal and insert mode
-nnoremap <F5> "=strftime("%Y.%m.%d %a")<CR>P 
-inoremap <F5> <C-R>=strftime("%Y.%m.%d %a")<CR>
+nnoremap <F1> "=strftime("%Y.%m.%d %a")<CR>P 
+inoremap <F1> <C-R>=strftime("%Y.%m.%d %a")<CR>
 
 " remap tab for following links in vimwiki
 nnoremap <Leader>n <Plug>VimwikiNextLink
@@ -214,11 +216,6 @@ noremap <leader>f :FZF<CR>
 noremap <leader>F :FZF ~/Dropbox/vimwiki<CR>
 noremap <leader>/ :Find<CR>
 noremap <leader>b :Buffers<CR>
-
-" Mapping selecting mappings
-" nmap <leader><tab> <plug>(fzf-maps-n)
-" xmap <leader><tab> <plug>(fzf-maps-x)
-" omap <leader><tab> <plug>(fzf-maps-o)
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)

@@ -79,7 +79,8 @@ bindsym $mod+space $exec "rofi -show run"
 bindsym $mod+semicolon $exec ~/bin/rofi-bangs.sh
 bindsym $mod+slash $exec "rofi -show window \
 -theme-str '#window { width: 100%; location: south; border: 1 0 0; }'"
-bindsym $mod+period $exec "rofi -show top -sort -modi top -theme-str '#window { width: 90%; }'" 
+bindsym $mod+period $exec "rofi -show top -sort -modi top -theme-str \
+'#window { width: 90%; }'" 
 bindsym $mod+p $exec pavucontrol &
 # reload the configuration file
 bindsym $mod+F11 $exec "~/.config/polybar/launch.sh"
@@ -124,7 +125,7 @@ bindsym $mod+Shift+a focus child
 bindsym $mod+n workspace next
 bindsym $mod+$mod1+n workspace prev
 bindsym $mod+1 [con_mark="_a"] focus
-bindsym $mod+2 [con_mark="_b"] focus
+bindsym $mod+2 $exec run_or_focus.py "Discord" discord
 bindsym $mod+3 $exec run_or_focus.py " - NVIM$" "termite -e nvim"
 bindsym $mod+4 $exec run_or_focus.py "mpv$" 
 bindsym $mod+r $exec run_or_focus.py "^ranger" "termite -e ranger"
@@ -162,6 +163,9 @@ focus_follows_mouse no
 popup_during_fullscreen ignore
 force_focus_wrapping no
 
+assign [class="firefox-nightly"] 1
+for_window [title="Nightly$"] mark _a
+assign [class="Discord"] 2
 assign [class="mpv"] 4
 for_window [class="mpv"] focus
 assign [class="(?i)termite" title="(?i)weechat"] 2
@@ -169,13 +173,14 @@ assign [class="(?i)termite" title="(?i)ranger"] 2
 assign [class="Steam"] 8
 for_window [class="Steam" title="Friends"] move to mark _b
 for_window [class="Steam" title="- Chat$"] move to mark _b
-assign [class="calibre"] 9:  
+assign [class="calibre"] 9
 assign [class="qBittorrent"] $ws7
 # Floating windows
 for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
+for_window [instance="dropdown"] floating enable, resize set 800 600, \
+move scratchpad
 for_window [class="^Steam$" title="^Steam Guard - \
 Computer Authorization Required$"] floating enable
 for_window [class="^Steam$" title=".* CD key"] floating enable
@@ -183,7 +188,8 @@ for_window [class="^Steam$" title=".* - event started"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="(?i)pinentry"] floating enable
 for_window [title="(?i)calfjackhost"] floating enable
-for_window [title="(?i)Calf JACK Host - session: Calf Studio Gear"] floating enable
+for_window [title="(?i)Calf JACK Host - session: Calf Studio Gear"] \
+floating enable
 for_window [title="(?i)Calf - Fluidsynth"] floating enable
 
 # workspaces aliases
@@ -198,6 +204,12 @@ set $ws8 workspace 8
 set $ws9 workspace 9
 set $ws10 workspace 10
 
+$ws1 output HDMI-A-0
+$ws2 output DVI-I-0
+$ws3 output DVI-I-0
+$ws4 output HDMI-A-0
+$ws7 output DVI-I-0
+$ws8 output DVI-I-0
 
 
 ###########################################################################
@@ -231,25 +243,16 @@ mode "nav" {
     bindsym j resize shrink height 10 px or 10 ppt
     bindsym k resize grow height 10 px or 10 ppt
     bindsym l resize grow width 300 px or 10 ppt
-    bindsym comma [con_mark="b"] focus, resize set 100 300, mode "default"
     #gaps
     bindsym Shift+j gaps inner current plus 15
     bindsym Shift+k gaps inner current minus 15
     bindsym Shift+h gaps outer current plus 15
     bindsym Shift+l gaps outer current minus 15
-    bindsym c gaps inner current set 0, mode default
+    bindsym c gaps inner current set 0, gaps outer current set 0, mode default
     # Make the currently focused window a scratchpad
     bindsym u move scratchpad
-    bindsym Shift+1 $ws1
-    bindsym Shift+2 $ws2
-    bindsym Shift+3 $ws3
-    # volume
     bindsym 9 $exec "volume.py -down"
     bindsym 0 $exec "volume.py -max", mode default
-    # live twitch channels
-    bindsym Shift+t $exec notify-send -i /usr/share/icons/Numix/16/status/twitch-indicator.svg \
-    "$(twitchnotifier -c tacticcarrotcake -n)", mode default
-    # toggle redshift
     bindsym r $exec redshift_toggle, mode default
     bindsym t layout toggle all
     bindsym F5 $exec feh -z --bg-fill ~/Pictures/texture_wp/
@@ -266,8 +269,5 @@ mode "nav" {
 #
 
 
+
 # vim:filetype=i3
-$ws1 output HDMI-A-0
-$ws2 output DVI-I-0
-$ws3 output DVI-I-0
-$ws4 output HDMI-A-0
