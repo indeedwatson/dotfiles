@@ -1,2 +1,4 @@
 #!/bin/bash
-twitch $(twitchnotifier -c tacticcarrotcake -n | rofi -sort -dmenu -markup-rows -i -theme-str '#window { width: 900; }' -p "" | grep -Po '^.+?(?=\:)')
+user="tacticcarrotcake"
+twitch $(twitchnotifier -c $user -n | rofi -sort -dmenu -markup-rows -i \
+    -theme-str '#window { width: 900; }' -p "" | grep -Po '^.+?(?=\:)')

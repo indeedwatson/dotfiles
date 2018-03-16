@@ -45,8 +45,13 @@ LABELS["pass"]=""
 # LABELS["bookmarks"]=""
 
 # greenclip clipboard history
-COMMANDS["clipboard"]='rofi -modi "clipboard:greenclip print" -show clipboard -theme-str "#window { width: 1000; }"'
+COMMANDS["clipboard"]='rofi -modi "clipboard:greenclip print" -show clipboard \
+    -theme-str "#window { width: 1000; }"'
 LABELS["clipboard"]=""
+
+# mpv history
+COMMANDS["mpv"]='~/bin/mpvhist'
+LABELS["mpv"]=""
 
 # SEARCH
 # open custom web searches
@@ -86,8 +91,14 @@ LABELS["r"]=""
 COMMANDS["se"]="surfraw seriouseats \${input}"
 LABELS["se"]=""
 
+COMMANDS["rarbg"]="surfraw rarbg \${input}"
+LABELS["rarbg"]=""
+
+COMMANDS["oe"]="surfraw onlyeats \${input}"
+LABELS["oe"]=""
+
+
 # translate
-# seriouseats
 
 # references --------------------------
 # COMMANDS[";sr2"]="chromium 'wikipedia.org/search-redirect.php?search=\" \${input}\""
