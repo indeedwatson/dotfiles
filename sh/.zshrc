@@ -45,11 +45,13 @@ eval "$(fasd --init auto)"
 # --glob: Addition conditions for search (in this case ignore everything in the
 # .git/ folder)
 
-export FZF_DEFAULT_COMMAND='rg --no-messages --files --smart-case --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --no-messages --files --smart-case --no-ignore \
+    --hidden --follow -g "!.git/*" -g "!undodir" -g "!z:"'
 
-export FZF_DEFAULT_SORT='--sort 20000'
+export FZF_DEFAULT_SORT='--sort 10000'
 
-export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null \
+    || cat {} || tree -C {}) 2> /dev/null | head -200'"
 
 export FZF_COMPLETION_TRIGGER='~~'
 
