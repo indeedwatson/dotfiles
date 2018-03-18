@@ -133,7 +133,7 @@ function print_menu()
 function start()
 {
     # print_menu | rofi -dmenu -p "?=>" 
-    print_menu | sort | rofi -kb-row-select "Tab" -kb-row-tab "Control+space" -width 30 -dmenu  -i -p "rofi-bangs"
+    print_menu | sort | rofi -sort -kb-row-select "Tab" -kb-row-tab "Control+space" -width 30 -dmenu  -i -p "rofi-bangs"
 
 }
 

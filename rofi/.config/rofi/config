@@ -1,8 +1,0 @@
-rofi.font: FantasqueSansMono 12
-rofi.display-run: > 
-rofi.case-sensitive: no
-rofi.matching: fuzzy
-rofi.theme: ~/.config/rofi/Monokai.rasi
-rofi.window-format:  {w} {n} {t} 
-rofi.window-command: i3-msg \[id={window}\] move workspace current 
-rofi.sort: yes

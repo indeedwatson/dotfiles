@@ -55,9 +55,9 @@ $exec kdeconnect-cli
 $exec greenclip daemon &
 $exec $term --name dropdown &
 $exec i3-msg "$ws1; exec firefox-nightly"
-$exec i3-msg "$ws2 exec "$term -e nvim \
-/home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config \
-/home/yama/dotfiles/nvim/.config/nvim/init.vim"
+$exec i3-msg "$ws2; exec "$term -e nvim \
+    /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config \
+    /home/yama/dotfiles/nvim/.config/nvim/init.vim"
 $exec i3-msg "$ws7; exec qbittorrent"
 
 
@@ -77,10 +77,10 @@ bindsym $mod+F4 $exec audioSwitch.py
 # Rofi
 bindsym $mod+space $exec "rofi -show run"
 bindsym $mod+semicolon $exec ~/bin/rofi-bangs.sh
-bindsym $mod+slash $exec "rofi -show window \
--theme-str '#window { width: 100%; location: south; border: 1 0 0; }'"
+bindsym $mod+slash $exec "rofi -show window -sort \
+    -theme-str '#window { width: 100%; location: south; border: 1 0 0; }'"
 bindsym $mod+period $exec "rofi -show top -sort -modi top -theme-str \
-'#window { width: 90%; }'" 
+    '#window { width: 90%; }'" 
 bindsym $mod+p $exec pavucontrol &
 # reload the configuration file
 bindsym $mod+F11 $exec "~/.config/polybar/launch.sh"
@@ -165,7 +165,7 @@ force_focus_wrapping no
 
 assign [class="firefox-nightly"] 1
 for_window [title="Nightly$"] mark _a
-assign [class="Discord"] 2
+assign [class="discord"] 2
 assign [class="mpv"] 4
 for_window [class="mpv"] focus
 assign [class="(?i)termite" title="(?i)weechat"] 2
@@ -180,16 +180,16 @@ for_window [class="(?i)feh"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [instance="dropdown"] floating enable, resize set 800 600, \
-move scratchpad
+    move scratchpad
 for_window [class="^Steam$" title="^Steam Guard - \
-Computer Authorization Required$"] floating enable
+    Computer Authorization Required$"] floating enable
 for_window [class="^Steam$" title=".* CD key"] floating enable
 for_window [class="^Steam$" title=".* - event started"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="(?i)pinentry"] floating enable
 for_window [title="(?i)calfjackhost"] floating enable
 for_window [title="(?i)Calf JACK Host - session: Calf Studio Gear"] \
-floating enable
+    floating enable
 for_window [title="(?i)Calf - Fluidsynth"] floating enable
 
 # workspaces aliases
@@ -257,7 +257,7 @@ mode "nav" {
     bindsym t layout toggle all
     bindsym F5 $exec feh -z --bg-fill ~/Pictures/texture_wp/
     bindsym $mod+y floating enable, resize set 500 350, sticky enable, \
-    move window to position 1415 40, mode default
+        move window to position 1415 40, mode default
     bindsym Escape mode "default"
     }
 
