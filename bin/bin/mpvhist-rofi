@@ -1,5 +1,0 @@
-#!/bin/bash
-# use with https://gist.github.com/garoto/e0eb539b210ee077c980e01fb2daef4a
-mpv "$(rofi -theme-str "#window {width: 90%;}" -dmenu -markup-rows -i -p \
-    "video" -matching fuzzy -sort < /home/yama/.config/mpv/bookmarks-playlist \
-    | grep -Po '\/home\/yama.*|http.*|ytdl:\/\/.*')"

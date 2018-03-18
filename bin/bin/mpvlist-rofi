@@ -1,0 +1,9 @@
+#!/bin/bash
+# use with https://gist.github.com/garoto/e0eb539b210ee077c980e01fb2daef4a
+file="$HOME/.config/mpv/bookmarks-playlist"
+if [ -f $file  ]
+then
+    mpv "$(rofi -theme-str "#window {width: 90%;}" -dmenu -markup-rows -i -p \
+        "video" -matching fuzzy -sort < $file \
+        | grep -Po '\/home\/yama.*|http.*|ytdl:\/\/.*')"
+fi
