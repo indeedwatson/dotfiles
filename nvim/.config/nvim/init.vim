@@ -40,13 +40,12 @@ Plug 'machakann/vim-sandwich'
 " enhance in-buffer search
 Plug 'junegunn/vim-slash'
 " status line
-" Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 " Show git diff in the gutter
 Plug 'airblade/vim-gitgutter'
 " distraction-free mode
 Plug 'junegunn/goyo.vim'
-" smooth scroll
-Plug 'yuttie/comfortable-motion.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 call plug#end()
 
 
@@ -79,6 +78,7 @@ set smarttab
 set conceallevel=2
 " Always show statusline
 set laststatus=2
+set colorcolumn=80
 
 " set transparent background and colorscheme
 function! NoBackground() abort
@@ -162,10 +162,14 @@ augroup Formatting
 augroup END
 
 " set .md and .markdown to use markdown filetype
-autocmd BufNewFile,BufReadPost *.md,*markdown set filetype=markdown formatoptions=cqt textwidth=137 wrapmargin=0
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+augroup markdown
+    autocmd BufNewFile,BufReadPost *.md,*markdown set filetype=markdown
+                \ formatoptions=cqt textwidth=137 wrapmargin=0
+    let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+augroup END
 " Markdown-compatible tables
 let g:table_mode_corner='|'
+
 
 " folding
 let g:vimwiki_folding = 'expr' " folding based on expression
@@ -206,7 +210,7 @@ let g:fzf_colors =
 " CTRL-N and CTRL-P will be automatically bound to next-history and
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
-let g:fzf_history_dir = '~/.local/share/fzf-history'
+" let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
@@ -231,16 +235,15 @@ inoremap <expr> <c-x><c-k> fzf#complete('cat /usr/share/dict/words')
 
 
 " Status line (neovim)
-
-function! s:fzf_statusline()
-  " Override statusline as you like
-  highlight fzf1 ctermfg=161 ctermbg=251
-  highlight fzf2 ctermfg=23 ctermbg=251
-  highlight fzf3 ctermfg=237 ctermbg=251
-  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
-endfunction
-
-autocmd! User FzfStatusLine call <SID>fzf_statusline()
+" function! s:fzf_statusline()
+"   " Override statusline as you like
+"   highlight fzf1 ctermfg=161 ctermbg=251
+"   highlight fzf2 ctermfg=23 ctermbg=251
+"   highlight fzf3 ctermfg=237 ctermbg=251
+"   setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+" endfunction
+" 
+" autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 " ripgrep for fzf
 "
@@ -252,26 +255,18 @@ autocmd! User FzfStatusLine call <SID>fzf_statusline()
 " --no-ignore: Do not respect .gitignore, etc...
 " --hidden: Search hidden files and folders
 " --follow: Follow symlinks
-" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --glob: Additional conditions for search (in this case ignore everything in 
+"  the .git/ folder)
 " --color: Search color options
 
 " Search for files containing a term
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --no-messages --fixed-strings --smart-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --line-number
+            \--no-heading --no-messages --fixed-strings --smart-case
+            \--no-ignore --hidden --follow --glob "!.git/*" --color "always"
+            \'.shellescape(<q-args>), 1, <bang>0)
 
 " use ripgrep for grepprg (vim search)
 set grepprg=rg\ --vimgrep
-
-" select buffer with fzf
-function! s:buflist()
-  redir => ls
-  silent ls
-  redir END
-  return split(ls, '\n')
-endfunction
-
-function! s:bufopen(e)
-  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-endfunction
 
 autocmd! FileType fzf
 autocmd FileType fzf set laststatus=0 noshowmode noruler
@@ -304,35 +299,35 @@ let g:gist_put_url_to_clipboard_after_post = 1
 
 " follow symlinks always
 " https://www.reddit.com/r/vim/comments/1x5rhh/how_to_follow_symlinks/cfbck18/
-function! MyFollowSymlink(...)
-    if exists('w:no_resolve_symlink') && w:no_resolve_symlink
-        return
-    endif
-    let fname = a:0 ? a:1 : expand('%')
-    if fname =~ '^\w\+:/'
-        " do no mess with fugitive:// etc
-        return
-    endif
-    let fname = simplify(fname)
-
-    let resolvedfile = resolve(fname)
-    if resolvedfile == fname
-        return
-    endif
-    let resolvedfile = fnameescape(resolvedfile)
-    "echohl WarningMsg | echomsg 'Resolving syminlk' fname '=>' resolvedfile |
-    "\ echohl None
-    exec 'file ' . resolvedfile
-endfunction
-
-command! FollowSymlink call MyfollowSymlink()
-command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 
-            \ 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>"
-            \ w:no_resolve_symlink
-
-augroup FollowSymlinks
-    au BufReadPost * call MyFollowSymlink(expand('<afile>'))
-augroup END
+"function! MyFollowSymlink(...)
+"    if exists('w:no_resolve_symlink') && w:no_resolve_symlink
+"        return
+"    endif
+"    let fname = a:0 ? a:1 : expand('%')
+"    if fname =~ '^\w\+:/'
+"        " do no mess with fugitive:// etc
+"        return
+"    endif
+"    let fname = simplify(fname)
+"
+"    let resolvedfile = resolve(fname)
+"    if resolvedfile == fname
+"        return
+"    endif
+"    let resolvedfile = fnameescape(resolvedfile)
+"    "echohl WarningMsg | echomsg 'Resolving syminlk' fname '=>' resolvedfile |
+"    "\ echohl None
+"    exec 'file ' . resolvedfile
+"endfunction
+"
+"command! FollowSymlink call MyfollowSymlink()
+"command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 
+"            \ 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>"
+"            \ w:no_resolve_symlink
+"
+"augroup FollowSymlinks
+"    au BufReadPost * call MyFollowSymlink(expand('<afile>'))
+"augroup END
 
 " tests -----------------------------------------------------------------------
 
@@ -349,3 +344,13 @@ function! WordCount()
     call setpos('.', position)
     return s:word_count
 endfunction
+
+
+" grep fzf
+" https://github.com/junegunn/fzf/issues/81
+let g:rg_command = '
+            \ rg --column --line-number --no-heading --fixed-strings
+            \ --no-ignore --ignore-case --hidden --follow --color "always"
+            \ -g "!{.git,undodir,z:}" '
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
