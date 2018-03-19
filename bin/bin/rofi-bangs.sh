@@ -50,7 +50,7 @@ COMMANDS["clipboard"]='rofi -modi "clipboard:greenclip print" -show clipboard \
 LABELS["clipboard"]=""
 
 # mpv history
-COMMANDS["mpv"]='~/bin/mpvhist'
+COMMANDS["mpv"]='~/bin/mpvlist-rofi'
 LABELS["mpv"]=""
 
 # SEARCH
