@@ -95,7 +95,7 @@ augroup END
 
 colorscheme monokai
 
-" binds --------------------------------------------------------------
+" maps --------------------------------------------------------------
 " space as leader
 let mapleader = "\<Space>"
 " tab for folding
@@ -138,6 +138,11 @@ nnoremap <space>gw :Gwrite<CR>
 nnoremap <space>gs :Gstatus<CR>
 nnoremap <space>gc :Gcommit<CR>
 nnoremap <space>gp :Gpush<CR>
+
+" fzf insert mode completion
+imap <c-f> <plug>(fzf-complete-path)
+imap <c-l> <plug>(fzf-complete-lines)
+imap <c-d> <plug>(fzf-complete-word)
 
 " Disable swap files
 set noswapfile
@@ -210,10 +215,11 @@ let g:fzf_colors =
 " CTRL-N and CTRL-P will be automatically bound to next-history and
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
-" let g:fzf_history_dir = '~/.local/share/fzf-history'
-
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
+let g:fzf_commits_log_options = '--graph --colors=always
+            \--format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 " Open file with fzf
 noremap <leader>f :FZF<CR>
@@ -260,11 +266,13 @@ inoremap <expr> <c-x><c-k> fzf#complete('cat /usr/share/dict/words')
 " --color: Search color options
 
 " Search for files containing a term
-command! -bang -nargs=* Find call fzf#vim#grep('rg --line-number
-            \--no-heading --no-messages --fixed-strings --smart-case
-            \--no-ignore --hidden --follow --glob "!.git/*" --color "always"
-            \'.shellescape(<q-args>), 1, <bang>0)
-
+command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \ 'rg --column --line-number --no-heading --no-ignore --smart-case --hidden
+    \ --color=always '.shellescape(<q-args>), 1,
+    \   <bang>0 ? fzf#vim#with_preview('up:60%')
+    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+    \   <bang>0)
 " use ripgrep for grepprg (vim search)
 set grepprg=rg\ --vimgrep
 
@@ -346,11 +354,4 @@ function! WordCount()
 endfunction
 
 
-" grep fzf
-" https://github.com/junegunn/fzf/issues/81
-let g:rg_command = '
-            \ rg --column --line-number --no-heading --fixed-strings
-            \ --no-ignore --ignore-case --hidden --follow --color "always"
-            \ -g "!{.git,undodir,z:}" '
-
-command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
+let s:error_sign = '✘'
