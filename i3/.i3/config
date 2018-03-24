@@ -55,9 +55,9 @@ $exec kdeconnect-cli
 $exec greenclip daemon &
 $exec $term --name dropdown &
 $exec i3-msg "$ws1; exec firefox-nightly"
-$exec i3-msg "$ws2; exec "$term -e nvim \
-    /home/yama/Dropbox/vimwiki/index.md /home/yama/dotfiles/i3/.i3/config \
-    /home/yama/dotfiles/nvim/.config/nvim/init.vim"
+$exec i3-msg "$ws2; exec $term -e 'nvim /home/yama/Dropbox/vimwiki/index.md \
+    /home/yama/dotfiles/i3/.i3/config \
+    /home/yama/dotfiles/nvim/.config/nvim/init.vim'"
 $exec i3-msg "$ws7; exec qbittorrent"
 
 
@@ -77,8 +77,7 @@ bindsym $mod+F4 $exec audioSwitch.py
 # Rofi
 bindsym $mod+space $exec "rofi -show run"
 bindsym $mod+semicolon $exec ~/bin/rofi-bangs.sh
-bindsym $mod+slash $exec "rofi -show window -sort \
-    -theme-str '#window { width: 100%; location: south; border: 1 0 0; }'"
+bindsym $mod+slash $exec "rofi -show window -theme winSelector"
 bindsym $mod+period $exec "rofi -show top -sort -modi top -theme-str \
     '#window { width: 90%; }'" 
 bindsym $mod+p $exec pavucontrol &
@@ -125,7 +124,7 @@ bindsym $mod+Shift+a focus child
 bindsym $mod+n workspace next
 bindsym $mod+$mod1+n workspace prev
 bindsym $mod+1 [con_mark="_a"] focus
-bindsym $mod+2 $exec run_or_focus.py "Discord" discord
+bindsym $mod+2 [con_mark="_b"] focus
 bindsym $mod+3 $exec run_or_focus.py " - NVIM$" "termite -e nvim"
 bindsym $mod+4 $exec run_or_focus.py "mpv$" 
 bindsym $mod+r $exec run_or_focus.py "^ranger" "termite -e ranger"
@@ -166,6 +165,7 @@ force_focus_wrapping no
 assign [class="firefox-nightly"] 1
 for_window [title="Nightly$"] mark _a
 assign [class="discord"] 2
+for_window [title="Discord"] mark _b
 assign [class="mpv"] 4
 for_window [class="mpv"] focus
 assign [class="(?i)termite" title="(?i)weechat"] 2

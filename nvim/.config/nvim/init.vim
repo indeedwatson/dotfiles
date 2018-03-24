@@ -1,8 +1,3 @@
-" set background=dark
-set foldenable
-set foldlevelstart=0
-set hidden
-
 " Plugins ---------------------------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -31,9 +26,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 " tabular
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-" taskwarrior Plug
 Plug 'tbabej/taskwiki'
-" folding
 Plug 'nelstrom/vim-markdown-folding'
 " sandwiched textobject
 Plug 'machakann/vim-sandwich'
@@ -46,6 +39,8 @@ Plug 'airblade/vim-gitgutter'
 " distraction-free mode
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'thinca/vim-quickrun'
+
 call plug#end()
 
 
@@ -80,6 +75,13 @@ set conceallevel=2
 set laststatus=2
 set colorcolumn=80
 
+let s:error_sign = '✘'
+" set background=dark
+set foldenable
+set foldmethod=indent
+set foldlevelstart=0
+set hidden
+
 " set transparent background and colorscheme
 function! NoBackground() abort
     highlight Normal ctermbg=none guibg=none
@@ -98,9 +100,9 @@ colorscheme monokai
 " maps --------------------------------------------------------------
 " space as leader
 let mapleader = "\<Space>"
-" tab for folding
-nnoremap <Leader><Tab> za
-vnoremap <Leader><Tab> za
+" comma for folding
+nnoremap , za
+vnoremap , za
 " make gist with leader-g
 nnoremap <Leader>gi :Gist -a<CR>
 nnoremap <Leader>G :Gist <CR>
@@ -115,7 +117,12 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+" insert current date with F5 in normal and insert mode
+nnoremap <F1> "=strftime("%Y.%m.%d %a")<CR>P 
+inoremap <F1> <C-R>=strftime("%Y.%m.%d %a")<CR>
+" display a column at 80 char
 nnoremap <F2> :let &cc = &cc == '' ? '80' : ''<CR>
+" source init.vim
 nnoremap <F5> :so ~/.config/nvim/init.vim<CR>
 
 " move lines up and down with Ctrl + j/k in normal, insert and visual mode
@@ -126,9 +133,19 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv=
 
-" insert current date with F5 in normal and insert mode
-nnoremap <F1> "=strftime("%Y.%m.%d %a")<CR>P 
-inoremap <F1> <C-R>=strftime("%Y.%m.%d %a")<CR>
+" mappings for terminal mode
+if has('nvim')
+    tnoremap <A-c> <C-\><C-n>
+    tnoremap <A-h> <C-\><C-n><C-w>h
+    tnoremap <A-j> <C-\><C-n><C-w>j
+    tnoremap <A-k> <C-\><C-n><C-w>k
+    tnoremap <A-l> <C-\><C-n><C-w>l
+    nnoremap <A-h> <C-w>h
+    nnoremap <A-j> <C-w>j
+    nnoremap <A-k> <C-w>k
+    nnoremap <A-l> <C-w>l
+    nnoremap <A-c> :close<CR>
+endif
 
 " remap tab for following links in vimwiki
 nnoremap <Leader>n <Plug>VimwikiNextLink
@@ -139,10 +156,6 @@ nnoremap <space>gs :Gstatus<CR>
 nnoremap <space>gc :Gcommit<CR>
 nnoremap <space>gp :Gpush<CR>
 
-" fzf insert mode completion
-imap <c-f> <plug>(fzf-complete-path)
-imap <c-l> <plug>(fzf-complete-lines)
-imap <c-d> <plug>(fzf-complete-word)
 
 " Disable swap files
 set noswapfile
@@ -172,6 +185,11 @@ augroup markdown
                 \ formatoptions=cqt textwidth=137 wrapmargin=0
     let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 augroup END
+
+autocmd FileType python nnoremap <buffer> <F9> :exec '!python' 
+                \shellescape(@%, 1)<cr>
+command! -buffer RunPy3Script split | resize 15 | terminal python3 %
+nnoremap <buffer> <F8> :RunPy3Script<CR>
 " Markdown-compatible tables
 let g:table_mode_corner='|'
 
@@ -224,14 +242,14 @@ let g:fzf_commits_log_options = '--graph --colors=always
 " Open file with fzf
 noremap <leader>f :FZF<CR>
 noremap <leader>F :FZF ~/Dropbox/vimwiki<CR>
-noremap <leader>/ :Find<CR>
+noremap <leader>/ :Rg<CR>
 noremap <leader>b :Buffers<CR>
 
 " Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-rg)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <c-f> <plug>(fzf-complete-path)
+imap <c-l> <plug>(fzf-complete-line)
+imap <c-d> <plug>(fzf-complete-word)
 
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
@@ -239,17 +257,6 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 " Replace the default dictionary completion with fzf-based fuzzy completion
 inoremap <expr> <c-x><c-k> fzf#complete('cat /usr/share/dict/words')
 
-
-" Status line (neovim)
-" function! s:fzf_statusline()
-"   " Override statusline as you like
-"   highlight fzf1 ctermfg=161 ctermbg=251
-"   highlight fzf2 ctermfg=23 ctermbg=251
-"   highlight fzf3 ctermfg=237 ctermbg=251
-"   setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
-" endfunction
-" 
-" autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 " ripgrep for fzf
 "
@@ -307,35 +314,35 @@ let g:gist_put_url_to_clipboard_after_post = 1
 
 " follow symlinks always
 " https://www.reddit.com/r/vim/comments/1x5rhh/how_to_follow_symlinks/cfbck18/
-"function! MyFollowSymlink(...)
-"    if exists('w:no_resolve_symlink') && w:no_resolve_symlink
-"        return
-"    endif
-"    let fname = a:0 ? a:1 : expand('%')
-"    if fname =~ '^\w\+:/'
-"        " do no mess with fugitive:// etc
-"        return
-"    endif
-"    let fname = simplify(fname)
-"
-"    let resolvedfile = resolve(fname)
-"    if resolvedfile == fname
-"        return
-"    endif
-"    let resolvedfile = fnameescape(resolvedfile)
-"    "echohl WarningMsg | echomsg 'Resolving syminlk' fname '=>' resolvedfile |
-"    "\ echohl None
-"    exec 'file ' . resolvedfile
-"endfunction
-"
-"command! FollowSymlink call MyfollowSymlink()
-"command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 
-"            \ 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>"
-"            \ w:no_resolve_symlink
-"
-"augroup FollowSymlinks
-"    au BufReadPost * call MyFollowSymlink(expand('<afile>'))
-"augroup END
+function! MyFollowSymlink(...)
+if exists('w:no_resolve_symlink') && w:no_resolve_symlink
+return
+endif
+let fname = a:0 ? a:1 : expand('%')
+if fname =~ '^\w\+:/'
+    " do no mess with fugitive:// etc
+    return
+endif
+let fname = simplify(fname)
+
+let resolvedfile = resolve(fname)
+if resolvedfile == fname
+    return
+endif
+let resolvedfile = fnameescape(resolvedfile)
+"echohl WarningMsg | echomsg 'Resolving syminlk' fname '=>' resolvedfile |
+"\ echohl None
+exec 'file ' . resolvedfile
+endfunction
+
+command! FollowSymlink call MyfollowSymlink()
+command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 
+            \ 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>"
+            \ w:no_resolve_symlink
+
+augroup FollowSymlinks
+    au BufReadPost * call MyFollowSymlink(expand('<afile>'))
+augroup END
 
 " tests -----------------------------------------------------------------------
 
@@ -353,5 +360,10 @@ function! WordCount()
     return s:word_count
 endfunction
 
+set number relativenumber
 
-let s:error_sign = '✘'
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
