@@ -60,6 +60,7 @@ set termguicolors
 set incsearch " highlight search term as you type
 set ignorecase
 set nonumber " don't display line numbers
+set noshowmode
 " syntax
 set t_Co=256
 " enable is better than `on`, doesn't reset colors when sourcing config file
@@ -116,6 +117,8 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+" open file under cursor with default app
+nnoremap gO :!xdg-open <cfile>
 
 " insert current date with F5 in normal and insert mode
 nnoremap <F1> "=strftime("%Y.%m.%d %a")<CR>P 
@@ -240,8 +243,8 @@ let g:fzf_commits_log_options = '--graph --colors=always
             \--format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 " Open file with fzf
-noremap <leader>f :FZF<CR>
-noremap <leader>F :FZF ~/Dropbox/vimwiki<CR>
+noremap <leader>f :FZF ~/<CR>
+noremap <leader>wf :FZF ~/Dropbox/vimwiki<CR>
 noremap <leader>/ :Rg<CR>
 noremap <leader>b :Buffers<CR>
 
@@ -302,10 +305,13 @@ let g:lightline = {
         \ 'colorscheme': 'molokai',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ],
+        \   'right': [ [ 'lineinfo' ], [ 'percent', 'wordcount' ],
+        \               [ 'fileformat', 'fileencoding', 'filetype' ] ]
         \ },
         \ 'component_function': {
-        \   'gitbranch': 'fugitive#head'
+        \   'gitbranch': 'fugitive#head',
+        \   'wordcount': 'WordCount',
         \ },
         \ }
 
@@ -346,24 +352,34 @@ augroup END
 
 " tests -----------------------------------------------------------------------
 
+" https://gist.github.com/cormacrelf/d0bee254f5630b0e93c3
 function! WordCount()
-    let s:old_status = v:statusmsg
-    let position = getpos(".")
-    exe ":silent normal g\<c-g>"
-    let stat = v:statusmsg
-    let s:word_count = 0
-    if stat != '--No lines in buffer--'
-        let s:word_count = str2nr(split(v:statusmsg)[11])
-        let v:statusmsg = s:old_status
-    end
-    call setpos('.', position)
-    return s:word_count
+    let currentmode = mode()
+    if !exists("g:lastmode_wc")
+        let g:lastmode_wc = currentmode
+    endif
+    " if we modify file, open a new buffer, be in visual ever, or switch modes
+    " since last run, we recompute.
+    if &modified || !exists("b:wordcount") || currentmode =~? '\c.*v' ||
+    \ currentmode != g:lastmode_wc
+        let g:lastmode_wc = currentmode
+        let l:old_position = getpos('.')
+        let l:old_status = v:statusmsg
+        execute "silent normal g\<c-g>"
+        if v:statusmsg == "--No lines in buffer--"
+            let b:wordcount = 0
+        else
+            let s:split_wc = split(v:statusmsg)
+            if index(s:split_wc, "Selected") < 0
+                let b:wordcount = str2nr(s:split_wc[11])
+            else
+                let b:wordcount = str2nr(s:split_wc[5])
+            endif
+            let v:statusmsg = l:old_status
+        endif
+        call setpos('.', l:old_position)
+        return b:wordcount
+    else
+        return b:wordcount
+    endif
 endfunction
-
-set number relativenumber
-
-augroup numbertoggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
-augroup END

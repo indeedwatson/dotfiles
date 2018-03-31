@@ -55,7 +55,8 @@ $exec kdeconnect-cli
 $exec greenclip daemon &
 $exec $term --name dropdown &
 $exec i3-msg "$ws1; exec firefox-nightly"
-$exec i3-msg "$ws2; exec $term -e 'nvim /home/yama/Dropbox/vimwiki/index.md \
+$exec i3-msg "$ws2; $exec discord; split h; \
+    exec $term -e 'nvim /home/yama/Dropbox/vimwiki/index.md \
     /home/yama/dotfiles/i3/.i3/config \
     /home/yama/dotfiles/nvim/.config/nvim/init.vim'"
 $exec i3-msg "$ws7; exec qbittorrent"
@@ -97,10 +98,12 @@ bindsym $mod+b move container workspace back_and_forth; workspace back_and_forth
 bindsym $mod+c mode "nav"
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+h $exec "~/i3-tools/focus-tool left"
+bindsym $mod+j $exec "~/i3-tools/focus-tool down"
+bindsym $mod+k $exec "~/i3-tools/focus-tool up"
+bindsym $mod+l $exec "~/i3-tools/focus-tool right"
+
+bindsym $mod+n $exec "i3-tools/focus-tool tab-next"
 
 # move focused window
 bindsym $mod+mod1+h move left
@@ -121,7 +124,8 @@ bindsym $mod+z focus mode_toggle
 bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
-bindsym $mod+n workspace next
+bindsym $mod+bracketleft workspace prev
+bindsym $mod+bracketright workspace next
 bindsym $mod+$mod1+n workspace prev
 bindsym $mod+1 [con_mark="_a"] focus
 bindsym $mod+2 [con_mark="_b"] focus
