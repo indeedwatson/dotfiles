@@ -1,5 +1,4 @@
 # Aliases for bash/zsh
-# global aliases
 alias l='exa -xa'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -12,6 +11,7 @@ alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/St
 alias mkdir='mkdir -p' # no error if existing, make parents directories as needed
 # alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi' # user DRI PRIME for dGPU
 alias phone='kdeconnect-cli -d 35ae67aa3fec869'
+alias :q='exit'
 
 # aliases for fasd
 alias v='f -ae nvim '

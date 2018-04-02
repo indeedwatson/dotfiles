@@ -46,7 +46,7 @@ eval "$(fasd --init auto)"
 # .git/ folder)
 
 export FZF_DEFAULT_COMMAND='rg --no-messages --files --smart-case --no-ignore \
-    --hidden --follow -g "!.git/*" -g "!undodir" -g "!z:"'
+    --hidden --follow -g "!{.git,soundfonts,undodir,z:}" '
 
 export FZF_DEFAULT_SORT='--sort 10000'
 
