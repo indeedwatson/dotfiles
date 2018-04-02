@@ -19,7 +19,7 @@ set_from_resource $grey1        i3wm.color19
 set_from_resource $light_grey   i3wm.color20
 
 #class                  border      backgr.     text            split
-client.focused          $grey2      $grey1      $white          $white
+client.focused          $grey2      $teal      $grey2          $white
 client.focused_inactive $black      $black      $light_grey     $black
 client.unfocused        $black      $black      $light_grey     $black
 client.urgent           $blue       $blue       $black          $black
