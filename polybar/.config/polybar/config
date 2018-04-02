@@ -1,10 +1,5 @@
 ;=====================================================
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
+;   https://github.com/jaagr/polybar
 ;=====================================================
 
 [colors]
@@ -34,6 +29,7 @@ offset-x = 0%
 offset-y = 0%
 radius = 0
 fixed-center = true
+monitor-fallback = ${env:MONITOR:DVI-I-0}
 
 background = ${colors.black}
 foreground = ${colors.white}
@@ -61,9 +57,10 @@ modules-right = filesystem filesystem2 temperature time
 
 [bar/right_screen]
 inherit = bar/left_screen
+monitor-strict = true
 monitor = ${env:MONITOR:DVI-I-0}
-modules-center = taskwarrior   
-modules-right = music redshift 
+modules-center = 
+modules-right = music redshift temperature time
 
 [module/xwindow]
 type = internal/xwindow
@@ -162,6 +159,7 @@ ws-icon-1 = 2;
 ws-icon-2 = 4;
 ws-icon-3 = 7;
 ws-icon-4 = 8;
+ws-icon-5 = 9;
 ws-icon-default = 
 pin-workspaces = true
 
@@ -351,9 +349,9 @@ exec = ~/.config/polybar/weathericons
 
 [module/twitch]
 interval = 30
-format = "  <label>  "
+format = <label>
 type = custom/script
-exec = ~/bin/twitch_loop
+exec = python -u ~/rofi-twitch/api-test2.py
 format-prefix = ""
 format-prefix-foreground = ${colors.black}
 format-prefix-background = ${colors.purple}
@@ -361,7 +359,8 @@ format-prefix-padding = 1
 
 format-foreground = ${colors.label_foreground}
 format-background = ${colors.label_background}
-format-padding = 0
+label-padding = 1
+tail = true
 
 
 [module/taskwarrior]
