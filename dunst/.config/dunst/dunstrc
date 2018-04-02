@@ -53,7 +53,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "500x5-30+30"
+    geometry = "500x5-30+50"
 
     # Define the title of the windows spawned by dunst
     title = Dunst
@@ -231,7 +231,7 @@
 
 [notify]
     appname = notify-send
-    format = "%s: %b"
+    format = "%s %b"
 [twitch]
     appname = twitchnotifier
     format = "%i %s: %b"
