@@ -5,9 +5,6 @@ if [ -f $HOME/.antigen/antigen.zsh ]; then
     . $HOME/.antigen/antigen.zsh
 fi
 
-# Import colorscheme from 'wal'
-# (wal -r &)
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -108,3 +105,11 @@ fi
 
 set -o vi
 source ~/.fzf.zsh
+
+
+# wal
+# Import colorscheme from 'wal' asynchronously
+# &     # Run the process in the background
+# (  )  # Hide shell job control messages
+(cat ~/.cache/wal/sequences &)
+source ~/.cache/wal/colors-tty.sh
