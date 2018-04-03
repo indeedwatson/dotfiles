@@ -13,8 +13,7 @@ Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 " automatic closing of quotes, parenthesis, brackets, etc
 Plug 'jiangmiao/auto-pairs'
-" monokai colorscheme
-Plug 'crusoexia/vim-monokai'
+Plug 'dylanaraps/wal.vim'
 " tables
 " Plug 'dhruvasagar/vim-table-mode'
 " i3 syntax
@@ -96,7 +95,7 @@ augroup transparentBg
     autocmd colorscheme * call NoBackground()
 augroup END
 
-colorscheme monokai
+colorscheme wal
 
 " maps --------------------------------------------------------------
 " space as leader
@@ -302,7 +301,7 @@ let g:vimwiki_hl_headers = 1
 let g:vimwiki_url_maxsave=1
 
 let g:lightline = {
-        \ 'colorscheme': 'molokai',
+        \ 'colorscheme': 'wal',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
         \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ],
