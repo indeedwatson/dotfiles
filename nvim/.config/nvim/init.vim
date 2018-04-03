@@ -55,7 +55,6 @@ set softtabstop=4
 set expandtab
 set wildmenu
 set wildmode=full
-set termguicolors
 set incsearch " highlight search term as you type
 set ignorecase
 set nonumber " don't display line numbers
