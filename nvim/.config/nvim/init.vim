@@ -57,8 +57,8 @@ set wildmenu
 set wildmode=full
 set incsearch " highlight search term as you type
 set ignorecase
-set nonumber " don't display line numbers
 set noshowmode
+set number relativenumber
 " syntax
 set t_Co=256
 " enable is better than `on`, doesn't reset colors when sourcing config file
@@ -92,6 +92,12 @@ endfunction
 augroup transparentBg
     autocmd!
     autocmd colorscheme * call NoBackground()
+augroup END
+
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter    * set norelativenumber
 augroup END
 
 colorscheme wal
@@ -305,7 +311,7 @@ let g:lightline = {
         \   'left': [ [ 'mode', 'paste' ],
         \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ],
         \   'right': [ [ 'lineinfo' ], [ 'percent', 'wordcount' ],
-        \               [ 'fileformat', 'fileencoding', 'filetype' ] ]
+        \               [ 'filetype' ] ]
         \ },
         \ 'component_function': {
         \   'gitbranch': 'fugitive#head',
