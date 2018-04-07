@@ -122,7 +122,7 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 " open file under cursor with default app
-nnoremap gO :!xdg-open <cfile>
+nnoremap gO :!xdg-open <cfile><CR><CR>
 
 " insert current date with F5 in normal and insert mode
 nnoremap <F1> "=strftime("%Y.%m.%d %a")<CR>P 
