@@ -13,16 +13,6 @@ alias mkdir='mkdir -p' # no error if existing, make parents directories as neede
 alias phone='kdeconnect-cli -d 35ae67aa3fec869'
 alias :q='exit'
 
-# aliases for fasd
-alias v='f -ae nvim '
-alias m='f -ae mpv '
-alias o='a -ae xdg-open'
-
-# pastebin file and send link to clipboard
-function pb() {
-  pbpst -Sf "$1" | xclip -selection clipboard
-}
-
 unalias z 2> /dev/null
 z() {
   [ $# -gt 0 ] && _z "$*" && return
