@@ -76,6 +76,9 @@ LABELS["imdb"]=""
 COMMANDS["aw"]="surfraw archwiki \${input}"
 LABELS["aw"]=""
 
+COMMANDS["aur"]="sr aur \${input}"
+LABELS["aur"]=""
+
 COMMANDS["ddg"]="surfraw duckduckgo \${input}"
 LABELS["ddg"]=""
 
