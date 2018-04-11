@@ -4,6 +4,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias g='git'
+alias gs='git status'
 alias pacu='yay -Syu && clear'
 alias py='python'
 alias batman='sudo pacman -Rns $(pacman -Qtdq) && pacaur -S polybar-git' # delete orphan packages
