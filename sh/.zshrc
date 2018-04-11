@@ -32,9 +32,6 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
-# start fasd
-eval "$(fasd --init auto)"
-
 # use ripgrep for fzf
 # --files: List files that would be searched but to not search
 # --no-ignore: Do not respect .gitignore, etc...
