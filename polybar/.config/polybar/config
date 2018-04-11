@@ -13,10 +13,10 @@ red = ${xrdb:color1}
 teal = ${xrdb:color6}
 purple = ${xrdb:color5}
 yellow = ${xrdb:color3}
-orange = ${xrdb:color16}
+orange = ${xrdb:color15}
 light_grey = ${xrdb:color20}
 dark_grey = ${xrdb:color19}
-darkest_grey = ${xrdb:color18}
+darkest_grey = ${xrdb:color19}
 
 label_foreground = ${colors.light_grey}
 label_background = ${colors.darkest_grey}
@@ -53,7 +53,7 @@ font-3 = "WunconSiji:size=10;1"
 
 modules-left = i3  
 modules-center = xwindow 
-modules-right = filesystem filesystem2 temperature time
+modules-right = volume filesystem filesystem2 temperature time
 
 [bar/right_screen]
 inherit = bar/left_screen
@@ -129,7 +129,7 @@ label-mode-background = ${colors.orange}
 format-mode-prefix = ""
 
 ; focused = Active workspace on focused monitor
-label-focused = %icon%
+label-focused = %icon% 
 label-focused-foreground = ${colors.white}
 label-focused-background = ${colors.black}
 label-focused-underline = ${colors.purple}
@@ -286,33 +286,33 @@ format-suffix = 
 format-suffix-foreground = ${colors.black}
 format-suffix-background = ${colors.green}
 format-suffix-padding = 1
-[module/volume]
-type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <bar-volume>
 label-volume =
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix =   
+;format-muted-prefix =     
 format-muted-foreground = ${colors.silver}
-label-muted =  muted 
+label-muted = 
+;label-muted-prefix =      
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+ramp-volume-0 =
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+bar-volume-foreground-0 = ${colors.green}
 bar-volume-gradient = false
-bar-volume-indicator = ■
+bar-volume-indicator = ∎
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = ∎
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = ∎
 bar-volume-empty-font = 3
-bar-volume-empty-foreground = ${colors.silver}
+bar-volume-empty-foreground = ${colors.blue}
 
 [module/pavolume]
 type = custom/script
@@ -351,7 +351,7 @@ exec = ~/.config/polybar/weathericons
 interval = 30
 format = <label>
 type = custom/script
-exec = python -u ~/rofi-twitch/api-test2.py
+exec = python -u ~/polybar_twitch/polybar-twitch.py
 format-prefix = ""
 format-prefix-foreground = ${colors.black}
 format-prefix-background = ${colors.purple}
@@ -378,8 +378,8 @@ warn-temperature = 60
 
 format = <ramp><label>
 format-warn = <ramp><label-warn>
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.red}
 label-warn-background = ${colors.label_background}
 label-warn-padding = 1
