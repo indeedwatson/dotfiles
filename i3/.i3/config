@@ -108,10 +108,10 @@ bindsym $mod+l $exec "~/i3-tools/focus-tool right"
 bindsym $mod+n $exec "i3-tools/focus-tool tab-next"
 
 # move focused window
-bindsym $mod+mod1+h move left
-bindsym $mod+mod1+j move down
-bindsym $mod+mod1+k move up
-bindsym $mod+mod1+l move right
+bindsym $mod+mod1+h move left 20 ppt
+bindsym $mod+mod1+j move down 200px
+bindsym $mod+mod1+k move up 200px
+bindsym $mod+mod1+l move right 300px
 
 # split in vertical orientation
 bindsym $mod+v split vertical
