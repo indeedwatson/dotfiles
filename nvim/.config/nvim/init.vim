@@ -80,6 +80,7 @@ set foldenable
 set foldmethod=indent
 set foldlevelstart=0
 set hidden
+set wildignorecase
 
 " set transparent background and colorscheme
 function! NoBackground() abort
@@ -387,3 +388,4 @@ function! WordCount()
         return b:wordcount
     endif
 endfunction
+highlight ColorColumn ctermbg=18
