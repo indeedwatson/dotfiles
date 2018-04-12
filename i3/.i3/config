@@ -60,7 +60,7 @@ $exec i3-msg '$ws2; append_layout /home/yama/tmp/ws-5.json; \
     $exec $term --name editor -e "nvim /home/yama/Dropbox/vimwiki/index.md \
     /home/yama/dotfiles/i3/.i3/config \
     /home/yama/dotfiles/nvim/.config/nvim/init.vim"; $exec discord'
-
+$exec "wal -f darktooth"
 
 ###########################################################################
 # BINDS
@@ -72,10 +72,10 @@ floating_modifier $mod
 # Terminal
 bindsym $mod+t $exec $term # terminal
 # mute system
-bindsym $mod+m $exec pavolume muteon
-bindsym $mod+Shift+m $exec pavolume muteoff
-bindsym $mod+comma $exec "pavolume --noshow voldown"
-bindsym $mod+period $exec "pavolume --noshow volup 40"
+bindsym $mod+m $exec "pamixer -m", $exec "notify-send 'muted' '0%'"
+bindsym $mod+Shift+m $exec pamixer -u, $exec "notify-send 'unmuted'"
+bindsym $mod+comma $exec "pamixer -d 15"
+bindsym $mod+period $exec "pamixer -u", $exec "pamixer -i 40"
 # switch audio device
 bindsym $mod+F4 $exec audioSwitch.py
 # Rofi
@@ -83,7 +83,7 @@ bindsym $mod+space $exec "rofi -show run"
 bindsym $mod+semicolon $exec ~/bin/rofi-bangs.sh
 bindsym $mod+slash $exec "rofi -show window -theme winSelector"
 #bindsym $mod+period $exec "rofi -show top -sort -modi top -theme-str \
-    '#window { width: 90%; }'" 
+#    '#window { width: 90%; }'" 
 # reload the configuration file
 bindsym $mod+F11 $exec "wal -i ~/Pictures/wal"
 bindsym $mod+F12 reload; $exec "notify-send 'i3 reloaded'"
