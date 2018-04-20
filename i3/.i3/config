@@ -62,6 +62,7 @@ $exec i3-msg '$ws2; append_layout /home/yama/tmp/ws-5.json; \
     /home/yama/dotfiles/nvim/.config/nvim/init.vim"; $exec discord'
 $exec "wal -f darktooth"
 exec_always ~/bin/per_ws_layout.pl
+$exec_always flashfocus
 
 ###########################################################################
 # BINDS
@@ -268,10 +269,13 @@ mode "nav" {
 	bindsym $mod+j $exec swap_containers.sh down
 	bindsym $mod+k $exec swap_containers.sh up
 	bindsym $mod+l $exec swap_containers.sh right
+    bindsym $mod1+h move left, resize set 40 ppt 0 ppt, mode default
+    bindsym $mod1+j move down, resize set 0 ppt 40 ppt, mode default
+    bindsym $mod1+k move up, resize set 0 ppt 40 ppt, mode default
+    bindsym $mod1+l move right, resize set 40 ppt 0 ppt, mode default
     bindsym w $exec swap_workspaces.sh
     bindsym bracketleft move workspace to output left
     bindsym bracketright move workspace to output right
-# fullscreen
     bindsym c gaps inner current set 0, gaps outer current set 0, mode default
     # Make the currently focused window a scratchpad
     bindsym u mark _s, move scratchpad
@@ -288,10 +292,5 @@ mode "nav" {
 ###########################################################################
 # TESTS
 ###########################################################################
-# # Testing https://www.youtube.com/watch?v=kPGXqFPnswc
-# bindsym $mod1+s $exec i3-input -F "[con_id=__focused__] mark _sticky_%s"
-#
-
-$exec_always flashfocus
 
 # vim:filetype=i3
