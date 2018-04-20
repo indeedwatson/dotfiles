@@ -19,9 +19,9 @@ set_from_resource $15           i3wm.color15
 set_from_resource $5            i3ww.color5
 
 #class                  border      backgr.     text            split
-client.focused          $blue      $blue        $15          $blue
-client.focused_inactive $blue      $black      $light_grey     $black
-client.unfocused        $blue      $black      $light_grey     $black
+client.focused          $blue       $blue       $black          $blue
+client.focused_inactive $blue       $black      $light_grey     $black
+client.unfocused        $blue       $black      $light_grey     $black
 client.urgent           $blue       $blue       $black          $black
 client.background       #000000
 
@@ -48,7 +48,7 @@ $exec xmodmap ~/.Xmodmap &
 $exec xcape -e "Hyper_L=Escape"
 $exec_always ~/.config/polybar/launch.sh &
 $exec_always feh -z --bg-fill ~/Pictures/texture_wp/
-$exec "compton"
+$exec "allow_rgb10_configs=false compton"
 $exec dropbox start &
 $exec unclutter &
 $exec kdeconnect-cli
@@ -61,6 +61,7 @@ $exec i3-msg '$ws2; append_layout /home/yama/tmp/ws-5.json; \
     /home/yama/dotfiles/i3/.i3/config \
     /home/yama/dotfiles/nvim/.config/nvim/init.vim"; $exec discord'
 $exec "wal -f darktooth"
+exec_always ~/bin/per_ws_layout.pl
 
 ###########################################################################
 # BINDS
@@ -108,7 +109,7 @@ bindsym $mod+l $exec "~/i3-tools/focus-tool right"
 bindsym $mod+n $exec "i3-tools/focus-tool tab-next"
 
 # move focused window
-bindsym $mod+mod1+h move left 20 ppt
+bindsym $mod+mod1+h move left 300px
 bindsym $mod+mod1+j move down 200px
 bindsym $mod+mod1+k move up 200px
 bindsym $mod+mod1+l move right 300px
@@ -202,6 +203,8 @@ for_window [class="^Steam$" title=".* - event started"] floating enable
 for_window [title="(?i)Calf"] floating enable, move scratchpad
 for_window [title="Discord Updater"] floating enable, move position center
 for_window [class="(?i)termite" title="pulsemixer"] floating enable
+for_window [title="KDEConnect-Send"] floating enable
+for_window [class="Firefox"] layout split vertical
 # for_window [tiling] [workspace="1"] move right; resize set 60 ppt 0 ppt
 
 # workspaces aliases
@@ -260,6 +263,12 @@ mode "nav" {
     bindsym Shift+k gaps inner current minus 15
     bindsym Shift+h gaps outer current plus 15
     bindsym Shift+l gaps outer current minus 15
+    # swap
+    bindsym $mod+h $exec swap_direction.sh left
+	bindsym $mod+j $exec swap_direction.sh down
+	bindsym $mod+k $exec swap_direction.sh up
+	bindsym $mod+l $exec swap_direction.sh right
+# fullscreen
     bindsym c gaps inner current set 0, gaps outer current set 0, mode default
     # Make the currently focused window a scratchpad
     bindsym u mark _s, move scratchpad
@@ -269,6 +278,7 @@ mode "nav" {
     bindsym Return floating toggle
     bindsym $mod+y floating enable, resize set 500 350, sticky enable, \
         move window to position 1415 40, mode default
+    bindsym F12 restart, mode "default", $exec notify-send "i3 restarted"
     bindsym Escape mode "default"
     }
 
@@ -279,6 +289,6 @@ mode "nav" {
 # bindsym $mod1+s $exec i3-input -F "[con_id=__focused__] mark _sticky_%s"
 #
 
-
+$exec_always flashfocus
 
 # vim:filetype=i3
