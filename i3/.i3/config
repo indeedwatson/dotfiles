@@ -268,6 +268,9 @@ mode "nav" {
 	bindsym $mod+j $exec swap_direction.sh down
 	bindsym $mod+k $exec swap_direction.sh up
 	bindsym $mod+l $exec swap_direction.sh right
+    bindsym w $exec swap_workspaces.sh
+    bindsym bracketleft move workspace to output left
+    bindsym bracketright move workspace to output right
 # fullscreen
     bindsym c gaps inner current set 0, gaps outer current set 0, mode default
     # Make the currently focused window a scratchpad
