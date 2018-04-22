@@ -21,7 +21,7 @@ Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
 " fzf
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 " Git wrapper
-Plug 'https://github.com/tpope/vim-fugitive'
+"Plug 'https://github.com/tpope/vim-fugitive'
 " tabular
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -39,6 +39,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'thinca/vim-quickrun'
+Plug 'lambdalisue/gina.vim'
 
 call plug#end()
 
