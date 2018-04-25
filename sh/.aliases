@@ -8,10 +8,11 @@ alias gs='git status'
 alias pacu='yay -Syu && clear'
 alias py='python'
 alias batman='sudo pacman -Rns $(pacman -Qtdq) && pacaur -S polybar-git' # delete orphan packages
-alias steam-wine='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-cef-sandbox >/dev/null 2>&1  &'
+alias steam-wine='wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe'
 alias mkdir='mkdir -p' # no error if existing, make parents directories as needed
 # alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi' # user DRI PRIME for dGPU
 alias phone='kdeconnect-cli -d 35ae67aa3fec869'
+r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias :q='exit'
 
 unalias z 2> /dev/null
