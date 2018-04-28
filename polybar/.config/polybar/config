@@ -23,13 +23,13 @@ label_background = ${colors.darkest_grey}
 
 [bar/left_screen]
 monitor = ${env:MONITOR:HDMI-A-0}
+monitor-fallback = ${env:MONITOR:HDMI-0}
 width = 100%
 height = 20
 offset-x = 0%
 offset-y = 0%
 radius = 0
 fixed-center = true
-monitor-fallback = ${env:MONITOR:DVI-I-0}
 
 background = ${colors.black}
 foreground = ${colors.white}
@@ -52,15 +52,18 @@ font-2 = "fontawesome:size=10;1"
 font-3 = "WunconSiji:size=10;1"
 
 modules-left = i3  
-modules-center = xwindow 
+modules-center = music
 modules-right = volume filesystem filesystem2 temperature time
 
 [bar/right_screen]
 inherit = bar/left_screen
 monitor-strict = true
 monitor = ${env:MONITOR:DVI-I-0}
-modules-center = 
-modules-right = music redshift temperature time
+monitor-fallback = ${env:MONITOR:DVI-0}
+
+modules-left = i3
+modules-center = twitch 
+modules-right = redshift temperature time
 
 [module/xwindow]
 type = internal/xwindow
@@ -287,17 +290,34 @@ format-suffix-foreground = ${colors.black}
 format-suffix-background = ${colors.green}
 format-suffix-padding = 1
 
+[module/pulseaudio-tail]
+type = custom/script
+exec = ~/.config/polybar/pulseaudio-tail.sh
+tail = true
+sink = default
+
+
 [module/volume]
 type = internal/pulseaudio
 
+; speaker-soundcard = hw:1
+; headphone-soundcard = hw:0
+; headphone-id = 0
+; mapped = true
+; 
+; speaker-mixer = Master
+; headphone-mixer = Headphon
+
+sink = default
 format-volume = <ramp-volume> <bar-volume>
 label-volume =
 label-volume-foreground = ${root.foreground}
+label-volume-background = ${colors.green}
+format-volume-padding = 2
 
-;format-muted-prefix =     
 format-muted-foreground = ${colors.silver}
 label-muted = 
-;label-muted-prefix =      
+format-muted-padding = 15
 
 bar-volume-width = 10
 ramp-volume-0 =
@@ -314,22 +334,6 @@ bar-volume-empty = ∎
 bar-volume-empty-font = 3
 bar-volume-empty-foreground = ${colors.blue}
 
-[module/pavolume]
-type = custom/script
-interval = 2
-label = %output%
-label-foreground = ${colors.light_grey}
-exec = ~/.config/polybar/pavolume.sh
-exec-if = pacmd list-sinks | grep -q available
-click-right = exec pavucontrol
-click-left = ~/.config/polybar/pavolume.sh --togmute
-scroll-up = ~/.config/polybar/pavolume.sh --up
-scroll-down = ~/.config/polybar/pavolume.sh --down
-
-[module/pulseaudio-tail]
-type = custom/script
-exec = ~/.config/polybar/pulseaudio-tail.sh
-tail = true
 
 [module/weather]
 type = custom/script

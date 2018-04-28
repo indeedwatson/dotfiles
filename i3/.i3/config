@@ -48,7 +48,8 @@ $exec xmodmap ~/.Xmodmap &
 $exec xcape -e "Hyper_L=Escape"
 $exec_always ~/.config/polybar/launch.sh &
 $exec_always feh -z --bg-fill ~/Pictures/texture_wp/
-$exec "allow_rgb10_configs=false compton"
+$exec_always "allow_rgb10_configs=false compton"
+$exec_always flashfocus
 $exec dropbox start &
 $exec unclutter &
 $exec kdeconnect-cli
@@ -59,10 +60,10 @@ $exec i3-msg '$ws7; exec qbittorrent'
 $exec i3-msg '$ws2; append_layout /home/yama/tmp/ws-5.json; \
     $exec $term --name editor -e "nvim /home/yama/Dropbox/vimwiki/index.md \
     /home/yama/dotfiles/i3/.i3/config \
-    /home/yama/dotfiles/nvim/.config/nvim/init.vim"; $exec discord'
+    /home/yama/dotfiles/nvim/.config/nvim/init.vim"'
 $exec "wal -f darktooth"
 exec_always ~/bin/per_ws_layout.pl
-$exec_always flashfocus
+$exec_always i3ipc_nop.py
 
 ###########################################################################
 # BINDS
@@ -76,10 +77,10 @@ bindsym $mod+t $exec $term # terminal
 # mute system
 bindsym $mod+m $exec "pamixer -m", $exec "notify-send 'muted' '0%'"
 bindsym $mod+Shift+m $exec pamixer -u, $exec "notify-send 'unmuted'"
-bindsym $mod+comma $exec "pamixer -d 15"
-bindsym $mod+period $exec "pamixer -u", $exec "pamixer -i 40"
+bindsym $mod+comma $exec "pamixer -d 10"
+bindsym $mod+period $exec "pamixer -u", $exec "pamixer -i 10"
 # switch audio device
-bindsym $mod+F4 $exec audioSwitch.py
+bindsym $mod+F4 $exec switch_audio_port.sh
 # Rofi
 bindsym $mod+space $exec "rofi -show run"
 bindsym $mod+semicolon $exec ~/bin/rofi-bangs.sh
@@ -91,7 +92,7 @@ bindsym $mod+F11 $exec "wal -i ~/Pictures/wal"
 bindsym $mod+F12 reload; $exec "notify-send 'i3 reloaded'"
 # Show the first scratchpad window
 bindsym $mod+u [con_mark="_s"] scratchpad show
-bindsym $mod+F1 [title="(?i)calf"]scratchpad show
+bindsym $mod+F1 [title="(?i)calf"] scratchpad show
 bindsym $mod+Tab workspace back_and_forth
 # Show dropdown terminal
 bindsym $mod+i [instance="dropdown"] scratchpad show, move position center
@@ -115,8 +116,11 @@ bindsym $mod+mod1+j move down 200px
 bindsym $mod+mod1+k move up 200px
 bindsym $mod+mod1+l move right 300px
 
+bindsym $mod+equal nop ipc resize grow
+bindsym $mod+minus nop ipc resize shrink
+
 # split in vertical orientation
-bindsym $mod+v split vertical
+bindsym $mod+v layout toggle split
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -177,7 +181,7 @@ force_focus_wrapping no
 assign [class="firefox-nightly"] 1
 for_window [title="Nightly$"] mark _a
 assign [class="discord"] 2
-for_window [title="Discord"] mark _b
+# for_window [title="Discord"] mark _b
 for_window [class="mpv" instance="image"] move to workspace current, floating \
     enable, move position left, floating_maximum_size 90x80
 assign [class="mpv"] 4
@@ -185,7 +189,8 @@ for_window [class="mpv"] focus
 assign [class="(?i)termite" title="(?i)weechat"] 2
 assign [class="(?i)termite" title="(?i)ranger"] 2
 assign [class="qBittorrent"] 7
-assign [class="Steam"] 8
+#assign [class="Steam"] 8
+#assign [class="Lutris"] 8
 for_window [class="Steam" title="Friends"] move to mark _b
 for_window [class="Steam" title="- Chat$"] move to mark _b
 assign [class="calibre"] 9
@@ -220,12 +225,12 @@ set $ws8 workspace 8
 set $ws9 workspace 9
 set $ws10 workspace 10
 
-$ws1 output HDMI-A-0
-$ws2 output DVI-I-0
-$ws3 output DVI-I-0
-$ws4 output HDMI-A-0
-$ws7 output DVI-I-0
-$ws8 output DVI-I-0
+$ws1 output left
+$ws2 output right
+$ws3 output right
+$ws4 output left
+$ws7 output right
+$ws8 output right
 
 
 ###########################################################################
