@@ -6,9 +6,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
-" wiki
 Plug 'vimwiki/vimwiki'
-" Gist for vim
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 " automatic closing of quotes, parenthesis, brackets, etc
@@ -21,7 +19,7 @@ Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
 " fzf
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 " Git wrapper
-"Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/tpope/vim-fugitive'
 " tabular
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -39,7 +37,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'thinca/vim-quickrun'
-Plug 'lambdalisue/gina.vim'
+"Plug 'lambdalisue/gina.vim'
 
 call plug#end()
 
@@ -176,10 +174,10 @@ if !&diff
 endif
 
 " remember cursor position when opening a file
-augroup resCur
-    autocmd!
-    autocmd BufReadPost * call setpos(".", getpos("'\'"))
-augroup END
+" augroup resCur
+"     autocmd!
+ "    autocmd BufReadPost * call setpos(".", getpos("'\'"))
+" augroup END
 
 " text width 80 for specific file formats
 augroup Formatting
@@ -219,17 +217,13 @@ let g:fzf_action = {
 " - down / up / left / right
 let g:fzf_layout = { 'down': '~40%' }
 
-" In Neovim, you can set up fzf window using a Vim command
-" let g:fzf_layout = { 'window': 'enew' }
-" let g:fzf_layout = { 'window': '-tabnew' }
-
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'fg+':     ['Normal'],
+  \ 'bg+':     ['Normal'],
   \ 'hl+':     ['fg', 'Statement'],
   \ 'info':    ['fg', 'PreProc'],
   \ 'prompt':  ['fg', 'Conditional'],
@@ -320,7 +314,6 @@ let g:lightline = {
         \   'wordcount': 'WordCount',
         \ },
         \ }
-
 
 let g:gist_put_url_to_clipboard_after_post = 1
 
