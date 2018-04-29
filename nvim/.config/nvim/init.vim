@@ -38,9 +38,10 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'thinca/vim-quickrun'
 "Plug 'lambdalisue/gina.vim'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-eunuch'
 
 call plug#end()
-
 
 " format ------------------------------------------------------------
 set autoindent
@@ -124,12 +125,14 @@ vmap <Leader>P "+P
 " open file under cursor with default app
 nnoremap gO :!xdg-open <cfile><CR><CR>
 
-" insert current date with F5 in normal and insert mode
+" insert current date
 nnoremap <F1> "=strftime("%Y.%m.%d %a")<CR>P 
 inoremap <F1> <C-R>=strftime("%Y.%m.%d %a")<CR>
 " display a column at 80 char
 nnoremap <F2> :let &cc = &cc == '' ? '80' : ''<CR>
 " source init.vim
+nnoremap <F3> :set spell!<CR>
+nnoremap <F4> :!chmod +x %<CR>
 nnoremap <F5> :so ~/.config/nvim/init.vim<CR>
 
 " move lines up and down with Ctrl + j/k in normal, insert and visual mode
@@ -383,3 +386,18 @@ function! WordCount()
     endif
 endfunction
 highlight ColorColumn ctermbg=18
+
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+"inoremap <expr> <M-,> pumvisible() ? "<C-n>'' :
+  "\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+
+
+filetype plugin on
+
+autocmd FileType *
+    \ if &omnifunc != '' |
+    \   call SuperTabChain(&omnifunc, "<c-p>") |
+    \ endif
