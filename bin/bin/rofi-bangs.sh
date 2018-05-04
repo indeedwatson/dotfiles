@@ -53,6 +53,10 @@ LABELS["clipboard"]=""
 COMMANDS["mpv"]='~/bin/mpvlist-rofi'
 LABELS["mpv"]=""
 
+# dict
+COMMANDS["dict"]='rofi -modi "dict: cat /usr/share/dict/words" -show dict'
+LABELS["dict"]=""
+
 # SEARCH
 # open custom web searches
 # COMMANDS["websearch"]="~/bin/rofi-websearch.sh"
