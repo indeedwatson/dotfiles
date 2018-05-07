@@ -57,7 +57,7 @@ $exec greenclip daemon &
 $exec $term --name dropdown &
 $exec i3-msg '$ws1; exec firefox-nightly'
 $exec i3-msg '$ws7; exec qbittorrent'
-$exec i3-msg '$ws2; append_layout /home/yama/tmp/ws-5.json; \
+$exec i3-msg '$ws2; append_layout /home/yama/.i3/workspace-2.json; \
     $exec $term --name editor -e "nvim /home/yama/Dropbox/vimwiki/index.md \
     /home/yama/dotfiles/i3/.i3/config \
     /home/yama/dotfiles/nvim/.config/nvim/init.vim"'
@@ -85,6 +85,7 @@ bindsym $mod+F4 $exec switch_audio_port.sh
 bindsym $mod+space $exec "rofi -show run"
 bindsym $mod+semicolon $exec ~/bin/rofi-bangs.sh
 bindsym $mod+slash $exec "rofi -show window -theme winSelector"
+bindsym $mod+o $exec rofi-search.sh
 #bindsym $mod+period $exec "rofi -show top -sort -modi top -theme-str \
 #    '#window { width: 90%; }'" 
 # reload the configuration file
@@ -96,7 +97,6 @@ bindsym $mod+F1 [title="(?i)calf"] scratchpad show
 bindsym $mod+Tab workspace back_and_forth
 # Show dropdown terminal
 bindsym $mod+i [instance="dropdown"] scratchpad show, move position center
-bindsym $mod+o sticky toggle
 # doesnt work bindsym Shift+Print $exec "teiler --quickcopy"
 bindsym Print $exec "teiler --quick image area"
 bindsym $mod+b move container workspace back_and_forth; workspace back_and_forth
@@ -132,11 +132,11 @@ bindsym $mod+Return focus mode_toggle
 bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
-bindsym $mod+bracketleft workspace prev
-bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft prev_on_output
+bindsym $mod+bracketright next_on_output
 bindsym $mod+$mod1+n workspace prev
 bindsym $mod+1 $exec run_or_focus.py "firefox" firefox-nightly
-bindsym $mod+2 [con_mark="_b"] focus
+bindsym $mod+2 [title="discordapp"] focus
 bindsym $mod+3 $exec run_or_focus.py " - NVIM$" "termite -e nvim"
 bindsym $mod+4 $exec run_or_focus.py "mpv$" 
 bindsym $mod+r $exec run_or_focus.py "^ranger" "termite -e ranger"
@@ -177,10 +177,13 @@ workspace_auto_back_and_forth yes
 focus_follows_mouse no
 popup_during_fullscreen ignore
 force_focus_wrapping no
+mouse_warping none
+focus_on_window_activation none
+show_marks yes
 
 assign [class="firefox-nightly"] 1
 for_window [title="Nightly$"] mark _a
-assign [class="discord"] 2
+assign [title="discord"] 2
 # for_window [title="Discord"] mark _b
 for_window [class="mpv" instance="image"] move to workspace current, floating \
     enable, move position left, floating_maximum_size 90x80
@@ -227,17 +230,11 @@ set $ws10 workspace 10
 
 # repeated because of monitor name change when changing GPU drivers
 $ws1 output HDMI-A-0
-$ws1 output HDMI-0
 $ws2 output DVI-I-0
-$ws2 output DVI-0
 $ws3 output DVI-I-0
-$ws3 output DVI-0
 $ws4 output HDMI-A-0
-$ws4 output HDMI-0
 $ws7 output DVI-I-0
-$ws7 output DVI-0
 $ws8 output DVI-I-0
-$ws8 output DVI-0
 
 
 ###########################################################################
