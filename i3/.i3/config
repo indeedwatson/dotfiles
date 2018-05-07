@@ -132,8 +132,8 @@ bindsym $mod+Return focus mode_toggle
 bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+Shift+a focus child
-bindsym $mod+bracketleft prev_on_output
-bindsym $mod+bracketright next_on_output
+bindsym $mod+bracketleft workspace prev_on_output
+bindsym $mod+bracketright workspace next_on_output
 bindsym $mod+$mod1+n workspace prev
 bindsym $mod+1 $exec run_or_focus.py "firefox" firefox-nightly
 bindsym $mod+2 [title="discordapp"] focus
