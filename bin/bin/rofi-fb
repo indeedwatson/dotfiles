@@ -5,24 +5,27 @@ if [[ "$host" == "" ]]; then
     host="https://paste.xinu.at"
 fi
 
+# sort fb entries by date, by latest
 menu=$(fb -H 2>&1 | tac | tail -n+6 | rofi -dmenu -kb-custom-1 "Shift-Return" \
     -kb-accept-alt "" -kb-custom-2 "Shift-Delete" -kb-delete-entry "")
-rofi_exit=$?
+rofi_exit=$? # return rofi's exit status
 id="$(echo "${menu}" | awk -F '| ' '{ print $2 }')"
 
 if [[ $rofi_exit -eq 1 ]]; then
     exit
 elif [[ $rofi_exit -eq 10 ]]; then
+    # if shift + enter is pressed, copy the url to clipboard and exit
     echo n "${host}/${id}/" | xclip -selection clipboard
-    notify-send "$rofi_exit"
     notify-send "filebin" "URL for ID \"${id}\" copied to clipboard"
     exit
 elif [[ $rofi_exit -eq 11 ]]; then
+    # if shift + delete is pressed, delete the ID and exit
     fb -d ${id}
     notify-send "filebin" "Deleted ID \"${id}\""
     exit
 fi
 
 if [[ -n $menu ]]; then
+    # if only enter is pressed, open the URL
     xdg-open "${host}/${id}/"
 fi

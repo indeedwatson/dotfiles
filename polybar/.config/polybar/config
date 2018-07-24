@@ -19,13 +19,13 @@ dark_grey = ${xrdb:color19}
 darkest_grey = ${xrdb:color19}
 
 label_foreground = ${colors.light_grey}
-label_background = ${colors.darkest_grey}
+label_background = ${colors.black}
 
 [bar/left_screen]
 monitor = ${env:MONITOR:HDMI-A-0}
-monitor-fallback = ${env:MONITOR:HDMI-0}
+monitor-fallback = ${env:MONITOR:VGA-1}
 width = 100%
-height = 20
+height = 15
 offset-x = 0%
 offset-y = 0%
 radius = 0
@@ -35,9 +35,9 @@ background = ${colors.black}
 foreground = ${colors.white}
 
 line-size = 0
-border-top-size = 3
-border-bottom-size = 3
-border-top-color = ${colors.black}
+border-top-size = 0
+border-bottom-size = 1
+border-top-color = ${colors.darkest_grey}
 border-bottom-color = ${colors.black}
 line-color = ${colors.red}
 border-color = ${colors.grey}
@@ -46,7 +46,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "lucy tewii:pixelsize=8;0"
+font-0 = "nerdypepper scientifica:pixelsize=8;0"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "fontawesome:size=10;1"
 font-3 = "WunconSiji:size=10;1"
@@ -80,13 +80,13 @@ interval = 25
 
 mount-0 = /
 format-mounted-prefix = 
-format-mounted-prefix-background = ${colors.teal}
-format-mounted-prefix-foreground = ${colors.black}
+#format-mounted-prefix-background = ${colors.teal}
+format-mounted-prefix-foreground = ${colors.teal}
 format-mounted-prefix-padding = 1
 label-mounted =  %free%
 label-mounted-foreground = ${colors.label_foreground}
 label-mounted-background = ${colors.label_background}
-label-mounted-padding = 1
+label-mounted-padding = 0
 
 format-unmounted-prefix-background = ${colors.black}
 format-unmounted-prefix-foreground = #000000
@@ -97,8 +97,9 @@ label-unmounted-foreground = ${colors.blue}
 [module/filesystem2]
 inherit = module/filesystem
 mount-0 = /home
-format-mounted-prefix = 
-format-mounted-prefix-background = ${colors.blue}
+format-mounted-prefix =
+format-mounted-prefix-foreground = ${colors.blue}
+#format-mounted-prefix-background = ${colors.blue}
 
 [module/bspwm]
 type = internal/bspwm
@@ -157,13 +158,13 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 strip-wsnumbers = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 4;
-ws-icon-3 = 7;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 4;
+ws-icon-3 = 7;
 ws-icon-4 = 8;
-ws-icon-5 = 9;
-ws-icon-default = 
+ws-icon-5 = 9;
+ws-icon-default = 
 pin-workspaces = true
 
 
@@ -262,9 +263,9 @@ interval = 5
 date = "%d/%m"
 
 format-prefix = 
-format-prefix-foreground = ${colors.black}
-format-prefix-background = ${colors.yellow}
-format-prefix-padding = 1
+format-prefix-foreground = ${colors.yellow}
+#format-prefix-background = ${colors.yellow}
+format-prefix-padding = 0
 
 label =%date% 
 label-foreground = ${colors.light_grey}
@@ -275,20 +276,20 @@ label-padding = 1
 type = internal/date
 interval = 5
 time = "%d/%m - %H:%M"
-format-prefix = 
-format-prefix-foreground = ${colors.black}
-format-prefix-background = ${colors.orange}
-format-prefix-padding = 1
+format-prefix =
+format-prefix-foreground = ${colors.orange}
+#format-prefix-background = ${colors.orange}
+format-prefix-padding = 0
 
 label = %time%
 label-foreground = ${colors.label_foreground}
 label-background = ${colors.label_background}
-label-padding = 1
+label-padding = 0
 
-format-suffix = 
-format-suffix-foreground = ${colors.black}
-format-suffix-background = ${colors.green}
-format-suffix-padding = 1
+format-suffix =
+format-suffix-foreground = ${colors.green}
+#format-suffix-background = ${colors.green}
+format-suffix-padding = 0
 
 [module/pulseaudio-tail]
 type = custom/script
@@ -313,25 +314,21 @@ format-volume = <ramp-volume> <bar-volume>
 label-volume =
 label-volume-foreground = ${root.foreground}
 label-volume-background = ${colors.green}
-format-volume-padding = 2
+format-volume-padding = 0
 
 format-muted-foreground = ${colors.silver}
 label-muted = 
 format-muted-padding = 15
 
-bar-volume-width = 10
-ramp-volume-0 =
-ramp-volume-1 = 
-ramp-volume-2 = 
+bar-volume-width = 5
+ramp-volume-0 =
+ramp-volume-1 =
 
 bar-volume-foreground-0 = ${colors.green}
 bar-volume-gradient = false
-bar-volume-indicator = ∎
-bar-volume-indicator-font = 2
-bar-volume-fill = ∎
-bar-volume-fill-font = 2
-bar-volume-empty = ∎
-bar-volume-empty-font = 3
+bar-volume-indicator =
+bar-volume-fill =
+bar-volume-empty =
 bar-volume-empty-foreground = ${colors.blue}
 
 
@@ -357,13 +354,13 @@ format = <label>
 type = custom/script
 exec = python -u ~/polybar_twitch/polybar-twitch.py
 format-prefix = ""
-format-prefix-foreground = ${colors.black}
-format-prefix-background = ${colors.purple}
+format-prefix-foreground = ${colors.purple}
+#format-prefix-background = ${colors.purple}
 format-prefix-padding = 1
 
 format-foreground = ${colors.label_foreground}
 format-background = ${colors.label_background}
-label-padding = 1
+label-padding = 0
 tail = true
 
 
@@ -384,19 +381,19 @@ format = <ramp><label>
 format-warn = <ramp><label-warn>
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.red}
-label-warn-background = ${colors.label_background}
+#label-warn-foreground = ${colors.red}
+label-warn-background = ${colors.red}
 label-warn-padding = 1
 label-foreground = ${colors.label_foreground}
 label-background = ${colors.label_background}
-label-padding = 1
+label-padding = 0
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.black}
-ramp-background = ${colors.purple}
-ramp-padding = 1
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.purple}
+#ramp-background = ${colors.purple}
+ramp-padding = 0
 
 [module/redshift]
 type = custom/script
@@ -412,13 +409,13 @@ label = %output:0:50%
 exec = ~/.config/polybar/player-mpris-simple.sh
 label-foreground = ${colors.label_foreground}
 label-background = ${colors.label_background}
-label-padding = 1
+label-padding = 0
 tail = true
 
 format-prefix = ""
-format-prefix-foreground = ${colors.black}
-format-prefix-background = ${colors.yellow}
-format-prefix-padding = 1
+format-prefix-foreground = ${colors.yellow}
+#format-prefix-background = ${colors.yellow}
+format-prefix-padding = 0
 
 [settings]
 screenchange-reload = true
