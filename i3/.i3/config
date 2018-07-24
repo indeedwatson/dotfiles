@@ -47,7 +47,7 @@ set $exec_always exec_always --no-startup-id
 $exec xmodmap ~/.Xmodmap &
 $exec xcape -e "Hyper_L=Escape"
 $exec_always ~/.config/polybar/launch.sh &
-$exec_always feh -z --bg-fill ~/Pictures/texture_wp/
+$exec_always feh -z --bg-tile ~/Pictures/texture_wp/
 $exec_always "allow_rgb10_configs=false compton"
 $exec_always flashfocus
 $exec dropbox start &
@@ -61,9 +61,7 @@ $exec i3-msg '$ws2; append_layout /home/yama/.i3/workspace-2.json; \
     $exec $term --name editor -e "nvim /home/yama/Documents/vimwiki/index.md \
     /home/yama/dotfiles/i3/.i3/config \
     /home/yama/dotfiles/nvim/.config/nvim/init.vim"'
-$exec "wal --theme sexy-hybrid"
-#exec_always ~/bin/per_ws_layout.pl
-#$exec_always i3ipc_nop.py
+$exec_always "wal --theme random_dark"
 
 ###########################################################################
 # BINDS
@@ -144,6 +142,7 @@ bindsym $mod+r $exec run_or_focus.py "^ranger" "termite -e ranger"
 bindsym $mod+w $exec run_or_focus.py "Weechat" "termite -e weechat"
 bindsym $mod+p $exec "termite -e pulsemixer"
 bindsym $mod+s $exec run_or_focus.py "^Steam" steam
+bindsym $mod+z $exec run_or_focus.py "zathura" zathura
 bindsym $mod+5 $ws5
 bindsym $mod+6 $ws6
 bindsym $mod+q $ws7
@@ -284,7 +283,7 @@ mode "nav" {
     bindsym $mod1+j move down, resize set 0 ppt 40 ppt, mode default
     bindsym $mod1+k move up, resize set 0 ppt 40 ppt, mode default
     bindsym $mod1+l move right, resize set 35 ppt 0 ppt
-    bindsym w $exec swap_workspaces.sh
+    bindsym w $exec swap_workspaces.sh, mode default
     bindsym bracketleft move workspace to output left
     bindsym bracketright move workspace to output right
     bindsym c gaps inner current set 0, gaps outer current set 0, mode default
