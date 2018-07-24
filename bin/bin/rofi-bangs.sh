@@ -14,7 +14,7 @@ declare -A COMMANDS
 ###
 # List of defined 'bangs'
 # calculator
-COMMANDS["="]="rofi -show calc -modi "calc:qalc +u8 -nocurrencies""
+COMMANDS["="]="rofi -show calc -modi calc -no-show-match -no-sort -i"
 LABELS["="]=""
 
 # poweroff
@@ -44,11 +44,6 @@ LABELS["pass"]=""
 # COMMANDS["bookmarks"]="~/.scripts/rofi-scripts-collection/rofi-surfraw-bookmarks.sh"
 # LABELS["bookmarks"]=""
 
-# greenclip clipboard history
-COMMANDS["clipboard"]='rofi -modi "clipboard:greenclip print" -show clipboard \
-    -theme-str "#window { width: 1000; }"'
-LABELS["clipboard"]=""
-
 # mpv history
 COMMANDS["mpv"]='~/bin/mpvlist-rofi'
 LABELS["mpv"]=""
@@ -61,6 +56,8 @@ LABELS["dict"]=""
 # open custom web searches
 # COMMANDS["websearch"]="~/bin/rofi-websearch.sh"
 # LABELS["websearch"]=""
+COMMANDS["fb"]="~/bin/rofi-fb"
+LABELS["fb"]=""
 
 COMMANDS["yt"]="surfraw youtube \${input}"
 LABELS["yt"]=""

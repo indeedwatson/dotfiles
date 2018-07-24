@@ -52,13 +52,13 @@ $exec_always "allow_rgb10_configs=false compton"
 $exec_always flashfocus
 $exec dropbox start &
 $exec unclutter &
-$exec mconnect -d &
+#$exec mconnect -d &
 $exec syncthing &
 $exec $term --name dropdown &
 $exec i3-msg '$ws1; exec firefox-nightly'
 $exec i3-msg '$ws7; exec qbittorrent'
 $exec i3-msg '$ws2; append_layout /home/yama/.i3/workspace-2.json; \
-    $exec $term --name editor -e "nvim /home/yama/Dropbox/vimwiki/index.md \
+    $exec $term --name editor -e "nvim /home/yama/Documents/vimwiki/index.md \
     /home/yama/dotfiles/i3/.i3/config \
     /home/yama/dotfiles/nvim/.config/nvim/init.vim"'
 $exec "wal --theme sexy-hybrid"
@@ -77,7 +77,7 @@ bindsym $mod+t $exec $term # terminal
 # mute system
 bindsym $mod+m $exec "pamixer -m", $exec "notify-send 'muted' '0%'"
 bindsym $mod+Shift+m $exec pamixer -u, $exec "notify-send 'unmuted'"
-bindsym $mod+comma $exec "pamixer -d 10"
+bindsym $mod+comma $exec "pamixer -u", $exec "pamixer -d 10"
 bindsym $mod+period $exec "pamixer -u", $exec "pamixer -i 10"
 # switch audio device
 bindsym $mod+F4 $exec switch_audio_port.sh
@@ -111,10 +111,11 @@ bindsym $mod+l $exec "~/i3-tools/focus-tool right"
 bindsym $mod+n $exec "i3-tools/focus-tool tab-next"
 
 # move focused window
-bindsym $mod+mod1+h move left 300px
+bindsym $mod+$mod1+h move left 200px
+#resize set 35 ppt 0 ppt
 bindsym $mod+mod1+j move down 200px
 bindsym $mod+mod1+k move up 200px
-bindsym $mod+mod1+l move right 300px
+bindsym $mod+$mod1+l move right 200px
 
 bindsym $mod+equal nop ipc resize grow
 bindsym $mod+minus nop ipc resize shrink
@@ -138,7 +139,7 @@ bindsym $mod+$mod1+n workspace prev
 bindsym $mod+1 $ws1
 bindsym $mod+2 [title="discordapp"] focus
 bindsym $mod+3 $exec run_or_focus.py " - NVIM$" "termite -e nvim"
-bindsym $mod+4 $ws4
+bindsym $mod+4 $exec run_or_focus.py "mpv$" mpv
 bindsym $mod+r $exec run_or_focus.py "^ranger" "termite -e ranger"
 bindsym $mod+w $exec run_or_focus.py "Weechat" "termite -e weechat"
 bindsym $mod+p $exec "termite -e pulsemixer"
@@ -193,8 +194,8 @@ for_window [class="mpv"] focus
 assign [class="(?i)termite" title="(?i)weechat"] 2
 assign [class="(?i)termite" title="(?i)ranger"] 2
 assign [class="qBittorrent"] 7
-#assign [class="Steam"] 8
-#assign [class="Lutris"] 8
+assign [class="Steam"] 8
+assign [class="Lutris"] 8
 for_window [class="Steam" title="Friends"] move to mark _b
 for_window [class="Steam" title="- Chat$"] move to mark _b
 assign [class="calibre"] 9
@@ -214,8 +215,8 @@ for_window [title="(?i)Calf"] floating enable, move scratchpad
 for_window [title="Discord Updater"] floating enable, move position center
 for_window [class="(?i)termite" title="pulsemixer"] floating enable
 for_window [title="KDEConnect-Send"] floating enable
-#for_window [class="Firefox"] layout split vertical
-# for_window [tiling] [workspace="1"] move right; resize set 60 ppt 0 ppt
+for_window [title="Guitarix"] floating enable
+
 
 # workspaces aliases
 set $ws1 workspace 1
@@ -265,24 +266,24 @@ mode "nav" {
     bindsym 1 mark _a, mode "default"
     bindsym 2 mark _b, mode "default"
     #resize
-    bindsym h resize shrink width 300 px
+    bindsym h resize grow width 100 px
     bindsym j resize shrink height 10 px or 10 ppt
     bindsym k resize grow height 10 px or 10 ppt
-    bindsym l resize grow width 300 px or 10 ppt
+    bindsym l resize shrink width 100 px or 10 ppt
     #gaps
     bindsym Shift+j gaps inner current plus 15
     bindsym Shift+k gaps inner current minus 15
     bindsym Shift+h gaps outer current plus 15
     bindsym Shift+l gaps outer current minus 15
     # swap
-    bindsym $mod+h $exec swap_containers.sh left
-	bindsym $mod+j $exec swap_containers.sh down
-	bindsym $mod+k $exec swap_containers.sh up
-	bindsym $mod+l $exec swap_containers.sh right
-    bindsym $mod1+h move left, resize set 40 ppt 0 ppt, mode default
+    bindsym $mod+h $exec swap_containers.sh left, mode default
+	bindsym $mod+j $exec swap_containers.sh down, mode default
+	bindsym $mod+k $exec swap_containers.sh up, mode default
+	bindsym $mod+l $exec swap_containers.sh right, mode default
+    bindsym $mod1+h move left, resize set 35 ppt 0 ppt
     bindsym $mod1+j move down, resize set 0 ppt 40 ppt, mode default
     bindsym $mod1+k move up, resize set 0 ppt 40 ppt, mode default
-    bindsym $mod1+l move right, resize set 40 ppt 0 ppt, mode default
+    bindsym $mod1+l move right, resize set 35 ppt 0 ppt
     bindsym w $exec swap_workspaces.sh
     bindsym bracketleft move workspace to output left
     bindsym bracketright move workspace to output right
