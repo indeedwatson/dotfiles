@@ -5,7 +5,7 @@
 
 DIRECTION=$1
 i3-msg -- mark --add A
-~/i3-tools/focus-tool $DIRECTION
+i3-msg focus $DIRECTION
 i3-msg -- mark --add B
 i3-msg swap container with mark A
 i3-msg '[con_mark="A"] focus'
