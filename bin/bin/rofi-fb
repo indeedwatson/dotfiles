@@ -1,0 +1,28 @@
+#!/bin/bash
+
+host="$(grep '^pastebin' $HOME/.config/fb-client/config | cut -c 10-)"
+if [[ "$host" == "" ]]; then
+    host="https://paste.xinu.at"
+fi
+
+menu=$(fb -H 2>&1 | tac | tail -n+6 | rofi -dmenu -kb-custom-1 "Shift-Return" \
+    -kb-accept-alt "" -kb-custom-2 "Shift-Delete" -kb-delete-entry "")
+rofi_exit=$?
+id="$(echo "${menu}" | awk -F '| ' '{ print $2 }')"
+
+if [[ $rofi_exit -eq 1 ]]; then
+    exit
+elif [[ $rofi_exit -eq 10 ]]; then
+    echo n "${host}/${id}/" | xclip -selection clipboard
+    notify-send "$rofi_exit"
+    notify-send "filebin" "URL for ID \"${id}\" copied to clipboard"
+    exit
+elif [[ $rofi_exit -eq 11 ]]; then
+    fb -d ${id}
+    notify-send "filebin" "Deleted ID \"${id}\""
+    exit
+fi
+
+if [[ -n $menu ]]; then
+    xdg-open "${host}/${id}/"
+fi
