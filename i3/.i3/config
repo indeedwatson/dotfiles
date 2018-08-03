@@ -232,7 +232,6 @@ set $ws10 workspace 10
 # repeated because of monitor name change when changing GPU drivers
 $ws1 output HDMI-A-0
 $ws2 output DVI-I-0
-$ws3 output DVI-I-0
 $ws4 output HDMI-A-0
 $ws7 output DVI-I-0
 $ws8 output DVI-I-0
