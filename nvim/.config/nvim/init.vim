@@ -9,38 +9,28 @@ call plug#begin('~/.vim/bundle')
 Plug 'vimwiki/vimwiki'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
-" automatic closing of quotes, parenthesis, brackets, etc
-Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs' " automatic closing of quotes, parenthesis, etc
 Plug 'dylanaraps/wal.vim'
-" tables
 " Plug 'dhruvasagar/vim-table-mode'
-" i3 syntax
 Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
-" fzf
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
-" Git wrapper
-Plug 'https://github.com/tpope/vim-fugitive'
-" tabular
+Plug 'https://github.com/tpope/vim-fugitive' " git wrapper
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'tbabej/taskwiki'
 Plug 'nelstrom/vim-markdown-folding'
-" sandwiched textobject
 Plug 'machakann/vim-sandwich'
-" enhance in-buffer search
 Plug 'junegunn/vim-slash'
-" status line
-Plug 'itchyny/lightline.vim'
-" Show git diff in the gutter
-Plug 'airblade/vim-gitgutter'
-" distraction-free mode
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'itchyny/lightline.vim' " status line
+Plug 'airblade/vim-gitgutter' " Show git diff in the gutter
+Plug 'junegunn/goyo.vim' " distraction-free mode
 Plug 'thinca/vim-quickrun'
 "Plug 'lambdalisue/gina.vim'
-Plug 'ervandew/supertab'
 Plug 'tpope/vim-eunuch'
-
+Plug 'tpope/vim-obsession'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2' | Plug 'ncm2/ncm2-path' | Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-pyclang' | Plug 'ncm2/ncm2-bufword'
+Plug 'mbbill/undotree'
 call plug#end()
 
 " format ------------------------------------------------------------
@@ -58,7 +48,6 @@ set wildmode=full
 set incsearch " highlight search term as you type
 set ignorecase
 set noshowmode
-set number relativenumber
 " syntax
 set t_Co=256
 " enable is better than `on`, doesn't reset colors when sourcing config file
@@ -72,11 +61,12 @@ set smarttab
 set conceallevel=2
 " Always show statusline
 set laststatus=2
-set colorcolumn=80
+highlight ColorColumn ctermbg=18
+call matchadd('ColorColumn', '\%81v', 8)
 
 let s:error_sign = '✘'
 " set background=dark
-set foldenable
+set nofoldenable
 set foldmethod=indent
 set foldlevelstart=0
 set hidden
@@ -95,11 +85,13 @@ augroup transparentBg
     autocmd colorscheme * call NoBackground()
 augroup END
 
-augroup numbertoggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter    * set norelativenumber
-augroup END
+set nonumber
+set norelativenumber
+" augroup numbertoggle
+"    autocmd!
+"    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+"    autocmd BufLeave,FocusLost,InsertEnter    * set norelativenumber
+" augroup END
 
 colorscheme wal
 
@@ -122,6 +114,8 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+" sort todo in markdown
+nnoremap <Leader>wc :sort /-\ \[X\]/
 " open file under cursor with default app
 nnoremap gO :!xdg-open <cfile><CR><CR>
 
@@ -166,6 +160,8 @@ nnoremap <space>gs :Gstatus<CR>
 nnoremap <space>gc :Gcommit<CR>
 nnoremap <space>gp :Gpush<CR>
 
+" quickrun
+nnoremap <space>r :w<CR> :QuickRun<CR>
 
 " Disable swap files
 set noswapfile
@@ -185,14 +181,13 @@ endif
 " text width 80 for specific file formats
 augroup Formatting
     autocmd!
-    autocmd BufNew,BufRead *.txt,*.py setlocal formatoptions=cqt textwidth=80
-                \ colorcolumn=80 wrapmargin=0
+    autocmd BufNew,BufRead *.txt,*.py,*.md,*markdown setlocal formatoptions=cqt
+                \ textwidth=80 colorcolumn=80 wrapmargin=80
 augroup END
 
 " set .md and .markdown to use markdown filetype
 augroup markdown
     autocmd BufNewFile,BufReadPost *.md,*markdown set filetype=markdown
-                \ formatoptions=cqt textwidth=137 wrapmargin=0
     let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 augroup END
 
@@ -246,8 +241,10 @@ let g:fzf_commits_log_options = '--graph --colors=always
             \--format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 " Open file with fzf
-noremap <leader>f :FZF ~/<CR>
-noremap <leader>wf :FZF ~/Dropbox/vimwiki<CR>
+noremap <leader>f :Files<CR>
+noremap <leader>fc :Files ~/.config<CR>
+noremap <leader>F :Files ~<CR>
+noremap <leader>wf :Files ~/Documents/vimwiki<CR>
 noremap <leader>/ :Rg<CR>
 noremap <leader>b :Buffers<CR>
 
@@ -262,6 +259,7 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " Replace the default dictionary completion with fzf-based fuzzy completion
 inoremap <expr> <c-x><c-k> fzf#complete('cat /usr/share/dict/words')
+
 
 
 " ripgrep for fzf
@@ -289,13 +287,16 @@ command! -bang -nargs=* Rg
 " use ripgrep for grepprg (vim search)
 set grepprg=rg\ --vimgrep
 
+command! -bang -nargs=? -complete=dir Files
+            \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
 autocmd! FileType fzf
 autocmd FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 " vimwiki settings ----------------------------------------------------------
 
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki/',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
 " code syntax highlight in code blocks
 let wiki = {}
@@ -309,12 +310,11 @@ let g:lightline = {
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
         \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ],
-        \   'right': [ [ 'lineinfo' ], [ 'percent', 'wordcount' ],
+        \   'right': [ [ 'lineinfo' ], [ 'percent'],
         \               [ 'filetype' ] ]
         \ },
         \ 'component_function': {
         \   'gitbranch': 'fugitive#head',
-        \   'wordcount': 'WordCount',
         \ },
         \ }
 
@@ -385,19 +385,26 @@ function! WordCount()
         return b:wordcount
     endif
 endfunction
-highlight ColorColumn ctermbg=18
 
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-"inoremap <expr> <M-,> pumvisible() ? "<C-n>'' :
-  "\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-
-
 filetype plugin on
 
-autocmd FileType *
-    \ if &omnifunc != '' |
-    \   call SuperTabChain(&omnifunc, "<c-p>") |
-    \ endif
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
+" supress the annoying 'match x of y', 'The only match' and 'Patter not found'
+" messages
+" set shortmess+=c
+
+" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+inoremap <c-c> <ESC>
+
+" When the <Enter> key is pressed while the popup menu is visible, it only
+" hides the menu. Use this mapping to close the menu and also start a new line
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
