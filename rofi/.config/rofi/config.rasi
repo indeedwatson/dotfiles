@@ -6,6 +6,6 @@ configuration {
    theme: "~/.cache/wal/colors-rofi-dark.rasi";
    window-format: "{w} {n} {t}";
    window-command: "i3-msg "\[id={window}\] move workspace current"";
-   levenshtein-sort: true;
+   levenshtein-sort: false;
    sort: true;
 }
