@@ -40,7 +40,7 @@ fi
 # .git/ folder)
 
 export FZF_DEFAULT_COMMAND='rg --no-messages --files --smart-case --no-ignore \
-    --hidden --follow -g "!{.git,soundfonts,undodir,z:}" '
+    --hidden --follow -g "!{.git,soundfonts,undodir,z:,.dotnet45}" '
 
 export FZF_DEFAULT_SORT='--sort 10000'
 
