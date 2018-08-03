@@ -11,9 +11,10 @@ alias batman='sudo pacman -Rns $(pacman -Qtdq) && pacaur -S polybar-git' # delet
 alias steam-wine='wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe'
 alias mkdir='mkdir -p' # no error if existing, make parents directories as needed
 # alias radeon='DRI_PRIME=1 VDPAU_DRIVER=radeonsi' # user DRI PRIME for dGPU
-alias phone='kdeconnect-cli -d 35ae67aa3fec869'
 r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias :q='exit'
+alias guitar="alsa_in -j MyGuitar -d'hw:Series,0,0' -p 128 -r 44100 -c 2 -q 1 &"
+alias dim='xrandr --output DVI-I-0 --brightness 0.5'
 
 unalias z 2> /dev/null
 z() {
@@ -22,3 +23,24 @@ z() {
 }
 
 alias j='z'
+
+function spell {
+    cat /usr/share/dict/words | fzf --preview 'wn {} -over | fold' \
+        --preview-window=up:60%
+}
+
+function fold {
+    if [ $# -eq 0 ]; then
+        /usr/bin/fold -w $COLUMNS -s
+    else
+        /usr/bin/fold $*
+    fi
+}
+
+function dic {
+    if [ $# -eq 0 ] ; then
+        wn `spell` -over
+    else
+        wn $1 -over
+    fi
+}
