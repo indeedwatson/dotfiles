@@ -1,11 +1,11 @@
 configuration {
-   font: "FantasqueSansMono 12";
+   font: "nerdypepper scientifica 10";
    display-run: ">";
    case-sensitive: false;
    matching: "fuzzy";
    theme: "~/.cache/wal/colors-rofi-dark.rasi";
    window-format: "{w} {n} {t}";
    window-command: "i3-msg "\[id={window}\] move workspace current"";
-   levenshtein-sort: false;
-   sort: true;
 }
+
+/* vim:ft=css */
