@@ -35,9 +35,9 @@ background = ${colors.black}
 foreground = ${colors.white}
 
 line-size = 0
-border-top-size = 0
-border-bottom-size = 1
-border-top-color = ${colors.darkest_grey}
+border-top-size = 2
+border-bottom-size = 2
+border-top-color = ${colors.black}
 border-bottom-color = ${colors.black}
 line-color = ${colors.red}
 border-color = ${colors.grey}
@@ -51,7 +51,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "fontawesome:size=10;1"
 font-3 = "WunconSiji:size=10;1"
 
-modules-left = i3  
+modules-left = i3
 modules-center = music
 modules-right = volume filesystem filesystem2 temperature time
 
