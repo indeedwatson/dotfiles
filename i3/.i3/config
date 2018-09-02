@@ -16,7 +16,7 @@ set_from_resource $grey2        i3wm.color18
 set_from_resource $grey1        i3wm.color19
 set_from_resource $light_grey   i3wm.color20
 set_from_resource $15           i3wm.color15
-set_from_resource $5            i3ww.color5
+set_from_resource $5            i3wm.color5
 
 #class                  border      backgr.     text            split
 client.focused          $blue       $blue       $black          $blue
@@ -57,10 +57,10 @@ $exec syncthing &
 $exec $term --name dropdown &
 $exec i3-msg '$ws1; exec firefox-nightly'
 $exec i3-msg '$ws7; exec qbittorrent'
-$exec i3-msg '$ws2; append_layout /home/yama/.i3/workspace-2.json; \
-    $exec $term --name editor -e "nvim /home/yama/Documents/vimwiki/index.md \
-    /home/yama/dotfiles/i3/.i3/config \
-    /home/yama/dotfiles/nvim/.config/nvim/init.vim"'
+#$exec i3-msg '$ws2; append_layout /home/yama/.i3/workspace-2.json; \
+    #$exec $term --name editor -e "nvim /home/yama/Documents/vimwiki/index.md \
+    #/home/yama/dotfiles/i3/.i3/config \
+    #/home/yama/dotfiles/nvim/.config/nvim/init.vim"'
 $exec_always "wal --theme random_dark"
 
 ###########################################################################
@@ -247,8 +247,6 @@ for_window [class="^.*"] border pixel 4
 gaps inner 15
 # space between windows and border of the screen
 gaps outer 0
-# draw borders only if there's more than one window
-smart_borders on
 # disable gaps for mpv & ff
 workspace 1 gaps inner 0
 workspace 4 gaps inner 0
