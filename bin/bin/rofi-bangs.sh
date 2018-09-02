@@ -14,7 +14,7 @@ declare -A COMMANDS
 ###
 # List of defined 'bangs'
 # calculator
-COMMANDS["="]="rofi -show calc -modi calc -no-show-match -no-sort -i"
+COMMANDS["="]="rofi -show calc -modi calc -no-show-match -no-sort -i -theme-str '#window { width: 30em; }'"
 LABELS["="]=""
 
 # poweroff
@@ -137,7 +137,7 @@ function print_menu()
 function start()
 {
     # print_menu | rofi -dmenu -p "?=>" 
-    print_menu | sort | rofi -sort -kb-row-select "Tab" -kb-row-tab "Control+space" -width 30 -dmenu  -i -p "rofi-bangs"
+    print_menu | sort | rofi -sort -kb-row-select "Tab" -kb-row-tab "Control+space" -width 30 -dmenu  -i -p " !"
 
 }
 
