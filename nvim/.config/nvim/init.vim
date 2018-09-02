@@ -62,7 +62,7 @@ set conceallevel=2
 " Always show statusline
 set laststatus=2
 highlight ColorColumn ctermbg=18
-call matchadd('ColorColumn', '\%81v', 8)
+call matchadd('ColorColumn', '\%81v', 100)
 
 let s:error_sign = '✘'
 " set background=dark
@@ -115,7 +115,7 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 " sort todo in markdown
-nnoremap <Leader>wc :sort /-\ \[X\]/
+nnoremap <Leader>wc :sort /-\ \[X\]/<CR>
 " open file under cursor with default app
 nnoremap gO :!xdg-open <cfile><CR><CR>
 
@@ -182,7 +182,7 @@ endif
 augroup Formatting
     autocmd!
     autocmd BufNew,BufRead *.txt,*.py,*.md,*markdown setlocal formatoptions=cqt
-                \ textwidth=80 colorcolumn=80 wrapmargin=80
+                \ textwidth=80 wrapmargin=80
 augroup END
 
 " set .md and .markdown to use markdown filetype
@@ -242,8 +242,8 @@ let g:fzf_commits_log_options = '--graph --colors=always
 
 " Open file with fzf
 noremap <leader>f :Files<CR>
-noremap <leader>fc :Files ~/.config<CR>
-noremap <leader>F :Files ~<CR>
+noremap <leader>Fc :Files ~/.config<CR>
+noremap <leader>Fh :Files ~<CR>
 noremap <leader>wf :Files ~/Documents/vimwiki<CR>
 noremap <leader>/ :Rg<CR>
 noremap <leader>b :Buffers<CR>
