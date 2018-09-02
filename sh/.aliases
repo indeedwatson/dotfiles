@@ -5,7 +5,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias g='git'
 alias gs='git status'
-alias pacu='yay -Syu && clear'
+alias pacu='yay -Syu --removemake --devel --answerdiff None --answeredit None\
+            --answerclean None --ignore love && clear'
 alias py='python'
 alias batman='sudo pacman -Rns $(pacman -Qtdq) && pacaur -S polybar-git' # delete orphan packages
 alias steam-wine='wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe'
