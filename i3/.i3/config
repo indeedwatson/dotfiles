@@ -80,7 +80,7 @@ bindsym $mod+period $exec "pamixer -u", $exec "pamixer -i 10"
 # switch audio device
 bindsym $mod+F4 $exec switch_audio_port.sh
 # Rofi
-bindsym $mod+space $exec "rofi -show run"
+bindsym $mod+space $exec "rofi -show run -sort -sorting-method fzf"
 bindsym $mod+semicolon $exec ~/bin/rofi-bangs.sh
 bindsym $mod+slash $exec "rofi -show window -theme winSelector"
 bindsym $mod+o $exec rofi-search.sh
@@ -97,6 +97,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+i [instance="dropdown"] scratchpad show, move position center
 # doesnt work bindsym Shift+Print $exec "teiler --quickcopy"
 bindsym Print $exec "teiler --quick image area"
+bindsym Shift+Print $exec "teiler --quickcopy area"
 bindsym $mod+b move container workspace back_and_forth; workspace back_and_forth
 bindsym $mod+c mode "nav"
 
@@ -134,15 +135,15 @@ bindsym $mod+Shift+a focus child
 bindsym $mod+bracketleft workspace prev_on_output
 bindsym $mod+bracketright workspace next_on_output
 bindsym $mod+$mod1+n workspace prev
-bindsym $mod+1 $ws1
-bindsym $mod+2 [title="discordapp"] focus
+bindsym $mod+1 [con_mark=_a] focus
+bindsym $mod+2 [con_mark=_b] focus
 bindsym $mod+3 $exec run_or_focus.py " - NVIM$" "termite -e nvim"
 bindsym $mod+4 $exec run_or_focus.py "mpv$" mpv
-bindsym $mod+r $exec run_or_focus.py "^ranger" "termite -e ranger"
+bindsym $mod+r $exec run_or_focus.py "^rn" "termite -e rn"
 bindsym $mod+w $exec run_or_focus.py "Weechat" "termite -e weechat"
 bindsym $mod+p $exec "termite -e pulsemixer"
 bindsym $mod+s $exec run_or_focus.py "^Steam" steam
-bindsym $mod+z $exec run_or_focus.py "zathura" zathura
+bindsym $mod+z $exec run_or_focus.py ".pdf$" zathura
 bindsym $mod+5 $ws5
 bindsym $mod+6 $ws6
 bindsym $mod+q $ws7
@@ -185,13 +186,12 @@ no_focus [title="(?i)steam"]
 assign [class="firefox-nightly"] 1
 for_window [title="Nightly$"] mark _a
 assign [title="discord"] 2
-# for_window [title="Discord"] mark _b
+for_window [title="Discord"] mark _b
 for_window [class="mpv" instance="image"] move to workspace current, floating \
     enable, move position left, floating_maximum_size 90x80
 assign [class="mpv"] 4
 for_window [class="mpv"] focus
 assign [class="(?i)termite" title="(?i)weechat"] 2
-assign [class="(?i)termite" title="(?i)ranger"] 2
 assign [class="qBittorrent"] 7
 assign [class="Steam"] 8
 assign [class="Lutris"] 8
