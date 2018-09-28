@@ -4,6 +4,6 @@ file="$HOME/.config/mpv/bookmarks-playlist"
 if [ -f $file  ]
 then
     mpv "$(rofi -theme-str "#window {width: 90%;}" -dmenu -markup-rows -i -p \
-        "video" -matching fuzzy -sort < $file \
+        "video" -matching fuzzy -sort -sorting-method fzf < $file \
         | grep -Po '\/home\/yama.*|http.*|ytdl:\/\/.*')"
 fi
