@@ -28,9 +28,11 @@ Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
 Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2' | Plug 'ncm2/ncm2-path' | Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-pyclang' | Plug 'ncm2/ncm2-bufword'
+"Plug 'ncm2/ncm2' | Plug 'ncm2/ncm2-path' | Plug 'ncm2/ncm2-jedi'
+"Plug 'ncm2/ncm2-pyclang' | Plug 'ncm2/ncm2-bufword'
 Plug 'mbbill/undotree'
+Plug 'lifepillar/vim-mucomplete'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " format ------------------------------------------------------------
@@ -132,8 +134,6 @@ nnoremap <F5> :so ~/.config/nvim/init.vim<CR>
 " move lines up and down with Ctrl + j/k in normal, insert and visual mode
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv=
 
@@ -386,25 +386,30 @@ function! WordCount()
     endif
 endfunction
 
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-filetype plugin on
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  "\ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+"filetype plugin on
 
-autocmd BufEnter * call ncm2#enable_for_buffer()
+"autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
 " supress the annoying 'match x of y', 'The only match' and 'Patter not found'
 " messages
-" set shortmess+=c
+ set shortmess+=c
 
 " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-inoremap <c-c> <ESC>
+"inoremap <c-c> <ESC>
 
 " When the <Enter> key is pressed while the popup menu is visible, it only
 " hides the menu. Use this mapping to close the menu and also start a new line
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+"inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 
 " use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+"mucomplete options
+"
+let g:jedi#popup_on_dot = 0
+let g:mucomplete#enable_auto_at_startup = 1
